@@ -44,7 +44,7 @@ nodejs是jav...">
       
         
         
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="light">
 
       
         
@@ -201,7 +201,7 @@ nodejs是jav...">
           <i class="iconfont iconeye"></i><span id="/2021/06/02/vue2-tailwind-elementui-axios%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="leancloud" data-flag-title="vue2+tailwind+elementui+axios项目搭建"></span>
         </span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>15280</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>15551</span>
     </div>
   </div>
 </section>
@@ -213,22 +213,21 @@ nodejs是jav...">
 </blockquote>
 <p>安装可以参考 <strong><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023025597810528">安装Node.js和npm - 廖雪峰的官方网站 (liaoxuefeng.com)</a></strong></p>
 <p>运行如下两条命令如果看到正确的输出结果，证明已经安装成功</p>
-<pre class="line-numbers language-none"><code class="language-none">node -v
-npm -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">node</span> <span class="hljs-title">-v</span><br>npm -v<br></code></pre></td></tr></table></figure>
 
 <h3 id="vue2"><a href="#vue2" class="headerlink" title="vue2"></a>vue2</h3><blockquote>
 <p>vue是尤雨溪大神写的一个前端框架，可以快速的完成前端开发</p>
 <p>虽然vue3已经发布了，但是新的版本可能有些第三方组件没有适配，出现问题也不好查到，建议还是使用二代</p>
 </blockquote>
 <p>使用npm安装vue2</p>
-<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">npm install vue-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install vue-cli -g<br></code></pre></td></tr></table></figure>
 
 <p>验证vue2是否安装成功: 输出版本即可证明安装成功  （<strong>这里的版本是vue-cli的版本</strong>）</p>
-<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">vue -V<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">vue -V<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><h3 id="创建vue2项目"><a href="#创建vue2项目" class="headerlink" title="创建vue2项目"></a>创建vue2项目</h3><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">vue init webpack my_vue<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><h3 id="创建vue2项目"><a href="#创建vue2项目" class="headerlink" title="创建vue2项目"></a>创建vue2项目</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">vue init webpack my_vue<br></code></pre></td></tr></table></figure>
 
 <p>接下来会要求输入一些创建项目的选项</p>
 <ul>
@@ -355,67 +354,16 @@ npm -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <li>Second.vue</li>
 </ul>
 <p>修改文件内容，用来标识文件</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
-  &lt;div&gt;					&lt;!--最外层一定要有一个容器，一般用div--&gt;
-    &lt;h1&gt;First页面&lt;&#x2F;h1&gt;  &lt;!--second修改这里就好--&gt;
-  &lt;&#x2F;div&gt;
-&lt;&#x2F;template&gt;
-
-&lt;script&gt;
-export default &#123;
-  name: &quot;Second&quot;
-&#125;
-&lt;&#x2F;script&gt;
-
-&lt;style scoped&gt;
-
-&lt;&#x2F;style&gt;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div&gt;					&lt;!--最外层一定要有一个容器，一般用div--&gt;<br>    &lt;h1&gt;First页面&lt;&#x2F;h1&gt;  &lt;!--second修改这里就好--&gt;<br>  &lt;&#x2F;div&gt;<br>&lt;&#x2F;template&gt;<br><br>&lt;script&gt;<br>export default &#123;<br>  name: &quot;Second&quot;<br>&#125;<br>&lt;&#x2F;script&gt;<br><br>&lt;style scoped&gt;<br><br>&lt;&#x2F;style&gt;<br><br></code></pre></td></tr></table></figure></li>
 <li><p>修改配置router/index.js</p>
 <blockquote>
 <p>想要在浏览器中看到我们新建的页面，就要在路由中定义相关页面的路由</p>
 </blockquote>
 <p>先看最初始的路由内容：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
-<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
-<span class="token keyword">import</span> HelloWorld <span class="token keyword">from</span> <span class="token string">'@/components/HelloWorld'</span> <span class="token comment">//引用HelloWorld页面</span>
-
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  routes<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span>
-      path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>     			<span class="token comment">// 页面路径，即'Ip:端口/' </span>
-      name<span class="token operator">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>		<span class="token comment">// 路由名字，必须唯一</span>
-      component<span class="token operator">:</span> HelloWorld  	<span class="token comment">// 路径对应的页面</span>
-      <span class="token comment">// 下面这种写法，也能够引用页面，不需要在上面引用，注意后面的.vue后缀不能省略</span>
-      <span class="token comment">//component: () => import("../components/HelloWorld.vue"),</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token comment">// 新的路由信息在这个地方添加</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> Router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span><br><span class="hljs-keyword">import</span> HelloWorld <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/components/HelloWorld&#x27;</span> <span class="hljs-comment">//引用HelloWorld页面</span><br><br>Vue.use(Router)<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Router(&#123;<br>  routes: [<br>    &#123;<br>      path: <span class="hljs-string">&#x27;/&#x27;</span>,     			<span class="hljs-comment">// 页面路径，即&#x27;Ip:端口/&#x27; </span><br>      name: <span class="hljs-string">&#x27;HelloWorld&#x27;</span>,		<span class="hljs-comment">// 路由名字，必须唯一</span><br>      component: HelloWorld  	<span class="hljs-comment">// 路径对应的页面</span><br>      <span class="hljs-comment">// 下面这种写法，也能够引用页面，不需要在上面引用，注意后面的.vue后缀不能省略</span><br>      <span class="hljs-comment">//component: () =&gt; import(&quot;../components/HelloWorld.vue&quot;),</span><br>    &#125;,<br>    <span class="hljs-comment">// 新的路由信息在这个地方添加</span><br>  ]<br>&#125;)  <br></code></pre></td></tr></table></figure>
 
 <p>加上新写的两个页面路由后，变成如下：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//mode: 'history'，   // 加入这一行可以取消url中的 # 号 </span>
-routes<span class="token operator">:</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">&#123;</span>
-    path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'HelloWorld'</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> HelloWorld
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#123;</span>
-    path<span class="token operator">:</span><span class="token string">'/first'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'First'</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../components/First.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment">// first页面</span>
-    meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>title<span class="token operator">:</span><span class="token string">'First'</span><span class="token punctuation">&#125;</span>   <span class="token comment">// 这里是定义路由的元信息，属于自定义内容</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#123;</span>
-    path<span class="token operator">:</span><span class="token string">'/second'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'Second'</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../components/Second.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// second页面</span>
-    meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>title<span class="token operator">:</span><span class="token string">'First'</span><span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//mode: &#x27;history&#x27;，   // 加入这一行可以取消url中的 # 号 </span><br>routes: [<br>  &#123;<br>    path: <span class="hljs-string">&#x27;/&#x27;</span>,<br>    name: <span class="hljs-string">&#x27;HelloWorld&#x27;</span>,<br>    component: HelloWorld<br>  &#125;,<br>  &#123;<br>    path:<span class="hljs-string">&#x27;/first&#x27;</span>,<br>    name: <span class="hljs-string">&#x27;First&#x27;</span>,<br>    component: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;../components/First.vue&quot;</span>),  <span class="hljs-comment">// first页面</span><br>    meta: &#123;<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;First&#x27;</span>&#125;   <span class="hljs-comment">// 这里是定义路由的元信息，属于自定义内容</span><br>  &#125;,<br>  &#123;<br>    path:<span class="hljs-string">&#x27;/second&#x27;</span>,<br>    name: <span class="hljs-string">&#x27;Second&#x27;</span>,<br>    component: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;../components/Second.vue&quot;</span>), <span class="hljs-comment">// second页面</span><br>    meta: &#123;<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;First&#x27;</span>&#125;<br>  &#125;,<br>]<br></code></pre></td></tr></table></figure>
 
 <p>url说明：加入mode: ‘history’这一行可以取消url中的#号，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34911465/article/details/79405796"> vue-router 路由模式及url中#号的解析</a></p>
 <p>也就是是说，加了这一行，你的url就是：</p>
@@ -452,49 +400,9 @@ routes<span class="token operator">:</span> <span class="token punctuation">[</s
 </blockquote>
 <ul>
 <li><p>创建两个‘儿子’页面 Son1.vue  和Son2.vue，内容如下</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
-  &lt;div&gt;
-    &lt;h1&gt;子页面1&lt;&#x2F;h1&gt;  &lt;!--Son2.vue 这里改成 子页面2--&gt;
-  &lt;&#x2F;div&gt;
-&lt;&#x2F;template&gt;
-
-&lt;script&gt;
-export default &#123;
-  name: &quot;Son1&quot;
-&#125;
-&lt;&#x2F;script&gt;
-
-&lt;style scoped&gt;
-
-&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;h1&gt;子页面1&lt;&#x2F;h1&gt;  &lt;!--Son2.vue 这里改成 子页面2--&gt;<br>  &lt;&#x2F;div&gt;<br>&lt;&#x2F;template&gt;<br><br>&lt;script&gt;<br>export default &#123;<br>  name: &quot;Son1&quot;<br>&#125;<br>&lt;&#x2F;script&gt;<br><br>&lt;style scoped&gt;<br><br>&lt;&#x2F;style&gt;<br></code></pre></td></tr></table></figure></li>
 <li><p>创建父组件 Father.vue</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
-  &lt;div&gt;
-    &lt;div style&#x3D;&quot;text-align: center&quot;&gt;   &lt;!-- 简单设置样式为居中 --&gt;
-      &lt;router-link to&#x3D;&quot;&#x2F;son1&quot;&gt;
-        &lt;button&gt;前往子页面1&lt;&#x2F;button&gt;
-      &lt;&#x2F;router-link&gt;
-      &lt;router-link to&#x3D;&quot;&#x2F;son2&quot;&gt;
-        &lt;button&gt;前往子页面2&lt;&#x2F;button&gt;
-      &lt;&#x2F;router-link&gt;
-    &lt;&#x2F;div&gt;
-
-    &lt;div&gt;
-      &lt;router-view&gt;&lt;&#x2F;router-view&gt;
-    &lt;&#x2F;div&gt;
-  &lt;&#x2F;div&gt;
-&lt;&#x2F;template&gt;
-
-&lt;script&gt;
-export default &#123;
-  name: &quot;Father&quot;
-&#125;
-&lt;&#x2F;script&gt;
-
-&lt;style scoped&gt;
-
-&lt;&#x2F;style&gt;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;div style&#x3D;&quot;text-align: center&quot;&gt;   &lt;!-- 简单设置样式为居中 --&gt;<br>      &lt;router-link to&#x3D;&quot;&#x2F;son1&quot;&gt;<br>        &lt;button&gt;前往子页面1&lt;&#x2F;button&gt;<br>      &lt;&#x2F;router-link&gt;<br>      &lt;router-link to&#x3D;&quot;&#x2F;son2&quot;&gt;<br>        &lt;button&gt;前往子页面2&lt;&#x2F;button&gt;<br>      &lt;&#x2F;router-link&gt;<br>    &lt;&#x2F;div&gt;<br><br>    &lt;div&gt;<br>      &lt;router-view&gt;&lt;&#x2F;router-view&gt;<br>    &lt;&#x2F;div&gt;<br>  &lt;&#x2F;div&gt;<br>&lt;&#x2F;template&gt;<br><br>&lt;script&gt;<br>export default &#123;<br>  name: &quot;Father&quot;<br>&#125;<br>&lt;&#x2F;script&gt;<br><br>&lt;style scoped&gt;<br><br>&lt;&#x2F;style&gt;<br><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>router-link   </p>
@@ -511,28 +419,7 @@ export default &#123;
 </ul>
 </li>
 <li><p>路由定义</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">...</span>
- <span class="token punctuation">&#123;</span>
-      path<span class="token operator">:</span><span class="token string">'/father'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'Father'</span><span class="token punctuation">,</span>
-      <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../components/Father.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>title<span class="token operator">:</span><span class="token string">'父页面'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      children<span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">&#123;</span>
-          path<span class="token operator">:</span><span class="token string">'/son1'</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'Son1'</span><span class="token punctuation">,</span>
-          <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../components/Son1.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-          meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>title<span class="token operator">:</span><span class="token string">'子页面1'</span><span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        <span class="token punctuation">&#123;</span>
-          path<span class="token operator">:</span><span class="token string">'/son2'</span><span class="token punctuation">,</span>
-          name<span class="token operator">:</span> <span class="token string">'Son2'</span><span class="token punctuation">,</span>
-          <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../components/Son2.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-          meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>title<span class="token operator">:</span><span class="token string">'子页面2'</span><span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">]</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js">...<br> &#123;<br>      path:<span class="hljs-string">&#x27;/father&#x27;</span>,<br>      name: <span class="hljs-string">&#x27;Father&#x27;</span>,<br>      component: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;../components/Father.vue&quot;</span>),<br>      meta: &#123;<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;父页面&#x27;</span>&#125;,<br>      children: [<br>        &#123;<br>          path:<span class="hljs-string">&#x27;/son1&#x27;</span>,<br>          name: <span class="hljs-string">&#x27;Son1&#x27;</span>,<br>          component: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;../components/Son1.vue&quot;</span>),<br>          meta: &#123;<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;子页面1&#x27;</span>&#125;<br>        &#125;,<br>        &#123;<br>          path:<span class="hljs-string">&#x27;/son2&#x27;</span>,<br>          name: <span class="hljs-string">&#x27;Son2&#x27;</span>,<br>          component: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;../components/Son2.vue&quot;</span>),<br>          meta: &#123;<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;子页面2&#x27;</span>&#125;<br>        &#125;,<br>      ]<br>    &#125;,<br>...<br></code></pre></td></tr></table></figure>
 
 <p>注意子页面的路由信息是放在父页面的children属性下的，这是父子组件必须有的路由结构</p>
 </li>
@@ -544,35 +431,12 @@ export default &#123;
 <p>下面演示一下路由守卫是如何修改页面标题的</p>
 </blockquote>
 <p>修改main.js 如下：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
-<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span>
-<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span>
-
-Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
-
-<span class="token comment">// 这里是添加的路由守卫</span>
-router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span><span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-  document<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>to<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-<span class="token comment">/* eslint-disable no-new */</span>
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  router<span class="token punctuation">,</span>
-  components<span class="token operator">:</span> <span class="token punctuation">&#123;</span> App <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  template<span class="token operator">:</span> <span class="token string">'&lt;App/>'</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App&#x27;</span><br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./router&#x27;</span><br><br>Vue.config.productionTip = <span class="hljs-literal">false</span><br><br><span class="hljs-comment">// 这里是添加的路由守卫</span><br>router.beforeEach(<span class="hljs-function">(<span class="hljs-params">to,<span class="hljs-keyword">from</span>,next</span>)=&gt;</span>&#123;<br>  <span class="hljs-built_in">document</span>.title = <span class="hljs-string">`<span class="hljs-subst">$&#123;to.meta.title&#125;</span>`</span>;<br>  next()<br>&#125;)<br><br><span class="hljs-comment">/* eslint-disable no-new */</span><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>  router,<br>  components: &#123; App &#125;,<br>  template: <span class="hljs-string">&#x27;&lt;App/&gt;&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
 
 <p>beforeEach在每次路由跳转前会执行，（同样也有afterEach，在每次路由跳转后执行）。 参数说明</p>
 <ul>
 <li><p>to： 跳转前的路由对象，也就是我们在router/index.js中定义的路由信息。<br>加入我们从son1页面跳转到son2页面，那么to的内容就是：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
-    path<span class="token operator">:</span><span class="token string">'/son1'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'Son1'</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../components/Son1.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    meta<span class="token operator">:</span> <span class="token punctuation">&#123;</span>title<span class="token operator">:</span><span class="token string">'子页面1'</span><span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>    path:<span class="hljs-string">&#x27;/son1&#x27;</span>,<br>    name: <span class="hljs-string">&#x27;Son1&#x27;</span>,<br>    component: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;../components/Son1.vue&quot;</span>),<br>    meta: &#123;<span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;子页面1&#x27;</span>&#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p>from: 跳转后的路由对象</p>
 </li>
 <li><p>next()  因为beforeEach相当于在路由跳转过程中插入了一段代码，因此必须调用next()才能继续执行跳转</p>
@@ -583,147 +447,22 @@ router<span class="token punctuation">.</span><span class="token function">befor
 <p>前端主要是用来展示的，但是没有数据展示什么呢？ 这就需要网络模块了。</p>
 <p>axios是一个封装的很好的HTTP库，有了它，我们就可以使用http协议向后端请求数据，或者传输数据</p>
 </blockquote>
-<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">npm install axios --save   &#x2F;&#x2F; 朴实无华的安装命令，注意要在项目目录下，也就是src同级目录下<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install axios --save   // 朴实无华的安装命令，注意要在项目目录下，也就是src同级目录下<br></code></pre></td></tr></table></figure>
 
 <h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><blockquote>
 <p>想要更傻瓜式的使用axios，我们需要进行简单的封装，此处查看注释了解各处的功能即可</p>
 </blockquote>
 <p>我们在src下新建文件夹http</p>
 <p>创建request.js文件，写入如下内容</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> instance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  baseURL <span class="token operator">:</span> <span class="token string">"https://v1.alapi.cn"</span><span class="token punctuation">,</span>  <span class="token comment">// 因为我们没有后端，这里写一个第三方免费接口的地址</span>
-  timeout <span class="token operator">:</span> <span class="token number">10000</span>
-
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-instance<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'application/json;charset=UTF-8'</span><span class="token punctuation">;</span> <span class="token comment">// poset请求的头部信息</span>
-
-<span class="token comment">// 请求拦截器</span>
-instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
-  <span class="token parameter">config</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 每次发送请求之前判断vuex中是否存在token</span>
-    <span class="token comment">// 如果存在，则统一在http请求的header都加上token，这样后台根据token判断你的登录情况</span>
-    <span class="token comment">// 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断</span>
-    <span class="token comment">// const token = store.state.token;</span>
-    <span class="token comment">// (config.headers.Authorization = token);</span>
-    <span class="token comment">// console.log(config)</span>
-    <span class="token keyword">return</span> config<span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token parameter">error</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-
-<span class="token comment">// 响应拦截器</span>
-instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
-  <span class="token parameter">response</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 如果返回的状态码为200，说明接口请求成功，可以正常拿到数据</span>
-    <span class="token comment">// 否则的话抛出错误</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token comment">// 服务器状态码不是2开头的的情况</span>
-  <span class="token comment">// 这里可以跟你们的后台开发人员协商好统一的错误状态码</span>
-  <span class="token comment">// 然后根据返回的状态码进行一些操作，例如登录过期提示，错误提示等等</span>
-  <span class="token comment">// 下面列举几个常见的操作，其他需求可自行扩展</span>
-  <span class="token parameter">error</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">)</span>
-
-
-<span class="token comment">/**
- * get方法，对应get请求
- * @param &#123;String&#125; url [请求的url地址]
- * @param &#123;Object&#125; params [请求时携带的参数]
- */</span>
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> params</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span><span class="token punctuation">&#123;</span>
-    instance<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-      params<span class="token operator">:</span> params
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span><span class="token punctuation">&#123;</span>
-      <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
-
-<span class="token comment">/**
- * post方法，对应post请求
- * @param &#123;String&#125; url [请求的url地址]
- * @param &#123;Object&#125; params [请求时携带的参数]
- */</span>
-<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">post</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> params</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    instance<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span><span class="token punctuation">&#123;</span>
-        <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;axios&quot;</span>;<br><br><span class="hljs-keyword">const</span> instance = axios.create(&#123;<br>  baseURL : <span class="hljs-string">&quot;https://v1.alapi.cn&quot;</span>,  <span class="hljs-comment">// 因为我们没有后端，这里写一个第三方免费接口的地址</span><br>  timeout : <span class="hljs-number">10000</span><br><br>&#125;)<br><br>instance.defaults.headers.post[<span class="hljs-string">&#x27;Content-Type&#x27;</span>] = <span class="hljs-string">&#x27;application/json;charset=UTF-8&#x27;</span>; <span class="hljs-comment">// poset请求的头部信息</span><br><br><span class="hljs-comment">// 请求拦截器</span><br>instance.interceptors.request.use(<br>  config =&gt; &#123;<br>    <span class="hljs-comment">// 每次发送请求之前判断vuex中是否存在token</span><br>    <span class="hljs-comment">// 如果存在，则统一在http请求的header都加上token，这样后台根据token判断你的登录情况</span><br>    <span class="hljs-comment">// 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断</span><br>    <span class="hljs-comment">// const token = store.state.token;</span><br>    <span class="hljs-comment">// (config.headers.Authorization = token);</span><br>    <span class="hljs-comment">// console.log(config)</span><br>    <span class="hljs-keyword">return</span> config;<br>  &#125;,<br>  error =&gt; &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.error(error);<br>  &#125;)<br><br><br><span class="hljs-comment">// 响应拦截器</span><br>instance.interceptors.response.use(<br>  response =&gt; &#123;<br>    <span class="hljs-comment">// 如果返回的状态码为200，说明接口请求成功，可以正常拿到数据</span><br>    <span class="hljs-comment">// 否则的话抛出错误</span><br>    <span class="hljs-built_in">console</span>.log(response)<br>    <span class="hljs-keyword">if</span> (response.status === <span class="hljs-number">200</span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(response);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(response);<br>    &#125;<br>  &#125;,<br>  <span class="hljs-comment">// 服务器状态码不是2开头的的情况</span><br>  <span class="hljs-comment">// 这里可以跟你们的后台开发人员协商好统一的错误状态码</span><br>  <span class="hljs-comment">// 然后根据返回的状态码进行一些操作，例如登录过期提示，错误提示等等</span><br>  <span class="hljs-comment">// 下面列举几个常见的操作，其他需求可自行扩展</span><br>  error =&gt; &#123;<br>    <span class="hljs-keyword">if</span> (error.response.status) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(error.response);<br>    &#125;<br>  &#125;,<br>)<br><br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * get方法，对应get请求</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;String&#125;</span> </span>url [请求的url地址]</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;Object&#125;</span> </span>params [请求时携带的参数]</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params">url, params</span>)</span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span>&#123;<br>    instance.get(url, &#123;<br>      params: params<br>    &#125;).then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>      resolve(res.data);<br>    &#125;).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span>&#123;<br>      reject(err.data)<br>    &#125;)<br>  &#125;);&#125;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * post方法，对应post请求</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;String&#125;</span> </span>url [请求的url地址]</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param <span class="hljs-type">&#123;Object&#125;</span> </span>params [请求时携带的参数]</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">post</span>(<span class="hljs-params">url, params</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>    instance.post(url, params)<br>      .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br>        resolve(res.data);<br>      &#125;)<br>      .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span>&#123;<br>        reject(err.data)<br>      &#125;)<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>在同目录下创建api.js</p>
 <p>将后端的接口变成前端的一个个方法，然后就可以在vue页面组件中引用这些方法</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>get<span class="token punctuation">,</span>post<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"./request"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 第三方的免费接口，用来知乎日报</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">GetZhihuDaily</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">param</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/api/zhihu/latest"</span><span class="token punctuation">,</span>param<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;get,post&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./request&quot;</span>;<br><br><span class="hljs-comment">// 第三方的免费接口，用来知乎日报</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> GetZhihuDaily = <span class="hljs-function">(<span class="hljs-params">param</span>)=&gt;</span>get(<span class="hljs-string">&quot;/api/zhihu/latest&quot;</span>,param)<br></code></pre></td></tr></table></figure>
 
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>我们在son1页面中演示一下上面这个接口的使用</p>
 <p>先看修改后的文件，再来一一说明：</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
-  &lt;div&gt;
-    &lt;h1&gt;子页面1&lt;&#x2F;h1&gt;
-
-    &lt;div v-for&#x3D;&quot;item in myData&quot;&gt;  &lt;!--7.渲染api获取的数据到页面中-&gt; 
-      &lt;h4&gt;&#123;&#123;item.title&#125;&#125;&lt;&#x2F;h4&gt;
-    &lt;&#x2F;div&gt;
-  &lt;&#x2F;div&gt;
-&lt;&#x2F;template&gt;
-
-&lt;script&gt;
-import &#123;GetZhihuDaily&#125; from &quot;..&#x2F;http&#x2F;api&quot;;  &#x2F;&#x2F; 1.引用请求方法
-
-export default &#123;
-  name: &quot;Son1&quot;,
-  data()&#123; &#x2F;&#x2F; 组件中的数据都会存在data中
-    return&#123;
-      myData:[],   &#x2F;&#x2F; 2.定义一个数组用来保存我们请求的来的数据
-    &#125;
-  &#125;,
-
-  created() &#123; &#x2F;&#x2F; 每次重新打开页面时，created中的代码会执行
-    this.FetchData()  &#x2F;&#x2F; 6.请求数据
-  &#125;,
-
-  methods:&#123; &#x2F;&#x2F; 方法必须放在method中，包括网络请求，点击事件等等
-    FetchData()&#123;    &#x2F;&#x2F; 3. 定义一个新方法，在方法中发送网络请求
-      GetZhihuDaily().then(res&#x3D;&gt;&#123; &#x2F;&#x2F; 4. 调用网络请求方法
-        console.log(res)
-        if(res.code&#x3D;&#x3D;&#x3D;200)&#123; &#x2F;&#x2F; 判断请求是否成功
-          this.myData &#x3D; res.data.stories  &#x2F;&#x2F; 5.将网络请求来的数据保存在mydata中，这里的stories是这个api数据特有的
-        &#125;
-      &#125;)
-    &#125;
-  &#125;
-&#125;
-&lt;&#x2F;script&gt;
-
-&lt;style scoped&gt;
-
-&lt;&#x2F;style&gt;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div&gt;<br>    &lt;h1&gt;子页面1&lt;&#x2F;h1&gt;<br><br>    &lt;div v-for&#x3D;&quot;item in myData&quot;&gt;  &lt;!--7.渲染api获取的数据到页面中-&gt; <br>      &lt;h4&gt;&#123;&#123;item.title&#125;&#125;&lt;&#x2F;h4&gt;<br>    &lt;&#x2F;div&gt;<br>  &lt;&#x2F;div&gt;<br>&lt;&#x2F;template&gt;<br><br>&lt;script&gt;<br>import &#123;GetZhihuDaily&#125; from &quot;..&#x2F;http&#x2F;api&quot;;  &#x2F;&#x2F; 1.引用请求方法<br><br>export default &#123;<br>  name: &quot;Son1&quot;,<br>  data()&#123; &#x2F;&#x2F; 组件中的数据都会存在data中<br>    return&#123;<br>      myData:[],   &#x2F;&#x2F; 2.定义一个数组用来保存我们请求的来的数据<br>    &#125;<br>  &#125;,<br><br>  created() &#123; &#x2F;&#x2F; 每次重新打开页面时，created中的代码会执行<br>    this.FetchData()  &#x2F;&#x2F; 6.请求数据<br>  &#125;,<br><br>  methods:&#123; &#x2F;&#x2F; 方法必须放在method中，包括网络请求，点击事件等等<br>    FetchData()&#123;    &#x2F;&#x2F; 3. 定义一个新方法，在方法中发送网络请求<br>      GetZhihuDaily().then(res&#x3D;&gt;&#123; &#x2F;&#x2F; 4. 调用网络请求方法<br>        console.log(res)<br>        if(res.code&#x3D;&#x3D;&#x3D;200)&#123; &#x2F;&#x2F; 判断请求是否成功<br>          this.myData &#x3D; res.data.stories  &#x2F;&#x2F; 5.将网络请求来的数据保存在mydata中，这里的stories是这个api数据特有的<br>        &#125;<br>      &#125;)<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;&#x2F;script&gt;<br><br>&lt;style scoped&gt;<br><br>&lt;&#x2F;style&gt;<br><br></code></pre></td></tr></table></figure>
 
 <p>具体步骤已经写在了代码注释中，下面对几个步骤再做进一步的解释</p>
 <ol>
@@ -740,16 +479,13 @@ export default &#123;
 <h3 id="element-ui"><a href="#element-ui" class="headerlink" title="element-ui"></a>element-ui</h3><blockquote>
 <p>经过上面的操作步骤，我们已经成功获得数据并渲染到了页面上。 但一个大问题，我们的页面太丑了。 前端一般使用css来修改样式的，但是css比较复杂，学习成本也比较高。 我们需要傻瓜式的ui组件。 好在很多开源的工具我们都可以拿来用，比如Vuetify 、 Vue Material、Element UI、Buefy 、Quasar 、Bootstrap Vue 等等。  我们这里以<a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN/component/installation"> Element</a>来举例，它是由饿了么前端团队开发的UI组件库</p>
 </blockquote>
-<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">npm install element-ui --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install element-ui --save<br></code></pre></td></tr></table></figure>
 
 <h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>在main.js中引用并使用配置elmentui</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> ElementUI <span class="token keyword">from</span> <span class="token string">'element-ui'</span>            <span class="token comment">// 引用组件库</span>
-<span class="token keyword">import</span> <span class="token string">'element-ui/lib/theme-chalk/index.css'</span>  <span class="token comment">//引用样式</span>
-
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementUI<span class="token punctuation">)</span> <span class="token comment">// 在vue中注册使用组件库</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> ElementUI <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-ui&#x27;</span>            <span class="hljs-comment">// 引用组件库</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span>  <span class="hljs-comment">//引用样式</span><br><br>Vue.use(ElementUI) <span class="hljs-comment">// 在vue中注册使用组件库</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><p>在father中，将第一个按钮修改一下。 即把button改成el-button</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span><span class="token punctuation">></span></span>前往子页面1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-button</span>&gt;</span>前往子页面1<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>打开页面，可以看到按钮变成了elementui定义的样式：</p>
 <p><img   class="lazyload" data-original="/images/image-20210527115242944.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
@@ -764,55 +500,31 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <ol>
 <li>安装</li>
 </ol>
-<pre class="line-numbers language-npm" data-language="npm"><code class="language-npm">npm install tailwindcss@1.9.5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs npm">npm install tailwindcss@1.9.5<br></code></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>在src/assets中创建css/tailwind.css, 写入如下内容</li>
 </ol>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@tailwind</span> base<span class="token punctuation">;</span></span>
-<span class="token atrule"><span class="token rule">@tailwind</span> components<span class="token punctuation">;</span></span>
-<span class="token atrule"><span class="token rule">@tailwind</span> utilities<span class="token punctuation">;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@tailwind</span> base;<br><span class="hljs-keyword">@tailwind</span> components;<br><span class="hljs-keyword">@tailwind</span> utilities;<br></code></pre></td></tr></table></figure>
 
 <ol start="3">
 <li><p>运行如下命令</p>
-<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">npx tailwindcss init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npx tailwindcss init<br></code></pre></td></tr></table></figure>
 
 <p>在项目目录下生成了一个tailwind.config.js文件</p>
 </li>
 <li><p>修改tailwind.config.js</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  future<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// removeDeprecatedGapUtilities: true,</span>
-    <span class="token comment">// purgeLayersByDefault: true,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  purge<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token string">'./src/**/*.html'</span><span class="token punctuation">,</span>
-    <span class="token string">'./src/**/*.vue'</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  theme<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    extend<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  variants<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;<br>  future: &#123;<br>    <span class="hljs-comment">// removeDeprecatedGapUtilities: true,</span><br>    <span class="hljs-comment">// purgeLayersByDefault: true,</span><br>  &#125;,<br>  purge: [<br>    <span class="hljs-string">&#x27;./src/**/*.html&#x27;</span>,<br>    <span class="hljs-string">&#x27;./src/**/*.vue&#x27;</span>,<br>  ],<br>  theme: &#123;<br>    extend: &#123;&#125;,<br>  &#125;,<br>  variants: &#123;&#125;,<br>  plugins: [],<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p>在项目目录下创建<strong>postcss.config.js</strong> 文件，内容如下</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'tailwindcss'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;<br>  plugins: [<br>    <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;tailwindcss&#x27;</span>)<br>  ]<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p>修改根目录下的.postcssrc.js 为如下内容</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token string">"plugins"</span><span class="token operator">:</span><span class="token punctuation">[</span>
-    <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'tailwindcss'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-string">&quot;plugins&quot;</span>:[<br>    <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;tailwindcss&#x27;</span>)<br>  ]<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h4><p>在main.js中配置使用tailwindcss</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token string">'@/assets/css/tailwind.css'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;@/assets/css/tailwind.css&#x27;</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h4><p>再次修改Father.vue,这次修改另一个按钮为如下：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-pink-500 text-white px-4 py-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>前往子页面2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bg-pink-500 text-white px-4 py-4&quot;</span>&gt;</span>前往子页面2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>class中定义了4个内容</p>
 <ul>
@@ -830,7 +542,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <p>这是vue的全局状态组件，也就是全局变量组件。 在项目中可能存在一些全局变量，使用vuex就可以方便的获取、同步修改、异步修改这些变量</p>
 </blockquote>
 <h4 id="安装-4"><a href="#安装-4" class="headerlink" title="安装"></a>安装</h4><p>安装命令：(–save的作用是将组件安装到当前项目中，而不是全局。 下同)</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install vuex --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install vuex <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
 
 <p>在项目目录/src下新建文件夹/store，并在文件夹下创建多个文件</p>
 <ul>
@@ -842,121 +554,42 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 </ul>
 <h4 id="使用-3"><a href="#使用-3" class="headerlink" title="使用"></a>使用</h4><ol>
 <li><p>首先在states中定义一个全局变量</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> state <span class="token operator">=</span>  <span class="token punctuation">&#123;</span>
-    count<span class="token operator">:</span><span class="token number">0</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> state<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> state =  &#123;<br>    count:<span class="hljs-number">0</span><br>&#125;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> state<br></code></pre></td></tr></table></figure></li>
 <li><p>在getters中定义获取count变量的方法</p>
-<pre class="line-numbers language-none"><code class="language-none">const getters &#x3D;  &#123;
-    docount:(state,getters) &#x3D;&gt; &#123;
-        return state.count
-    &#125;
-&#125;
-export default getters<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs pf"><span class="hljs-keyword">const</span> getters =  &#123;<br>    docount:(<span class="hljs-keyword">state</span>,getters) =&gt; &#123;<br>        return <span class="hljs-keyword">state</span>.count<br>    &#125;<br>&#125;<br>export <span class="hljs-keyword">default</span> getters<br></code></pre></td></tr></table></figure></li>
 <li><p>在mutations中添加如下内容</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> mutations <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token function">setCount</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> v</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        state<span class="token punctuation">.</span>count <span class="token operator">=</span> v<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token function">addCount</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span>v</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            state<span class="token punctuation">.</span>count <span class="token operator">+=</span> v
-        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-            state<span class="token punctuation">.</span>count <span class="token operator">++</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token function">reduceCount</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span>v</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            state<span class="token punctuation">.</span>count <span class="token operator">-=</span> v
-        <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
-            state<span class="token punctuation">.</span>count <span class="token operator">--</span>
-        <span class="token punctuation">&#125;</span>
-
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> mutations<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mutations = &#123;<br>    <span class="hljs-function"><span class="hljs-title">setCount</span>(<span class="hljs-params">state, v</span>)</span> &#123;<br>        state.count = v;<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-title">addCount</span>(<span class="hljs-params">state,v</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span>(v)&#123;<br>            state.count += v<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            state.count ++<br>        &#125;<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-title">reduceCount</span>(<span class="hljs-params">state,v</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span>(v)&#123;<br>            state.count -= v<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            state.count --<br>        &#125;<br><br>    &#125;<br>&#125;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> mutations<br></code></pre></td></tr></table></figure></li>
 <li><p>修改actions内容,  可以看到其中可以加入异步内容，我们这里没有使用</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> actions <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token constant">ADD_COUNT</span><span class="token punctuation">(</span><span class="token parameter">vuex<span class="token punctuation">,</span>num</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// axios.get("/customer/user_info").then(res => &#123;</span>
-        <span class="token comment">//     commit(TYPES.SET_COUMT, res.data);</span>
-        <span class="token comment">// &#125;);</span>
-        vuex<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">"addCount"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token constant">REDUCE_COUNT</span><span class="token punctuation">(</span><span class="token parameter">vuex<span class="token punctuation">,</span>num</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// axios.get("/customer/user_info").then(res => &#123;</span>
-        <span class="token comment">//     commit(TYPES.SET_COUMT, res.data);</span>
-        <span class="token comment">// &#125;);</span>
-        vuex<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">"reduceCount"</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> actions<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> actions = &#123;<br>    <span class="hljs-function"><span class="hljs-title">ADD_COUNT</span>(<span class="hljs-params">vuex,num</span>)</span> &#123;<br>        <span class="hljs-comment">// axios.get(&quot;/customer/user_info&quot;).then(res =&gt; &#123;</span><br>        <span class="hljs-comment">//     commit(TYPES.SET_COUMT, res.data);</span><br>        <span class="hljs-comment">// &#125;);</span><br>        vuex.commit(<span class="hljs-string">&quot;addCount&quot;</span>, num);<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-title">REDUCE_COUNT</span>(<span class="hljs-params">vuex,num</span>)</span> &#123;<br>        <span class="hljs-comment">// axios.get(&quot;/customer/user_info&quot;).then(res =&gt; &#123;</span><br>        <span class="hljs-comment">//     commit(TYPES.SET_COUMT, res.data);</span><br>        <span class="hljs-comment">// &#125;);</span><br>        vuex.commit(<span class="hljs-string">&quot;reduceCount&quot;</span>, num);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> actions<br></code></pre></td></tr></table></figure></li>
 <li><p>在store中引入以上组件</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
-<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span>
-
-<span class="token keyword">import</span> state <span class="token keyword">from</span> <span class="token string">"./states"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> getters <span class="token keyword">from</span> <span class="token string">"./getters"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> mutations <span class="token keyword">from</span> <span class="token string">"./mutations"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> actions <span class="token keyword">from</span> <span class="token string">"./actions"</span><span class="token punctuation">;</span>
-
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  state<span class="token punctuation">,</span>
-  getters<span class="token punctuation">,</span>
-  mutations<span class="token punctuation">,</span>
-  actions<span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span><br><br><span class="hljs-keyword">import</span> state <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./states&quot;</span>;<br><span class="hljs-keyword">import</span> getters <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./getters&quot;</span>;<br><span class="hljs-keyword">import</span> mutations <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./mutations&quot;</span>;<br><span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./actions&quot;</span>;<br><br>Vue.use(Vuex)<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Vuex.Store(&#123;<br>  state,<br>  getters,<br>  mutations,<br>  actions,<br>&#125;)<br></code></pre></td></tr></table></figure></li>
 <li><p>修改main.js引入vuex</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">"./store/store"</span><span class="token punctuation">;</span>  <span class="token comment">// 引入vuex</span>
-
-<span class="token comment">/* eslint-disable no-new */</span>
-<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  router<span class="token punctuation">,</span>
-  store<span class="token punctuation">,</span>   <span class="token comment">// 加入这一行</span>
-  components<span class="token operator">:</span> <span class="token punctuation">&#123;</span> App <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  template<span class="token operator">:</span> <span class="token string">'&lt;App/>'</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./store/store&quot;</span>;  <span class="hljs-comment">// 引入vuex</span><br><br><span class="hljs-comment">/* eslint-disable no-new */</span><br><span class="hljs-keyword">new</span> Vue(&#123;<br>  el: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>  router,<br>  store,   <span class="hljs-comment">// 加入这一行</span><br>  components: &#123; App &#125;,<br>  template: <span class="hljs-string">&#x27;&lt;App/&gt;&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h4><p>下面演示我们如何在网页中使用定义的count全局变量</p>
 <p>方案： 在Father中获取并展示count变量； 在子页面1中执行count+1，在子页面2中执行count-1</p>
 <ol>
 <li><p>修改Father.vue<br>获取count值</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">computed<span class="token operator">:</span><span class="token punctuation">&#123;</span>   <span class="token comment">// computed中的函数必须有返回值，vuex会实时更新这个值</span>
-    <span class="token function">myCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>docount<span class="token punctuation">)</span>
-      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>docount
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">computed:&#123;   <span class="hljs-comment">// computed中的函数必须有返回值，vuex会实时更新这个值</span><br>    <span class="hljs-function"><span class="hljs-title">myCount</span>(<span class="hljs-params"></span>)</span>&#123;<br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.$store.getters.docount)<br>      <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.$store.getters.docount<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>展示count值</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-blue-400 py-2 text-4xl text-white mx-auto my-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  &#123;&#123;myCount&#125;&#125;
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bg-blue-400 py-2 text-4xl text-white mx-auto my-2&quot;</span>&gt;</span><br>  &#123;&#123;myCount&#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 <li><p>修改Son1.vue<br>添加一个方法，用来增加count的值</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 修改vuex中的变量值</span>
-<span class="token function">AddCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'ADD_COUNT'</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 修改vuex中的变量值</span><br><span class="hljs-function"><span class="hljs-title">AddCount</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-built_in">this</span>.$store.dispatch(<span class="hljs-string">&#x27;ADD_COUNT&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>添加一个按钮用于触发这个方法</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>AddCount<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>add count<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;AddCount&quot;</span>&gt;</span>add count<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 <li><p>修改Son2.vue<br>添加一个方法，用来增加count的值</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 修改vuex中的变量值</span>
-   <span class="token function">AddCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-     <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'ADD_COUNT'</span><span class="token punctuation">)</span>
-   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 修改vuex中的变量值</span><br>   <span class="hljs-function"><span class="hljs-title">AddCount</span>(<span class="hljs-params"></span>)</span>&#123;<br>     <span class="hljs-built_in">this</span>.$store.dispatch(<span class="hljs-string">&#x27;ADD_COUNT&#x27;</span>)<br>   &#125;<br></code></pre></td></tr></table></figure>
 
 <p>添加一个按钮用于触发这个方法</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ReduceCount<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>reduce count<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;danger&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;ReduceCount&quot;</span>&gt;</span>reduce count<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <p>现在可以打开网页测试一下啦</p>
 <p><img   class="lazyload" data-original="/images/image-20210527201535270.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" ></p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><pre class="line-numbers language-none"><code class="language-none">npm run dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npm <span class="hljs-builtin-name">run</span> dev<br></code></pre></td></tr></table></figure>
 
-<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">npm run build<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm run build<br></code></pre></td></tr></table></figure>
 
 <p>打包后，项目目录下会出现一个dist目录，这个就是我们打包的结果</p>
 <h2 id="nginx部署"><a href="#nginx部署" class="headerlink" title="nginx部署"></a>nginx部署</h2><blockquote>
@@ -969,35 +602,12 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><p>nginx配置是很重要的一步。</p>
 <p>以win10为例，在nginx安装目录下找到conf/nginx.conf，这就是我们要配置的文件</p>
 <p>我们在http{}中添加如下内容</p>
-<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">server &#123;
-    listen       8888;					# 访问端口
-    server_name  你的ip:8888;		# 因为没有域名，所以这里是你的ip：端口
-
-    #charset koi8-r;
-
-    #access_log  logs&#x2F;host.access.log  main;
-
-    location &#x2F; &#123;
-        root   D:\app\my_vue\dist; 		# 指向我们打包后的目录
-        index  index.html index.htm;	
-
-        try_files $uri $uri&#x2F; &#x2F;index.html;  # 没有这一行，可能会报404错误
-    &#125;
-
-    #error_page  404              &#x2F;404.html;
-
-    # redirect server error pages to the static page &#x2F;50x.html
-    #
-    error_page   500 502 503 504  &#x2F;50x.html;
-    location &#x3D; &#x2F;50x.html &#123;
-        root   html;
-    &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs conf">server &#123;<br>    listen       8888;					# 访问端口<br>    server_name  你的ip:8888;		# 因为没有域名，所以这里是你的ip：端口<br><br>    #charset koi8-r;<br><br>    #access_log  logs&#x2F;host.access.log  main;<br><br>    location &#x2F; &#123;<br>        root   D:\app\my_vue\dist; 		# 指向我们打包后的目录<br>        index  index.html index.htm;	<br><br>        try_files $uri $uri&#x2F; &#x2F;index.html;  # 没有这一行，可能会报404错误<br>    &#125;<br><br>    #error_page  404              &#x2F;404.html;<br><br>    # redirect server error pages to the static page &#x2F;50x.html<br>    #<br>    error_page   500 502 503 504  &#x2F;50x.html;<br>    location &#x3D; &#x2F;50x.html &#123;<br>        root   html;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
 <p>启动nginx</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">start nginx.exe <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">start nginx.exe <br></code></pre></td></tr></table></figure>
 
 <p>打开浏览器  http://你的ip:8888/father</p>
 <p>成功！</p>
@@ -1026,7 +636,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
         
   <nav class="nav">
-    <a></a>
+    <a href="/2021/06/24/springboot%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%AE%9E%E5%BD%95/"><i class="iconfont iconleft"></i>springboot项目开发实录</a>
     <a href="/2021/06/02/linux%E4%BD%BF%E7%94%A8pyinstaller/">linux使用pyinstaller<i class="iconfont iconright"></i></a>
   </nav>
 

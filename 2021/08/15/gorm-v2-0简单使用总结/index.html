@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>gorm v2.0简单使用总结 - Fanlu&#39;s Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="数据库连接1234567891011import ( ...">
+  <meta name="author" content="Fanlu">
+  <link rel="icon" href="/images/icons/fanlu_36x36.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/fanlu_48x48.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/fanlu_144x144.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/fanlu_144x144.png" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/fanlu_144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: false,
+        alipay: 'https://imgtu.com/i/RuTiFJ',
+        wechat: 'https://imgtu.com/i/RuTFY9'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: false
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '竹杖芒鞋轻胜马',
+          typing: true,
+          api: '',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'image',
+        image: '/images/theme/wechat.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: true,
+        path: '/search.xml'
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Fanlu's Blog" type="application/atom+xml">
+</head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
+      
+    </div>
+    <div class="center">gorm v2.0简单使用总结</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/gorm.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">gorm v2.0简单使用总结</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 15, 2021</span>
+      
+        <span class="post-info-item">
+          <i class="iconfont iconeye"></i><span id="/2021/08/15/gorm-v2-0%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="leancloud" data-flag-title="gorm v2.0简单使用总结"></span>
+        </span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>8136</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">import</span> (<br>   <span class="hljs-string">&quot;gorm.io/driver/mysql&quot;</span><br>   <span class="hljs-string">&quot;gorm.io/gorm&quot;</span><br>   <span class="hljs-string">&quot;testing&quot;</span><br>)<br><br><span class="hljs-comment">// 测试连接mysql</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">TestConnectMysql</span><span class="hljs-params">(t *testing.T)</span></span> &#123;<br>   dsn := <span class="hljs-string">&quot;root:1234@(127.0.0.1:3306)/SimpleGorm?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;</span><br>   db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>gorm.Open第一个参数是Dialector类型</p>
+<ul>
+<li><p>简单的,直接按照数据库的地址构造dialector 即mysql.Opne(dsn)</p>
+</li>
+<li><p>复杂的,支持MySQL的配置</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go">mysql.New(mysql.Config&#123;<br>  DSN: <span class="hljs-string">&quot;gorm:gorm@tcp(127.0.0.1:3306)/gorm?charset=utf8&amp;parseTime=True&amp;loc=Local&quot;</span>, <span class="hljs-comment">// DSN data source name</span><br>  DefaultStringSize: <span class="hljs-number">256</span>, <span class="hljs-comment">// string 类型字段的默认长度</span><br>  DisableDatetimePrecision: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 禁用 datetime 精度，MySQL 5.6 之前的数据库不支持</span><br>  DontSupportRenameIndex: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 重命名索引时采用删除并新建的方式，MySQL 5.7 之前的数据库和 MariaDB 不支持重命名索引</span><br>  DontSupportRenameColumn: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 用 `change` 重命名列，MySQL 8 之前的数据库和 MariaDB 不支持重命名列</span><br>  SkipInitializeWithVersion: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 根据当前 MySQL 版本自动配置</span><br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>gorm.Open的第二个参数是Option类型,可以设置gorm的配置</p>
+<ul>
+<li><p>支持的配置有如下</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Config <span class="hljs-keyword">struct</span> &#123;<br>  SkipDefaultTransaction   <span class="hljs-keyword">bool</span>				<span class="hljs-comment">//跳过默认事务</span><br>  NamingStrategy           schema.Namer		<span class="hljs-comment">// 表和列命名策略</span><br>  Logger                   logger.Interface	<span class="hljs-comment">// 配置日志</span><br>  NowFunc                  <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span> <span class="hljs-title">time</span>.<span class="hljs-title">Time</span>	// 更改创建时间使用的函数</span><br>  DryRun                   <span class="hljs-keyword">bool</span>			<span class="hljs-comment">//生成 SQL 但不执行，可以用于准备或测试生成的 SQL</span><br>  PrepareStmt              <span class="hljs-keyword">bool</span>		<span class="hljs-comment">//在执行任何 SQL 时都会创建一个 prepared statement 并将其缓存，以提高后续的效率</span><br>  DisableNestedTransaction <span class="hljs-keyword">bool</span>		<span class="hljs-comment">// 禁用嵌套事务</span><br>  AllowGlobalUpdate        <span class="hljs-keyword">bool</span>		<span class="hljs-comment">// 启用全局 update/delete</span><br>  DisableAutomaticPing     <span class="hljs-keyword">bool</span>		<span class="hljs-comment">//GORM 会自动 ping 数据库以检查数据库的可用性.可以禁用</span><br>  DisableForeignKeyConstraintWhenMigrating <span class="hljs-keyword">bool</span> <span class="hljs-comment">//GORM 会自动创建外键约束，若要禁用该特性 建议禁用物理外键</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>使用示例,只用了一个配置</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go">db, _ = gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;<br>   DisableForeignKeyConstraintWhenMigrating: <span class="hljs-literal">true</span>,    <span class="hljs-comment">//禁用物理外键</span><br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="标签的使用"><a href="#标签的使用" class="headerlink" title="标签的使用"></a>标签的使用</h2><p>可用标签见<a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/models.html#%E5%AD%97%E6%AE%B5%E6%A0%87%E7%AD%BE">文档</a></p>
+<p>示例:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 定义一个玩家结构</span><br><span class="hljs-keyword">type</span> Player <span class="hljs-keyword">struct</span> &#123;<br>   ID           <span class="hljs-keyword">uint</span>      <span class="hljs-string">`gorm:&quot;primaryKey;comment:主键&quot;`</span><br>   UID       <span class="hljs-keyword">uint</span>      <span class="hljs-string">`gorm:&quot;unique;comment:玩家唯一id&quot;`</span><br>   Username   <span class="hljs-keyword">string</span>        <span class="hljs-string">`gorm:&quot;comment:玩家用户名&quot;`</span><br>   Password   <span class="hljs-keyword">string</span>    <span class="hljs-string">`gorm:&quot;comment:密码&quot;`</span><br>   CreatedAt  time.Time  <span class="hljs-string">`gorm:&quot;comment:创建时间;autoCreateTime&quot;`</span><br>   UpdateAt   time.Time  <span class="hljs-string">`gorm:&quot;comment:创建时间;autoUpdateTime&quot;`</span><br>   DeleteAt   gorm.DeletedAt <span class="hljs-string">`gorm:&quot;删除时间&quot;`</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>gorm也提供了基本的模型,已经包含了如下字段:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Model <span class="hljs-keyword">struct</span> &#123;<br>   ID        <span class="hljs-keyword">uint</span> <span class="hljs-string">`gorm:&quot;primarykey&quot;`</span><br>   CreatedAt time.Time<br>   UpdatedAt time.Time<br>   DeletedAt DeletedAt <span class="hljs-string">`gorm:&quot;index&quot;`</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>自己创建模型时,直接<strong>继承</strong>就可以了,例如</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Player <span class="hljs-keyword">struct</span> &#123;<br>   gorm.Model          <span class="hljs-comment">// gorm提供的结构体,自带id\Createat\updateat\deleteat</span><br>   UID       <span class="hljs-keyword">uint</span>      <span class="hljs-string">`gorm:&quot;unique;comment:玩家唯一id&quot;`</span><br>   Username   <span class="hljs-keyword">string</span>        <span class="hljs-string">`gorm:&quot;comment:玩家用户名&quot;`</span><br>   Password   <span class="hljs-keyword">string</span>    <span class="hljs-string">`gorm:&quot;comment:密码&quot;`</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="基本的增删改查"><a href="#基本的增删改查" class="headerlink" title="基本的增删改查"></a>基本的增删改查</h2><blockquote>
+<p>增删改查可以根据返回值的RowsAffected来判断,表示数据库操作影响的行数.</p>
+<p>gorm会自动跳过软删除的数据</p>
+<p>gorm执行前添加Debug会进入调试模式,打印所有sql</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs go">db.Debug().Where(<span class="hljs-string">&quot;username like ?&quot;</span>,<span class="hljs-string">&quot;%夏目%&quot;</span>).Find(&amp;newPlayers)  <span class="hljs-comment">// 加入DeBug()方便打印sql进行调试</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>创建表</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go">exist := db.Migrator().HasTable(&amp;Player&#123;&#125;)  <span class="hljs-comment">// 查看Player表是否存在</span><br><span class="hljs-keyword">if</span> !exist&#123;<br>    db.AutoMigrate(&amp;Player&#123;&#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>插入</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go">player := Player&#123;<br>   Username: <span class="hljs-string">&quot;夏目&quot;</span>,<br>   Password: <span class="hljs-string">&quot;1234&quot;</span>,<br>   UID: <span class="hljs-number">12345678</span>,<br>&#125;<br>result := db.Save(&amp;player)<br></code></pre></td></tr></table></figure>
+
+<p>删除</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs go">db.First(&amp;player)		<span class="hljs-comment">// 删除第一条数据</span><br>result := db.Delete(&amp;player)<br></code></pre></td></tr></table></figure>
+
+<p>查询单条</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go">db.First(&amp;player)		<span class="hljs-comment">//首条记录</span><br>db.First(&amp;newPlayer,<span class="hljs-number">4</span>)	<span class="hljs-comment">// 主键查询</span><br>db.Where(<span class="hljs-string">&quot;Username = ?&quot;</span>,<span class="hljs-string">&quot;xiamu&quot;</span>).First(&amp;player)  <span class="hljs-comment">//条件查询</span><br></code></pre></td></tr></table></figure>
+
+<p>查询多条</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs go">db.Find(&amp;players)<br>db.Debug().Where(<span class="hljs-string">&quot;username like ?&quot;</span>,<span class="hljs-string">&quot;%夏目%&quot;</span>).Find(&amp;newPlayers) <br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h2><blockquote>
+<p>一对一包含两种, has one以及belongs to</p>
+</blockquote>
+<h3 id="hasOne"><a href="#hasOne" class="headerlink" title="hasOne"></a>hasOne</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Player <span class="hljs-keyword">struct</span> &#123;<br>   gorm.Model          <span class="hljs-comment">// gorm提供的结构体,自带id\Createat\updateat\deleteat</span><br>   UID       <span class="hljs-keyword">uint</span>      <span class="hljs-string">`gorm:&quot;unique;comment:玩家唯一id&quot;`</span><br>   Username   <span class="hljs-keyword">string</span>        <span class="hljs-string">`gorm:&quot;comment:玩家用户名&quot;`</span><br>   Password   <span class="hljs-keyword">string</span>    <span class="hljs-string">`gorm:&quot;comment:密码&quot;`</span><br>   Role      Role<br>&#125;<br><br><span class="hljs-comment">// 定义一个游戏角色 使用playerId作为外键</span><br><span class="hljs-keyword">type</span> Role <span class="hljs-keyword">struct</span> &#123;<br>	gorm.Model<br>	PlayerId 	<span class="hljs-keyword">uint</span>		<span class="hljs-comment">// 默认使用user.uid作为外键</span><br>	Name 		<span class="hljs-keyword">string</span> 		<span class="hljs-string">`gorm:&quot;comment:游戏角色名&quot;`</span><br>	Level 		<span class="hljs-keyword">string</span>		<span class="hljs-string">`gorm:&quot;comment:游戏角色登记&quot;`</span><br>	Coins  		<span class="hljs-keyword">uint32</span>		<span class="hljs-string">`gorm:&quot;comment:游戏角色金币数&quot;`</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Player has Role  每个玩家包含一个角色.</p>
+<ul>
+<li><p>Player中要包含一个Role结构体</p>
+</li>
+<li><p>Role中要包含Player的外键,默认为PlayerId (结构体名Id)</p>
+</li>
+<li><p>支持自定义外键</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs go">Phone		Phone		<span class="hljs-string">`gorm:&quot;foreignKey:UID&quot;`</span>		<span class="hljs-comment">// 自定义外键 Role中的外键也要对应修改</span><br></code></pre></td></tr></table></figure></li>
+<li><p>也支持自定义引用<br>必须是有效的外键,即unique列</p>
+</li>
+</ul>
+<h3 id="belongsTo"><a href="#belongsTo" class="headerlink" title="belongsTo"></a>belongsTo</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Player <span class="hljs-keyword">struct</span> &#123;<br>   gorm.Model          <span class="hljs-comment">// gorm提供的结构体,自带id\Createat\updateat\deleteat</span><br>   Username   <span class="hljs-keyword">string</span>        <span class="hljs-string">`gorm:&quot;comment:玩家用户名&quot;`</span><br>   Password   <span class="hljs-keyword">string</span>    <span class="hljs-string">`gorm:&quot;comment:密码&quot;`</span><br>   SwordID       <span class="hljs-keyword">uint</span>      <span class="hljs-string">`gorm:&quot;comment:宝剑ID&quot;`</span><br>   Sword     Sword<br>&#125;<br><br><span class="hljs-keyword">type</span> Sword <span class="hljs-keyword">struct</span> &#123;<br>	gorm.Model<br>	Name     	<span class="hljs-keyword">string</span>		<span class="hljs-string">`gorm:&quot;comment:宝剑名;unique&quot;`</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>一把Sword属于一个Player</p>
+</blockquote>
+<ul>
+<li><p>Player中包含Sword的主键以及Sword的结构体</p>
+</li>
+<li><p>支持拥有者(Player)中修改Player.SwordName的名字</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Player <span class="hljs-keyword">struct</span> &#123;<br>	...<br>	MySwordID	<span class="hljs-keyword">string</span><br>	Sword		Sword		<span class="hljs-string">`gorm:&quot;foreignKey:MySwordID&quot;`</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>支持修改引用:  可以修改Player.SwordID的内容为指定的Sword中的字段</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs go">Sword     Sword	 <span class="hljs-string">`gorm:&quot;references:Name&quot;`</span>	<span class="hljs-comment">// SwordID保存的即变为Sword.Name</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><p>增:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go">player1 := Player&#123;<br>   Username: <span class="hljs-string">&quot;周芷若&quot;</span>,<br>   Password: <span class="hljs-string">&quot;1234&quot;</span>,<br>   Sword: Sword&#123;<br>      Name: <span class="hljs-string">&quot;倚天剑&quot;</span>,<br>   &#125;,<br>&#125;<br><br>player2 := Player&#123;<br>   Username: <span class="hljs-string">&quot;张无忌&quot;</span>,<br>   Password: <span class="hljs-string">&quot;1234&quot;</span>,<br>   Sword: Sword&#123;<br>      Name: <span class="hljs-string">&quot;屠龙刀&quot;</span>,<br>   &#125;,<br>&#125;<br><br>db.Create([]Player&#123;player1,player2&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>删除和普通表的操作一样.</p>
+<p>更新和查询见关联查询以及preload的用法</p>
+<h2 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h2><blockquote>
+<p>数据关系:  player和hero是一对多关系</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> Player <span class="hljs-keyword">struct</span> &#123;<br>   gorm.Model          <span class="hljs-comment">// gorm提供的结构体,自带id\Createat\updateat\deleteat</span><br>   Username   <span class="hljs-keyword">string</span>        <span class="hljs-string">`gorm:&quot;comment:玩家用户名&quot;`</span><br>   Password   <span class="hljs-keyword">string</span>    <span class="hljs-string">`gorm:&quot;comment:密码&quot;`</span><br>   <span class="hljs-comment">//Heros       []Hero</span><br>   <span class="hljs-comment">// 第二种</span><br>   <span class="hljs-comment">//Heros       []Hero    `gorm:&quot;foreignKey:PlayerKey&quot;`  // 定义外键的名字</span><br>   <span class="hljs-comment">// 第三种</span><br>   Heros     []Hero    <span class="hljs-string">`gorm:&quot;foreignKey:PlayerName;references:Username&quot;`</span> <span class="hljs-comment">// 自定义外键引用</span><br>&#125;<br><br><br><span class="hljs-comment">// hero   player可以拥有多个hero</span><br><span class="hljs-keyword">type</span> Hero <span class="hljs-keyword">struct</span> &#123;<br>   gorm.Model<br>   Name      <span class="hljs-keyword">string</span>    <span class="hljs-string">`gorm:&quot;comment:英雄名字&quot;`</span><br>   HP       <span class="hljs-keyword">int32</span>     <span class="hljs-string">`gorm:&quot;comment:血量&quot;`</span><br>   <span class="hljs-comment">//PlayerID uint</span><br>   <span class="hljs-comment">// 第二种</span><br>   <span class="hljs-comment">//PlayerKey    uint</span><br>   <span class="hljs-comment">// 第三种</span><br>   PlayerName     <span class="hljs-keyword">string</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>插入数据</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">TestInsert</span><span class="hljs-params">(t *testing.T)</span></span>&#123;<br>   hero1 := Hero&#123;<br>      Name: <span class="hljs-string">&quot;卡莎&quot;</span>,<br>      HP: <span class="hljs-number">300</span>,<br>   &#125;<br>   hero2 := Hero&#123;<br>      Name: <span class="hljs-string">&quot;瑞兹&quot;</span>,<br>      HP: <span class="hljs-number">500</span>,<br>   &#125;<br><br>   player := Player&#123;<br>      Username: <span class="hljs-string">&quot;夏目&quot;</span>,<br>      Password: <span class="hljs-string">&quot;1234&quot;</span>,<br>      Heros: []Hero&#123;hero1,hero2&#125;,<br>   &#125;<br><br>   result := db.Create(&amp;player)<br>   fmt.Println(<span class="hljs-string">&quot;插入行数：&quot;</span>,result.RowsAffected)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="多对多"><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h2><blockquote>
+<p>每个player都有多个手柄</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 每一个player有多个手柄</span><br><span class="hljs-keyword">type</span> Player <span class="hljs-keyword">struct</span> &#123;<br>   gorm.Model<br>   Name      <span class="hljs-keyword">string</span><br>   Gamepads   []Gamepad     <span class="hljs-string">`gorm:&quot;many2many:player_gamepad&quot;`</span><br>   Friends       []Player      <span class="hljs-string">`gorm:&quot;many2many:player_friends&quot;`</span>     <span class="hljs-comment">//自引用</span><br>&#125;<br><br><span class="hljs-comment">// 游戏手柄</span><br><span class="hljs-keyword">type</span> Gamepad <span class="hljs-keyword">struct</span> &#123;<br>   gorm.Model<br>   Brand     <span class="hljs-keyword">string</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>插入数据</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">TestInsert</span><span class="hljs-params">(t *testing.T)</span></span> &#123;<br>   gamepad1 := Gamepad&#123;<br>      Brand: <span class="hljs-string">&quot;Nintendo&quot;</span>,<br>   &#125;<br><br>   gamepad2 := Gamepad&#123;<br>      Brand: <span class="hljs-string">&quot;PS4&quot;</span>,<br>   &#125;<br>   db.Create([]*Gamepad&#123;&amp;gamepad1,&amp;gamepad2&#125;)    <span class="hljs-comment">// 插入手柄数据</span><br><br>   gamepads := <span class="hljs-built_in">make</span>([]Gamepad,<span class="hljs-number">0</span>)<br>   db.Find(&amp;gamepads)<br><br>   player1 := Player&#123;<br>      Name: <span class="hljs-string">&quot;马里奥&quot;</span>,<br>      Gamepads: gamepads,       <span class="hljs-comment">// 每个player都有各种手柄</span><br>   &#125;<br><br>   player2 := Player&#123;<br>      Name: <span class="hljs-string">&quot;路易吉&quot;</span>,<br>      Gamepads: gamepads,<br>   &#125;<br><br>   result := db.Create([]*Player&#123;&amp;player1,&amp;player2&#125;)  <span class="hljs-comment">//插入数据,gorm自动更新中间表</span><br>   <span class="hljs-keyword">if</span> result.RowsAffected==<span class="hljs-number">0</span> &#123;<br>      fmt.Println(<span class="hljs-string">&quot;插入失败&quot;</span>)<br>   &#125;<span class="hljs-keyword">else</span>&#123;<br>      fmt.Println(<span class="hljs-string">&quot;插入成功&quot;</span>,result.RowsAffected)<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h2><blockquote>
+<p>一对一; 一对多; 多对多的查询都需要使用关联查询.. <a target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/associations.html">文档</a>写的很好了,我就懒得写了</p>
+</blockquote>
+<p>关键字: Assocaition</p>
+<p>功能包括:</p>
+<ul>
+<li>查找所有关联</li>
+<li>添加关联:  例如给player添加新的gamepad</li>
+<li>替换关联</li>
+<li>删除关联</li>
+<li>清空关联</li>
+<li>关联计数</li>
+<li>删除数据,如果要删除它关联的数据,要使用Select删除</li>
+</ul>
+<h2 id="preload"><a href="#preload" class="headerlink" title="preload"></a>preload</h2><blockquote>
+<p>查询数据时, 如果要把关联的数据一并查找出来, 可以使用预加载</p>
+</blockquote>
+<ul>
+<li><p>支持全部查找</p>
+</li>
+<li><p>支持带条件的预加载</p>
+</li>
+<li><p>也支持自定义的预加载</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go">db.Preload(<span class="hljs-string">&quot;Orders&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(db *gorm.DB)</span> *<span class="hljs-title">gorm</span>.<span class="hljs-title">DB</span></span> &#123;<br>  <span class="hljs-keyword">return</span> db.Order(<span class="hljs-string">&quot;orders.amount DESC&quot;</span>)<br>&#125;).Find(&amp;users)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="钩子"><a href="#钩子" class="headerlink" title="钩子"></a>钩子</h2><blockquote>
+<p>如果一个模型 struct要在创建\查询\更新\删除操作时,  添加自定义的方法, 可以使用钩子函数来实现, 这样gorm就会自动在执行相关操作时, 执行对应的函数</p>
+</blockquote>
+<ul>
+<li>创建时<ul>
+<li>BeforeSave</li>
+<li>BeforeCrete</li>
+<li>AfterCreate</li>
+<li>AfterSave</li>
+</ul>
+</li>
+<li>更新时<ul>
+<li>BeforeSave</li>
+<li>BeforeUpdate</li>
+<li>AfterUpdate</li>
+<li>AfterSave</li>
+</ul>
+</li>
+<li>删除时<ul>
+<li>BeforeDelete</li>
+<li>AfterDelete</li>
+</ul>
+</li>
+<li>查询时<ul>
+<li>AfterFind        比如把密码加密,</li>
+</ul>
+</li>
+</ul>
+<h2 id="原生"><a href="#原生" class="headerlink" title="原生"></a>原生</h2><p>db.Raw(“原生sql”).Scan(查找对象)</p>
+<p>db.Exec(“原生sql”)</p>
+<h2 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h2><blockquote>
+<p>Migrator方法包含了很多对数据表的操作方法</p>
+</blockquote>
+<ul>
+<li>AutoMigrate  自动迁移</li>
+<li>CurrentDatabase   当前数据库</li>
+<li>FullDataTypeOf(Field)  列的数据类型</li>
+</ul>
+<p>表的操作</p>
+<ul>
+<li>CreateTable  创建表</li>
+<li>DropTable   删除表</li>
+<li>HasTable</li>
+<li>RenameTable</li>
+</ul>
+<p>列的操作</p>
+<ul>
+<li>AddColumn</li>
+<li>DropColumn</li>
+<li>AlterColumn</li>
+<li>HasColumn</li>
+<li>RenameColumn</li>
+<li>MigrateColumn</li>
+<li>ColumnTypes</li>
+</ul>
+<p>约束操作</p>
+<ul>
+<li>CreateConstraint</li>
+<li>DropConstraint</li>
+<li>HashConstraint</li>
+</ul>
+<p>索引操作</p>
+<ul>
+<li>CreateIndex</li>
+<li>DropIndex</li>
+<li>HasIndex</li>
+<li>RenameIndex</li>
+</ul>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 开始事务</span><br>tx := db.Begin()<br><span class="hljs-comment">// 在事务中执行一些 db 操作（从这里开始，您应该使用 &#x27;tx&#x27; 而不是 &#x27;db&#x27;）</span><br>tx.Create(...)<span class="hljs-comment">// ...</span><br><span class="hljs-comment">// 遇到错误时回滚事务</span><br>tx.Rollback()<br><span class="hljs-comment">// 否则，提交事务</span><br>tx.Commit()<br></code></pre></td></tr></table></figure>
+
+<p>如果需要回滚到指定的地方,可以使用:</p>
+<ul>
+<li>tx.SavePoint(“name”)</li>
+<li>tx.RollbackTo(“name”)</li>
+</ul>
+<p>回滚到指定的保存点</p>
+
+      </section>
+      <section class="extra">
+        
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/" rel="tag">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/orm/" rel="tag">orm</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2021/06/24/springboot%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%AE%9E%E5%BD%95/">springboot项目开发实录<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+  
+<div id="valine"></div>
+<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  window.onload = function () {
+    var loadValine = function () {
+      new Valine({
+        el: '#valine',
+        app_id: "69dsLimanzESX0iaHwJALaIv-gzGzoHsz",
+        app_key: "Q1IhoacJwYJeAV9NimoRPQoN",
+        placeholder: "留个言交流一下吧",
+        avatar: "mp",
+        pageSize: "10",
+        lang: "zh-CN",
+      });
+    }
+    if ( false ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        loadValine();
+      });
+    } else {
+      loadValine();
+    }
+  };
+</script>
+
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-text">数据库连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">标签的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">基本的增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%AF%B9%E4%B8%80"><span class="toc-text">一对一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hasOne"><span class="toc-text">hasOne</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#belongsTo"><span class="toc-text">belongsTo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">增删改查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%AF%B9%E5%A4%9A"><span class="toc-text">一对多</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A"><span class="toc-text">多对多</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E8%81%94"><span class="toc-text">关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#preload"><span class="toc-text">preload</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%92%A9%E5%AD%90"><span class="toc-text">钩子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F"><span class="toc-text">原生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB"><span class="toc-text">迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-text">事务</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=1066580119 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://github.com/FanLu1994 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:fanlu2020@qq.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
+
+    AV.init({
+      appId: '69dsLimanzESX0iaHwJALaIv-gzGzoHsz',
+      appKey: 'Q1IhoacJwYJeAV9NimoRPQoN',
+      serverURLs: 'https://leancloud.cn/',
+    });
+
+    const showCount = (Counter) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud").each(async (e) => {
+        const url = $(".leancloud").eq(e).attr('id').trim();
+        const query = new AV.Query("Counter");
+        query.equalTo("words", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud").eq(e).text(count ? count : '--');
+      });
+    }
+
+    const addCount = (Counter) => {
+      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'https://fanlu1994.github.io';
+      var query = new Counter;
+      query.save({
+        words: url
+      });
+    }
+
+    $(function () {
+      const Counter = AV.Object.extend("Counter");
+      addCount(Counter);
+      showCount(Counter);
+    });
+
+  });
+</script>
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

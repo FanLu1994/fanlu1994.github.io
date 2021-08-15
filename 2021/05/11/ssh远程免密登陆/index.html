@@ -48,7 +48,7 @@ B...">
       
         
         
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="light">
 
       
         
@@ -205,7 +205,7 @@ B...">
           <i class="iconfont iconeye"></i><span id="/2021/05/11/ssh%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/" class="leancloud" data-flag-title="ssh远程免密登陆"></span>
         </span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>361</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>363</span>
     </div>
   </div>
 </section>
@@ -217,7 +217,7 @@ B...">
 </blockquote>
 <ol>
 <li><p>B机器执行命令生成公钥和私钥</p>
-<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">ssh-keygen -t rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">ssh-keygen -t rsa<br></code></pre></td></tr></table></figure>
 
 <p>生成的秘钥在用户目录下，例如C:\Users\admin\ .ssh</p>
 </li>
@@ -236,7 +236,7 @@ B...">
 </ul>
 </li>
 <li><p>测试连接<br>在B机器上命令行输入测试</p>
-<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">ssh 用户名@A机器ip地址<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">ssh 用户名@A机器ip地址<br></code></pre></td></tr></table></figure>
 
 <p>如果没有提示输入密码，直接登录成功，则表示免密登录配置成功！</p>
 </li>

@@ -43,7 +43,7 @@
       
         
         
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="light">
 
       
         
@@ -200,7 +200,7 @@
           <i class="iconfont iconeye"></i><span id="/2021/06/02/linux%E4%BD%BF%E7%94%A8pyinstaller/" class="leancloud" data-flag-title="linux使用pyinstaller"></span>
         </span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>365</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>370</span>
     </div>
   </div>
 </section>
@@ -208,24 +208,20 @@
       <section class="content">
         <h3 id="安装pyinstaller"><a href="#安装pyinstaller" class="headerlink" title="安装pyinstaller"></a>安装pyinstaller</h3><p><a target="_blank" rel="noopener" href="https://www.pyinstaller.org/downloads.html">Downloads — PyInstaller bundles Python applications</a></p>
 <p>下载</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https:&#x2F;&#x2F;github.com&#x2F;pyinstaller&#x2F;pyinstaller&#x2F;releases&#x2F;download&#x2F;v4.2&#x2F;PyInstaller-4.2.tar.gz
-
-tar -xvf PyInstaller-4.2.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://github.com/pyinstaller/pyinstaller/releases/download/v4.2/PyInstaller-4.2.tar.gz<br><br>tar -xvf PyInstaller-4.2.tar.gz<br></code></pre></td></tr></table></figure>
 
 <p>build</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd pyinstaller-4.2
-
-python3 setup.py build<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd pyinstaller-4.2<br><br>python3 setup.py build<br></code></pre></td></tr></table></figure>
 
 
 
 <p>install</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo python3 setup.py install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo python3 setup.py install<br></code></pre></td></tr></table></figure>
 
 <p>测试是否安装成功</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pyinstaller --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pyinstaller --version<br></code></pre></td></tr></table></figure>
 
-<h3 id="打包python项目"><a href="#打包python项目" class="headerlink" title="打包python项目"></a>打包python项目</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pyinstaller -F program_exporter.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="打包python项目"><a href="#打包python项目" class="headerlink" title="打包python项目"></a>打包python项目</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pyinstaller -F program_exporter.py<br></code></pre></td></tr></table></figure>
 
 
       </section>

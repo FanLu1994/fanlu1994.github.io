@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>springboot项目开发实录 - Fanlu&#39;s Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="大纲自己想要学习springboot框架, 于是想要自...">
+  <meta name="author" content="Fanlu">
+  <link rel="icon" href="/images/icons/fanlu_36x36.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/fanlu_48x48.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/fanlu_144x144.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/fanlu_144x144.png" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/fanlu_144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: false,
+        alipay: 'https://imgtu.com/i/RuTiFJ',
+        wechat: 'https://imgtu.com/i/RuTFY9'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: false
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '竹杖芒鞋轻胜马',
+          typing: true,
+          api: '',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'image',
+        image: '/images/theme/wechat.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: true,
+        path: '/search.xml'
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Fanlu's Blog" type="application/atom+xml">
+</head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
+      
+    </div>
+    <div class="center">springboot项目开发实录</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/springboot.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">springboot项目开发实录</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 24, 2021</span>
+      
+        <span class="post-info-item">
+          <i class="iconfont iconeye"></i><span id="/2021/06/24/springboot%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%AE%9E%E5%BD%95/" class="leancloud" data-flag-title="springboot项目开发实录"></span>
+        </span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>16733</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><p>自己想要学习springboot框架, 于是想要自己设计一个项目实战一下. </p>
+<p>功能idea来自平常的学习, 对于一个新的技术, 小白往往感觉无从下手, 只好去网上搜一些教程, 包括视频教程以及一些文档教程, 但是质量又良莠不齐, 很容易踩雷, 浪费很多时间.  这个idea就是希望大家都贡献出自己学习一门技术的过程,即<strong>plan</strong>.  小白可以来参考这些plan,进行自己的学习, 并将自己的学习过程也<strong>share</strong>出来.  因此本项目叫做plan-share.</p>
+<h2 id="功能设计"><a href="#功能设计" class="headerlink" title="功能设计"></a>功能设计</h2><ol>
+<li><p>创建学习计划</p>
+</li>
+<li><p>添加学习进度到学习计划<br>学习进度指学习的阶段</p>
+</li>
+<li><p>添加资源到学习计划或者学习进度<br>资源指学习用到的视频链接或者文档链接</p>
+</li>
+<li><p>数据的CRUD</p>
+</li>
+</ol>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h3><ul>
+<li>plan</li>
+<li>plan_resource</li>
+<li>schedule</li>
+<li>schedule_resource</li>
+<li>plan_type</li>
+<li>resource</li>
+<li>resource_type</li>
+</ul>
+<h3 id="权限表"><a href="#权限表" class="headerlink" title="权限表"></a>权限表</h3><ul>
+<li>user</li>
+<li>sys_role</li>
+<li>sys_permission</li>
+<li>user_role</li>
+<li>role_permission</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> DATABASE `plan_share` <span class="hljs-comment">/*!40100 DEFAULT CHARACTER SET utf8 */</span> <span class="hljs-comment">/*!80016 DEFAULT ENCRYPTION=&#x27;N&#x27; */</span><br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `plan` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `name` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `create_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `update_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `type_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;1&#x27;</span>,<br>  `description` <span class="hljs-type">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8 <span class="hljs-keyword">COLLATE</span> utf8_general_ci <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` <span class="hljs-type">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  `creator` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">11</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;学习计划表&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `plan_resource` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `plan_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `resource_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">5</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;学习计划与学习资料关联表&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `plan_type` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `name` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `create_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `update_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `description` <span class="hljs-type">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8 <span class="hljs-keyword">COLLATE</span> utf8_general_ci <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;计划类型&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `resource` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `name` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `description` <span class="hljs-type">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8 <span class="hljs-keyword">COLLATE</span> utf8_general_ci <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `type_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `create_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `update_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  `creator` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;学习资料&#x27;</span>;<br><br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `resource_type` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `name` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `create_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `update_time` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `description` <span class="hljs-type">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8 <span class="hljs-keyword">COLLATE</span> utf8_general_ci <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;学习资料类型&#x27;</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `role_permission` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `role_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `permission_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">7</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `schedule` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `name` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `plan_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  `create_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `update_time` datetime <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `description` <span class="hljs-type">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8 <span class="hljs-keyword">COLLATE</span> utf8_general_ci <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  `creator` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">3</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;学习进度&#x27;</span>;<br><span class="hljs-comment">/*!40101 SET character_set_client = @saved_cs_client */</span>;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `schedule_resource` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `schedule_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `resource_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">2</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8 COMMENT<span class="hljs-operator">=</span><span class="hljs-string">&#x27;学习进度与学习资料关联表&#x27;</span>;<br><br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `sys_permission` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `url` <span class="hljs-type">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `description` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">7</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `sys_role` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `name` <span class="hljs-type">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `description` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">3</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `<span class="hljs-keyword">user</span>` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `username` <span class="hljs-type">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `password` <span class="hljs-type">varchar</span>(<span class="hljs-number">100</span>) <span class="hljs-type">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8 <span class="hljs-keyword">COLLATE</span> utf8_general_ci <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `nickname` <span class="hljs-type">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  `creat_time` datetime <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">NULL</span>,<br>  `is_delete` tinyint(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;0&#x27;</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">7</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br><br><br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> `user_role` (<br>  `id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> AUTO_INCREMENT,<br>  `user_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  `role_id` <span class="hljs-type">bigint</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,<br>  <span class="hljs-keyword">PRIMARY</span> KEY (`id`)<br>) ENGINE<span class="hljs-operator">=</span>InnoDB AUTO_INCREMENT<span class="hljs-operator">=</span><span class="hljs-number">7</span> <span class="hljs-keyword">DEFAULT</span> CHARSET<span class="hljs-operator">=</span>utf8;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="mybatis-plus"><a href="#mybatis-plus" class="headerlink" title="mybatis-plus"></a>mybatis-plus</h2><blockquote>
+<p>项目使用了mbp,省去了mybatis繁琐的编写步骤。  提高了很多开发效率。</p>
+</blockquote>
+<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0.22<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><br><br>      <span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter --&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.baomidou<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MybatisPlusConfig</span> </span>&#123;<br>    <span class="hljs-comment">// 分页插件</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> PaginationInterceptor <span class="hljs-title">paginationInterceptor</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PaginationInterceptor();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><ol>
+<li><p>创建实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.annotation.IdType;<br><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.annotation.TableId;<br><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.annotation.TableName;<br><span class="hljs-keyword">import</span> lombok.Data;<br><br><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@TableName(&quot;plan&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Plan</span> </span>&#123;<br><br>    <span class="hljs-meta">@ApiModelProperty(hidden = true)</span><br>    <span class="hljs-meta">@TableId(type = IdType.AUTO)</span><br>    <span class="hljs-keyword">private</span> Long id;<br><br>    <span class="hljs-meta">@ApiModelProperty(value = &quot;学习计划名&quot;,required = true,example = &quot;英语&quot;)</span><br>    <span class="hljs-keyword">private</span> String name;<br><br>    <span class="hljs-meta">@ApiModelProperty(value = &quot;学习计划描述&quot;,required = true,example = &quot;雅思必过&quot;)</span><br>    <span class="hljs-keyword">private</span> String description;<br><br>    <span class="hljs-meta">@ApiModelProperty(hidden = true)</span><br>    <span class="hljs-keyword">private</span> Long typeId;<br><br>    <span class="hljs-meta">@ApiModelProperty(hidden = true)</span><br>    <span class="hljs-keyword">private</span> Date createTime;<br><br>    <span class="hljs-meta">@ApiModelProperty(hidden = true)</span><br>    <span class="hljs-keyword">private</span> Date updateTime = <span class="hljs-keyword">new</span> Date();<br><br>    <span class="hljs-meta">@ApiModelProperty(hidden = true)</span><br>    <span class="hljs-keyword">private</span> Boolean isDelete;<br><br>    <span class="hljs-keyword">private</span> Long creator;    <span class="hljs-comment">// 创建者用户id</span><br>&#125;<br><br></code></pre></td></tr></table></figure></li>
+<li><p>创建dao类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.core.mapper.BaseMapper;<br><span class="hljs-keyword">import</span> com.fan.plan.entity.Plan;<br><span class="hljs-keyword">import</span> org.apache.ibatis.annotations.Mapper;<br><span class="hljs-keyword">import</span> org.springframework.stereotype.Repository;<br><br><span class="hljs-meta">@Mapper</span><br><span class="hljs-meta">@Repository</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">PlanDao</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseMapper</span>&lt;<span class="hljs-title">Plan</span>&gt; </span>&#123;<br><br>&#125;<br><br></code></pre></td></tr></table></figure></li>
+<li><p>使用方法</p>
+<ul>
+<li><p>增</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">  * 添加学习计划</span><br><span class="hljs-comment">  */</span><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addPlan</span><span class="hljs-params">(Plan plan)</span></span>&#123;<br>     Timestamp time = <span class="hljs-keyword">new</span> Timestamp(<span class="hljs-keyword">new</span> Date().getTime());<br>     plan.setCreateTime(time);<br>     plan.setUpdateTime(time);<br>     planDao.insert(plan);<br> &#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>删</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 删除学习计划</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delPlan</span><span class="hljs-params">(Long id)</span></span>&#123;<br>    Timestamp time = <span class="hljs-keyword">new</span> Timestamp(<span class="hljs-keyword">new</span> Date().getTime());<br>    Plan plan = <span class="hljs-keyword">new</span> Plan();<br>    plan.setId(id);<br>    plan.setUpdateTime(time);<br>    plan.setIsDelete(<span class="hljs-keyword">true</span>);<br>    planDao.updateById(plan);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>改</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 更新学习计划</span><br><span class="hljs-comment">   */</span><br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">updatePlan</span><span class="hljs-params">(Long id,Plan plan)</span></span>&#123;<br>      Timestamp time = <span class="hljs-keyword">new</span> Timestamp(<span class="hljs-keyword">new</span> Date().getTime());<br>      plan.setUpdateTime(time);<br>      UpdateWrapper&lt;Plan&gt; updateWrapper = <span class="hljs-keyword">new</span> UpdateWrapper&lt;&gt;();<br>      updateWrapper.eq(<span class="hljs-string">&quot;id&quot;</span>,id);<br>      <span class="hljs-keyword">return</span> planDao.update(plan, updateWrapper);<br>  &#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>查</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 分页返回所有学习计划</span><br><span class="hljs-comment">     * current:  当前页码</span><br><span class="hljs-comment">     * size: 每页数量</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;Plan&gt; <span class="hljs-title">queryAllPlan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> current,<span class="hljs-keyword">int</span> size)</span></span>&#123;<br>        Wrapper&lt;Plan&gt; wrapper = <span class="hljs-keyword">new</span> QueryWrapper&lt;Plan&gt;()<br>                .gt(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-number">0</span>)<br>                .eq(<span class="hljs-string">&quot;is_delete&quot;</span>,<span class="hljs-number">0</span>)<br>                .orderByAsc(<span class="hljs-string">&quot;id&quot;</span>);<br>        <span class="hljs-keyword">return</span> planDao.selectPage(<span class="hljs-keyword">new</span> Page&lt;Plan&gt;(current,size),wrapper);<br>    &#125;<br>   <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 根据id获取学习计划</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> id</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Plan <span class="hljs-title">queryById</span><span class="hljs-params">(Long id)</span></span>&#123;<br>        <span class="hljs-keyword">return</span> planDao.selectById(id);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 根据typeid分页获取学习计划</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> typeId   计划类型</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> current  当前页码</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> size      每页数量</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;Plan&gt; <span class="hljs-title">queryPlanByType</span><span class="hljs-params">(Long typeId,<span class="hljs-keyword">int</span> current,<span class="hljs-keyword">int</span> size)</span></span>&#123;<br>        QueryWrapper&lt;Plan&gt; queryWrapper = <span class="hljs-keyword">new</span> QueryWrapper&lt;&gt;();<br>        queryWrapper.eq(<span class="hljs-string">&quot;type_id&quot;</span>,typeId).eq(<span class="hljs-string">&quot;is_delete&quot;</span>,<span class="hljs-number">0</span>);<br><br>        <span class="hljs-keyword">return</span> planDao.selectPage(<span class="hljs-keyword">new</span> Page&lt;Plan&gt;(current,size),queryWrapper);<br>    &#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="基础搭建"><a href="#基础搭建" class="headerlink" title="基础搭建"></a>基础搭建</h2><p>首先看下目录结构：</p>
+<p>├─.idea<br>│  ├─dataSources<br>│  └─libraries<br>├─.mvn<br>│  └─wrapper<br>├─logs   日志<br>├─src<br>│  ├─main<br>│  │  ├─java<br>│  │  │  └─com<br>│  │  │      └─fan<br>│  │  │          └─plan<br>│  │  │              ├─annotation  自定义注解 没有用到<br>│  │  │              ├─auth            权限认证相关代码 包括jwt以及shiro<br>│  │  │              ├─common    通用返回以及日志切片代码<br>│  │  │              ├─config        相关配置：mybatis\Shiro\Cors<br>│  │  │              ├─controller    接口定义<br>│  │  │              │  └─Auth<br>│  │  │              ├─dao                数据库操作<br>│  │  │              │  └─Auth<br>│  │  │              ├─entity            实体类<br>│  │  │              │  └─Auth<br>│  │  │              ├─exception        自定义异常<br>│  │  │              ├─service        业务实现类<br>│  │  │              │  └─Auth<br>│  │  │              └─util                工具类<br>│  │  └─resources<br>│  └─test<br>│      └─java<br>│          └─com<br>│              └─fan<br>│                  └─plan<br>└─target                        编译结果<br>    ├─classes<br>    │  └─com<br>    │      └─fan<br>    │          └─plan<br>    │              ├─annotation<br>    │              ├─auth<br>    │              ├─common<br>    │              ├─config<br>    │              ├─controller<br>    │              │  └─Auth<br>    │              ├─dao<br>    │              │  └─Auth<br>    │              ├─entity<br>    │              │  └─Auth<br>    │              ├─exception<br>    │              ├─service<br>    │              │  └─Auth<br>    │              └─util<br>    ├─generated-sources<br>    │  └─annotations<br>    ├─generated-test-sources<br>    │  └─test-annotations<br>    ├─maven-archiver<br>    ├─maven-status<br>    │  └─maven-compiler-plugin<br>    │      ├─compile<br>    │      │  └─default-compile<br>    │      └─testCompile<br>    │          └─default-testCompile<br>    ├─surefire-reports<br>    └─test-classes<br>        └─com<br>            └─fan<br>                └─plan</p>
+<h3 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h3><blockquote>
+<p>实体类就是对用到的数据模型的对象化。 一般与数据库表结构对应或者有独特作用的类。</p>
+<p>本项目使用了lombok, 因此无需自己再写getter和setter以及toString放啊，只需定义属性即可。</p>
+<p>另外注意属性名如果为小驼峰，mybatisplus会将其转换为连接符，例如属性createTime  会对应到数据库中的create_time字段</p>
+</blockquote>
+<h3 id="dao"><a href="#dao" class="headerlink" title="dao"></a>dao</h3><blockquote>
+<p>项目使用了mbp。 因此dao的写法非常简单，只需继承BaseMapper即可。如：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Mapper</span><br><span class="hljs-meta">@Repository</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">PlanDao</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseMapper</span>&lt;<span class="hljs-title">Plan</span>&gt; </span>&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意事项： idea可能会找不到dao,导致无法自动注入，为了解决这个办法，需要做两点，首先在dao类上加上 @Mapper  @Repository注解，其次在Application中指定扫描的路径，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-meta">@MapperScan(&quot;com.fan.plan.dao&quot;)</span>  <span class="hljs-comment">// 这里指定扫描路径</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlanApplication</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        SpringApplication.run(PlanApplication.class, args);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">    * 分页返回所有学习计划</span><br><span class="hljs-comment">    * current:  当前页码</span><br><span class="hljs-comment">    * size: 每页数量</span><br><span class="hljs-comment">    * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">    */</span><br>   <span class="hljs-function"><span class="hljs-keyword">public</span> Page&lt;Plan&gt; <span class="hljs-title">queryAllPlan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> current,<span class="hljs-keyword">int</span> size)</span></span>&#123;<br>       Wrapper&lt;Plan&gt; wrapper = <span class="hljs-keyword">new</span> QueryWrapper&lt;Plan&gt;()<br>               .gt(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-number">0</span>)<br>               .eq(<span class="hljs-string">&quot;is_delete&quot;</span>,<span class="hljs-number">0</span>)<br>               .orderByAsc(<span class="hljs-string">&quot;id&quot;</span>);<br>       <span class="hljs-keyword">return</span> planDao.selectPage(<span class="hljs-keyword">new</span> Page&lt;Plan&gt;(current,size),wrapper);<br>   &#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在service中调用dao实现对数据的处理</p>
+</blockquote>
+<h3 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@ApiOperation(value=&quot;分页查询全部学习计划&quot;,notes = &quot;分页查询全部学习计划&quot;)</span><br>    <span class="hljs-meta">@ApiImplicitParams(&#123;</span><br><span class="hljs-meta">            @ApiImplicitParam(name = &quot;current&quot;,value = &quot;页码&quot;),</span><br><span class="hljs-meta">            @ApiImplicitParam(name = &quot;size&quot;,value = &quot;页面大小&quot;)</span><br><span class="hljs-meta">    &#125;)</span><br>    <span class="hljs-meta">@GetMapping(&quot;/get_all&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> CommonResult <span class="hljs-title">GetAllPlan</span><span class="hljs-params">(<span class="hljs-meta">@RequestParam(required = false,</span></span></span><br><span class="hljs-function"><span class="hljs-params"><span class="hljs-meta">                                            defaultValue = DefaultValueConfig.DefaultPageNum)</span> <span class="hljs-keyword">int</span> current,</span></span><br><span class="hljs-function"><span class="hljs-params">                                   <span class="hljs-meta">@RequestParam(required = false,</span></span></span><br><span class="hljs-function"><span class="hljs-params"><span class="hljs-meta">                                           defaultValue = DefaultValueConfig.DefaultPageSize)</span> <span class="hljs-keyword">int</span> size)</span></span>&#123;<br>        Page&lt;Plan&gt; planPage = planService.queryAllPlan(current,size);<br>        <span class="hljs-keyword">return</span> CommonResult.success(planPage.getRecords());<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>@RestController                    // 表示接口为restful风格<br>@RequestMapping(“/plan”)    // 注解在controller类上,表示该类的接口的url前缀</p>
+<p>@PostMapping(“/add”)            // 表示post接口,路径为/add</p>
+<p>@GetMapping(“/del”)                // 表示get接口 路径为/del</p>
+</blockquote>
+<h2 id="日志配置"><a href="#日志配置" class="headerlink" title="日志配置"></a>日志配置</h2><h3 id="引入包"><a href="#引入包" class="headerlink" title="引入包"></a>引入包</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core --&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>           <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>           <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>log4j-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>           <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.14.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>       <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="进行配置"><a href="#进行配置" class="headerlink" title="进行配置"></a>进行配置</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment">#  src/main/resources/application.yml</span><br><br><span class="hljs-attr">logging:</span><br>  <span class="hljs-attr">file:</span><br><span class="hljs-comment">#    path: D:\Log\plan-share</span><br><span class="hljs-comment">#    name: D:\Log\plan-share\log.log</span><br>    <span class="hljs-attr">name:</span> <span class="hljs-string">logs/plan-share.log</span><br>  <span class="hljs-attr">pattern:</span><br>    <span class="hljs-attr">console:</span> <span class="hljs-string">&quot;%clr(%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125;)&#123;faint&#125; %clr($&#123;LOG_LEVEL_PATTERN:-%5p&#125;) %clr($&#123;PID:- &#125;)&#123;magenta&#125; %clr(---)&#123;faint&#125; %clr([%t])&#123;faint&#125; %clr(%-40.40logger&#123;39&#125;)&#123;cyan&#125;[lineno:%line]    %clr(:)&#123;faint&#125; %m%n$&#123;LOG_EXCEPTION_CONVERSION_WORD:%wEx&#125;&quot;</span>		<span class="hljs-comment">#  命令行输出</span><br>    <span class="hljs-attr">file:</span> <span class="hljs-string">&quot;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; $&#123;LOG_LEVEL_PATTERN:-%5p&#125; $&#123;PID:- &#125; --- [%t] %-40.40logger&#123;39&#125;[lineno:%line]: %m%n$&#123;LOG_EXCEPTION_CONVERSION_WORD:%wEx&#125;&quot;</span>	<span class="hljs-comment">#  文件输出</span><br>  <span class="hljs-attr">logback:</span><br>    <span class="hljs-attr">rollingpolicy:</span>			<span class="hljs-comment"># 文件滚动策略</span><br>      <span class="hljs-attr">max-file-size:</span> <span class="hljs-string">10MB</span>	<span class="hljs-comment"># 最大10M</span><br>      <span class="hljs-attr">max-history:</span> <span class="hljs-number">10</span>		<span class="hljs-comment"># 最多保留10个</span><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>项目定义一个日志切片,来自动记录接口请求内容与相应内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><code class="hljs java">Aspect<br><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LogAop</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger logger = LoggerFactory.getLogger(LogAop.class);<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String PLATFORM_NAME = <span class="hljs-string">&quot;plan-share&quot;</span>;<br><br>    <span class="hljs-comment">// 统计时间</span><br>    ThreadLocal&lt;Long&gt; startTime = <span class="hljs-keyword">new</span> ThreadLocal&lt;&gt;();<br><br>    <span class="hljs-meta">@Pointcut(&quot;execution(public * com.fan.plan.controller.*.*(..))&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">webLog</span><span class="hljs-params">()</span></span>&#123;&#125;;<br><br><br>    <span class="hljs-meta">@Before(&quot;webLog()&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doBefore</span><span class="hljs-params">(JoinPoint joinPoint)</span> <span class="hljs-keyword">throws</span> Throwable</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;记录请求日志!!!!!!!!!!!!&quot;</span>);<br><br>        startTime.set(System.currentTimeMillis());<br><br>        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();<br>        HttpServletRequest request = attributes.getRequest();<br><br>        <span class="hljs-comment">// 记录请求参数</span><br>        Map&lt;String,String[]&gt; paramMap = request.getParameterMap();<br>        <span class="hljs-keyword">if</span>(paramMap!=<span class="hljs-keyword">null</span>&amp;&amp;paramMap.size()&gt;<span class="hljs-number">0</span>)&#123;<br>            StringBuffer buffer = <span class="hljs-keyword">new</span> StringBuffer();<br>            <span class="hljs-keyword">for</span>(String mapKey:paramMap.keySet())&#123;<br>                String[] mapValue = paramMap.get(mapKey);<br><br>                <span class="hljs-comment">// 添加判断</span><br>                <span class="hljs-keyword">if</span>(mapValue!=<span class="hljs-keyword">null</span>&amp;&amp;mapValue.length&gt;<span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-keyword">for</span>(String paramStr:mapValue)&#123;<br>                        <span class="hljs-keyword">if</span>(StringUtils.isNotBlank(paramStr))&#123;<br>                            buffer.append(<span class="hljs-string">&quot;参数&quot;</span>+mapKey+<span class="hljs-string">&quot;=&quot;</span>);<br>                            buffer.append(paramStr);<br>                            buffer.append(<span class="hljs-string">&quot;;&quot;</span>);<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>            <span class="hljs-comment">//打印日志参数</span><br>            logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;request请求参数PARAM : &quot;</span> + buffer);<br>        &#125;<br><br>        <span class="hljs-comment">// 记录下请求内容</span><br>        logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;request请求URL : &quot;</span> + request.getRequestURL().toString());<br>        logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;request请求方法HTTP_METHOD : &quot;</span> + request.getMethod());<br>        logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;request请求方法IP : &quot;</span> + getIP(request));<br>        logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;request请求类方法CLASS_METHOD : &quot;</span> + joinPoint.getSignature().getDeclaringTypeName() + <span class="hljs-string">&quot;.&quot;</span> + joinPoint.getSignature().getName());<br>        logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;request请求ARGS : &quot;</span> + Arrays.toString(joinPoint.getArgs()));<br><br>    &#125;<br><br>    <span class="hljs-meta">@AfterReturning(returning = &quot;ret&quot;, pointcut = &quot;webLog()&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doAfterReturning</span><span class="hljs-params">(Object ret)</span> <span class="hljs-keyword">throws</span> Throwable </span>&#123;<br>        <span class="hljs-comment">// 处理完请求，返回内容</span><br>        logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;response请求响应结果RESULT: &quot;</span> + JSON.toJSONString(ret));<br>        logger.info(PLATFORM_NAME+<span class="hljs-string">&quot;--&gt;response请求响应时间= 【&quot;</span> + (System.currentTimeMillis() - startTime.get())+<span class="hljs-string">&quot;】毫秒&quot;</span>);<br>    &#125;<br><br><br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取请求ip地址</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> request</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getIP</span><span class="hljs-params">(HttpServletRequest request)</span> </span>&#123;<br>        String ip = request.getHeader(<span class="hljs-string">&quot;x-forwarded-for&quot;</span>);<br><br>        <span class="hljs-keyword">if</span> (ip == <span class="hljs-keyword">null</span> || ip.length() == <span class="hljs-number">0</span> || <span class="hljs-string">&quot;unknown&quot;</span>.equalsIgnoreCase(ip)) &#123;<br>            ip = request.getHeader(<span class="hljs-string">&quot;Proxy-Client-IP&quot;</span>);<br>        &#125;<br><br>        <span class="hljs-keyword">if</span> (ip == <span class="hljs-keyword">null</span> || ip.length() == <span class="hljs-number">0</span> || <span class="hljs-string">&quot;unknown&quot;</span>.equalsIgnoreCase(ip)) &#123;<br>            ip = request.getHeader(<span class="hljs-string">&quot;WL-Proxy-Client-IP&quot;</span>);<br>        &#125;<br><br>        <span class="hljs-keyword">if</span> (ip == <span class="hljs-keyword">null</span> || ip.length() == <span class="hljs-number">0</span> || <span class="hljs-string">&quot;unknown&quot;</span>.equalsIgnoreCase(ip)) &#123;<br>            ip = request.getRemoteAddr();<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> ip;<br>    &#125;<br><br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="shiro-jwt"><a href="#shiro-jwt" class="headerlink" title="shiro+jwt"></a>shiro+jwt</h2><h2 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h2><h2 id="docker部署"><a href="#docker部署" class="headerlink" title="docker部署"></a>docker部署</h2>
+      </section>
+      <section class="extra">
+        
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2021/08/15/gorm-v2-0%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"><i class="iconfont iconleft"></i>gorm v2.0简单使用总结</a>
+    <a href="/2021/06/02/vue2-tailwind-elementui-axios%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/">vue2+tailwind+elementui+axios项目搭建<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+  
+<div id="valine"></div>
+<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  window.onload = function () {
+    var loadValine = function () {
+      new Valine({
+        el: '#valine',
+        app_id: "69dsLimanzESX0iaHwJALaIv-gzGzoHsz",
+        app_key: "Q1IhoacJwYJeAV9NimoRPQoN",
+        placeholder: "留个言交流一下吧",
+        avatar: "mp",
+        pageSize: "10",
+        lang: "zh-CN",
+      });
+    }
+    if ( false ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        loadValine();
+      });
+    } else {
+      loadValine();
+    }
+  };
+</script>
+
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E7%BA%B2"><span class="toc-text">大纲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1"><span class="toc-text">功能设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="toc-text">数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">数据表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E8%A1%A8"><span class="toc-text">权限表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mybatis-plus"><span class="toc-text">mybatis-plus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-text">引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%90%AD%E5%BB%BA"><span class="toc-text">基础搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E7%B1%BB"><span class="toc-text">实体类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dao"><span class="toc-text">dao</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#service"><span class="toc-text">service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#controller"><span class="toc-text">controller</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE"><span class="toc-text">日志配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E5%8C%85"><span class="toc-text">引入包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="toc-text">进行配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shiro-jwt"><span class="toc-text">shiro+jwt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swagger"><span class="toc-text">swagger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E9%83%A8%E7%BD%B2"><span class="toc-text">docker部署</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=1066580119 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://github.com/FanLu1994 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:fanlu2020@qq.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
+
+    AV.init({
+      appId: '69dsLimanzESX0iaHwJALaIv-gzGzoHsz',
+      appKey: 'Q1IhoacJwYJeAV9NimoRPQoN',
+      serverURLs: 'https://leancloud.cn/',
+    });
+
+    const showCount = (Counter) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud").each(async (e) => {
+        const url = $(".leancloud").eq(e).attr('id').trim();
+        const query = new AV.Query("Counter");
+        query.equalTo("words", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud").eq(e).text(count ? count : '--');
+      });
+    }
+
+    const addCount = (Counter) => {
+      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'https://fanlu1994.github.io';
+      var query = new Counter;
+      query.save({
+        words: url
+      });
+    }
+
+    $(function () {
+      const Counter = AV.Object.extend("Counter");
+      addCount(Counter);
+      showCount(Counter);
+    });
+
+  });
+</script>
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
