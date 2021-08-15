@@ -6,7 +6,7 @@
   <link href="https://fanlu1994.github.io/atom.xml" rel="self"/>
   
   <link href="https://fanlu1994.github.io/"/>
-  <updated>2021-08-15T03:38:52.248Z</updated>
+  <updated>2021-08-15T06:02:23.197Z</updated>
   <id>https://fanlu1994.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unity编辑器开发入门</title>
+    <link href="https://fanlu1994.github.io/2021/08/15/unity%E7%BC%96%E8%BE%91%E5%99%A8%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/"/>
+    <id>https://fanlu1994.github.io/2021/08/15/unity%E7%BC%96%E8%BE%91%E5%99%A8%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/</id>
+    <published>2021-08-15T06:01:50.000Z</published>
+    <updated>2021-08-15T06:02:23.197Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="添加按钮"><a href="#添加按钮" class="headerlink" title="添加按钮"></a>添加按钮</h2><ul><li><p>Menuitem可以添加编辑器按钮</p></li><li><p>使用priority确定按钮的分组，每隔10是一组</p></li></ul><h2 id="给游戏对象创建编辑器方法"><a href="#给游戏对象创建编辑器方法" class="headerlink" title="给游戏对象创建编辑器方法"></a>给游戏对象创建编辑器方法</h2><p>MenuItem(“CONTEXT/游戏组件名/编辑器方法”)</p><p>MenuCommand   是当前正在操作的组件</p><p>PlayerHealth health = (PlayHealth)cmd.context;  强制转型  注意类型是否正确</p><p>当然也可以加在已有的类型上，比如RigidBody等等</p><p>Selecttion获取当前选择的GO</p><ul><li>Selection.activeGameObject.name  选择的第一个go名字</li><li>支持多选</li><li>Selection.activeTransform  选择Scene中的物体</li><li>Selection.Objects   选择的物体</li></ul><h2 id="操作记录"><a href="#操作记录" class="headerlink" title="操作记录"></a>操作记录</h2><blockquote><p>将我们的操作记录到历史中,可以使用ctrl+z回退</p></blockquote><ul><li>使用Undo执行操作<br>Undo.DestoryObjectImmediate(o)</li><li>Undo要在执行操作前按下快门<br>Undo.RecoredObject</li></ul><h2 id="添加快捷键"><a href="#添加快捷键" class="headerlink" title="添加快捷键"></a>添加快捷键</h2><p>MenuItem(“Tools/Test  _t”,false,0)  使用T作为快捷键</p><p>%=ctrl  #=shift &amp;=alt</p><p>%q   指定快捷键为ctrl + q</p><h2 id="控制菜单选项是否可以使用"><a href="#控制菜单选项是否可以使用" class="headerlink" title="控制菜单选项是否可以使用"></a>控制菜单选项是否可以使用</h2><ul><li><p>使用一个方法来判断;</p></li><li><p>该方法的[MenuItem]内容与验证的目标菜单选项一致</p></li><li><p>第二个参数改成true </p></li><li><p>该方法返回值为bool值</p></li></ul><h2 id="ContextMenu-ContextMenuItem"><a href="#ContextMenu-ContextMenuItem" class="headerlink" title="ContextMenu ContextMenuItem"></a>ContextMenu ContextMenuItem</h2><blockquote><p>给组件添加右键菜单</p></blockquote><ul><li>可以直接在组建中使用</li><li>ContextMenu 用于方法上</li><li>ContextMenmItme添加在属性上.(属性右键菜单)<ul><li>参数1:  按钮回调的方法</li><li>参数2:  按钮名字</li></ul></li></ul><h2 id="对话框"><a href="#对话框" class="headerlink" title="对话框"></a>对话框</h2><p>对话框组件要继承ScriptableWizard</p><ul><li><p>创建对话框：<br>ScriptableWizard.DisplayWizard&lt;自定义对话框&gt;(“标题”，“button名字”,  “自定义按钮名字”)；</p></li><li><p>点击事件：<br>OnWizardCreate()<br>使用Selection遍历选择的Go，对其进行处理</p></li><li><p>更新事件：</p><pre><code>OnWizardUpdate()创建时调用、值改变时调用</code></pre></li><li><p>选择改变事件：<br>OnSelectionChange()  继承自EditorWindow的方法</p></li><li><p>自定义按钮：<br>OtherButtonName<br>OnWizardOtherButton  点击事件函数</p></li><li><p>提示信息<br>ShowNotification(new GUIContent(字符串))</p></li><li><p>保存数据<br>EditorPrefs<br>EditorPrefs.SetInt(“key”,value)<br>EditorPrefs.GetInt(“key”)</p></li><li><p>进度条<br>EditorUtility.DisplayProgressBar(“进度”,”0/“,0)</p><p>.ClearProgressBar</p></li></ul><h2 id="自定义窗口"><a href="#自定义窗口" class="headerlink" title="自定义窗口"></a>自定义窗口</h2><blockquote><p>EditorWindow</p></blockquote><p>定义一个类管理窗口的位置\显示\功能</p><p>显示: window.Show</p><p>绘制: OnGUI()  GUILayout</p><p>可撤销: Undo.RegisterCreatedObjectUndo</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;添加按钮&quot;&gt;&lt;a href=&quot;#添加按钮&quot; class=&quot;headerlink&quot; title=&quot;添加按钮&quot;&gt;&lt;/a&gt;添加按钮&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Menuitem可以添加编辑器按钮&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用priority确定按钮的分组，</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>gorm v2.0简单使用总结</title>
