@@ -1026,4 +1026,120 @@
 <p>可撤销: Undo.RegisterCreatedObjectUndo</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>unittest的学习笔记</title>
+    <url>/2021/08/17/unittest%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="概念解释"><a href="#概念解释" class="headerlink" title="概念解释"></a>概念解释</h2><h3 id="test-fixture"><a href="#test-fixture" class="headerlink" title="test fixture"></a>test fixture</h3><blockquote>
+<p>测试脚手架 包括测试前的准备工作以及测试后的清理工作</p>
+</blockquote>
+<p>test case</p>
+<blockquote>
+<p>独立测试单元;  可以继承TestCase来新建测试用例</p>
+</blockquote>
+<ul>
+<li>继承即创建一个case,  要以Test为类名的开始</li>
+<li>类中的测试方法,要以test_为开头</li>
+</ul>
+<p>test suite</p>
+<blockquote>
+<p>测试用例的集合</p>
+</blockquote>
+<p>test runner</p>
+<blockquote>
+<p>执行与输出结果的组件</p>
+</blockquote>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>main函数中   unittest.main()</p>
+<p>命令行</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">python -m unittest test_module1 test_module2<br>python -m unittest test_module.TestClass<br>python -m unittest test_module.TestClass.test_method<br><br>python -m unittest tests/test_something.py<br></code></pre></td></tr></tbody></table></figure>
+
+<p>参数说明:</p>
+<ul>
+<li>-b  丢弃成功执行信息;输出错误信息</li>
+<li>-c  避免ctrl+c  退出测试</li>
+<li>-f   出现错误即停止测试</li>
+<li>-k  只运行匹配模式的测试方法和类</li>
+</ul>
+<h3 id="discover"><a href="#discover" class="headerlink" title="discover"></a>discover</h3><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">python -m unittest discover<br></code></pre></td></tr></tbody></table></figure>
+
+<p>参数:</p>
+<ul>
+<li>-v  输出详细结果</li>
+<li>-s 开始搜索的目录, 默认为当前目录</li>
+<li>-p  搜索字符串  默认 test*.py</li>
+<li>-t  指定项目最上层目录,  默认为开始时目录</li>
+</ul>
+<h2 id="编写用例"><a href="#编写用例" class="headerlink" title="编写用例"></a>编写用例</h2><h3 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h3><ul>
+<li>继承unittest.TestCase</li>
+<li>实现一些test_开头的方法,  作为测试步骤</li>
+<li>setUp函数 ,  每次执行测试步骤前,都会执行该函数, 作为预处理</li>
+<li>tearDown函数,  每次执行测试步骤后, 都会执行该函数, 作为后处理</li>
+<li>setUpClass在测试case执行前执行, 需要加上@classmethod注释</li>
+<li>tearDownClass 在测试case执行后执行, 需要加上@classmethod注释</li>
+</ul>
+<h3 id="测试套件"><a href="#测试套件" class="headerlink" title="测试套件"></a>测试套件</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">suite</span>():</span><br>    suite = unittest.TestSuite()<br>    suite.addTest(WidgetTestCase(<span class="hljs-string">'test_default_widget_size'</span>))<br>    suite.addTest(WidgetTestCase(<span class="hljs-string">'test_widget_resize'</span>))<br>    <span class="hljs-keyword">return</span> suite<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>    runner = unittest.TextTestRunner()<br>    runner.run(suite())<br></code></pre></td></tr></tbody></table></figure>
+
+<h3 id="打包测试方法"><a href="#打包测试方法" class="headerlink" title="打包测试方法"></a>打包测试方法</h3><p>FunctionTestCase(test方法,  setUp=与处理函数,  tearDown=后处理函数)</p>
+<h3 id="跳过测试"><a href="#跳过测试" class="headerlink" title="跳过测试"></a>跳过测试</h3><blockquote>
+<p>支持定义在方法上,也支持在类上</p>
+</blockquote>
+<ul>
+<li>@unittest.Skip(“说明”)</li>
+<li>@unittest.SkipIf(条件语句,”说明”)</li>
+<li>@unittest.Unless(条件语句,”说明”)</li>
+</ul>
+<h3 id="预计失败"><a href="#预计失败" class="headerlink" title="预计失败"></a>预计失败</h3><p>@unittest.expectedFailure</p>
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><ul>
+<li>相等/不相等</li>
+<li>布尔</li>
+<li>Is/IsNot</li>
+<li>IsNone/IsNotNone</li>
+<li>In/NotIn</li>
+<li>IsInstance/NotIsInstance</li>
+<li>Raises  预期异常</li>
+<li>RaiseRegex</li>
+<li>Warns</li>
+<li>WarnsRegex</li>
+<li>AlmostEqual/NotAlmostEqual</li>
+<li>Greter/GreaterEqual</li>
+<li>Less/LessEqual</li>
+<li>Regex/NotRegex  正则判断</li>
+<li>CountEqual   断言 第一个序列包含第二个序列同样的元素<br>相当于assertEqual(Counter(list(first)), Counter(list(second)))</li>
+<li>TypeEqualityFunc (typeobj,function)<br>自定义方法比较</li>
+<li>MultiLineEqual<br>多行字符串比较</li>
+<li>SequenceEqual<br>比较两个序列</li>
+<li>ListEqual</li>
+<li>TupleEqual</li>
+<li>SetEqual</li>
+<li>DictEqual</li>
+</ul>
+<p>其他方法:</p>
+<ul>
+<li>fail   失败</li>
+<li>failureException  失败异常</li>
+<li>longMessage  </li>
+<li>…</li>
+</ul>
+<h2 id="unitest-mock"><a href="#unitest-mock" class="headerlink" title="unitest.mock"></a>unitest.mock</h2><blockquote>
+<p>from unittest.mock import MagicMock</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> unittest.mock <span class="hljs-keyword">import</span> MagicMock<br><br>thing = ProductionClass()   <span class="hljs-comment"># 自定义类</span><br>thing.method = MagicMock(return_value=<span class="hljs-number">3</span>)	<span class="hljs-comment"># mock方法,指定返回值</span><br>thing.method(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,key=<span class="hljs-string">'value'</span>)   <span class="hljs-comment"># 调用方法</span><br>thing.method.assert_called_with(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,key=<span class="hljs-string">'value'</span>)	<span class="hljs-comment"># 断言调用方法</span><br></code></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>测试</tag>
+      </tags>
+  </entry>
 </search>
