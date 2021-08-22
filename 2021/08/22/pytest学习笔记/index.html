@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>pytest学习笔记 - Fanlu&#39;s Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="安装pip install pytest
+基本概念测试...">
+  <meta name="author" content="Fanlu">
+  <link rel="icon" href="/images/icons/fanlu_36x36.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/fanlu_48x48.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/fanlu_144x144.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/fanlu_144x144.png" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/fanlu_144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_r673sha78lq.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '[object Object]'
+      },
+      donate: {
+        enable: false,
+        alipay: 'https://imgtu.com/i/RuTiFJ',
+        wechat: 'https://imgtu.com/i/RuTFY9'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: false
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '竹杖芒鞋轻胜马',
+          typing: true,
+          api: '',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'image',
+        image: '/images/theme/wechat.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: true,
+        path: '/search.xml'
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Fanlu's Blog" type="application/atom+xml">
+</head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
+      
+    </div>
+    <div class="center">pytest学习笔记</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">pytest学习笔记</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 22, 2021</span>
+      
+        <span class="post-info-item">
+          <i class="iconfont iconeye"></i><span id="/2021/08/22/pytest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="leancloud" data-flag-title="pytest学习笔记"></span>
+        </span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3735</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>pip install pytest</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="测试通过"><a href="#测试通过" class="headerlink" title="测试通过"></a>测试通过</h3><p>用 . 标识Passed</p>
+<h3 id="测试失败"><a href="#测试失败" class="headerlink" title="测试失败"></a>测试失败</h3><p>用 F 标识 Failed</p>
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><blockquote>
+<p>pytest使用assert断言实际结果和预期结果是否相同</p>
+</blockquote>
+<h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><blockquote>
+<p>有时需要测试程序能否正常抛出异常, 此时pytest需要将该异常捕获</p>
+</blockquote>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> pytest.raises(预期异常) <span class="hljs-keyword">as</span> e:<br>    会抛出异常的代码<br></code></pre></td></tr></table></figure>
+
+<h2 id="函数命名方式"><a href="#函数命名方式" class="headerlink" title="函数命名方式"></a>函数命名方式</h2><blockquote>
+<p>类似unitest,  pytest也会自动去查找指定命名方式的函数, 自动将这些函数作为测试目标</p>
+</blockquote>
+<p>函数要以test_开头</p>
+<h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><ul>
+<li><p>执行指定文件下所有函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pytest /path_to_file/test_name.py<br></code></pre></td></tr></table></figure></li>
+<li><p>指定制定的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pytest /path_to_file/test_name.py::test_func1<br></code></pre></td></tr></table></figure></li>
+<li><p>模糊匹配函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pytest -k func1 /path_to_file/test_name.py<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="函数标记"><a href="#函数标记" class="headerlink" title="函数标记"></a>函数标记</h3><ul>
+<li>@pytest.mark.标记名</li>
+</ul>
+<p>指定执行的标记名</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">python -m 标记名 /path_to_file/test_name.py<br></code></pre></td></tr></table></figure>
+
+<p>支持指定多个标记</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pytest -m <span class="hljs-string">&quot;finished and commit&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="跳过测试"><a href="#跳过测试" class="headerlink" title="跳过测试"></a>跳过测试</h2><blockquote>
+<p>有些case暂时不需要跑, 可以打上跳过标记</p>
+</blockquote>
+<ul>
+<li>@pytest.mark.skip(reason=“跳过测试的理由”)</li>
+</ul>
+<p>测试结果中 s表示测试被跳过</p>
+<ul>
+<li>@pytest.mark.skipif(条件)<br>符合条件的就跳过测试</li>
+</ul>
+<h2 id="预期错误"><a href="#预期错误" class="headerlink" title="预期错误"></a>预期错误</h2><ul>
+<li>@pytest.mark.xfail(条件语句,  原因)</li>
+</ul>
+<p>测试结果中  x  表示预期的失败</p>
+<h2 id="参数化"><a href="#参数化" class="headerlink" title="参数化"></a>参数化</h2><blockquote>
+<p>测试用例有时需要测试很多情况下的错误, 不同的数据就可以来模拟多种情况.  比如要有常规数值\临界数值\越界数值</p>
+</blockquote>
+<ul>
+<li>@pytest.mark.parametrize(‘参数名’,[参数列表])<br>在函数中就可以使用该参数,  pytest根据参数列表长度自动执行多次</li>
+<li>@pytest.param<br>可以在执行过程中展示详细的信息</li>
+</ul>
+<h2 id="固件"><a href="#固件" class="headerlink" title="固件"></a>固件</h2><blockquote>
+<p>固件就是函数.  pytest会在执行前或者执行后 运行这些函数</p>
+</blockquote>
+<ul>
+<li>使用@pytest.fixture()定义固件;</li>
+<li>可以把所有的固件都写在conftest.py中, pytest会自动加载</li>
+</ul>
+<h3 id="执行前后的函数定义方式和使用方式"><a href="#执行前后的函数定义方式和使用方式" class="headerlink" title="执行前后的函数定义方式和使用方式"></a>执行前后的函数定义方式和使用方式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@pytest.fixture()</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fixturefunc</span>():</span><br>    <span class="hljs-comment"># 预处理的代码</span><br>    print(<span class="hljs-string">&quot;预处理&quot;</span>)<br>    <br>    <span class="hljs-keyword">yield</span><br>    <br>    <span class="hljs-comment"># 后处理的代码</span><br>    print(<span class="hljs-string">&quot;后处理&quot;</span>)<br>    <br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_func</span>(<span class="hljs-params">fixturefunc</span>):</span><br>    print(<span class="hljs-string">&quot;测试代码&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="固件的作用域"><a href="#固件的作用域" class="headerlink" title="固件的作用域"></a>固件的作用域</h3><p>​    @pytest.ficture(scope=‘作用域’)</p>
+<p>​    作用域有如下:</p>
+<ul>
+<li><code>function</code>: 函数级，每个测试函数都会执行一次固件； <strong>默认作用域</strong></li>
+<li><code>class</code>: 类级别，每个测试类执行一次，所有方法都可以使用；<br>要是用@pytest.mark.usefixtures(‘固件方法名’)</li>
+<li><code>module</code>: 模块级，每个模块执行一次，模块内函数和方法都可使用；</li>
+<li><code>session</code>: 会话级，一次测试只执行一次，所有被找到的函数和方法都可用。</li>
+</ul>
+<h3 id="自动执行"><a href="#自动执行" class="headerlink" title="自动执行"></a>自动执行</h3><p>定义固件时,指定autouse参数, 固件就可以自动执行了</p>
+<p>例如:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@pytest.fixture(<span class="hljs-params">scope=<span class="hljs-string">&#x27;session&#x27;</span>, autouse=<span class="hljs-literal">True</span></span>)</span><br><br><span class="hljs-meta">@pytest.fixture(<span class="hljs-params">autouse=<span class="hljs-literal">True</span></span>)</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><p>固件支持重命名. 方式如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@pytest.fixture(<span class="hljs-params">name=<span class="hljs-string">&quot;myname&quot;</span></span>)def fixtureFunc():    return 1def test_func(<span class="hljs-params">myname</span>):    print(<span class="hljs-params">myname</span>)</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="参数化-1"><a href="#参数化-1" class="headerlink" title="参数化"></a>参数化</h3><blockquote>
+<p>依赖pytest.request 以及pytest.param</p>
+<p>比如要测试多个数据库, 这时候可以在预处理中,指定多个数据库的参数, 依次连接不同的数据库</p>
+</blockquote>
+<h4 id="参数定义"><a href="#参数定义" class="headerlink" title="参数定义"></a>参数定义</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@pytest.fixture(<span class="hljs-params">params=[	(<span class="hljs-params"><span class="hljs-string">&#x27;redis&#x27;</span>,<span class="hljs-string">&#x27;6379&#x27;</span></span>),    (<span class="hljs-params"><span class="hljs-string">&#x27;elasticsearch&#x27;</span>,<span class="hljs-string">&#x27;9200&#x27;</span></span>)]</span>)def param(<span class="hljs-params">request</span>):    return request.param</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="固件定义"><a href="#固件定义" class="headerlink" title="固件定义"></a>固件定义</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@pytest.fixture(<span class="hljs-params">autouse=<span class="hljs-literal">True</span></span>)def db(<span class="hljs-params">param</span>):     print(<span class="hljs-params"><span class="hljs-string">&#x27;\nSucceed to connect %s:%s&#x27;</span> % param</span>)    yield    print(<span class="hljs-params"><span class="hljs-string">&#x27;\nSucceed to close %s:%s&#x27;</span> % param</span>)</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="测试函数"><a href="#测试函数" class="headerlink" title="测试函数"></a>测试函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_api</span>():</span>    <span class="hljs-keyword">assert</span> <span class="hljs-number">1</span> == <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="pytest内置固件"><a href="#pytest内置固件" class="headerlink" title="pytest内置固件"></a>pytest内置固件</h3><h4 id="tmpdir"><a href="#tmpdir" class="headerlink" title="tmpdir"></a>tmpdir</h4><blockquote>
+<p>临时文件, 作用域只能是函数</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_tmpdir</span>(<span class="hljs-params">tmpdir</span>):</span>    a_dir = tmpdir.mkdir(<span class="hljs-string">&#x27;mytmpdir&#x27;</span>)    a_file = a_dir.join(<span class="hljs-string">&#x27;tmpfile.txt&#x27;</span>)    a_file.write(<span class="hljs-string">&#x27;hello, pytest!&#x27;</span>)    <span class="hljs-keyword">assert</span> a_file.read() == <span class="hljs-string">&#x27;hello, pytest!&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="tmpdir-factory"><a href="#tmpdir-factory" class="headerlink" title="tmpdir_factory"></a>tmpdir_factory</h4><blockquote>
+<p>临时目录, 作用域只能是函数</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@pytest.fixture(<span class="hljs-params">scope=<span class="hljs-string">&#x27;module&#x27;</span></span>)def my_tmpdir_factory(<span class="hljs-params">tmpdir_factory</span>):    a_dir = tmpdir_factory.mktemp(<span class="hljs-params"><span class="hljs-string">&#x27;mytmpdir&#x27;</span></span>)    a_file = a_dir.join(<span class="hljs-params"><span class="hljs-string">&#x27;tmpfile.txt&#x27;</span></span>)    a_file.write(<span class="hljs-params"><span class="hljs-string">&#x27;hello, pytest!&#x27;</span></span>)    return a_file</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="pytestconfig"><a href="#pytestconfig" class="headerlink" title="pytestconfig"></a>pytestconfig</h4><blockquote>
+<p>读取命令行参数以及配置文件</p>
+<p>在conftest.py中定义pytest_addoption函数</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pytest_addoption</span>(<span class="hljs-params">parser</span>):</span>    parser.addoption(<span class="hljs-string">&#x27;--host&#x27;</span>, action=<span class="hljs-string">&#x27;store&#x27;</span>,                     <span class="hljs-built_in">help</span>=<span class="hljs-string">&#x27;host of db&#x27;</span>)    parser.addoption(<span class="hljs-string">&#x27;--port&#x27;</span>, action=<span class="hljs-string">&#x27;store&#x27;</span>, default=<span class="hljs-string">&#x27;8888&#x27;</span>,                     <span class="hljs-built_in">help</span>=<span class="hljs-string">&#x27;port of db&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>测试函数获取命令行参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_option1</span>(<span class="hljs-params">pytestconfig</span>):</span>    print(<span class="hljs-string">&#x27;host: %s&#x27;</span> % pytestconfig.getoption(<span class="hljs-string">&#x27;host&#x27;</span>))    print(<span class="hljs-string">&#x27;port: %s&#x27;</span> % pytestconfig.getoption(<span class="hljs-string">&#x27;port&#x27;</span>))<br></code></pre></td></tr></table></figure>
+
+<p>自定义固件也可以实现读取命令行参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@pytest.fixturedef config(<span class="hljs-params">request</span>):    return request.config</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="capsys"><a href="#capsys" class="headerlink" title="capsys"></a>capsys</h4><blockquote>
+<p>捕获stdout和stderr内容</p>
+</blockquote>
+<h4 id="monkeypatch"><a href="#monkeypatch" class="headerlink" title="monkeypatch"></a>monkeypatch</h4><blockquote>
+<p>运行时动态修改类或者模块</p>
+</blockquote>
+<ul>
+<li><code>setattr(target, name, value, raising=True)</code>，设置属性；</li>
+<li><code>delattr(target, name, raising=True)</code>，删除属性；</li>
+<li><code>setitem(dic, name, value)</code>，字典添加元素；</li>
+<li><code>delitem(dic, name, raising=True)</code>，字典删除元素；</li>
+<li><code>setenv(name, value, prepend=None)</code>，设置环境变量；</li>
+<li><code>delenv(name, raising=True)</code>，删除环境变量；</li>
+<li><code>syspath_prepend(path)</code>，添加系统路径；</li>
+<li><code>chdir(path)</code>，切换目录。</li>
+</ul>
+<p>修改对象的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">speak</span>(<span class="hljs-params">self</span>):</span>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ook ook eee eee eee!&quot;</span>SomeClass.speak = speak<br></code></pre></td></tr></table></figure>
+
+<h4 id="rewarn"><a href="#rewarn" class="headerlink" title="rewarn"></a>rewarn</h4><blockquote>
+<p>捕获程序的warnings警告</p>
+</blockquote>
+<h2 id="pytest常用插件"><a href="#pytest常用插件" class="headerlink" title="pytest常用插件"></a>pytest常用插件</h2><h3 id="pytest-sugar"><a href="#pytest-sugar" class="headerlink" title="pytest-sugar"></a>pytest-sugar</h3><p>美化执行结果的输出</p>
+<h3 id="pytest-ordering"><a href="#pytest-ordering" class="headerlink" title="pytest-ordering"></a>pytest-ordering</h3><p>指定测试步骤的执行顺序</p>
+<p>@pytest.mark.run(order=x)</p>
+<h3 id="pytest-picked"><a href="#pytest-picked" class="headerlink" title="pytest-picked"></a>pytest-picked</h3><p>对于git项目，只执行已修改但是没有提交的用例</p>
+<h3 id="pytest-rerunfailures"><a href="#pytest-rerunfailures" class="headerlink" title="pytest-rerunfailures"></a>pytest-rerunfailures</h3><p>自动重新运行失败的测试用例</p>
+<h3 id="pytest-xdist"><a href="#pytest-xdist" class="headerlink" title="pytest-xdist"></a>pytest-xdist</h3><p>并发执行用例</p>
+<p>pytest -n NUM 指定cpu数量</p>
+<h3 id="pytest-html"><a href="#pytest-html" class="headerlink" title="pytest-html"></a>pytest-html</h3><p>可以生成测试结果的html报告</p>
+<p>pytest —html=report.html</p>
+<h2 id="allure-pytest"><a href="#allure-pytest" class="headerlink" title="allure-pytest"></a>allure-pytest</h2><blockquote>
+<p>非常好用的pytest结果可视化插件  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/yoyoketang/p/12004145.html">用法点这里</a></p>
+</blockquote>
+
+      </section>
+      <section class="extra">
+        
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2021/08/22/docker%E9%83%A8%E7%BD%B2springboot-mysql/"><i class="iconfont iconleft"></i>docker部署springboot+mysql</a>
+    <a href="/2021/08/17/unittest%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">unittest的学习笔记<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+  
+<div id="valine"></div>
+<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  window.onload = function () {
+    var loadValine = function () {
+      new Valine({
+        el: '#valine',
+        app_id: "69dsLimanzESX0iaHwJALaIv-gzGzoHsz",
+        app_key: "Q1IhoacJwYJeAV9NimoRPQoN",
+        placeholder: "留个言交流一下吧",
+        avatar: "mp",
+        pageSize: "10",
+        lang: "zh-CN",
+      });
+    }
+    if ( false ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        loadValine();
+      });
+    } else {
+      loadValine();
+    }
+  };
+</script>
+
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E9%80%9A%E8%BF%87"><span class="toc-text">测试通过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%A4%B1%E8%B4%A5"><span class="toc-text">测试失败</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AD%E8%A8%80"><span class="toc-text">断言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7"><span class="toc-text">异常捕获</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">使用方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">函数命名方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">执行命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%A0%87%E8%AE%B0"><span class="toc-text">函数标记</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87%E6%B5%8B%E8%AF%95"><span class="toc-text">跳过测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E6%9C%9F%E9%94%99%E8%AF%AF"><span class="toc-text">预期错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-text">参数化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6"><span class="toc-text">固件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%89%8D%E5%90%8E%E7%9A%84%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">执行前后的函数定义方式和使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">固件的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C"><span class="toc-text">自动执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-text">重命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8C%96-1"><span class="toc-text">参数化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pytest%E5%86%85%E7%BD%AE%E5%9B%BA%E4%BB%B6"><span class="toc-text">pytest内置固件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pytest%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="toc-text">pytest常用插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pytest-sugar"><span class="toc-text">pytest-sugar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pytest-ordering"><span class="toc-text">pytest-ordering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pytest-picked"><span class="toc-text">pytest-picked</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pytest-rerunfailures"><span class="toc-text">pytest-rerunfailures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pytest-xdist"><span class="toc-text">pytest-xdist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pytest-html"><span class="toc-text">pytest-html</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#allure-pytest"><span class="toc-text">allure-pytest</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=1066580119 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://github.com/FanLu1994 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:fanlu2020@qq.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+    <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+  <script>
+  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
+
+    AV.init({
+      appId: '69dsLimanzESX0iaHwJALaIv-gzGzoHsz',
+      appKey: 'Q1IhoacJwYJeAV9NimoRPQoN',
+      serverURLs: 'https://leancloud.cn/',
+    });
+
+    const showCount = (Counter) => {
+      const asyncLimit = new AsyncLimit(2);
+      $(".leancloud").each(async (e) => {
+        const url = $(".leancloud").eq(e).attr('id').trim();
+        const query = new AV.Query("Counter");
+        query.equalTo("words", url);
+        let count = await asyncLimit.run(() => query.count());
+        $(".leancloud").eq(e).text(count ? count : '--');
+      });
+    }
+
+    const addCount = (Counter) => {
+      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'https://fanlu1994.github.io';
+      var query = new Counter;
+      query.save({
+        words: url
+      });
+    }
+
+    $(function () {
+      const Counter = AV.Object.extend("Counter");
+      addCount(Counter);
+      showCount(Counter);
+    });
+
+  });
+</script>
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

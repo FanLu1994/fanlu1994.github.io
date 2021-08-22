@@ -6,12 +6,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>感想 - Fanlu&#39;s Blog</title>
+  <title>docker部署springboot+mysql - Fanlu&#39;s Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  
+  <meta name="description" content="docker部署mysql拉取镜像docker pul...">
   <meta name="author" content="Fanlu">
   <link rel="icon" href="/images/icons/fanlu_36x36.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/fanlu_48x48.png" type="image/png" sizes="32x32">
@@ -150,7 +150,7 @@
         <i class="iconfont iconsearch j-navbar-search"></i>
       
     </div>
-    <div class="center">标签</div>
+    <div class="center">docker部署springboot+mysql</div>
     <div class="right">
       <i class="iconfont iconmenu j-navbar-menu"></i>
     </div>
@@ -184,23 +184,131 @@
   </div>
 </nav>
   <main id="main">
-  <section class="archive">
-    <div class="archive-container">
-      <div class="archive-post">
-        <h2 class="archive-total"># 感想</h2>
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">docker部署springboot+mysql</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 22, 2021</span>
+      
+        <span class="post-info-item">
+          <i class="iconfont iconeye"></i><span id="/2021/08/22/docker%E9%83%A8%E7%BD%B2springboot-mysql/" class="leancloud" data-flag-title="docker部署springboot+mysql"></span>
+        </span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1085</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <h2 id="docker部署mysql"><a href="#docker部署mysql" class="headerlink" title="docker部署mysql"></a>docker部署mysql</h2><h3 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h3><p>docker pull mysql</p>
+<h3 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d -p 3456:3306  --name xiamu_mysql -e MYSQL_ROOT_PASSWORD=123456 mysql<br></code></pre></td></tr></table></figure>
+
+<p>参数说明:</p>
+<ul>
+<li><p>-d 表示后台运行</p>
+</li>
+<li><p>-p 表示端口映射 即   宿主机端口:容器端口</p>
+</li>
+<li><p>–name 指定容器的名字</p>
+</li>
+<li><p>-e指定 启动时的变量MYSQL_ROOT_PASSWORD</p>
+<p>MYSQL_DATABASE</p>
+<p>MYSQL_USER, MYSQL_PASSWORD</p>
+<p>MYSQL_ALLOW_EMPTY_PASSWORD</p>
+<p>MYSQL_RANDOM_ROOT_PASSWORD</p>
+<p>MYSQL_ONETIME_PASSWORD</p>
+</li>
+<li><p>最后指定镜像的名字</p>
+</li>
+</ul>
+<h2 id="docker部署springboot"><a href="#docker部署springboot" class="headerlink" title="docker部署springboot"></a>docker部署springboot</h2><ul>
+<li><p>编写dockerfile</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> openjdk:<span class="hljs-number">11</span>		// 使用的是java版本<br><br><span class="hljs-keyword">COPY</span><span class="bash"> *.jar /app.jar		// 打包好的jar包</span><br><br><span class="hljs-keyword">CMD</span><span class="bash"> [<span class="hljs-string">&quot;--server.port=8080&quot;</span>]		// 启动命令</span><br><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">8080</span>			// 端口<br><br><span class="hljs-keyword">ENTRYPOINT</span><span class="bash"> [<span class="hljs-string">&quot;java&quot;</span>,<span class="hljs-string">&quot;-jar&quot;</span>,<span class="hljs-string">&quot;/app.jar&quot;</span>]	// 启动项目</span><br></code></pre></td></tr></table></figure></li>
+<li><p>修改springboot配置(mysql配置)</p>
+<blockquote>
+<p>同一个主机部署的容器之间通信要用单独配置, 因为docker数据库的名字是xiamu_mysql 这里将其作为mysql的地址</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xml">spring:<br>  datasource:<br>#    url: jdbc:mysql://xiamu_mysql/plan_share?serverTimezone=GMT%2B8<br>    url: jdbc:mysql://127.0.0.1/plan_share?serverTimezone=GMT%2B8<br>    username: ***<br>    password: ***<br>    driver-class-name: com.mysql.cj.jdbc.Driver<br></code></pre></td></tr></table></figure></li>
+<li><p>构建docker镜像<br>在DockerFile所在文件夹下面执行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker build -t 镜像名字 .<br></code></pre></td></tr></table></figure></li>
+<li><p>启动docker容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d -p 5001:8080 --name 容器名 --link=xiamu_mysql:xiamu_mysql 镜像名<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>–name 指定容器名</li>
+<li>-p  如上</li>
+<li>–link  容器名:代码中用到的mysql名字  对容器进行映射</li>
+</ul>
+</li>
+</ul>
+
+      </section>
+      <section class="extra">
         
         
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springboot/" rel="tag">springboot</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2021/08/22/pytest%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">pytest学习笔记<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+  
+<div id="valine"></div>
+<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  window.onload = function () {
+    var loadValine = function () {
+      new Valine({
+        el: '#valine',
+        app_id: "69dsLimanzESX0iaHwJALaIv-gzGzoHsz",
+        app_key: "Q1IhoacJwYJeAV9NimoRPQoN",
+        placeholder: "留个言交流一下吧",
+        avatar: "mp",
+        pageSize: "10",
+        lang: "zh-CN",
+      });
+    }
+    if ( false ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        loadValine();
+      });
+    } else {
+      loadValine();
+    }
+  };
+</script>
+
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
           
-            <h3 class="archive-year">2021 年</h3>
-          
-          <div class="archive-item">
-            <a class="archive-date" href="/2021/03/14/%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BC%80%E5%A7%8B/">03/14</a>
-            <a class="archive-title" href="/2021/03/14/%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%BC%80%E5%A7%8B/">博客的开始</a>
-          </div>
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E9%83%A8%E7%BD%B2mysql"><span class="toc-text">docker部署mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F"><span class="toc-text">拉取镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8docker"><span class="toc-text">启动docker</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker%E9%83%A8%E7%BD%B2springboot"><span class="toc-text">docker部署springboot</span></a></li></ol>
+  </aside>
+
         
       </div>
     </div>
-  </section>
+  </div>
 </main>
   
 
