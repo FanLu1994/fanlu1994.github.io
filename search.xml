@@ -1348,4 +1348,32 @@
         <tag>测试</tag>
       </tags>
   </entry>
+  <entry>
+    <title>docker-compose部署springboot</title>
+    <url>/2021/08/26/docker-compose%E9%83%A8%E7%BD%B2springboot/</url>
+    <content><![CDATA[<blockquote>
+<p>允许用户通过一个单独的 <code>docker-compose.yml</code> 模板文件（YAML 格式）来定义一组相关联的应用容器为一个项目（project）</p>
+</blockquote>
+<p>服务 (<code>service</code>)：一个应用的容器，实际上可以包括若干运行相同镜像的容器实例。</p>
+<p>项目 (<code>project</code>)：由一组关联的应用容器组成的一个完整业务单元，在 <code>docker-compose.yml</code> 文件中定义。</p>
+<h2 id="编写springboot的DockerFile"><a href="#编写springboot的DockerFile" class="headerlink" title="编写springboot的DockerFile"></a>编写springboot的DockerFile</h2><figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># Dockerfile</span><br><br><span class="hljs-keyword">FROM</span> openjdk:<span class="hljs-number">11</span><br><br><span class="hljs-keyword">COPY</span><span class="bash"> *.jar /app.jar</span><br><br><span class="hljs-keyword">CMD</span><span class="bash"> [<span class="hljs-string">"--server.port=8080"</span>]</span><br><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">8080</span><br><br><span class="hljs-keyword">ENTRYPOINT</span><span class="bash"> [<span class="hljs-string">"java"</span>,<span class="hljs-string">"-jar"</span>,<span class="hljs-string">"/app.jar"</span>]</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="配置springboot连接-docker-mysql"><a href="#配置springboot连接-docker-mysql" class="headerlink" title="配置springboot连接 docker-mysql"></a>配置springboot连接 docker-mysql</h2><figure class="highlight yml"><table><tbody><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">spring:</span><br>  <span class="hljs-attr">datasource:</span><br><span class="hljs-comment">#    url: jdbc:mysql://docker_mysql/plan_share?serverTimezone=GMT%2B8</span><br>    <span class="hljs-attr">url:</span>  <span class="hljs-string">${MYSQL_URL:jdbc:mysql://127.0.0.1:3306/数据库的名字?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai}</span><br><span class="hljs-comment">#    url: jdbc:mysql://127.0.0.1/plan_share?serverTimezone=GMT%2B8</span><br>    <span class="hljs-attr">username:</span> <span class="hljs-string">root</span><br>    <span class="hljs-attr">password:</span> <span class="hljs-number">1234</span><br>    <span class="hljs-attr">driver-class-name:</span> <span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>注意数据库的url地址，跟docker-compose有关。 其中MYSQL_URL是dockwer-compose的环境变量</p>
+<h2 id="编写mysqlDockerFile"><a href="#编写mysqlDockerFile" class="headerlink" title="编写mysqlDockerFile"></a>编写mysqlDockerFile</h2><figure class="highlight dockerfile"><table><tbody><tr><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> mysql:<span class="hljs-number">5.7</span>.<span class="hljs-number">34</span><br><span class="hljs-keyword">COPY</span><span class="bash"> plan-share.sql /docker-entrypoint-initdb.d</span><br></code></pre></td></tr></tbody></table></figure>
+
+<p>第二行表示将初始化的sql复制到docker中去</p>
+<h2 id="编写Docker-Compose"><a href="#编写Docker-Compose" class="headerlink" title="编写Docker-Compose"></a>编写Docker-Compose</h2><figure class="highlight yml"><table><tbody><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">version:</span> <span class="hljs-string">"3.8"</span><br><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">we-plan:</span><br>    <span class="hljs-attr">build:</span><br>      <span class="hljs-attr">context:</span> <span class="hljs-string">.</span>  <span class="hljs-string">//</span> <span class="hljs-string">执行目录，即dockerfile所在的目录</span><br>      <span class="hljs-attr">args:</span><br>        <span class="hljs-attr">JAR_FILE:</span> <span class="hljs-string">plan-0.0.1-SNAPSHOT.jar</span><br>      <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">Dockerfile</span><br><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">5001</span><span class="hljs-string">:8080</span>	<span class="hljs-string">//端口映射</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">MYSQL_URL:</span> <span class="hljs-string">jdbc:mysql://docker_mysql/plan_share?serverTimezone=GMT%2B8</span><br><br>  <span class="hljs-attr">docker_mysql:</span><br>    <span class="hljs-attr">build:</span><br>      <span class="hljs-attr">context:</span> <span class="hljs-string">.</span><br>      <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">Dockerfile-mysql</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">3456</span><span class="hljs-string">:3306</span> <span class="hljs-string">//端口映射</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">"docker_mysql_data:/var/lib/mysql"</span>  <span class="hljs-string">//</span> <span class="hljs-string">目录映射</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-attr">MYSQL_ROOT_PASSWORD:</span> <span class="hljs-number">1234</span>  <span class="hljs-string">//</span> <span class="hljs-string">密码</span><br><br><span class="hljs-attr">volumes:</span><br>  <span class="hljs-attr">docker_mysql_data:</span><br></code></pre></td></tr></tbody></table></figure>
+
+<h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><p>docker-compose up -d</p>
+<p>首次启动会build   springboot的镜像和mysql的镜像。</p>
+<p>第二次就不会了。</p>
+<p>如果要重新build，加上 –build即可</p>
+]]></content>
+      <tags>
+        <tag>springboot</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
 </search>
