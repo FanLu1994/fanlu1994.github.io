@@ -15,7 +15,7 @@ images: images
 
 # themes/shoka/source/images/***
 favicon:
-  apple_touch_icon: /apple-touch-icon.png
+  apple_touch_icon: /tom.png
   #safari_pinned_tab: /logo.svg
   #android_manifest: /manifest.json
   #ms_browserconfig: /browserconfig.xml
@@ -97,7 +97,8 @@ menu:
   #   categories: /categories/ || th
   #   tags: /tags/ || tags
   # friends: /friends/ || heart
-  # links: /links/ || magic
+  links: https://bbs.hupu.com/85 || links
+  开往: https://www.travellings.cn || links
 
 # Social Links
 # Usage: `Key: permalink || icon || color`
@@ -105,12 +106,12 @@ menu:
 # Value before `||` delimiter is the target permalink,
 # secend value is the name of Font icon.
 social:
-  #github: https://github.com/yourname || github || "#191717"
+  github: https://github.com/fanlu1994 || github || "#191717"
   #google: https://plus.google.com/yourname || google
-  #twitter: https://twitter.com/yourname || twitter || "#00aff0"
+  twitter: https://twitter.com/gkmDZKu7JTE1C3B || twitter || "#00aff0"
   #zhihu: https://www.zhihu.com/people/yourname || zhihu || "#1e88e5"
   #music: https://music.163.com/#/user/home?id=yourid || cloud-music || "#e60026"
-  #weibo: https://weibo.com/yourname || weibo || "#ea716e"
+  weibo: https://weibo.com/u/1599952025 || weibo || "#ea716e"
   #about: https://about.me/yourname || address-card || "#3b5998"
   #email: mailto:yourname@mail.com || envelope || "#55acd5"
   #facebook: https://www.facebook.com/yourname || facebook
@@ -125,7 +126,7 @@ sidebar:
   position: left
   # position: right
   # Replace the default avatar image and set the url here.
-  avatar: avatar.jpg
+  avatar: tom.png
 
 widgets:
   # if true, will show random posts
@@ -135,7 +136,7 @@ widgets:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  since: 2010
+  since: 2023
   icon:
     name: sakura rotate
     # Change the color of icon, using Hex Code.
@@ -154,8 +155,8 @@ reward:
   enable: true
   account:
     wechatpay: /wechatpay.png
-    alipay: /alipay.png
-    paypal: /paypal.png
+    # alipay: /alipay.png
+    # paypal: /paypal.png
 
 # TagCloud settings for tags page.
 tagcloud:
