@@ -1,28 +1,67 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://www.fanlu.top</id>
+    <id>http://example.com</id>
     <title>何妨吟啸且徐行</title>
-    <link href="http://www.fanlu.top" />
-    <updated>2023-05-14T15:06:29.534Z</updated>
+    <link href="http://example.com" />
+    <updated>2023-05-15T15:40:19.187Z</updated>
     <entry>
-        <id>http://www.fanlu.top/2023/05/14/hello-world/</id>
+        <id>http://example.com/2023/05/15/hello-world/</id>
         <title>Hello World</title>
-        <link rel="alternate" href="http://www.fanlu.top/2023/05/14/hello-world/"/>
+        <link rel="alternate" href="http://example.com/2023/05/15/hello-world/"/>
         <content type="html">&lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvLw==&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv&#34;&gt;documentation&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=&#34;&gt;troubleshooting&lt;/span&gt; or you can ask me on &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==&#34;&gt;GitHub&lt;/span&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo new &lt;span class=&#34;string&#34;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
+&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
 &lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo server&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
 &lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo generate&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
 &lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-bash&#34; data-language=&#34;bash&#34;&gt;&lt;code class=&#34;language-bash&#34;&gt;$ hexo deploy&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
 &lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
 </content>
-        <updated>2023-05-14T15:06:29.534Z</updated>
+        <updated>2023-05-15T15:40:19.187Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/</id>
+        <title>鸡毛蒜皮周刊-01</title>
+        <link rel="alternate" href="http://example.com/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/"/>
+        <content type="html">&lt;h2 id=&#34;人类群星闪耀时&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#人类群星闪耀时&#34;&gt;#&lt;/a&gt; 人类群星闪耀时&lt;/h2&gt;
+&lt;p&gt;作者茨威格选择了一些很有意思的历史时间进行文学叙述，文笔确实很好。 但是作为一个历史” 爱好者 “，始终无法相信这样过度的文学描写，这样总会导致历史失真。&lt;/p&gt;
+&lt;h2 id=&#34;家里的wifi&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#家里的wifi&#34;&gt;#&lt;/a&gt; 家里的 wifi&lt;/h2&gt;
+&lt;p&gt;上海电信默认光猫是路由模式，又接了一个小米路由器，网速总是不稳定，这周找师傅来改成了桥接模式，需要电信远程下发数据还挺麻烦。 但是改完之后，室内的台式机（当时装修脑子抽，没给台式机留网口），网络还是一般，怀疑是主板网卡的问题，于是买了一个绿联的即插网卡，插上搞定！&lt;/p&gt;
+&lt;h2 id=&#34;chrome插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#chrome插件&#34;&gt;#&lt;/a&gt; chrome 插件&lt;/h2&gt;
+&lt;p&gt;最近对 chrome 插件开发感兴趣。于是琢磨着写个小项目试试能做点啥。于是考虑做个统计网页浏览时间的小应用。简单来说，有两个步骤，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取到当前标签页的地址&lt;/li&gt;
+&lt;li&gt;切换标签页时重新进行计时&lt;br /&gt;
+网上的插件开发教程写的还行，但是对于 api 的教程太少了。于是找到了一个现成的插件项目叫做 “网费很贵”，对于我想要的功能它已经做的很完整了。于是扒了下它的源码【&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3NoZWVwemgvdGltZXIvYmxvYi9tYWluL1JFQURNRS16aC5tZCVFMyU4MCU5MSVFMyU4MCU4Mg==&#34;&gt;https://github.com/sheepzh/timer/blob/main/README-zh.md】。&lt;/span&gt; 项目代码十分优雅，一看就能甩我好几年的功力。&lt;br /&gt;
+找到了几个关键 api：&lt;br /&gt;
+&lt;pre class=&#34;line-numbers language-typescript&#34; data-language=&#34;typescript&#34;&gt;&lt;code class=&#34;language-typescript&#34;&gt;chrome&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;tabs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;onActivated&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;addListener  &lt;span class=&#34;token comment&#34;&gt;// 添加切换 tab 的监听&lt;/span&gt;
+chrome&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;browser&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;setBadgeText  &lt;span class=&#34;token comment&#34;&gt;// 修改插件图标上的文字&lt;/span&gt;
+chrome&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;tabs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tabId&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tab&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 根据 tabID 获取到标签的信息&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;
+ 代码会放到 github 上。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;docxtemplater&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#docxtemplater&#34;&gt;#&lt;/a&gt; docxtemplater&lt;/h2&gt;
+&lt;p&gt;工作中用到了前端导出 word 的操作，chatGpt 给我推荐了这个库&lt;br /&gt;
+！[[Pasted image 20230228121250.png]]&lt;br /&gt;
+ 使用方法可以参照：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC83MDk0MTM5NDEzMjQ4MDgxOTI4&#34;&gt;前端使用 docxtemplater 导出 word 文档最佳实践 - 掘金 (juejin.cn)&lt;/span&gt;&lt;br /&gt;
+ 这个库的地址在：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL29wZW4teG1sLXRlbXBsYXRpbmcvZG9jeHRlbXBsYXRlcg==&#34;&gt;open-xml-templating/docxtemplater: Generate docx, pptx, and xlsx from templates (Word, Powerpoint and Excel documents), from Node.js, the Browser and the command line / Demo: https://www.docxtemplater.com/demo. #docx #office #generator #templating #report #json #generate #generation #template #create #pptx #docx #xlsx #react #vuejs #angularjs #browser #typescript #image #html #table #chart (github.com)&lt;/span&gt;&lt;br /&gt;
+ 使用下来，感觉很强大的一个库，支持模板渲染、循环数据渲染、表格循环渲染。&lt;/p&gt;
+&lt;h2 id=&#34;诡秘之主&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#诡秘之主&#34;&gt;#&lt;/a&gt; 诡秘之主&lt;/h2&gt;
+&lt;p&gt;这是一个在各种排名都很高的网文，我看了几十章，实在看不下去了，节奏太慢了，看网文的目的是放松和休息大脑，实在不想费劲阅读。&lt;br /&gt;
+但是打开起点，看到它在第一名，还是继续看下去吧。&lt;/p&gt;
+&lt;h2 id=&#34;ppchart&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ppchart&#34;&gt;#&lt;/a&gt; PPChart&lt;/h2&gt;
+&lt;p&gt;用 echarts 总觉得调样式很麻烦，这个网站不错，可以看到不少好看的效果，以后可以用来参考（拷贝）。😲&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3BwY2hhcnQuY29tLyMv&#34;&gt;PPChart - 让图表更简单&lt;/span&gt;&lt;br /&gt;
+！[[Pasted image 20230301164049.png]]&lt;br /&gt;
+ 同类型的网站还有：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubWFrZWFwaWUuY24vZWNoYXJ0c19jYXRlZ29yeS9zZXJpZXMtYmFy&#34;&gt;series-bar 柱状图 - makeapie echarts 图表可视化案例&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;nas赚钱&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nas赚钱&#34;&gt;#&lt;/a&gt; nas 赚钱&lt;/h2&gt;
+&lt;p&gt;在极空间 z4s 上打开了迅雷的网心云插件，用闲置的带宽做 pcdn 赚钱，目前几天下来，每天 5 毛钱。可惜没有公网 ip 不然应该会高一点，现在好像还不够 nas 的电费。&lt;/p&gt;
+</content>
+        <updated>2023-05-15T14:53:53.000Z</updated>
     </entry>
 </feed>
