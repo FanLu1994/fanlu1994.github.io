@@ -24,6 +24,7 @@ const randomBG = function(count = 1, image_server = null, image_list = []) {
     return image_server + '?' + Math.floor(Math.random() * 999999)
   }
 
+  // TODO:替换图库
   var parseImage = function(img, size) {
     if (img.startsWith('//') || img.startsWith('http')) {
       return img
