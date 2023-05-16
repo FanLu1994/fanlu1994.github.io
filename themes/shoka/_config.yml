@@ -15,7 +15,7 @@ images: images
 
 # themes/shoka/source/images/***
 favicon:
-  apple_touch_icon: /apple-touch-icon.png
+  apple_touch_icon: /tom.png
   #safari_pinned_tab: /logo.svg
   #android_manifest: /manifest.json
   #ms_browserconfig: /browserconfig.xml
@@ -31,7 +31,7 @@ auto_scroll: true
 
 # Whether to show the loading cat
 loader:
-  start: true # When entering the page
+  start: false # When entering the page
   switch: true # When switching to another page
 
 # click with Firework
@@ -125,7 +125,7 @@ sidebar:
   position: left
   # position: right
   # Replace the default avatar image and set the url here.
-  avatar: avatar.jpg
+  avatar: tom.png
 
 widgets:
   # if true, will show random posts
@@ -135,7 +135,7 @@ widgets:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  since: 2010
+  since: 2023
   icon:
     name: sakura rotate
     # Change the color of icon, using Hex Code.
