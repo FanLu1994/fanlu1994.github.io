@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>何妨吟啸且徐行 • Posts by &#34;鸡毛蒜皮周刊&#34; tag</title>
+        <link>https://fanlu.top</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Thu, 18 May 2023 15:20:45 +0000</pubDate>
+        <lastBuildDate>Thu, 18 May 2023 15:20:45 +0000</lastBuildDate>
+        <category>前端搬砖指南</category>
+        <category>鸡毛蒜皮周刊</category>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/</guid>
+            <title>鸡毛蒜皮周刊-02</title>
+            <link>https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/</link>
+            <category>鸡毛蒜皮周刊</category>
+            <pubDate>Thu, 18 May 2023 15:20:45 +0000</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;nonebot-和-微信机器人&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nonebot-和-微信机器人&#34;&gt;#&lt;/a&gt; NoneBot 和 微信机器人&lt;/h2&gt;
+&lt;p&gt;NoneBot（&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92Mi5ub25lYm90LmRldi8=&#34;&gt;NoneBot&lt;/span&gt;&lt;/strong&gt;）是一个 python 框架，用来实现机器人聊天应答，支持的平台包括：qq、飞书、钉钉等，插件非常丰富，文档也很详尽，准备搭建试试。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly94aWUuaW5mb3EuY24vYXJ0aWNsZS8yMGYxOTE0NjIzN2YzNzE0YzVlYjVhZGI3&#34;&gt;微信 + ChatGPT = 自己的智能助手 | 社区征文_ChatGPT_IT 蜗壳 - Tango_InfoQ 写作社区&lt;/span&gt; 作者基于 wechaty python 库和一个 chatGpt 账号，实现了一个微信的智能应答机器人&lt;/p&gt;
+&lt;h2 id=&#34;pake&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pake&#34;&gt;#&lt;/a&gt; Pake&lt;/h2&gt;
+&lt;p&gt;基于 rust 和 tauri 来将网站打包成一个应用，支持多平台。&lt;br /&gt;
+我拿来试了下，打包了部署在个人腾讯云上面的 rss 阅读器，体验非常好，阅读 rss 的时间大大增加了。&lt;br /&gt;
+&lt;img data-src=&#34;http://110.42.182.92:4080/Pasted%20image%2020230307081744.png&#34; alt=&#34;图片&#34; /&gt;&lt;br /&gt;
+顺便吐槽一句，win 上现有的 rss 阅读器真的很难用。&lt;/p&gt;
+&lt;h2 id=&#34;ue4&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ue4&#34;&gt;#&lt;/a&gt; UE4&lt;/h2&gt;
+&lt;p&gt;由于工作的原因，需要了解一下 UE4 的开发。试了一下 B 站上的一个教程：&lt;br /&gt;
+&amp;lt;iframe src=&amp;quot;&lt;a href=&#34;//player.bilibili.com/player.html?aid=728399911&amp;amp;bvid=BV1qS4y1J7oh&amp;amp;cid=772526176&amp;amp;page=1&#34;&gt;//player.bilibili.com/player.html?aid=728399911&amp;amp;bvid=BV1qS4y1J7oh&amp;amp;cid=772526176&amp;amp;page=1&lt;/a&gt;&amp;quot; scrolling=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; frameborder=&amp;quot;no&amp;quot; framespacing=&amp;quot;0&amp;quot; allowfullscreen=&amp;quot;true&amp;quot;&amp;gt; &amp;lt;/iframe&amp;gt;&lt;br /&gt;
+ 体验如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;蓝图太好用了，可视化编程无敌&lt;/li&gt;
+&lt;li&gt;蓝图太难记了，控件、方法实在太多了，有些是需要牵引出来才能找到，太难找了&lt;/li&gt;
+&lt;li&gt;ue4 的网络模块太牛了，在蓝图里就能开发网络，需要好好学习一下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;rust和chatgpt&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#rust和chatgpt&#34;&gt;#&lt;/a&gt; rust 和 chatGPT&lt;/h2&gt;
+&lt;p&gt;尝试看了一个 rust 后端，tauri 前端的小项目。&lt;br /&gt;
+rust 语法有点难理解啊。&lt;br /&gt;
+忽然想起 chatGPT，于是放进去问问，效果惊人&lt;br /&gt;
+&lt;img data-src=&#34;http://110.42.182.92:4080/Pasted%20image%2020230309091056.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;travellingscn&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#travellingscn&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL1RyYXZlbGxpbmdzLmNu&#34;&gt;Travellings.cn&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;偶然发现某个博客有个友链的跳转地址，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS10cmF2ZWxsaW5ncy1rdTZyaThndXU1M2F4cWxiLmNu&#34;&gt;首先跳到 travellings.cn&lt;/span&gt;，然后跳到另一个博客，然后下一个博客也有这么一个链接，感觉是一个博客联盟之类的，进行随机跳转。一查果然没错：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24v&#34;&gt;开往 - 友链接力 (travellings.cn)&lt;/span&gt;&lt;br /&gt;
+ 挺有意思的，可以把自己的博客也搞上去&lt;br /&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==&#34;&gt;开往 - 友链接力 (travellings.cn)&lt;/span&gt;  这个链接可以随机前往到某个博客，进入他们的世界，感觉很不错。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "何妨吟啸且徐行 • All posts by \"鸡毛蒜皮周刊\" tag",
+    "description": "",
+    "home_page_url": "https://fanlu.top",
+    "items": [
+        {
+            "id": "https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/",
+            "url": "https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/",
+            "title": "鸡毛蒜皮周刊-02",
+            "date_published": "2023-05-18T15:20:45.000Z",
+            "content_html": "<h2 id=\"nonebot-和-微信机器人\"><a class=\"anchor\" href=\"#nonebot-和-微信机器人\">#</a> NoneBot 和 微信机器人</h2>\n<p>NoneBot（<strong><span class=\"exturl\" data-url=\"aHR0cHM6Ly92Mi5ub25lYm90LmRldi8=\">NoneBot</span></strong>）是一个 python 框架，用来实现机器人聊天应答，支持的平台包括：qq、飞书、钉钉等，插件非常丰富，文档也很详尽，准备搭建试试。</p>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly94aWUuaW5mb3EuY24vYXJ0aWNsZS8yMGYxOTE0NjIzN2YzNzE0YzVlYjVhZGI3\">微信 + ChatGPT = 自己的智能助手 | 社区征文_ChatGPT_IT 蜗壳 - Tango_InfoQ 写作社区</span> 作者基于 wechaty python 库和一个 chatGpt 账号，实现了一个微信的智能应答机器人</p>\n<h2 id=\"pake\"><a class=\"anchor\" href=\"#pake\">#</a> Pake</h2>\n<p>基于 rust 和 tauri 来将网站打包成一个应用，支持多平台。<br />\n我拿来试了下，打包了部署在个人腾讯云上面的 rss 阅读器，体验非常好，阅读 rss 的时间大大增加了。<br />\n<img data-src=\"http://110.42.182.92:4080/Pasted%20image%2020230307081744.png\" alt=\"图片\" /><br />\n顺便吐槽一句，win 上现有的 rss 阅读器真的很难用。</p>\n<h2 id=\"ue4\"><a class=\"anchor\" href=\"#ue4\">#</a> UE4</h2>\n<p>由于工作的原因，需要了解一下 UE4 的开发。试了一下 B 站上的一个教程：<br />\n&lt;iframe src=&quot;<a href=\"//player.bilibili.com/player.html?aid=728399911&amp;bvid=BV1qS4y1J7oh&amp;cid=772526176&amp;page=1\">//player.bilibili.com/player.html?aid=728399911&amp;bvid=BV1qS4y1J7oh&amp;cid=772526176&amp;page=1</a>&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt; &lt;/iframe&gt;<br />\n 体验如下：</p>\n<ul>\n<li>蓝图太好用了，可视化编程无敌</li>\n<li>蓝图太难记了，控件、方法实在太多了，有些是需要牵引出来才能找到，太难找了</li>\n<li>ue4 的网络模块太牛了，在蓝图里就能开发网络，需要好好学习一下</li>\n</ul>\n<h2 id=\"rust和chatgpt\"><a class=\"anchor\" href=\"#rust和chatgpt\">#</a> rust 和 chatGPT</h2>\n<p>尝试看了一个 rust 后端，tauri 前端的小项目。<br />\nrust 语法有点难理解啊。<br />\n忽然想起 chatGPT，于是放进去问问，效果惊人<br />\n<img data-src=\"http://110.42.182.92:4080/Pasted%20image%2020230309091056.png\" alt=\"\" /></p>\n<h2 id=\"travellingscn\"><a class=\"anchor\" href=\"#travellingscn\">#</a> <span class=\"exturl\" data-url=\"aHR0cDovL1RyYXZlbGxpbmdzLmNu\">Travellings.cn</span></h2>\n<p>偶然发现某个博客有个友链的跳转地址，<span class=\"exturl\" data-url=\"aHR0cDovL3huLS10cmF2ZWxsaW5ncy1rdTZyaThndXU1M2F4cWxiLmNu\">首先跳到 travellings.cn</span>，然后跳到另一个博客，然后下一个博客也有这么一个链接，感觉是一个博客联盟之类的，进行随机跳转。一查果然没错：<span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24v\">开往 - 友链接力 (travellings.cn)</span><br />\n 挺有意思的，可以把自己的博客也搞上去<br />\n<span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==\">开往 - 友链接力 (travellings.cn)</span>  这个链接可以随机前往到某个博客，进入他们的世界，感觉很不错。</p>\n",
+            "tags": [
+                "鸡毛蒜皮周刊"
+            ]
+        }
+    ]
+}
