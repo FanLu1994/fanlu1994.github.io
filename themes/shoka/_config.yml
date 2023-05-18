@@ -187,7 +187,7 @@ valine:
   appId: 69dsLimanzESX0iaHwJALaIv-gzGzoHsz
   appKey: Q1IhoacJwYJeAV9NimoRPQoN
   placeholder: ヽ(○´∀`)ﾉ♪ # Comment box placeholder
-  avatar: mp # Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro
+  avatar: monsterid # Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro
   pageSize: 10 # Pagination size
   lang: zh-CN
   visitor: true # Article reading statistic
