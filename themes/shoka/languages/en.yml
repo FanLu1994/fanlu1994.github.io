@@ -105,13 +105,13 @@ symbol:
   year: "Y"
   month: "M"
 
-reward:
-  donate: Donate
-  text: Give me a cup of [coffee]~(￣▽￣)~*
-  wechatpay: WeChat Pay
-  alipay: Alipay
-  paypal: PayPal
-  bitcoin: Bitcoin
+# reward:
+#   donate: Donate
+#   text: Give me a cup of [coffee]~(￣▽￣)~*
+#   wechatpay: WeChat Pay
+#   alipay: Alipay
+#   paypal: PayPal
+#   bitcoin: Bitcoin
 
 follow_me:
   welcome: Welcome to my other publishing channels
