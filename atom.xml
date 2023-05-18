@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>https://fanlu.top</id>
     <title>何妨吟啸且徐行</title>
-    <link href="http://example.com" />
+    <link href="https://fanlu.top" />
     <updated>2023-05-17T01:04:08.000Z</updated>
     <entry>
-        <id>http://example.com/2023/05/17/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/</id>
+        <id>https://fanlu.top/2023/05/17/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/</id>
         <title>gopher-lua使用小demo</title>
-        <link rel="alternate" href="http://example.com/2023/05/17/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/05/17/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;模拟读者读书&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -270,16 +270,332 @@
         <updated>2023-05-17T01:04:08.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/05/17/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+        <id>https://fanlu.top/2023/05/17/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
         <title>gopher-lua的使用</title>
-        <link rel="alternate" href="http://example.com/2023/05/17/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-        <content type="html"></content>
+        <link rel="alternate" href="https://fanlu.top/2023/05/17/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+        <content type="html">&lt;p&gt;#golang #lua #压测&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3l1aW4vZ29waGVyLWx1YSN1c2FnZQ==&#34;&gt;https://github.com/yuin/gopher-lua#usage&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;简单使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简单使用&#34;&gt;#&lt;/a&gt; 简单使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;首先声明一个 lua 虚拟机： L := lua.NewState ()  返回一个 LState Struct&lt;/li&gt;
+&lt;li&gt;然后可以执行 lua 格式的字符串或者 File
+&lt;ul&gt;
+&lt;li&gt;lua.DoString( &lt;code&gt;print(&amp;quot;hello&amp;quot;)&lt;/code&gt; )&lt;/li&gt;
+&lt;li&gt;lua.DoFile (lua 脚本的路径)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;LState 定义如下：&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;type&lt;/span&gt; LState &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+	G       &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;Global
+	Parent  &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;LState
+	Env     &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;LTable
+	Panic   &lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+	Dead    &lt;span class=&#34;token builtin&#34;&gt;bool&lt;/span&gt;
+	Options Options
+
+	stop         &lt;span class=&#34;token builtin&#34;&gt;int32&lt;/span&gt;
+	reg          &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;registry
+	stack        callFrameStack
+	alloc        &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;allocator
+	currentFrame &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;callFrame
+	wrapped      &lt;span class=&#34;token builtin&#34;&gt;bool&lt;/span&gt;
+	uvcache      &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;Upvalue
+	hasErrorFunc &lt;span class=&#34;token builtin&#34;&gt;bool&lt;/span&gt;
+	mainLoop     &lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;callFrame&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+	ctx          context&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Context
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get 方法  获取栈中的变量&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;数据模型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据模型&#34;&gt;#&lt;/a&gt; 数据模型&lt;/h2&gt;
+&lt;p&gt;gopher-lua 中的说有变量值都是一个 LValue, 是 go 语言中的 interface，包含两个方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;String（）string&lt;/li&gt;
+&lt;li&gt;Type() LValueType&lt;br /&gt;
+&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;type&lt;/span&gt; LValue &lt;span class=&#34;token keyword&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;  
+   &lt;span class=&#34;token function&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;  
+   &lt;span class=&#34;token function&#34;&gt;Type&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; LValueType   
+   &lt;span class=&#34;token function&#34;&gt;assertFloat64&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;float64&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  
+   &lt;span class=&#34;token function&#34;&gt;assertString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  
+   &lt;span class=&#34;token function&#34;&gt;assertFunction&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;LFunction&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;该接口的实现包括如下类：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type name&lt;/th&gt;
+&lt;th&gt;Go type&lt;/th&gt;
+&lt;th&gt;Type() value&lt;/th&gt;
+&lt;th&gt;Constants&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LNilType&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;(constants)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTNil&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LNil&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LBool&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;(constants)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTBool&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTrue&lt;/code&gt; ,  &lt;code&gt;LFalse&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LNumber&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;float64&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTNumber&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LString&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTString&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LFunction&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;struct pointer&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTFunction&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LUserData&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;struct pointer&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTUserData&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LState&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;struct pointer&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTThread&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LTable&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;struct pointer&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTTable&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;LChannel&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;chan LValue&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LTChannel&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;lv.Type () 可以获取类型&lt;/li&gt;
+&lt;li&gt;原表不可用；没有错误捕捉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;callstack-registry-size&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#callstack-registry-size&#34;&gt;#&lt;/a&gt; Callstack &amp;amp; Registry size&lt;/h2&gt;
+&lt;p&gt;LState 的调用栈的大小控制着脚本中 Lua 函数的最大调用深度（Go 函数的调用不算在内）。&lt;/p&gt;
+&lt;p&gt;LState 的注册表实现了对调用函数（包括 Lua 和 Go 函数）和表达式中的临时变量的栈存储。它的存储需求将随着调用堆栈的使用和代码的复杂性而增加。&lt;/p&gt;
+&lt;p&gt;注册表和调用堆栈都可以被设置为固定大小或自动大小。&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt; L &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewState&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Options&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    RegistrySize&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;         &lt;span class=&#34;token comment&#34;&gt;// this is the initial size of the registry&lt;/span&gt;
+    RegistryMaxSize&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;80&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;      &lt;span class=&#34;token comment&#34;&gt;// this is the maximum size that the registry can grow to. If set to `0` (the default) then the registry will not auto grow&lt;/span&gt;
+    RegistryGrowStep&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;            &lt;span class=&#34;token comment&#34;&gt;// this is how much to step up the registry by each time it runs out of space. The default is `32`.&lt;/span&gt;
+ &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;defer&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;h2 id=&#34;api&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#api&#34;&gt;#&lt;/a&gt; API&lt;/h2&gt;
+&lt;h3 id=&#34;从lua中调用go函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#从lua中调用go函数&#34;&gt;#&lt;/a&gt; 从 lua 中调用 go 函数&lt;/h3&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Double&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    lv &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ToInt&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;             &lt;span class=&#34;token comment&#34;&gt;/* get argument */&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;LNumber&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lv &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* push result */&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;                     &lt;span class=&#34;token comment&#34;&gt;/* number of results */&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    L &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewState&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;defer&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetGlobal&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;double&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewFunction&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Double&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* Original lua_setglobal uses stack... */&lt;/span&gt;
+   	&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;DoString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;`print(double(20))`&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+		&lt;span class=&#34;token function&#34;&gt;panic&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;注册为 lua 函数之后，会变成一个 LGFunction 类型；&lt;/p&gt;
+&lt;p&gt;支持协程中运行；&lt;/p&gt;
+&lt;h3 id=&#34;加载lua内置库的函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#加载lua内置库的函数&#34;&gt;#&lt;/a&gt; 加载 lua 内置库的函数&lt;/h3&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    L &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewState&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Options&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;SkipOpenLibs&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;defer&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; pair &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        n &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;
+        f lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LGFunction
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LoadLibName&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;OpenPackage&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// Must be first&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;BaseLibName&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;OpenBase&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;TabLibName&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;OpenTable&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;CallByParam&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;P&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            Fn&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;      L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewFunction&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;pair&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;f&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+            NRet&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+            Protect&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;LString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;pair&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+            &lt;span class=&#34;token function&#34;&gt;panic&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;DoFile&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;main.lua&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;panic&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;h3 id=&#34;在go中创建一个lua的模块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在go中创建一个lua的模块&#34;&gt;#&lt;/a&gt; 在 go 中创建一个 lua 的模块&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先定义一组方法  类型为 map [string] lua.LGFuntion&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后调用 SetFuncs  将函数表分配给一个 lua table，作为一个模块，获取到一个 LTable&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后将模块 push 到栈&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;Loader&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;// register functions to the table&lt;/span&gt;
+    mod &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetFuncs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewTable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; exports&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;// register other stuff&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetField&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;mod&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;name&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;LString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;value&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;// returns the module&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;mod&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过 PreLoadModule（name,  注册方法）将模块注册到虚拟机中&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;PreloadModule&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;mymodule&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; mymodule&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Loader&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;在go中调用lua方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在go中调用lua方法&#34;&gt;#&lt;/a&gt; 在 go 中调用 lua 方法&lt;/h3&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;CallByParam&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;P&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    Fn&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;GetGlobal&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;double&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;		&lt;span class=&#34;token comment&#34;&gt;//lua 方法名&lt;/span&gt;
+    NRet&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;					&lt;span class=&#34;token comment&#34;&gt;// &lt;/span&gt;
+    Protect&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;LNumber&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;panic&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CallByParam 方法 第一个参数 lua.P 结构； 第二个参数 参数&lt;/li&gt;
+&lt;li&gt;通过 lua.P 结构进行调用&lt;/li&gt;
+&lt;li&gt;实际使用中 函数参数也可以使用提前设置全局变量的方式来实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;自定义类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义类型&#34;&gt;#&lt;/a&gt; 自定义类型&lt;/h3&gt;
+&lt;p&gt;支持在 Go 中自定义新类型&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;type&lt;/span&gt; Person &lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    Name &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; luaPersonTypeName &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;person&#34;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// 注册类型&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;registerPersonType&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    mt &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewTypeMetatable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;luaPersonTypeName&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;// 新建一个元表&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetGlobal&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;person&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; mt&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;					&lt;span class=&#34;token comment&#34;&gt;// 元表设置为全局变量&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;// static attributes&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetField&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;mt&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;new&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewFunction&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;newPerson&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 注册方法到元表中 静态放啊&lt;/span&gt;
+    &lt;span class=&#34;token comment&#34;&gt;// methods&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetField&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;mt&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;__index&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetFuncs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewTable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; personMethods&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 注册方法到元表&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// Constructor&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;newPerson&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;			&lt;span class=&#34;token comment&#34;&gt;//go 方法&lt;/span&gt;
+    person &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;Person&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;CheckString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    ud &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewUserData&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    ud&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Value &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; person
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;SetMetatable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;ud&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;GetTypeMetatable&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;luaPersonTypeName&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;ud&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// Checks whether the first lua argument is a *LUserData with *Person and returns this *Person.&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;checkPerson&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;Person &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;// 检查类型&lt;/span&gt;
+    ud &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;CheckUserData&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; v&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; ok &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; ud&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Value&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;Person&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; ok &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; v
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;ArgError&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;person expected&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; personMethods &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LGFunction&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;		&lt;span class=&#34;token comment&#34;&gt;// 方法表&lt;/span&gt;
+    &lt;span class=&#34;token string&#34;&gt;&#34;name&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; personGetSetName&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// Getter and setter for the Person#Name&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;personGetSetName&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;			&lt;span class=&#34;token comment&#34;&gt;// 属性的 Getter 和 Setter 在 lua 中通过 p:name () 调用&lt;/span&gt;
+    p &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;checkPerson&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;GetTop&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        p&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;CheckString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;LString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;p&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Name&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    L &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewState&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;defer&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;registerPersonType&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;DoString&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;`						
+        p = person.new(&#34;Steeve&#34;)	
+        print(p:name(&#34;新名字&#34;)) --  
+		print(p:name())
+        p:name(&#34;Alice&#34;)
+        print(p:name()) -- &#34;Alice&#34;
+    `&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;panic&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;err&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;h3 id=&#34;共享lua字节代码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#共享lua字节代码&#34;&gt;#&lt;/a&gt; 共享 lua 字节代码&lt;/h3&gt;
+&lt;p&gt;调用 DoFile 将加载一个 Lua 脚本，将其编译为字节码，并在一个 LState 中运行字节码。&lt;/p&gt;
+&lt;p&gt;如果你有多个 LState，它们都需要运行同一个脚本，你可以在它们之间共享字节码，这将节省内存。共享字节码是安全的，因为它是只读的，不能被 lua 脚本所改变。&lt;/p&gt;
+&lt;p&gt;&lt;pre class=&#34;line-numbers language-go&#34; data-language=&#34;go&#34;&gt;&lt;code class=&#34;language-go&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// CompileLua reads the passed lua file from disk and compiles it.&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;CompileLua&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filePath &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;FunctionProto&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;error&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    file&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; os&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Open&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;filePath&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;defer&lt;/span&gt; file&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; err
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    reader &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; bufio&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewReader&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;file&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    chunk&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; parse&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Parse&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;reader&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; filePath&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; err
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    proto&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Compile&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;chunk&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; filePath&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; err &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; err
+    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; proto&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;
+
+&lt;span class=&#34;token comment&#34;&gt;// DoCompiledFile takes a FunctionProto, as returned by CompileLua, and runs it in the LState. It is equivalent&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// to calling DoFile on the LState with the original source file.&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;DoCompiledFile&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;L &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;LState&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; proto &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;FunctionProto&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;
+    lfunc &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;NewFunctionFromProto&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;proto&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;lfunc&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; L&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;PCall&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lua&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;MultRet&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;h3 id=&#34;go协程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#go协程&#34;&gt;#&lt;/a&gt; go 协程&lt;/h3&gt;
+&lt;p&gt;LState 不是 goroutine-safe。建议每个 goroutine 使用一个 LState，并通过使用通道在 goroutine 之间通信。&lt;/p&gt;
+&lt;p&gt;通道在 GopherLua 中由通道对象表示。而一个通道表提供了执行通道操作的函数。&lt;/p&gt;
+&lt;p&gt;有些对象不能通过通道发送，因为它本身有非 goroutine 安全的对象。&lt;/p&gt;
+&lt;p&gt;一个线程 (state)&lt;br /&gt;
+ 一个函数&lt;br /&gt;
+一个用户数据&lt;br /&gt;
+一个有元数据的表&lt;/p&gt;
+</content>
         <updated>2023-05-17T01:03:13.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</id>
+        <id>https://fanlu.top/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</id>
         <title>vben-admin换肤实现</title>
-        <link rel="alternate" href="http://example.com/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/"/>
         <content type="html">&lt;p&gt;最近在 github 上看到了一个后台管理的前端项目，使用了 vue3+ts+vite+ant-vue 的技术，看起来很不错，功能特别丰富，clone 下来发现代码也写的特别好，比我现在的小白代码根本不在同一个等级，因此想要学习一下。 个人觉得从一个功能抽丝剥茧来学习一个功能的写法可能会对自己的技术提高有帮助。&lt;/p&gt;
 &lt;p&gt;项目中的侧边栏提供了超多的主题选项，可以丰富的变换主题。因此本文想分析一下这个换肤是如何实现的。&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://secure2.wostatic.cn/static/wGUf6UvBJUZVXfAPhrzaF/image.png?auth_key=1684196309-2jkBMzvREcZ21xSJjxnEvU-0-4173f6dd779469091bae7835b4c93aa7&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -660,9 +976,9 @@ function subtractLight(color: string, amount: number) &amp;#123;
         <updated>2023-05-16T00:19:08.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/</id>
+        <id>https://fanlu.top/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/</id>
         <title>鸡毛蒜皮周刊-01</title>
-        <link rel="alternate" href="http://example.com/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/"/>
         <content type="html">&lt;h2 id=&#34;人类群星闪耀时&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#人类群星闪耀时&#34;&gt;#&lt;/a&gt; 人类群星闪耀时&lt;/h2&gt;
 &lt;p&gt;作者茨威格选择了一些很有意思的历史时间进行文学叙述，文笔确实很好。 但是作为一个历史” 爱好者 “，始终无法相信这样过度的文学描写，这样总会导致历史失真。&lt;/p&gt;
 &lt;h2 id=&#34;家里的wifi&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#家里的wifi&#34;&gt;#&lt;/a&gt; 家里的 wifi&lt;/h2&gt;
