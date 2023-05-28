@@ -1,0 +1,16 @@
+name: HTTP Request
+on:
+  push:
+    branches:
+      - main  # 更改为你要触发的分支
+
+jobs:
+  send_http_request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Send HTTP Request
+        run: curl -X get https://baidu.com  # 替换为实际的 HTTP 请求命令或脚本
