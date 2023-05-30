@@ -1,3 +1,10 @@
+name: HTTP Request
+on:
+  push:
+    branches:
+      - main  # 更改为你要触发的分支
+
+
 jobs:
   login:
     runs-on: ubuntu-latest  # 可以根据需要更改操作系统
@@ -8,7 +15,12 @@ jobs:
 
       - name: Login and Fetch Token
         run: |
+          # 在这里编写登录请求的代码，使用适当的语言和库发送POST请求，获取并提取出令牌
+          # 将令牌存储在一个变量中
+
+          # 示例（使用cURL发送请求）：
           token=$(curl -X POST -d 'username= ${{ secrets.username }}&password= ${{ secrets.password }}'  http://110.42.182.92:5920/api/user/login | jq -r '.token')
+
           echo "Token: $token"
 
           # 将令牌存储为一个GitHub Actions的环境变量，以便在后续的步骤中使用
