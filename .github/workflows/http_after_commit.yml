@@ -19,7 +19,7 @@ jobs:
           # 将令牌存储在一个变量中
 
           # 示例（使用cURL发送请求）：
-          token=$(curl -X POST -d 'username= ${{ secrets.username }}&password= ${{ secrets.password }}'  http://110.42.182.92:5920/api/user/login | jq -r '.token')
+          token=$(curl -X POST -d 'username= ${{ secrets.username }}&password= ${{ secrets.password }}'  http://110.42.182.92:5920/api/user/login | jq -r '.data.token')
 
           echo "Token: $token"
 
