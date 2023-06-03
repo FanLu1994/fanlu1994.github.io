@@ -1,4 +1,4 @@
-name: HTTP Request
+name: Deploy On My server
 on:
   push:
     branches:
@@ -26,7 +26,7 @@ jobs:
           # 将令牌存储为一个GitHub Actions的环境变量，以便在后续的步骤中使用
           echo "TOKEN=$token" >> $GITHUB_ENV
       
-      - name: Use Token in Request
+      - name: Start Deploy Task
         run: |
           # 在这里编写发送下一个请求的代码，使用适当的语言和库
           # 将上一步获取的令牌放置在请求标头中
