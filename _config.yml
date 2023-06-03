@@ -8,7 +8,7 @@ subtitle: 'Axiss的记事本'
 description: ''
 keywords: 技术分享,生活记录
 author: Axiss
-language: en
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -45,19 +45,15 @@ relative_link: false
 future: true
 highlight:
   enable: false
-  auto_detect: false
   line_number: true
-  line_threshold: 0
+  auto_detect: false
   tab_replace: ''
-  exclude_languages:
-    - example
   wrap: true
   hljs: false
 prismjs:
   enable: false
   preprocess: true
   line_number: true
-  line_threshold: 0
   tab_replace: ''
 
 # Home page setting
@@ -107,62 +103,3 @@ theme: shoka
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
-
-
-markdown:
-  render: # 渲染器设置
-    html: false # 过滤 HTML 标签
-    xhtmlOut: true # 使用 '/' 来闭合单标签 （比如 <br />）。
-    breaks: true # 转换段落里的 '\n' 到 <br>。
-    linkify: true # 将类似 URL 的文本自动转换为链接。
-    typographer:
-    quotes: '“”‘’'
-  plugins: # markdown-it 插件设置
-    - plugin:
-        name: markdown-it-toc-and-anchor
-        enable: true
-        options: # 文章目录以及锚点应用的 class 名称，shoka 主题必须设置成这样
-          tocClassName: 'toc'
-          anchorClassName: 'anchor'
-    - plugin:
-        name: markdown-it-multimd-table
-        enable: true
-        options:
-          multiline: true
-          rowspan: true
-          headerless: true
-    - plugin:
-        name: ./markdown-it-furigana
-        enable: true
-        options:
-          fallbackParens: "()"
-    - plugin:
-        name: ./markdown-it-spoiler
-        enable: true
-        options:
-          title: "你知道得太多了"
-
-minify:
-  html:
-    enable: true
-    exclude: # 排除 hexo-feed 用到的模板文件
-      - '**/json.ejs'
-      - '**/atom.ejs'
-      - '**/rss.ejs'
-  css:
-    enable: true
-    exclude:
-      - '**/*.min.css'
-  js:
-    enable: true
-    mangle:
-      toplevel: true
-    output:
-    compress:
-    exclude:
-      - '**/*.min.js'
-
-autoprefixer:
-  exclude:
-    - '*.min.css'
-

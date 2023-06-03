@@ -24,12 +24,11 @@ const randomBG = function(count = 1, image_server = null, image_list = []) {
     return image_server + '?' + Math.floor(Math.random() * 999999)
   }
 
-  // TODO:替换图库
   var parseImage = function(img, size) {
     if (img.startsWith('//') || img.startsWith('http')) {
       return img
     } else {
-      return 'http://110.42.182.92:4080/'+img
+      return 'https://tva'+randomServer+'.sinaimg.cn/'+size+'/'+img
     }
   }
 

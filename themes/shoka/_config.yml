@@ -32,7 +32,7 @@ auto_scroll: true
 # Whether to show the loading cat
 loader:
   start: false # When entering the page
-  switch: true # When switching to another page
+  switch: false # When switching to another page
 
 # click with Firework
 fireworks:
@@ -113,7 +113,6 @@ social:
   weibo: https://weibo.com/u/1599952025|| weibo || "#ea716e"
   #about: https://about.me/yourname || address-card || "#3b5998"
   email: mailto:1066580119@qq.com || envelope || "#55acd5"
-  #facebook: https://www.facebook.com/yourname || facebook
   #stackoverflow: https://stackoverflow.com/yourname || stack-overflow
   #youtube: https://youtube.com/yourname || youtube
   #instagram: https://instagram.com/yourname || instagram
@@ -135,23 +134,23 @@ widgets:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  since: 2023
+  since: 2010
   icon:
     name: sakura rotate
     # Change the color of icon, using Hex Code.
     color: "#ffc0cb"
   # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
-  count: true
+  count: false
   powered: true
 
 post:
   # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
-  count: true
+  count: false
 
 # Reward (Donate)
 reward:
   # If true, reward will be displayed in every article by default.
-  enable: false
+  enable: true
   account:
     wechatpay: /wechatpay.png
     alipay: /alipay.png
@@ -336,6 +335,7 @@ markdown:
         options:
           title: "你知道得太多了"
 
+
 minify:
   html:
     enable: true
@@ -361,7 +361,24 @@ autoprefixer:
     - '*.min.css'
 
 
-keywords: Axiss,测试开发 #站点关键词，用 “,” 分隔
+
+algolia:
+  appId: #Your appId
+  apiKey: #Your apiKey
+  adminApiKey: #Your adminApiKey
+  chunkSize: 5000
+  indexName: #"shoka"
+  fields:
+    - title #必须配置
+    - path #必须配置
+    - categories #推荐配置
+    - content:strip:truncate,0,2000
+    - gallery
+    - photos
+    - tags
+
+
+keywords: #站点关键词，用 “,” 分隔
 
 feed:
     limit: 20

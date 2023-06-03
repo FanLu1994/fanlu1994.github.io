@@ -14,7 +14,7 @@ tags: golang实验室
 
 LState定义如下：
 
-```go
+```golang
 type LState struct {
 	G       *Global
 	Parent  *LState
