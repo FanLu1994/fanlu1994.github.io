@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fanlu.top</id>
+    <title>何妨吟啸且徐行 • Posts by &#34;鸡毛蒜皮周刊&#34; tag</title>
+    <link href="https://fanlu.top" />
+    <updated>2023-05-18T15:20:45.000Z</updated>
+    <category term="golang实验室" />
+    <category term="前端搬砖指南" />
+    <category term="工具" />
+    <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/</id>
+        <title>鸡毛蒜皮周刊-02</title>
+        <link rel="alternate" href="https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/"/>
+        <content type="html">&lt;h2 id=&#34;nonebot-和-微信机器人&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nonebot-和-微信机器人&#34;&gt;#&lt;/a&gt; NoneBot 和 微信机器人&lt;/h2&gt;
+&lt;p&gt;NoneBot（&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92Mi5ub25lYm90LmRldi8=&#34;&gt;NoneBot&lt;/span&gt;&lt;/strong&gt;）是一个 python 框架，用来实现机器人聊天应答，支持的平台包括：qq、飞书、钉钉等，插件非常丰富，文档也很详尽，准备搭建试试。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly94aWUuaW5mb3EuY24vYXJ0aWNsZS8yMGYxOTE0NjIzN2YzNzE0YzVlYjVhZGI3&#34;&gt;微信 + ChatGPT = 自己的智能助手 | 社区征文_ChatGPT_IT 蜗壳 - Tango_InfoQ 写作社区&lt;/span&gt; 作者基于 wechaty python 库和一个 chatGpt 账号，实现了一个微信的智能应答机器人&lt;/p&gt;
+&lt;h2 id=&#34;pake&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pake&#34;&gt;#&lt;/a&gt; Pake&lt;/h2&gt;
+&lt;p&gt;基于 rust 和 tauri 来将网站打包成一个应用，支持多平台。&lt;br&gt;
+我拿来试了下，打包了部署在个人腾讯云上面的 rss 阅读器，体验非常好，阅读 rss 的时间大大增加了。&lt;br&gt;
+&lt;img data-src=&#34;http://110.42.182.92:4080/Pasted%20image%2020230307081744.png&#34; alt=&#34;图片&#34;&gt;&lt;br&gt;
+顺便吐槽一句，win 上现有的 rss 阅读器真的很难用。&lt;/p&gt;
+&lt;h2 id=&#34;ue4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ue4&#34;&gt;#&lt;/a&gt; UE4&lt;/h2&gt;
+&lt;p&gt;由于工作的原因，需要了解一下 UE4 的开发。试了一下 B 站上的一个教程：&lt;/p&gt;
+&lt;iframe src=&#34;//player.bilibili.com/player.html?aid=728399911&amp;bvid=BV1qS4y1J7oh&amp;cid=772526176&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt; &lt;/iframe&gt;
+体验如下：
+- 蓝图太好用了，可视化编程无敌
+- 蓝图太难记了，控件、方法实在太多了，有些是需要牵引出来才能找到，太难找了
+- ue4的网络模块太牛了，在蓝图里就能开发网络，需要好好学习一下
+&lt;h2 id=&#34;rust和chatgpt&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rust和chatgpt&#34;&gt;#&lt;/a&gt; rust 和 chatGPT&lt;/h2&gt;
+&lt;p&gt;尝试看了一个 rust 后端，tauri 前端的小项目。&lt;br&gt;
+rust 语法有点难理解啊。&lt;br&gt;
+忽然想起 chatGPT，于是放进去问问，效果惊人&lt;br&gt;
+&lt;img data-src=&#34;http://110.42.182.92:4080/Pasted%20image%2020230309091056.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;travellingscn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#travellingscn&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL1RyYXZlbGxpbmdzLmNu&#34;&gt;Travellings.cn&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;偶然发现某个博客有个友链的跳转地址，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS10cmF2ZWxsaW5ncy1rdTZyaThndXU1M2F4cWxiLmNu&#34;&gt;首先跳到 travellings.cn&lt;/span&gt;，然后跳到另一个博客，然后下一个博客也有这么一个链接，感觉是一个博客联盟之类的，进行随机跳转。一查果然没错：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24v&#34;&gt;开往 - 友链接力 (travellings.cn)&lt;/span&gt;&lt;br&gt;
+ 挺有意思的，可以把自己的博客也搞上去&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudHJhdmVsbGluZ3MuY24vZ28uaHRtbA==&#34;&gt;开往 - 友链接力 (travellings.cn)&lt;/span&gt;  这个链接可以随机前往到某个博客，进入他们的世界，感觉很不错。&lt;/p&gt;
+</content>
+        <category term="鸡毛蒜皮周刊" />
+        <updated>2023-05-18T15:20:45.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://fanlu.top/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/</id>
+        <title>鸡毛蒜皮周刊-01</title>
+        <link rel="alternate" href="https://fanlu.top/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/"/>
+        <content type="html">&lt;h2 id=&#34;人类群星闪耀时&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#人类群星闪耀时&#34;&gt;#&lt;/a&gt; 人类群星闪耀时&lt;/h2&gt;
+&lt;p&gt;作者茨威格选择了一些很有意思的历史时间进行文学叙述，文笔确实很好。 但是作为一个历史” 爱好者 “，始终无法相信这样过度的文学描写，这样总会导致历史失真。&lt;/p&gt;
+&lt;h2 id=&#34;家里的wifi&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#家里的wifi&#34;&gt;#&lt;/a&gt; 家里的 wifi&lt;/h2&gt;
+&lt;p&gt;上海电信默认光猫是路由模式，又接了一个小米路由器，网速总是不稳定，这周找师傅来改成了桥接模式，需要电信远程下发数据还挺麻烦。 但是改完之后，室内的台式机（当时装修脑子抽，没给台式机留网口），网络还是一般，怀疑是主板网卡的问题，于是买了一个绿联的即插网卡，插上搞定！&lt;/p&gt;
+&lt;h2 id=&#34;chrome插件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#chrome插件&#34;&gt;#&lt;/a&gt; chrome 插件&lt;/h2&gt;
+&lt;p&gt;最近对 chrome 插件开发感兴趣。于是琢磨着写个小项目试试能做点啥。于是考虑做个统计网页浏览时间的小应用。简单来说，有两个步骤，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取到当前标签页的地址&lt;/li&gt;
+&lt;li&gt;切换标签页时重新进行计时&lt;br&gt;
+网上的插件开发教程写的还行，但是对于 api 的教程太少了。于是找到了一个现成的插件项目叫做 “网费很贵”，对于我想要的功能它已经做的很完整了。于是扒了下它的源码【&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3NoZWVwemgvdGltZXIvYmxvYi9tYWluL1JFQURNRS16aC5tZCVFMyU4MCU5MSVFMyU4MCU4Mg==&#34;&gt;https://github.com/sheepzh/timer/blob/main/README-zh.md】。&lt;/span&gt; 项目代码十分优雅，一看就能甩我好几年的功力。&lt;br&gt;
+找到了几个关键 api：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight ts&#34;&gt;&lt;figcaption data-lang=&#34;TypeScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;chrome&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;tabs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;onActivated&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;addListener  &lt;span class=&#34;token comment&#34;&gt;// 添加切换 tab 的监听&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;chrome&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;browser&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;setBadgeText  &lt;span class=&#34;token comment&#34;&gt;// 修改插件图标上的文字&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;chrome&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;tabs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tabId&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tab&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 根据 tabID 获取到标签的信息&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;代码会放到 github 上。&lt;/p&gt;
+&lt;h2 id=&#34;docxtemplater&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docxtemplater&#34;&gt;#&lt;/a&gt; docxtemplater&lt;/h2&gt;
+&lt;p&gt;工作中用到了前端导出 word 的操作，chatGpt 给我推荐了这个库&lt;br&gt;
+！[[Pasted image 20230228121250.png]]&lt;br&gt;
+ 使用方法可以参照：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC83MDk0MTM5NDEzMjQ4MDgxOTI4&#34;&gt;前端使用 docxtemplater 导出 word 文档最佳实践 - 掘金 (juejin.cn)&lt;/span&gt;&lt;br&gt;
+ 这个库的地址在：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL29wZW4teG1sLXRlbXBsYXRpbmcvZG9jeHRlbXBsYXRlcg==&#34;&gt;open-xml-templating/docxtemplater: Generate docx, pptx, and xlsx from templates (Word, Powerpoint and Excel documents), from Node.js, the Browser and the command line / Demo: https://www.docxtemplater.com/demo. #docx #office #generator #templating #report #json #generate #generation #template #create #pptx #docx #xlsx #react #vuejs #angularjs #browser #typescript #image #html #table #chart (github.com)&lt;/span&gt;&lt;br&gt;
+ 使用下来，感觉很强大的一个库，支持模板渲染、循环数据渲染、表格循环渲染。&lt;/p&gt;
+&lt;h2 id=&#34;诡秘之主&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#诡秘之主&#34;&gt;#&lt;/a&gt; 诡秘之主&lt;/h2&gt;
+&lt;p&gt;这是一个在各种排名都很高的网文，我看了几十章，实在看不下去了，节奏太慢了，看网文的目的是放松和休息大脑，实在不想费劲阅读。&lt;br&gt;
+但是打开起点，看到它在第一名，还是继续看下去吧。&lt;/p&gt;
+&lt;h2 id=&#34;ppchart&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ppchart&#34;&gt;#&lt;/a&gt; PPChart&lt;/h2&gt;
+&lt;p&gt;用 echarts 总觉得调样式很麻烦，这个网站不错，可以看到不少好看的效果，以后可以用来参考（拷贝）。😲&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3BwY2hhcnQuY29tLyMv&#34;&gt;PPChart - 让图表更简单&lt;/span&gt;&lt;br&gt;
+！[[Pasted image 20230301164049.png]]&lt;br&gt;
+ 同类型的网站还有：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubWFrZWFwaWUuY24vZWNoYXJ0c19jYXRlZ29yeS9zZXJpZXMtYmFy&#34;&gt;series-bar 柱状图 - makeapie echarts 图表可视化案例&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;nas赚钱&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nas赚钱&#34;&gt;#&lt;/a&gt; nas 赚钱&lt;/h2&gt;
+&lt;p&gt;在极空间 z4s 上打开了迅雷的网心云插件，用闲置的带宽做 pcdn 赚钱，目前几天下来，每天 5 毛钱。可惜没有公网 ip 不然应该会高一点，现在好像还不够 nas 的电费。&lt;/p&gt;
+</content>
+        <category term="鸡毛蒜皮周刊" />
+        <updated>2023-05-15T14:53:53.000Z</updated>
+    </entry>
+</feed>
