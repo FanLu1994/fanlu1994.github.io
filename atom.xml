@@ -3,7 +3,7 @@
     <id>https://fanlu.top</id>
     <title>何妨吟啸且徐行</title>
     <link href="https://fanlu.top" />
-    <updated>2023-06-19T13:56:14.000Z</updated>
+    <updated>2023-06-20T15:28:33.000Z</updated>
     <category term="CI CD linux" />
     <category term="前端 产品经理" />
     <category term="golang实验室" />
@@ -12,6 +12,13 @@
     <category term="工具" />
     <category term="nuxt axiss 前端" />
     <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</id>
+        <title>daisyUI使用体验</title>
+        <link rel="alternate" href="https://fanlu.top/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/"/>
+        <content type="html"></content>
+        <updated>2023-06-20T15:28:33.000Z</updated>
+    </entry>
     <entry>
         <id>https://fanlu.top/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</id>
         <title>Hexo博客自动部署</title>

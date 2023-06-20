@@ -5,8 +5,8 @@
         <link>https://fanlu.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Mon, 19 Jun 2023 13:56:14 +0000</pubDate>
-        <lastBuildDate>Mon, 19 Jun 2023 13:56:14 +0000</lastBuildDate>
+        <pubDate>Tue, 20 Jun 2023 15:28:33 +0000</pubDate>
+        <lastBuildDate>Tue, 20 Jun 2023 15:28:33 +0000</lastBuildDate>
         <category>CI CD linux</category>
         <category>前端 产品经理</category>
         <category>golang实验室</category>
@@ -15,6 +15,13 @@
         <category>工具</category>
         <category>nuxt axiss 前端</category>
         <category>鸡毛蒜皮周刊</category>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</guid>
+            <title>daisyUI使用体验</title>
+            <link>https://fanlu.top/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</link>
+            <pubDate>Tue, 20 Jun 2023 15:28:33 +0000</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://fanlu.top/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
             <title>Hexo博客自动部署</title>
