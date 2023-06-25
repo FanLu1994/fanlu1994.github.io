@@ -5,17 +5,180 @@
         <link>https://fanlu.top</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Thu, 22 Jun 2023 07:03:47 +0000</pubDate>
-        <lastBuildDate>Thu, 22 Jun 2023 07:03:47 +0000</lastBuildDate>
+        <pubDate>Sun, 25 Jun 2023 13:46:33 +0000</pubDate>
+        <lastBuildDate>Sun, 25 Jun 2023 13:46:33 +0000</lastBuildDate>
         <category>CI CD linux</category>
+        <category>测试开发 性能 工具</category>
         <category>前端 产品经理</category>
+        <category>前端 UI</category>
         <category>golang实验室</category>
         <category>前端搬砖指南</category>
         <category>云服务器</category>
         <category>工具</category>
         <category>nuxt axiss 前端</category>
-        <category>前端 UI</category>
         <category>鸡毛蒜皮周刊</category>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/06/25/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</guid>
+            <title>SoloX移动设备性能采集工具使用体验</title>
+            <link>https://fanlu.top/2023/06/25/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</link>
+            <category>测试开发 性能 工具</category>
+            <pubDate>Sun, 25 Jun 2023 13:46:33 +0000</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3NtYXJ0LXRlc3QtdGkvU29sb1g=&#34;&gt;https://github.com/smart-test-ti/SoloX&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;基于 python 的移动设备性能测试工具，支持 android，通过 itunes（tidevice 的技术）支持了 ios 设备。&lt;/p&gt;
+&lt;h2 id=&#34;功能介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能介绍&#34;&gt;#&lt;/a&gt; 功能介绍&lt;/h2&gt;
+&lt;p&gt;使用 python -m solox 启动服务，会自动打开 web 客户端：默认端口为 50003。&lt;/p&gt;
+&lt;h3 id=&#34;性能测试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#性能测试&#34;&gt;#&lt;/a&gt; 性能测试&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;设备类型支持安卓和苹果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持选择设备列表&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持选择目标 app&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持选择子进程 (仅安卓)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持性能指标的开关 （只控制显示，不控制是否采集）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU&lt;/li&gt;
+&lt;li&gt;内存&lt;/li&gt;
+&lt;li&gt;流量&lt;/li&gt;
+&lt;li&gt;FPS&lt;/li&gt;
+&lt;li&gt;电池&lt;/li&gt;
+&lt;li&gt;surfaceview (仅安卓)&lt;/li&gt;
+&lt;li&gt;wifi (仅安卓)&lt;/li&gt;
+&lt;li&gt;GPU （仅苹果）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持显示设备信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;品牌&lt;/li&gt;
+&lt;li&gt;设备名&lt;/li&gt;
+&lt;li&gt;系统版本&lt;/li&gt;
+&lt;li&gt;序列号&lt;/li&gt;
+&lt;li&gt;wifi 地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持启动数据采集、停止设备采集（此时生成报告）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持显示 logcat 日志 &lt;em&gt;重要&lt;/em&gt;   (仅安卓)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持安装应用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持查看当前应用启动时间 （安卓支持较好）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持对比模式 （仅安卓）&lt;br&gt;
+多台设备同时连接，同时测试&lt;br&gt;
+支持&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU&lt;/li&gt;
+&lt;li&gt;Memory&lt;/li&gt;
+&lt;li&gt;NetWorkData&lt;/li&gt;
+&lt;li&gt;FPS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;报告管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#报告管理&#34;&gt;#&lt;/a&gt; 报告管理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;报告展示&lt;/li&gt;
+&lt;li&gt;报告管理
+&lt;ul&gt;
+&lt;li&gt;编辑 （场景名）&lt;/li&gt;
+&lt;li&gt;导出为 excel&lt;/li&gt;
+&lt;li&gt;删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;报告详情
+&lt;ul&gt;
+&lt;li&gt;结果对比&lt;/li&gt;
+&lt;li&gt;保存 html&lt;/li&gt;
+&lt;li&gt;保存图片&lt;/li&gt;
+&lt;li&gt;单个图片导出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;功能剖析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能剖析&#34;&gt;#&lt;/a&gt; 功能剖析&lt;/h2&gt;
+&lt;h3 id=&#34;web功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#web功能&#34;&gt;#&lt;/a&gt; web 功能&lt;/h3&gt;
+&lt;h4 id=&#34;flask服务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#flask服务&#34;&gt;#&lt;/a&gt; flask 服务&lt;/h4&gt;
+&lt;p&gt;web 功能基于 flask flask-template flask-soketio 实现。&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;app &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Flask&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;__name__&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; template_folder&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;templates&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; static_folder&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;static&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;socketio &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; SocketIO&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;app&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; cors_allowed_origins&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;*&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;startServer&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;host&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; port&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    socketio&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;run&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;app&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; host&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;host&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; debug&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;False&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; port&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;port&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;自动打开页面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自动打开页面&#34;&gt;#&lt;/a&gt; 自动打开页面&lt;/h4&gt;
+&lt;p&gt;服务启动时会自动打开浏览器，打开 solox 前端客户端&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;openUrl&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;host&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; port&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    flag &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;True&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; flag&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        logger&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;info&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Start solox server ...&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        f &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Figlet&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;font&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;slant&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; width&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;f&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;renderText&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;SOLOX 2. 6. 7&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        flag &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; getServerStatus&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;host&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; port&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    webbrowser&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;http://&amp;#123;&amp;#125;:&amp;#123;&amp;#125;/?platform=Android&amp;amp;lan=en&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;host&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; port&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; new&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    logger&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;info&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Running on http://&amp;#123;&amp;#125;:&amp;#123;&amp;#125;/?platform=Android&amp;amp;lan=en (Press CTRL+C to quit)&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;host&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; port&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;其中，使用了&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Figlet 打印艺术字&lt;/li&gt;
+&lt;li&gt;webbrowser  是 python 内置的一个库，可以打开 url&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;端口检查&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#端口检查&#34;&gt;#&lt;/a&gt; 端口检查&lt;/h4&gt;
+&lt;p&gt;服务启动时，还调用了检查端口的函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于非 windows 系统，直接干掉进程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;os.system(&amp;quot;lsof -i:%s| grep LISTEN| awk &#39;&amp;#123;print $2&amp;#125;&#39;|xargs kill -9&amp;quot; % port)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;对于 windows 系统
+&lt;ul&gt;
+&lt;li&gt;使用  &lt;code&gt;netstat&lt;/code&gt;  命令结合  &lt;code&gt;findstr&lt;/code&gt;  过滤器，在指定端口上查找监听的进程。&lt;/li&gt;
+&lt;li&gt;读取命令输出的数据，并逐行处理。&lt;/li&gt;
+&lt;li&gt;提取每行中的进程 PID，并将其添加到  &lt;code&gt;pid_list&lt;/code&gt;  列表中。&lt;/li&gt;
+&lt;li&gt;将  &lt;code&gt;pid_list&lt;/code&gt;  转换为集合，再转换回列表，以去除重复的 PID。&lt;/li&gt;
+&lt;li&gt;选取列表中的第一个 PID，并使用  &lt;code&gt;taskkill&lt;/code&gt;  命令强制终止该进程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;启动&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#启动&#34;&gt;#&lt;/a&gt; 启动&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;检查 python 版本：必选 3.10 以上&lt;/li&gt;
+&lt;li&gt;然后使用 Fire 启动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;fire 库可以自己的库封装成一个命令 通过 python -m 命令调用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其他所有的功能都是由 http 请求触发，logcat 是一个 websocket&lt;br&gt;
+ 前端使用 jquery 处理事件和操作 dom；&lt;/p&gt;
+&lt;h3 id=&#34;设备监听与信息抓取&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设备监听与信息抓取&#34;&gt;#&lt;/a&gt; 设备监听与信息抓取&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;前端每次打开页面（ &lt;code&gt;$(document).ready&lt;/code&gt; ）后，会自动触发连接按钮的点击事件，从而调用 &lt;code&gt;initializeEnv&lt;/code&gt;  方法；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;initializeEnv&lt;/code&gt;  请求接口 /device/ids?platform = 当前选择设备类型&lt;/li&gt;
+&lt;li&gt;后端接口：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;安卓&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安卓&#34;&gt;#&lt;/a&gt; 安卓&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;获取到当前的设备 id 列表 （解析命令行 &lt;code&gt;adb devices&lt;/code&gt;  的输出）
+&lt;ul&gt;
+&lt;li&gt;获取第一个设备的 pkg 列表 （adb -s deviceID shell pm list package）&lt;/li&gt;
+&lt;li&gt;获取设备信息 (安卓基于 &lt;code&gt;adb&lt;/code&gt; ,ios 基于 &lt;code&gt;tidevice&lt;/code&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;getDdeviceDetail&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;self&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; deviceId&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; platform&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    result &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;match&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;platform&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt; Platform&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Android&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;brand&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; adb&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;shell&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cmd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;getprop ro.product.brand&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; deviceId&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;deviceId&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;name&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; adb&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;shell&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cmd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;getprop ro.product.model&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; deviceId&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;deviceId&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;version&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; adb&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;shell&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cmd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;getprop ro.build.version.release&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; deviceId&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;deviceId&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;serialno&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; adb&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;shell&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cmd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;getprop ro.serialno&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; deviceId&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;deviceId&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            cmd &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string-interpolation&#34;&gt;&lt;span class=&#34;token string&#34;&gt;f&#39;ip addr show wlan0 | &lt;/span&gt;&lt;span class=&#34;token interpolation&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;self&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;filterType&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt; link/ether&#39;&lt;/span&gt;&lt;/span&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;wifiadr&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; adb&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;shell&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;cmd&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;cmd&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; deviceId&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;deviceId&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;split&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39; &#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt; Platform&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;iOS&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            iosInfo &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; json&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;loads&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;self&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;execCmd&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;tidevice info --json&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;brand&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; iosInfo&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;DeviceClass&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;name&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; iosInfo&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;DeviceName&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;version&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; iosInfo&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;ProductVersion&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;serialno&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; iosInfo&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;SerialNumber&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            result&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;wifiadr&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; iosInfo&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;WiFiAddress&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &lt;span class=&#34;token keyword&#34;&gt;raise&lt;/span&gt; Exception&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;&amp;#123;&amp;#125; is undefined&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token builtin&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;platform&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;   &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; result&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h4 id=&#34;ios&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ios&#34;&gt;#&lt;/a&gt; ios&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;获取设备信息 （解析命令行 tidevice list --json）&lt;/li&gt;
+&lt;li&gt;获取第一个设备 pkg 列表：  &lt;code&gt;tidevice --udid 设备uid  applist&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;获取设备详情，同上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;性能采集&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#性能采集&#34;&gt;#&lt;/a&gt; 性能采集&lt;/h3&gt;
+&lt;p&gt;点击开始按钮，触发启动测试。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必须先选中设备和应用&lt;/li&gt;
+&lt;li&gt;分别调用 collectCpu、collectMem、collectNetwork、collectFps、collectBattery  如果是 ios 系统，还要采集 GPU collectGpu&lt;/li&gt;
+&lt;li&gt;这些方法再调用 collectPers 方法（参数包括一个获取采集数据的方法），然后使用&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuaGlnaGNoYXJ0cy5jb20v&#34;&gt; highcharts&lt;/span&gt; 绘制图表；其中采集数据的方法作为 highcharts 实例的数据 load 方法，并且图表支持切换时间范围；  这个请求函数成功后会设置一个 settimeout 定时器，一秒钟后再次请求这个接口更新数据，并将数据塞入到图表数据的最新；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;性能采集需要比较复杂，打算分成系列的博客慢慢写一下。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://fanlu.top/2023/06/22/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-CSS%E7%81%B5%E6%84%9F/</guid>
             <title>网站推荐-CSS灵感</title>
@@ -50,8 +213,59 @@
             <guid isPermalink="true">https://fanlu.top/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</guid>
             <title>daisyUI使用体验</title>
             <link>https://fanlu.top/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</link>
+            <category>前端 UI</category>
             <pubDate>Tue, 20 Jun 2023 15:28:33 +0000</pubDate>
-            <description><![CDATA[  ]]></description>
+            <description><![CDATA[ &lt;h2 id=&#34;tailwind介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tailwind介绍&#34;&gt;#&lt;/a&gt; tailwind 介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudGFpbHdpbmRjc3MuY24vZG9jcy9jdXN0b21pemluZy1jb2xvcnMjLTg=&#34;&gt;https://www.tailwindcss.cn/docs/customizing-colors#-8&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;以下介绍来自 chatGPT:&lt;/em&gt;&lt;br&gt;
+Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的构建块和实用工具，用于快速开发现代化的、自定义的用户界面。&lt;/p&gt;
+&lt;p&gt;与其他 CSS 框架相比，Tailwind CSS 的一个主要区别是它并没有预定义的样式类。相反，它提供了一组原子级的 CSS 类，每个类都对应一个特定的样式属性。这些类的命名是基于其功能而不是视觉效果，例如 “text-red-500” 表示红色文本颜色，“bg-blue-200” 表示蓝色背景颜色，“p-4” 表示边距为 4 的元素等等。通过将这些类组合在一起，开发者可以轻松地构建自定义的样式。&lt;/p&gt;
+&lt;p&gt;使用 Tailwind CSS，开发者可以通过组合这些原子类来创建出复杂的布局和设计，而不需要手动编写大量的 CSS。这使得开发过程更加快速和高效，并且可以在不同的项目中实现一致的设计风格。&lt;/p&gt;
+&lt;p&gt;Tailwind CSS 还提供了一些有用的实用工具，如网格系统、响应式设计类、颜色调色板、阴影效果等。它还支持定制化配置，可以根据项目需求进行个性化设置，并且可以通过插件系统进行扩展。&lt;/p&gt;
+&lt;p&gt;总的来说，Tailwind CSS 是一个强大的 CSS 框架，它通过提供原子级的类和实用工具，使得开发者可以更轻松、高效地构建自定义的用户界面。它的灵活性和可定制化的特点使其在现代 Web 开发中广受欢迎。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;个人使用体验&lt;/em&gt;：&lt;br&gt;
+优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;节省时间，提升了开发速度&lt;/li&gt;
+&lt;li&gt;丰富的预制样式，可以提供样式设计的思路&lt;br&gt;
+缺点：&lt;/li&gt;
+&lt;li&gt;代码会比较混乱，一个元素的 class 可能会定义的特别长&lt;/li&gt;
+&lt;li&gt;后期不好维护，每个元素都自定义了，后面要修改就比较麻烦 （当然也可以封装）&lt;/li&gt;
+&lt;li&gt;可能与其他组件样式冲突&lt;/li&gt;
+&lt;li&gt;导致元素的基础样式丢失，比如 h1 h2 等，不过可以使用 prose 插件解决 （具体见：&lt;a href=&#34;https://fanlu.top/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/%EF%BC%89&#34;&gt;https://fanlu.top/2023/06/12 / 微信公众号模板工具开发 - 01/）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结论：小项目建议使用，大项目不建议&lt;/p&gt;
+&lt;h2 id=&#34;daisyui介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#daisyui介绍&#34;&gt;#&lt;/a&gt; daisyUI 介绍&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kYWlzeXVpLmNvbS9kb2NzL2luc3RhbGwv&#34;&gt;https://daisyui.com/docs/install/&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是一个基于 tailwindcss 的组件库，现在 tailwindcss 也有自己的组件库（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90YWlsd2luZHVpLmNvbS9jb21wb25lbnRzJUVGJUJDJTg5JUVGJUJDJThDJUU0JUI4JThEJUU4JUJGJTg3JUU2JTk4JUFGJUU2JTk0JUI2JUU4JUI0JUI5JUU3JTlBJTg0JUUzJTgwJTgy&#34;&gt;https://tailwindui.com/components），不过是收费的。&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;daisyui 是一个简单的组件库，这里的简单是指它的组件真的很简单，只有预设的样式，没有提供任何原生以外的组件功能。&lt;br&gt;
+想到用这个，主要是因为 element 的原生样式太不能满足需求了，修改也比较麻烦（其实现在看还好）。&lt;/p&gt;
+&lt;h2 id=&#34;简单使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简单使用&#34;&gt;#&lt;/a&gt; 简单使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 daisyUI:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-undefined&#34;&gt;npm i -D daisyui
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;然后，在你的 &lt;code&gt;tailwind.config.js&lt;/code&gt;  文件里追加 daisyUI 的设置:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption data-lang=&#34;JavaScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;module&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;exports &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token comment&#34;&gt;//...&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token literal-property property&#34;&gt;plugins&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;daisyui&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在组件中这样使用&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;btn btn-success btn-sm py-0 text-sm leading-3&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;token attr-name&#34;&gt;@click&lt;/span&gt;&lt;span class=&#34;token attr-value&#34;&gt;&lt;span class=&#34;token punctuation attr-equals&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;copy&lt;span class=&#34;token punctuation&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;复制&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token tag&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;与elementui的比较&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#与elementui的比较&#34;&gt;#&lt;/a&gt; 与 elementui 的比较&lt;/h2&gt;
+&lt;h3 id=&#34;优势&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优势&#34;&gt;#&lt;/a&gt; 优势：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;样式美观，自定义很方便&lt;/li&gt;
+&lt;li&gt;功能好修改，更接近原生&lt;br&gt;
+劣势：&lt;/li&gt;
+&lt;li&gt;功能不够丰富，大部分功能需要自己单独写&lt;/li&gt;
+&lt;li&gt;组件目前还不如 element 丰富&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;体验总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#体验总结&#34;&gt;#&lt;/a&gt; 体验总结&lt;/h2&gt;
+&lt;p&gt;建议作为兴趣使用，如果想要快速出活，还是用其他的组件库比较好。&lt;/p&gt;
+ ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://fanlu.top/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
