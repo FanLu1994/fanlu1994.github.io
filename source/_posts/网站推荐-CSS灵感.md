@@ -1,7 +1,7 @@
 ---
 title: 网站推荐-CSS灵感
 date: 2023-06-22 15:03:47
-tags: 前端 UI
+tags: 前端 UI 网站
 ---
 >https://csscoco.com/inspiration/#/./init
 
