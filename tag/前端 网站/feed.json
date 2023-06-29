@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "何妨吟啸且徐行 • All posts by \"前端 网站\" tag",
+    "description": "",
+    "home_page_url": "https://fanlu.top",
+    "items": [
+        {
+            "id": "https://fanlu.top/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/",
+            "url": "https://fanlu.top/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/",
+            "title": "ASCII",
+            "date_published": "2023-06-29T01:01:40.000Z",
+            "content_html": "<blockquote>\n<p><span class=\"exturl\" data-url=\"aHR0cDovL3BhdG9yamsuY29tL3NvZnR3YXJlL3RhYWcvI3A9ZGlzcGxheSZhbXA7Zj0zRCUyMERpYWdvbmFsJmFtcDt0PUhFTExPJTIwV09STEQ=\">http://patorjk.com/software/taag/#p=display&amp;f=3D Diagonal&amp;t=HELLO WORLD</span></p>\n</blockquote>\n<p>在知乎网站 F12 打开开发者工具，你会看到知乎的招聘广告，像这样：</p>\n<p><img data-src=\"https://i.imgloc.com/2023/06/29/V3Vzpk.png\" alt=\"截图\"><br>\n这样的字符画是怎么实现的呢？就可以利用这个网站来实现。</p>\n<p>一个将字符，转换为 ASCII 字符画的网站。（<span class=\"exturl\" data-url=\"aHR0cDovL3BhdG9yamsuY29tL3NvZnR3YXJlL3RhYWcvI3A9ZGlzcGxheSZhbXA7Yz1iYXNoJmFtcDtmPUFscGhhJmFtcDt0PUhJUkUlRUYlQkMlODk=\">http://patorjk.com/software/taag/#p=display&amp;c=bash&amp;f=Alpha&amp;t=HIRE）</span></p>\n<ul>\n<li>支持超多的字体样式</li>\n<li>支持设置字符宽度高度</li>\n<li>可以一键查看所有的样式效果</li>\n<li>支持自定义替换空白符</li>\n</ul>\n<p>比如要实现上面的知乎效果，就可以输出 HIRE，然后选择 Alpha 样式。</p>\n<p>可以给自己的网站开发者工具里面加一点有趣字符画，试试吧。</p>\n",
+            "tags": [
+                "前端 网站"
+            ]
+        }
+    ]
+}

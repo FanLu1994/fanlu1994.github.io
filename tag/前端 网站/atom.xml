@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fanlu.top</id>
+    <title>何妨吟啸且徐行 • Posts by &#34;前端 网站&#34; tag</title>
+    <link href="https://fanlu.top" />
+    <updated>2023-06-29T01:01:40.000Z</updated>
+    <category term="CI CD linux" />
+    <category term="测试开发 性能 工具" />
+    <category term="前端 产品经理" />
+    <category term="前端 UI" />
+    <category term="golang实验室" />
+    <category term="前端搬砖指南" />
+    <category term="云服务器" />
+    <category term="工具" />
+    <category term="nuxt axiss 前端" />
+    <category term="前端 网站" />
+    <category term="前端 UI 网站" />
+    <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/</id>
+        <title>ASCII</title>
+        <link rel="alternate" href="https://fanlu.top/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3BhdG9yamsuY29tL3NvZnR3YXJlL3RhYWcvI3A9ZGlzcGxheSZhbXA7Zj0zRCUyMERpYWdvbmFsJmFtcDt0PUhFTExPJTIwV09STEQ=&#34;&gt;http://patorjk.com/software/taag/#p=display&amp;amp;f=3D Diagonal&amp;amp;t=HELLO WORLD&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在知乎网站 F12 打开开发者工具，你会看到知乎的招聘广告，像这样：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.imgloc.com/2023/06/29/V3Vzpk.png&#34; alt=&#34;截图&#34;&gt;&lt;br&gt;
+这样的字符画是怎么实现的呢？就可以利用这个网站来实现。&lt;/p&gt;
+&lt;p&gt;一个将字符，转换为 ASCII 字符画的网站。（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3BhdG9yamsuY29tL3NvZnR3YXJlL3RhYWcvI3A9ZGlzcGxheSZhbXA7Yz1iYXNoJmFtcDtmPUFscGhhJmFtcDt0PUhJUkUlRUYlQkMlODk=&#34;&gt;http://patorjk.com/software/taag/#p=display&amp;amp;c=bash&amp;amp;f=Alpha&amp;amp;t=HIRE）&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持超多的字体样式&lt;/li&gt;
+&lt;li&gt;支持设置字符宽度高度&lt;/li&gt;
+&lt;li&gt;可以一键查看所有的样式效果&lt;/li&gt;
+&lt;li&gt;支持自定义替换空白符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;比如要实现上面的知乎效果，就可以输出 HIRE，然后选择 Alpha 样式。&lt;/p&gt;
+&lt;p&gt;可以给自己的网站开发者工具里面加一点有趣字符画，试试吧。&lt;/p&gt;
+</content>
+        <category term="前端 网站" />
+        <updated>2023-06-29T01:01:40.000Z</updated>
+    </entry>
+</feed>
