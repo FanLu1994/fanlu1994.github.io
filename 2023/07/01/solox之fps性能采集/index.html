@@ -1,0 +1,544 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/tom.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="何妨吟啸且徐行" href="https://fanlu.top/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="何妨吟啸且徐行" href="https://fanlu.top/atom.xml" />
+<link rel="alternate" type="application/json" title="何妨吟啸且徐行" href="https://fanlu.top/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="测试开发 性能 工具" />
+
+
+<link rel="canonical" href="https://fanlu.top/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/">
+
+
+
+  <title>何妨吟啸且徐行</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">solox之fps性能采集
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-07-01 22:14:39">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-07-01T22:14:39+08:00">2023-07-01</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>11k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>10 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Axiss</a></li>
+      <!-- <li class="item title"><a target="_blank" href="https://www.travellings.cn/" rel="start noopener">开往</a></li>  -->
+    </ul>
+
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <!-- <li class="item search">
+        <i class="ic i-search"></i>
+      </li>  -->
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyD24z.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyAEtb.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyDimP.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyATdZ.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyDNTp.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyAmGA.jpeg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://fanlu.top/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/tom.png">
+    <meta itemprop="name" content="Axiss">
+    <meta itemprop="description" content="Axiss的记事本, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="何妨吟啸且徐行">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="安卓"><a class="markdownIt-Anchor" href="#安卓">#</a> 安卓</h2>
+<p>通过 fpsMonitor 类获取到 fps 计算器；</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">getAndroidFps</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> noLog<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""get Android Fps, unit:HZ"""</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    monitors <span class="token operator">=</span> FPSMonitor<span class="token punctuation">(</span>device_id<span class="token operator">=</span>self<span class="token punctuation">.</span>deviceId<span class="token punctuation">,</span> package_name<span class="token operator">=</span>self<span class="token punctuation">.</span>pkgName<span class="token punctuation">,</span> frequency<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>                          surfaceview<span class="token operator">=</span>self<span class="token punctuation">.</span>surfaceview<span class="token punctuation">,</span> start_time<span class="token operator">=</span>TimeUtils<span class="token punctuation">.</span>getCurrentTimeUnderline<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    monitors<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    fps<span class="token punctuation">,</span> jank <span class="token operator">=</span> monitors<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">if</span> noLog <span class="token keyword">is</span> <span class="token boolean">False</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        apm_time <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%H:%M:%S.%f'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        f<span class="token punctuation">.</span>add_log<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>f<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span><span class="token string">'fps.log'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> apm_time<span class="token punctuation">,</span> fps<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        f<span class="token punctuation">.</span>add_log<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>f<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span><span class="token string">'jank.log'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> apm_time<span class="token punctuation">,</span> jank<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token keyword">return</span> fps<span class="token punctuation">,</span> jank</pre></td></tr></table></figure><p>在 FPSMonitor 中使用 SurfaceStatsCollector 来采集 FPS 数据</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">class</span> <span class="token class-name">FPSMonitor</span><span class="token punctuation">(</span>Monitor<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> device_id<span class="token punctuation">,</span> package_name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> frequency<span class="token operator">=</span><span class="token number">1.0</span><span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">,</span> fps_queue<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>                 jank_threshold<span class="token operator">=</span><span class="token number">166</span><span class="token punctuation">,</span> use_legacy<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> surfaceview<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> start_time<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        self<span class="token punctuation">.</span>start_time <span class="token operator">=</span> start_time</pre></td></tr><tr><td data-num="6"></td><td><pre>        self<span class="token punctuation">.</span>use_legacy <span class="token operator">=</span> use_legacy</pre></td></tr><tr><td data-num="7"></td><td><pre>        self<span class="token punctuation">.</span>frequency <span class="token operator">=</span> frequency  <span class="token comment"># 取样频率</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        self<span class="token punctuation">.</span>jank_threshold <span class="token operator">=</span> jank_threshold</pre></td></tr><tr><td data-num="9"></td><td><pre>        self<span class="token punctuation">.</span>device <span class="token operator">=</span> device_id</pre></td></tr><tr><td data-num="10"></td><td><pre>        self<span class="token punctuation">.</span>timeout <span class="token operator">=</span> timeout</pre></td></tr><tr><td data-num="11"></td><td><pre>        self<span class="token punctuation">.</span>surfaceview <span class="token operator">=</span> surfaceview</pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token keyword">if</span> <span class="token keyword">not</span> package_name<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            package_name <span class="token operator">=</span> self<span class="token punctuation">.</span>device<span class="token punctuation">.</span>adb<span class="token punctuation">.</span>get_foreground_process<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        self<span class="token punctuation">.</span>package <span class="token operator">=</span> package_name</pre></td></tr><tr><td data-num="15"></td><td><pre>        self<span class="token punctuation">.</span>fpscollector <span class="token operator">=</span> SurfaceStatsCollector<span class="token punctuation">(</span>self<span class="token punctuation">.</span>device<span class="token punctuation">,</span> self<span class="token punctuation">.</span>frequency<span class="token punctuation">,</span> package_name<span class="token punctuation">,</span> fps_queue<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="16"></td><td><pre>                                                  self<span class="token punctuation">.</span>jank_threshold<span class="token punctuation">,</span> self<span class="token punctuation">.</span>surfaceview<span class="token punctuation">,</span> self<span class="token punctuation">.</span>use_legacy<span class="token punctuation">)</span></pre></td></tr></table></figure><p>SurfaceStatsCollector 涵盖的功能有：</p>
+<h4 id="获取surface的activity名字"><a class="markdownIt-Anchor" href="#获取surface的activity名字">#</a> 获取 surface 的 activity 名字</h4>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">get_surfaceview_activity</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    activity_name <span class="token operator">=</span> <span class="token string">''</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    activity_line <span class="token operator">=</span> <span class="token string">''</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        dumpsys_result <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span><span class="token string">'dumpsys SurfaceFlinger --list | &#123;&#125; &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>filterType<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>package_name<span class="token punctuation">)</span><span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>device<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        dumpsys_result_list <span class="token operator">=</span> dumpsys_result<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>    </pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">for</span> line <span class="token keyword">in</span> dumpsys_result_list<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            <span class="token keyword">if</span> line<span class="token punctuation">.</span>startswith<span class="token punctuation">(</span><span class="token string">'SurfaceView'</span><span class="token punctuation">)</span> <span class="token keyword">and</span> line<span class="token punctuation">.</span>find<span class="token punctuation">(</span>self<span class="token punctuation">.</span>package_name<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>                activity_line <span class="token operator">=</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>                <span class="token keyword">break</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token keyword">if</span> activity_line<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            <span class="token keyword">if</span> activity_line<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>  <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>      </pre></td></tr><tr><td data-num="13"></td><td><pre>                activity_name <span class="token operator">=</span> activity_line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="14"></td><td><pre>            <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>                activity_name <span class="token operator">=</span> activity_line<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'SurfaceView'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'['</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">']'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>    </pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="17"></td><td><pre>            activity_name <span class="token operator">=</span> dumpsys_result_list<span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span>dumpsys_result_list<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="18"></td><td><pre>            <span class="token keyword">if</span> <span class="token keyword">not</span> activity_name<span class="token punctuation">.</span>__contains__<span class="token punctuation">(</span>self<span class="token punctuation">.</span>package_name<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="19"></td><td><pre>                logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'get activity name failed, Please provide SurfaceFlinger --list information to the author'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="20"></td><td><pre>                logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'dumpsys SurfaceFlinger --list info: &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>dumpsys_result<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token keyword">except</span> Exception<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="22"></td><td><pre>        traceback<span class="token punctuation">.</span>print_exc<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="23"></td><td><pre>        logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'get activity name failed, Please provide SurfaceFlinger --list information to the author'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="24"></td><td><pre>        logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'dumpsys SurfaceFlinger --list info: &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>dumpsys_result<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token keyword">return</span> activity_name</pre></td></tr></table></figure><h4 id="获取聚焦的activity名字"><a class="markdownIt-Anchor" href="#获取聚焦的activity名字">#</a> 获取聚焦的 activity 名字</h4>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">get_focus_activity</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    activity_name <span class="token operator">=</span> <span class="token string">''</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    activity_line <span class="token operator">=</span> <span class="token string">''</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    dumpsys_result <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span><span class="token string">'dumpsys window windows'</span><span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>device<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    dumpsys_result_list <span class="token operator">=</span> dumpsys_result<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">for</span> line <span class="token keyword">in</span> dumpsys_result_list<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">if</span> line<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'mCurrentFocus'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            activity_line <span class="token operator">=</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">if</span> activity_line<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        activity_line_split <span class="token operator">=</span> activity_line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token keyword">return</span> activity_name</pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>activity_line_split<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token keyword">if</span> activity_line_split<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'u0'</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>            activity_name <span class="token operator">=</span> activity_line_split<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rstrip<span class="token punctuation">(</span><span class="token string">'&#125;'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="17"></td><td><pre>            activity_name <span class="token operator">=</span> activity_line_split<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token keyword">if</span> <span class="token keyword">not</span> activity_name<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        activity_name <span class="token operator">=</span> self<span class="token punctuation">.</span>get_surfaceview_activity<span class="token punctuation">(</span><span class="token punctuation">)</span>        </pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token keyword">return</span> activity_name</pre></td></tr></table></figure><h4 id="获取前台进程名字"><a class="markdownIt-Anchor" href="#获取前台进程名字">#</a> 获取前台进程名字</h4>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">get_foreground_process</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    focus_activity <span class="token operator">=</span> self<span class="token punctuation">.</span>get_focus_activity<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">if</span> focus_activity<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        <span class="token keyword">return</span> focus_activity<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token keyword">return</span> <span class="token string">""</span></pre></td></tr></table></figure><h4 id="获取sdk版本"><a class="markdownIt-Anchor" href="#获取sdk版本">#</a> 获取 sdk 版本</h4>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">get_sdk_version</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    sdk_version <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span><span class="token string">'getprop ro.build.version.sdk'</span><span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>device<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">return</span> sdk_version</pre></td></tr></table></figure><h4 id="版本兼容"><a class="markdownIt-Anchor" href="#版本兼容">#</a> 版本兼容</h4>
+<p>为了兼容不同版本的安卓系统，做了两套方法，在启动时进行区分：</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">start</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> start_time<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">if</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>use_legacy_method<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>            self<span class="token punctuation">.</span>focus_window <span class="token operator">=</span> self<span class="token punctuation">.</span>get_focus_activity<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>            <span class="token keyword">if</span> self<span class="token punctuation">.</span>focus_window<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'$'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="6"></td><td><pre>                self<span class="token punctuation">.</span>focus_window <span class="token operator">=</span> self<span class="token punctuation">.</span>focus_window<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'$'</span><span class="token punctuation">,</span> <span class="token string">'\$'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token keyword">except</span> Exception<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>            logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">u'Unable to dynamically obtain the current activity name, using page_ Flip statistics full screen frame rate'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>            self<span class="token punctuation">.</span>use_legacy_method <span class="token operator">=</span> <span class="token boolean">True</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            self<span class="token punctuation">.</span>surface_before <span class="token operator">=</span> self<span class="token punctuation">.</span>_get_surface_stats_legacy<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"dumpsys SurfaceFlinger --latency-clear is none"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        self<span class="token punctuation">.</span>use_legacy_method <span class="token operator">=</span> <span class="token boolean">True</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        self<span class="token punctuation">.</span>surface_before <span class="token operator">=</span> self<span class="token punctuation">.</span>_get_surface_stats_legacy<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    self<span class="token punctuation">.</span>collector_thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>self<span class="token punctuation">.</span>_collector_thread<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    self<span class="token punctuation">.</span>collector_thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    self<span class="token punctuation">.</span>calculator_thread <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>self<span class="token punctuation">.</span>_calculator_thread<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>start_time<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    self<span class="token punctuation">.</span>calculator_thread<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>这里分别启动了采集线程和计算线程。</p>
+<h4 id="旧版本方法"><a class="markdownIt-Anchor" href="#旧版本方法">#</a> 旧版本方法</h4>
+<blockquote>
+<p>获取当前的 surface 索引和时间戳</p>
+</blockquote>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">_get_surface_stats_legacy</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""Legacy method (before JellyBean), returns the current Surface index</pre></td></tr><tr><td data-num="3"></td><td><pre>         and timestamp.</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>    Calculate FPS by measuring the difference of Surface index returned by</pre></td></tr><tr><td data-num="6"></td><td><pre>    SurfaceFlinger in a period of time.</pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre>    Returns:</pre></td></tr><tr><td data-num="9"></td><td><pre>        Dict of &#123;page_flip_count (or 0 if there was an error), timestamp&#125;.</pre></td></tr><tr><td data-num="10"></td><td><pre>    """</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    cur_surface <span class="token operator">=</span> <span class="token boolean">None</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    timestamp <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    ret <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span><span class="token string">"service call SurfaceFlinger 1013"</span><span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>device<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token keyword">if</span> <span class="token keyword">not</span> ret<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token keyword">return</span> <span class="token boolean">None</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token keyword">match</span> <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'^Result: Parcel\((\w+)'</span><span class="token punctuation">,</span> ret<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token keyword">if</span> <span class="token keyword">match</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        cur_surface <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token keyword">match</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token string">'page_flip_count'</span><span class="token punctuation">:</span> cur_surface<span class="token punctuation">,</span> <span class="token string">'timestamp'</span><span class="token punctuation">:</span> timestamp<span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token keyword">return</span> <span class="token boolean">None</span></pre></td></tr></table></figure><h4 id="新版本方法"><a class="markdownIt-Anchor" href="#新版本方法">#</a> 新版本方法</h4>
+<h5 id="首先获取到帧数据列表"><a class="markdownIt-Anchor" href="#首先获取到帧数据列表">#</a> 首先获取到帧数据列表</h5>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">_get_surfaceflinger_frame_data</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""Returns collected SurfaceFlinger frame timing data.</pre></td></tr><tr><td data-num="3"></td><td><pre>    return:(16.6,[[t1,t2,t3],[t4,t5,t6]])</pre></td></tr><tr><td data-num="4"></td><td><pre>    Returns:</pre></td></tr><tr><td data-num="5"></td><td><pre>        A tuple containing:</pre></td></tr><tr><td data-num="6"></td><td><pre>        - The display's nominal refresh period in seconds.</pre></td></tr><tr><td data-num="7"></td><td><pre>        - A list of timestamps signifying frame presentation times in seconds.</pre></td></tr><tr><td data-num="8"></td><td><pre>        The return value may be (None, None) if there was no data collected (for</pre></td></tr><tr><td data-num="9"></td><td><pre>        example, if the app was closed before the collector thread has finished).</pre></td></tr><tr><td data-num="10"></td><td><pre>    """</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token comment"># shell dumpsys SurfaceFlinger --latency &lt;window name></span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token comment"># prints some information about the last 128 frames displayed in</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token comment"># that window.</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token comment"># The data returned looks like this:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token comment"># 16954612</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token comment"># 7657467895508     7657482691352     7657493499756</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token comment"># 7657484466553     7657499645964     7657511077881</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token comment"># 7657500793457     7657516600576     7657527404785</span></pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token comment"># (...)</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token comment">#</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token comment"># The first line is the refresh period (here 16.95 ms), it is followed</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    <span class="token comment"># by 128 lines w/ 3 timestamps in nanosecond each:</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    <span class="token comment"># A) when the app started to draw</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    <span class="token comment"># B) the vsync immediately preceding SF submitting the frame to the h/w</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token comment"># C) timestamp immediately after SF submitted that frame to the h/w</span></pre></td></tr><tr><td data-num="26"></td><td><pre>    <span class="token comment">#</span></pre></td></tr><tr><td data-num="27"></td><td><pre>    <span class="token comment"># The difference between the 1st and 3rd timestamp is the frame-latency.</span></pre></td></tr><tr><td data-num="28"></td><td><pre>    <span class="token comment"># An interesting data is when the frame latency crosses a refresh period</span></pre></td></tr><tr><td data-num="29"></td><td><pre>    <span class="token comment"># boundary, this can be calculated this way:</span></pre></td></tr><tr><td data-num="30"></td><td><pre>    <span class="token comment">#</span></pre></td></tr><tr><td data-num="31"></td><td><pre>    <span class="token comment"># ceil((C - A) / refresh-period)</span></pre></td></tr><tr><td data-num="32"></td><td><pre>    <span class="token comment">#</span></pre></td></tr><tr><td data-num="33"></td><td><pre>    <span class="token comment"># (each time the number above changes, we have a "jank").</span></pre></td></tr><tr><td data-num="34"></td><td><pre>    <span class="token comment"># If this happens a lot during an animation, the animation appears</span></pre></td></tr><tr><td data-num="35"></td><td><pre>    <span class="token comment"># janky, even if it runs at 60 fps in average.</span></pre></td></tr><tr><td data-num="36"></td><td><pre>    <span class="token comment">#</span></pre></td></tr><tr><td data-num="37"></td><td><pre></pre></td></tr><tr><td data-num="38"></td><td><pre>    <span class="token comment"># Google Pixel 2 android8.0 dumpsys SurfaceFlinger --latency 结果</span></pre></td></tr><tr><td data-num="39"></td><td><pre>    <span class="token comment"># 16666666</span></pre></td></tr><tr><td data-num="40"></td><td><pre>    <span class="token comment"># 0       0       0</span></pre></td></tr><tr><td data-num="41"></td><td><pre>    <span class="token comment"># 0       0       0</span></pre></td></tr><tr><td data-num="42"></td><td><pre>    <span class="token comment"># 0       0       0</span></pre></td></tr><tr><td data-num="43"></td><td><pre>    <span class="token comment"># 0       0       0</span></pre></td></tr><tr><td data-num="44"></td><td><pre>    <span class="token comment"># 但华为 荣耀 9 android8.0 dumpsys SurfaceFlinger --latency 结果是正常的 但数据更新很慢  也不能用来计算 fps</span></pre></td></tr><tr><td data-num="45"></td><td><pre>    <span class="token comment"># 16666666</span></pre></td></tr><tr><td data-num="46"></td><td><pre>    <span class="token comment"># 9223372036854775807     3618832932780   9223372036854775807</span></pre></td></tr><tr><td data-num="47"></td><td><pre>    <span class="token comment"># 9223372036854775807     3618849592155   9223372036854775807</span></pre></td></tr><tr><td data-num="48"></td><td><pre>    <span class="token comment"># 9223372036854775807     3618866251530   9223372036854775807</span></pre></td></tr><tr><td data-num="49"></td><td><pre></pre></td></tr><tr><td data-num="50"></td><td><pre>    refresh_period <span class="token operator">=</span> <span class="token boolean">None</span></pre></td></tr><tr><td data-num="51"></td><td><pre>    timestamps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="52"></td><td><pre>    nanoseconds_per_second <span class="token operator">=</span> <span class="token number">1e9</span></pre></td></tr><tr><td data-num="53"></td><td><pre>    pending_fence_timestamp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">63</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="54"></td><td><pre>    <span class="token keyword">if</span> self<span class="token punctuation">.</span>surfaceview <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">True</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="55"></td><td><pre>        results <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span></pre></td></tr><tr><td data-num="56"></td><td><pre>            cmd<span class="token operator">=</span><span class="token string">'dumpsys SurfaceFlinger --latency %s'</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>focus_window<span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>device<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="57"></td><td><pre>        results <span class="token operator">=</span> results<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"\r\n"</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>splitlines<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="58"></td><td><pre>        refresh_period <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> nanoseconds_per_second</pre></td></tr><tr><td data-num="59"></td><td><pre>        results <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span><span class="token string">'dumpsys gfxinfo %s framestats'</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>package_name<span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>device<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="60"></td><td><pre>        results <span class="token operator">=</span> results<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"\r\n"</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>splitlines<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="61"></td><td><pre>        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">len</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="62"></td><td><pre>            <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="63"></td><td><pre>        isHaveFoundWindow <span class="token operator">=</span> <span class="token boolean">False</span></pre></td></tr><tr><td data-num="64"></td><td><pre>        PROFILEDATA_line <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="65"></td><td><pre>        activity <span class="token operator">=</span> self<span class="token punctuation">.</span>focus_window</pre></td></tr><tr><td data-num="66"></td><td><pre>        <span class="token keyword">if</span> self<span class="token punctuation">.</span>focus_window<span class="token punctuation">.</span>__contains__<span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="67"></td><td><pre>            activity <span class="token operator">=</span> activity<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="68"></td><td><pre>        <span class="token keyword">for</span> line <span class="token keyword">in</span> results<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="69"></td><td><pre>            <span class="token keyword">if</span> <span class="token keyword">not</span> isHaveFoundWindow<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="70"></td><td><pre>                <span class="token keyword">if</span> <span class="token string">"Window"</span> <span class="token keyword">in</span> line <span class="token keyword">and</span> activity <span class="token keyword">in</span> line<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="71"></td><td><pre>                    isHaveFoundWindow <span class="token operator">=</span> <span class="token boolean">True</span></pre></td></tr><tr><td data-num="72"></td><td><pre>            <span class="token keyword">if</span> <span class="token keyword">not</span> isHaveFoundWindow<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="73"></td><td><pre>                <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="74"></td><td><pre>            <span class="token keyword">if</span> <span class="token string">"PROFILEDATA"</span> <span class="token keyword">in</span> line<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="75"></td><td><pre>                PROFILEDATA_line <span class="token operator">+=</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="76"></td><td><pre>            fields <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="77"></td><td><pre>            fields <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="78"></td><td><pre>            <span class="token keyword">if</span> fields <span class="token keyword">and</span> <span class="token string">'0'</span> <span class="token operator">==</span> fields<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="79"></td><td><pre>                timestamp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="80"></td><td><pre>                <span class="token keyword">if</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> pending_fence_timestamp<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="81"></td><td><pre>                    <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="82"></td><td><pre>                timestamp <span class="token operator">=</span> <span class="token punctuation">[</span>_timestamp <span class="token operator">/</span> nanoseconds_per_second <span class="token keyword">for</span> _timestamp <span class="token keyword">in</span> timestamp<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="83"></td><td><pre>                timestamps<span class="token punctuation">.</span>append<span class="token punctuation">(</span>timestamp<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="84"></td><td><pre>            <span class="token keyword">if</span> <span class="token number">2</span> <span class="token operator">==</span> PROFILEDATA_line<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="85"></td><td><pre>                <span class="token keyword">break</span></pre></td></tr><tr><td data-num="86"></td><td><pre>    <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="87"></td><td><pre>        self<span class="token punctuation">.</span>focus_window <span class="token operator">=</span> self<span class="token punctuation">.</span>get_surfaceview_activity<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="88"></td><td><pre>        results <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span></pre></td></tr><tr><td data-num="89"></td><td><pre>            cmd<span class="token operator">=</span><span class="token string">'dumpsys SurfaceFlinger --latency %s'</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>focus_window<span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>device<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="90"></td><td><pre>        results <span class="token operator">=</span> results<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"\r\n"</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>splitlines<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="91"></td><td><pre>        <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token builtin">len</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="92"></td><td><pre>            <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="93"></td><td><pre>        <span class="token keyword">if</span> <span class="token keyword">not</span> results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="94"></td><td><pre>            <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="95"></td><td><pre>        <span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="96"></td><td><pre>            refresh_period <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> nanoseconds_per_second</pre></td></tr><tr><td data-num="97"></td><td><pre>        <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="98"></td><td><pre>            logger<span class="token punctuation">.</span>exception<span class="token punctuation">(</span>e<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="99"></td><td><pre>            <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="100"></td><td><pre>        <span class="token comment"># If a fence associated with a frame is still pending when we query the</span></pre></td></tr><tr><td data-num="101"></td><td><pre>        <span class="token comment"># latency data, SurfaceFlinger gives the frame a timestamp of INT64_MAX.</span></pre></td></tr><tr><td data-num="102"></td><td><pre>        <span class="token comment"># Since we only care about completed frames, we will ignore any timestamps</span></pre></td></tr><tr><td data-num="103"></td><td><pre>        <span class="token comment"># with this value.</span></pre></td></tr><tr><td data-num="104"></td><td><pre></pre></td></tr><tr><td data-num="105"></td><td><pre>        <span class="token keyword">for</span> line <span class="token keyword">in</span> results<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="106"></td><td><pre>            fields <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="107"></td><td><pre>            <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>fields<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="108"></td><td><pre>                <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="109"></td><td><pre>            timestamp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>fields<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="110"></td><td><pre>            <span class="token keyword">if</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> pending_fence_timestamp<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="111"></td><td><pre>                <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="112"></td><td><pre>            timestamp <span class="token operator">=</span> <span class="token punctuation">[</span>_timestamp <span class="token operator">/</span> nanoseconds_per_second <span class="token keyword">for</span> _timestamp <span class="token keyword">in</span> timestamp<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="113"></td><td><pre>            timestamps<span class="token punctuation">.</span>append<span class="token punctuation">(</span>timestamp<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="114"></td><td><pre>    <span class="token keyword">return</span> <span class="token punctuation">(</span>refresh_period<span class="token punctuation">,</span> timestamps<span class="token punctuation">)</span></pre></td></tr></table></figure><p>然后将数据插入到队列中</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>refresh_period<span class="token punctuation">,</span> new_timestamps <span class="token operator">=</span> self<span class="token punctuation">.</span>_get_surfaceflinger_frame_data<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">if</span> refresh_period <span class="token keyword">is</span> <span class="token boolean">None</span> <span class="token keyword">or</span> new_timestamps <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    self<span class="token punctuation">.</span>focus_window <span class="token operator">=</span> self<span class="token punctuation">.</span>get_focus_activity<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">"refresh_period is None or timestamps is None"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="6"></td><td><pre>timestamps <span class="token operator">+=</span> <span class="token punctuation">[</span>timestamp <span class="token keyword">for</span> timestamp <span class="token keyword">in</span> new_timestamps</pre></td></tr><tr><td data-num="7"></td><td><pre>               <span class="token keyword">if</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">></span> self<span class="token punctuation">.</span>last_timestamp<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>timestamps<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    first_timestamp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>last_timestamp<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">if</span> <span class="token keyword">not</span> is_first<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        timestamps <span class="token operator">=</span> first_timestamp <span class="token operator">+</span> timestamps</pre></td></tr><tr><td data-num="12"></td><td><pre>    self<span class="token punctuation">.</span>last_timestamp <span class="token operator">=</span> timestamps<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    is_first <span class="token operator">=</span> <span class="token boolean">False</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    is_first <span class="token operator">=</span> <span class="token boolean">True</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    cur_focus_window <span class="token operator">=</span> self<span class="token punctuation">.</span>get_focus_activity<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token keyword">if</span> self<span class="token punctuation">.</span>focus_window <span class="token operator">!=</span> cur_focus_window<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        self<span class="token punctuation">.</span>focus_window <span class="token operator">=</span> cur_focus_window</pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="20"></td><td><pre>self<span class="token punctuation">.</span>data_queue<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token punctuation">(</span>refresh_period<span class="token punctuation">,</span> timestamps<span class="token punctuation">,</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="21"></td><td><pre>time_consume <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> before</pre></td></tr><tr><td data-num="22"></td><td><pre>delta_inter <span class="token operator">=</span> self<span class="token punctuation">.</span>frequency <span class="token operator">-</span> time_consume</pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token keyword">if</span> delta_inter <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>delta_inter<span class="token punctuation">)</span></pre></td></tr></table></figure><h4 id="计算线程计算fps和jank"><a class="markdownIt-Anchor" href="#计算线程计算fps和jank">#</a> 计算线程计算 fps 和 jank</h4>
+<h5 id="旧版本方法-2"><a class="markdownIt-Anchor" href="#旧版本方法-2">#</a> 旧版本方法</h5>
+<p>不知道为什么 fps 设置最高就是 60</p>
+<p>通过一段时间内的帧总数除以时间差获取到 fps</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>td <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'timestamp'</span><span class="token punctuation">]</span> <span class="token operator">-</span> self<span class="token punctuation">.</span>surface_before<span class="token punctuation">[</span><span class="token string">'timestamp'</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre>seconds <span class="token operator">=</span> td<span class="token punctuation">.</span>seconds <span class="token operator">+</span> td<span class="token punctuation">.</span>microseconds <span class="token operator">/</span> <span class="token number">1e6</span></pre></td></tr><tr><td data-num="3"></td><td><pre>frame_count <span class="token operator">=</span> <span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'page_flip_count'</span><span class="token punctuation">]</span> <span class="token operator">-</span></pre></td></tr><tr><td data-num="4"></td><td><pre>               self<span class="token punctuation">.</span>surface_before<span class="token punctuation">[</span><span class="token string">'page_flip_count'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>fps <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">round</span><span class="token punctuation">(</span>frame_count <span class="token operator">/</span> seconds<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">if</span> fps <span class="token operator">></span> <span class="token number">60</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    fps <span class="token operator">=</span> <span class="token number">60</span></pre></td></tr><tr><td data-num="8"></td><td><pre>self<span class="token punctuation">.</span>surface_before <span class="token operator">=</span> data</pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token comment"># logger.debug('FPS:%2s'%fps)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>collect_fps <span class="token operator">=</span> fps</pre></td></tr></table></figure><h4 id="新版本方法-2"><a class="markdownIt-Anchor" href="#新版本方法-2">#</a> 新版本方法</h4>
+<ol>
+<li>首先拿到帧数</li>
+<li>对异常数据的处理</li>
+<li>2、3、4 帧数为啥这样处理？</li>
+</ol>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">_calculate_results_new</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> refresh_period<span class="token punctuation">,</span> timestamps<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    frame_count <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>timestamps<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">if</span> frame_count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>        fps <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        jank <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">elif</span> frame_count <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        fps <span class="token operator">=</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        jank <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">elif</span> frame_count <span class="token operator">==</span> <span class="token number">2</span> <span class="token keyword">or</span> frame_count <span class="token operator">==</span> <span class="token number">3</span> <span class="token keyword">or</span> frame_count <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        seconds <span class="token operator">=</span> timestamps<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> timestamps<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token keyword">if</span> seconds <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="12"></td><td><pre>            fps <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">round</span><span class="token punctuation">(</span><span class="token punctuation">(</span>frame_count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> seconds<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            jank <span class="token operator">=</span> self<span class="token punctuation">.</span>_calculate_janky<span class="token punctuation">(</span>timestamps<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>            fps <span class="token operator">=</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="16"></td><td><pre>            jank <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        seconds <span class="token operator">=</span> timestamps<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> timestamps<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token keyword">if</span> seconds <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="20"></td><td><pre>            fps <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">round</span><span class="token punctuation">(</span><span class="token punctuation">(</span>frame_count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> seconds<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="21"></td><td><pre>            jank <span class="token operator">=</span> self<span class="token punctuation">.</span>_calculate_jankey_new<span class="token punctuation">(</span>timestamps<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="22"></td><td><pre>        <span class="token keyword">else</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="23"></td><td><pre>            fps <span class="token operator">=</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="24"></td><td><pre>            jank <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token keyword">return</span> fps<span class="token punctuation">,</span> jank</pre></td></tr></table></figure><h5 id="计算jank"><a class="markdownIt-Anchor" href="#计算jank">#</a> 计算 jank</h5>
+<h6 id="旧版本"><a class="markdownIt-Anchor" href="#旧版本">#</a> 旧版本</h6>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">_calculate_janky</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> timestamps<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    tempstamp <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    jank <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">for</span> timestamp <span class="token keyword">in</span> timestamps<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token keyword">if</span> tempstamp <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="6"></td><td><pre>            tempstamp <span class="token operator">=</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        costtime <span class="token operator">=</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> tempstamp</pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token keyword">if</span> costtime <span class="token operator">></span> self<span class="token punctuation">.</span>jank_threshold<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            jank <span class="token operator">=</span> jank <span class="token operator">+</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        tempstamp <span class="token operator">=</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token keyword">return</span> jank</pre></td></tr></table></figure><h5 id="新版本"><a class="markdownIt-Anchor" href="#新版本">#</a> 新版本</h5>
+<p>通过预设的 jank_threshold 阈值判断是否有 jank（默认 166ms 的渲染时间）</p>
+<p>通过过去 4 帧的时间，也即过去三帧的平均渲染时间 *2，如果当前帧渲染时间超过这个值，并且当前帧渲染时间大于上一帧渲染时间，判断为一次 jank</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">_calculate_jankey_new</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> timestamps<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    twofilmstamp <span class="token operator">=</span> <span class="token number">83.3</span> <span class="token operator">/</span> <span class="token number">1000.0</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    tempstamp <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    jank <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">for</span> index<span class="token punctuation">,</span> timestamp <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>timestamps<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">or</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="7"></td><td><pre>            <span class="token keyword">if</span> tempstamp <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>                tempstamp <span class="token operator">=</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="9"></td><td><pre>                <span class="token keyword">continue</span></pre></td></tr><tr><td data-num="10"></td><td><pre>            costtime <span class="token operator">=</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> tempstamp</pre></td></tr><tr><td data-num="11"></td><td><pre>            <span class="token keyword">if</span> costtime <span class="token operator">></span> self<span class="token punctuation">.</span>jank_threshold<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="12"></td><td><pre>                jank <span class="token operator">=</span> jank <span class="token operator">+</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            tempstamp <span class="token operator">=</span> timestamp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        <span class="token keyword">elif</span> index <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="15"></td><td><pre>            currentstamp <span class="token operator">=</span> timestamps<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="16"></td><td><pre>            lastonestamp <span class="token operator">=</span> timestamps<span class="token punctuation">[</span>index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="17"></td><td><pre>            lasttwostamp <span class="token operator">=</span> timestamps<span class="token punctuation">[</span>index <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="18"></td><td><pre>            lastthreestamp <span class="token operator">=</span> timestamps<span class="token punctuation">[</span>index <span class="token operator">-</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="19"></td><td><pre>            lastfourstamp <span class="token operator">=</span> timestamps<span class="token punctuation">[</span>index <span class="token operator">-</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="20"></td><td><pre>            tempframetime <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>lastthreestamp <span class="token operator">-</span> lastfourstamp<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>lasttwostamp <span class="token operator">-</span> lastthreestamp<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span></pre></td></tr><tr><td data-num="21"></td><td><pre>                    lastonestamp <span class="token operator">-</span> lasttwostamp<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">3</span> <span class="token operator">*</span> <span class="token number">2</span></pre></td></tr><tr><td data-num="22"></td><td><pre>            currentframetime <span class="token operator">=</span> currentstamp <span class="token operator">-</span> lastonestamp</pre></td></tr><tr><td data-num="23"></td><td><pre>            <span class="token keyword">if</span> <span class="token punctuation">(</span>currentframetime <span class="token operator">></span> tempframetime<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>currentframetime <span class="token operator">></span> twofilmstamp<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="24"></td><td><pre>                jank <span class="token operator">=</span> jank <span class="token operator">+</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token keyword">return</span> jank</pre></td></tr></table></figure><h2 id="ios"><a class="markdownIt-Anchor" href="#ios">#</a> IOS</h2>
+<p>同样使用 instrument 协议</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">iter_fps</span><span class="token punctuation">(</span>d<span class="token punctuation">:</span> BaseDevice<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Iterator<span class="token punctuation">[</span>Any<span class="token punctuation">]</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token keyword">with</span> d<span class="token punctuation">.</span>connect_instruments<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> ts<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="3"></td><td><pre>        <span class="token keyword">for</span> data <span class="token keyword">in</span> ts<span class="token punctuation">.</span>iter_opengl_data<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>            fps <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'CoreAnimationFramesPerSecond'</span><span class="token punctuation">]</span> <span class="token comment"># fps from GPU</span></pre></td></tr><tr><td data-num="5"></td><td><pre>            <span class="token comment"># print("FPS:", fps)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>            <span class="token keyword">yield</span> DataType<span class="token punctuation">.</span>FPS<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token string">"fps"</span><span class="token punctuation">:</span> fps<span class="token punctuation">,</span> <span class="token string">"time"</span><span class="token punctuation">:</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"value"</span><span class="token punctuation">:</span> fps<span class="token punctuation">&#125;</span></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91-%E6%80%A7%E8%83%BD-%E5%B7%A5%E5%85%B7/" rel="tag"><i class="ic i-tag"></i> 测试开发 性能 工具</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-07-01 22:16:01" itemprop="dateModified" datetime="2023-07-01T22:16:01+08:00">2023-07-01</time>
+  </span>
+  <span id="2023/07/01/solox之fps性能采集/" class="item leancloud_visitors" data-flag-title="solox之fps性能采集" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Axiss <i class="ic i-at"><em>@</em></i>何妨吟啸且徐行
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://fanlu.top/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="solox之fps性能采集">https://fanlu.top/2023/07/01/solox之fps性能采集/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;i.328888.xyz&#x2F;2023&#x2F;05&#x2F;19&#x2F;VyDtEN.jpeg" title="ASCII">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>ASCII</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%8D%93"><span class="toc-number">1.</span> <span class="toc-text"> 安卓</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96surface%E7%9A%84activity%E5%90%8D%E5%AD%97"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 获取 surface 的 activity 名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%81%9A%E7%84%A6%E7%9A%84activity%E5%90%8D%E5%AD%97"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 获取聚焦的 activity 名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%89%8D%E5%8F%B0%E8%BF%9B%E7%A8%8B%E5%90%8D%E5%AD%97"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 获取前台进程名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96sdk%E7%89%88%E6%9C%AC"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 获取 sdk 版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9"><span class="toc-number">1.0.5.</span> <span class="toc-text"> 版本兼容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A7%E7%89%88%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.6.</span> <span class="toc-text"> 旧版本方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E7%89%88%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.7.</span> <span class="toc-text"> 新版本方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E8%8E%B7%E5%8F%96%E5%88%B0%E5%B8%A7%E6%95%B0%E6%8D%AE%E5%88%97%E8%A1%A8"><span class="toc-number">1.0.7.1.</span> <span class="toc-text"> 首先获取到帧数据列表</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%BA%BF%E7%A8%8B%E8%AE%A1%E7%AE%97fps%E5%92%8Cjank"><span class="toc-number">1.0.8.</span> <span class="toc-text"> 计算线程计算 fps 和 jank</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A7%E7%89%88%E6%9C%AC%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.0.8.1.</span> <span class="toc-text"> 旧版本方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E7%89%88%E6%9C%AC%E6%96%B9%E6%B3%95-2"><span class="toc-number">1.0.9.</span> <span class="toc-text"> 新版本方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97jank"><span class="toc-number">1.0.9.1.</span> <span class="toc-text"> 计算 jank</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%97%A7%E7%89%88%E6%9C%AC"><span class="toc-number">1.0.9.1.1.</span> <span class="toc-text"> 旧版本</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B0%E7%89%88%E6%9C%AC"><span class="toc-number">1.0.9.2.</span> <span class="toc-text"> 新版本</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ios"><span class="toc-number">2.</span> <span class="toc-text"> IOS</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Axiss"
+      data-src="/images/tom.png">
+  <p class="name" itemprop="name">Axiss</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">18</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">12</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Zhbkx1MTk5NA==" title="https:&#x2F;&#x2F;github.com&#x2F;FanLu1994"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Zhbkx1MTk5NA==" title="https:&#x2F;&#x2F;github.com&#x2F;FanLu1994"><i class="ic i-twitter"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS8xNTk5OTUyMDI1" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1599952025"><i class="ic i-weibo"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjEwNjY1ODAxMTlAcXEuY29t" title="mailto:1066580119@qq.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/05/17/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/" title="gopher-lua的使用">gopher-lua的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/05/17/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/" title="gopher-lua使用小demo">gopher-lua使用小demo</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/" title="云服务器重新搭建实录">云服务器重新搭建实录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/22/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-CSS%E7%81%B5%E6%84%9F/" title="网站推荐-CSS灵感">网站推荐-CSS灵感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="solox之fps性能采集">solox之fps性能采集</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/25/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" title="SoloX移动设备性能采集工具使用体验">SoloX移动设备性能采集工具使用体验</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" title="Hexo博客自动部署">Hexo博客自动部署</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/03/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-03/" title="鸡毛蒜皮周刊-03">鸡毛蒜皮周刊-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/11/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/" title="鸡毛蒜皮周刊-04">鸡毛蒜皮周刊-04</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/" title="ASCII">ASCII</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Axiss @ Axiss</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">61k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">55 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+    <br/>
+        <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">沪ICP备2021031543号-1</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/07/01/solox之fps性能采集/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
