@@ -2228,25 +2228,25 @@ main >.inner {
   left: -10%;
 }
 .social .item.github::before {
-  background-color: #191717;
+  background-color: #aaa;
 }
 .social .item.github i {
   color: #191717;
 }
 .social .item.twitter::before {
-  background-color: #00aff0;
+  background-color: #aaa;
 }
 .social .item.twitter i {
   color: #00aff0;
 }
 .social .item.weibo::before {
-  background-color: #ea716e;
+  background-color: #aaa;
 }
 .social .item.weibo i {
   color: #ea716e;
 }
 .social .item.email::before {
-  background-color: #55acd5;
+  background-color: #aaa;
 }
 .social .item.email i {
   color: #55acd5;
