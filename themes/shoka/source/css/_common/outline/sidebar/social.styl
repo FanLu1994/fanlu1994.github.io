@@ -39,6 +39,14 @@
       left: -10%;
     }
 
+    //&:hover {
+    //  background:#aaaaaa;
+    //
+    //  i {
+    //    color: white;
+    //  }
+    //}
+
     $social = hexo-config('social');
 
     for type in $social {
@@ -47,9 +55,8 @@
       }
 
       &.{slice(type, 0, 1)} {
-
         &::before {
-          background-color: unquote(color);
+          background-color: #aaaaaa;
         }
         i {
           color: unquote(color);
