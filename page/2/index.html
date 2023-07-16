@@ -91,12 +91,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyDn2o.jpeg"></li>
-          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyDDuA.jpeg"></li>
-          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyAecq.png"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyArst.jpeg"></li>
           <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyAY7Q.jpeg"></li>
-          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyAsPU.jpeg"></li>
-          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyDWTV.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyASwL.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyDOda.png"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyAKvy.jpeg"></li>
+          <li class="item" data-background-image="https://i.328888.xyz/2023/05/19/VyAc8c.png"></li>
         </ul>
       </div>
     </header>
@@ -122,7 +122,85 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/" itemprop="url" title="ASCII"><img data-src="https://i.328888.xyz/2023/05/19/VyAmGA.jpeg"></a>
+    <a href="/2023/07/06/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" itemprop="url" title="SoloX之CPU性能采集"><img data-src="https://i.328888.xyz/2023/05/19/VyDOda.png"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2023-07-06 20:57:07">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-07-06T20:57:07+08:00">2023-07-06</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>4.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/2023/07/06/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" itemprop="url" title="SoloX之CPU性能采集">SoloX之CPU性能采集</a></h3>
+    <div class="excerpt">
+        # 安卓
+# 获取进程 cpu 使用时间
+def getprocessCpuStat(self): &quot;&quot;&quot;get the cpu usage of a process at a certain time&quot;&quot;&quot; cmd = f&#39;cat /proc/&amp;#123;self.pid&amp;#125;/stat&#39; result = adb.shell(cmd=cmd, deviceId=self.deviceId) r = re.compile(&quot;&#92;&#92;s+&quot;) toks =...
+    </div>
+    <a href="/2023/07/06/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" itemprop="url" title="SoloX之CPU性能采集" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" itemprop="url" title="solox之fps性能采集"><img data-src="https://i.328888.xyz/2023/05/19/VyD0Wd.jpeg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2023-07-01 22:14:39">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-07-01T22:14:39+08:00">2023-07-01</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>11k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>10 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" itemprop="url" title="solox之fps性能采集">solox之fps性能采集</a></h3>
+    <div class="excerpt">
+        # 安卓
+通过 fpsMonitor 类获取到 fps 计算器；
+def getAndroidFps(self, noLog=False): &quot;&quot;&quot;get Android Fps, unit:HZ&quot;&quot;&quot; monitors = FPSMonitor(device_id=self.deviceId, package_name=self.pkgName, frequency=1, surfaceview=self.surfaceview, start_time=TimeUtils.getCurrentTimeUnderline())...
+    </div>
+    <a href="/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" itemprop="url" title="solox之fps性能采集" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/" itemprop="url" title="ASCII"><img data-src="https://i.328888.xyz/2023/05/19/VyD4IJ.jpeg"></a>
   </div>
   <div class="info">
     
@@ -164,7 +242,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/25/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" itemprop="url" title="SoloX移动设备性能采集工具使用体验"><img data-src="https://i.328888.xyz/2023/05/19/VyAxMd.jpeg"></a>
+    <a href="/2023/06/25/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" itemprop="url" title="SoloX移动设备性能采集工具使用体验"><img data-src="https://i.328888.xyz/2023/05/19/VyArst.jpeg"></a>
   </div>
   <div class="info">
     
@@ -225,7 +303,7 @@ GPU...
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/22/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-CSS%E7%81%B5%E6%84%9F/" itemprop="url" title="网站推荐-CSS灵感"><img data-src="https://i.328888.xyz/2023/05/19/VyATdZ.jpeg"></a>
+    <a href="/2023/06/22/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-CSS%E7%81%B5%E6%84%9F/" itemprop="url" title="网站推荐-CSS灵感"><img data-src="https://i.328888.xyz/2023/05/19/VyAXwN.png"></a>
   </div>
   <div class="info">
     
@@ -282,7 +360,7 @@ SVG
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" itemprop="url" title="daisyUI使用体验"><img data-src="https://i.328888.xyz/2023/05/19/VyAInP.jpeg"></a>
+    <a href="/2023/06/20/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" itemprop="url" title="daisyUI使用体验"><img data-src="https://i.328888.xyz/2023/05/19/VyDy4t.jpeg"></a>
   </div>
   <div class="info">
     
@@ -325,7 +403,7 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" itemprop="url" title="Hexo博客自动部署"><img data-src="https://i.328888.xyz/2023/05/19/VyApYo.jpeg"></a>
+    <a href="/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" itemprop="url" title="Hexo博客自动部署"><img data-src="https://i.328888.xyz/2023/05/19/VyAQ2H.jpeg"></a>
   </div>
   <div class="info">
     
@@ -370,7 +448,7 @@ github 提供了免费的静态网页托管服务，可以将 github repo 作为
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/17/Web%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99%E2%80%94%E7%BF%BB%E8%AF%91/" itemprop="url" title="Web界面设计准则—翻译"><img data-src="https://i.328888.xyz/2023/05/19/VyAKvy.jpeg"></a>
+    <a href="/2023/06/17/Web%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99%E2%80%94%E7%BF%BB%E8%AF%91/" itemprop="url" title="Web界面设计准则—翻译"><img data-src="https://i.328888.xyz/2023/05/19/VyA9tv.jpeg"></a>
   </div>
   <div class="info">
     
@@ -415,7 +493,7 @@ github 提供了免费的静态网页托管服务，可以将 github repo 作为
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/" itemprop="url" title="微信公众号模板工具开发-02（end）"><img data-src="https://i.328888.xyz/2023/05/19/VyDZWC.jpeg"></a>
+    <a href="/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/" itemprop="url" title="微信公众号模板工具开发-02（end）"><img data-src="https://i.328888.xyz/2023/05/19/VyA9tv.jpeg"></a>
   </div>
   <div class="info">
     
@@ -457,7 +535,7 @@ npm install prismjs@1.29.0 @types/prismjs@1.26.0# 配置
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/" itemprop="url" title="微信公众号模板工具开发-01"><img data-src="https://i.328888.xyz/2023/05/19/VyAKvy.jpeg"></a>
+    <a href="/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/" itemprop="url" title="微信公众号模板工具开发-01"><img data-src="https://i.328888.xyz/2023/05/19/VyDHNw.png"></a>
   </div>
   <div class="info">
     
@@ -500,93 +578,6 @@ markdown 原始的文本是无法被渲染的好看的，在浏览器中，使�
   </div>
 </article>
 
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2023/06/11/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/" itemprop="url" title="鸡毛蒜皮周刊-04"><img data-src="https://i.328888.xyz/2023/05/19/VyAg7V.png"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2023-06-11 23:05:21">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2023-06-11T23:05:21+08:00">2023-06-11</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>3.1k</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>3 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/2023/06/11/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/" itemprop="url" title="鸡毛蒜皮周刊-04">鸡毛蒜皮周刊-04</a></h3>
-    <div class="excerpt">
-        # WASM 初体验
-最近看到了很多介绍 webassembly 的文章，包括字节的公众号连续分享了两篇文章：
-
-# WebAssembly 使用场景和未来发展趋势
-WebAssembly 常用开发语言和工具链
-简单来说，webassembly 可以将你用 c、go、rust 等语言写的程序打包，交给 js 在浏览器中调用。我觉得是非常有用的一项技术，一切能用浏览器实现的技术应该早晚会交给浏览器。
-出于学习的想法以及对 go 和前端的开发经验，找了一份小教程，体验了一下 go-wasm:
-教程：# Go WebAssembly (Wasm) 简明教程
-还是挺有趣的，把 go...
-    </div>
-    <a href="/2023/06/11/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/" itemprop="url" title="鸡毛蒜皮周刊-04" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2023/06/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/" itemprop="url" title="云服务器重新搭建实录"><img data-src="https://i.328888.xyz/2023/05/19/VyD24z.jpeg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2023-06-05 08:47:28">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2023-06-05T08:47:28+08:00">2023-06-05</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>4k</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>4 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/2023/06/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/" itemprop="url" title="云服务器重新搭建实录">云服务器重新搭建实录</a></h3>
-    <div class="excerpt">
-        上上周把腾讯云的环境搞坏了，之前搭建的 halo 博客站数据也丢了，好在基本都有备份，有些垃圾文章就直接扔掉了。 重新部署了一下云服务器，包括 rss 阅读、hexo 博客、gocron 定时任务等等。这篇文章记录一下我的部署流程。
-
-# 安装 docker
-略
-# 安装 docker-compose
-sudo curl -L &amp;quot;https://get.daocloud.io/docker/compose/releases/download/2.17.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o...
-    </div>
-    <a href="/2023/06/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/" itemprop="url" title="云服务器重新搭建实录" class="btn">more...</a>
-  </div>
-</article>
-
     </div>
 
   </div>
@@ -622,13 +613,13 @@ sudo curl -L &amp;quot;https://get.daocloud.io/docker/compose/releases/download/
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">27</span>
+        <span class="count">29</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">12</span>
+        <span class="count">14</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -710,52 +701,34 @@ sudo curl -L &amp;quot;https://get.daocloud.io/docker/compose/releases/download/
 <div class="breadcrumb">
 </div>
 
+    <span><a href="/2023/06/25/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" title="SoloX移动设备性能采集工具使用体验">SoloX移动设备性能采集工具使用体验</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/" title="微信公众号模板工具开发-01">微信公众号模板工具开发-01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/06/SoloX%E4%B9%8B%E5%86%85%E5%AD%98%E6%80%A7%E8%83%BD%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" title="SoloX之内存性能数据采集">SoloX之内存性能数据采集</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/2023/06/17/Web%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99%E2%80%94%E7%BF%BB%E8%AF%91/" title="Web界面设计准则—翻译">Web界面设计准则—翻译</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" title="Hexo博客自动部署">Hexo博客自动部署</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/07/01/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="solox之fps性能采集">solox之fps性能采集</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/05/19/%E5%9B%BE%E7%89%87%E6%89%B9%E9%87%8F%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/" title="图片批量压缩工具推荐">图片批量压缩工具推荐</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/06/29/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/" title="ASCII">ASCII</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/" title="鸡毛蒜皮周刊-02">鸡毛蒜皮周刊-02</a></span>
   </li>
 
       
@@ -773,7 +746,7 @@ sudo curl -L &amp;quot;https://get.daocloud.io/docker/compose/releases/download/
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/07/14/SoloX%E4%B9%8B%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%97%B6%E9%97%B4/" title="SoloX之应用启动时间">SoloX之应用启动时间</a></span>
+    <span><a href="/2023/07/14/SoloX%E4%B9%8BGPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="SoloX之GPU性能采集">SoloX之GPU性能采集</a></span>
   </li>
 
       
@@ -782,7 +755,7 @@ sudo curl -L &amp;quot;https://get.daocloud.io/docker/compose/releases/download/
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/07/14/SoloX%E4%B9%8B%E5%AE%89%E5%8D%93logcat/" title="SoloX之安卓logcat">SoloX之安卓logcat</a></span>
+    <span><a href="/2023/05/17/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/" title="gopher-lua的使用">gopher-lua的使用</a></span>
   </li>
 
       
@@ -791,7 +764,25 @@ sudo curl -L &amp;quot;https://get.daocloud.io/docker/compose/releases/download/
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/07/14/SoloX%E4%B9%8B%E5%BA%94%E7%94%A8%E5%AE%89%E8%A3%85/" title="SoloX之应用安装">SoloX之应用安装</a></span>
+    <span><a href="/2023/07/14/SoloX%E4%B9%8B%E5%BA%94%E7%94%A8%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" title="SoloX之应用网络数据采集">SoloX之应用网络数据采集</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/" title="微信公众号模板工具开发-02（end）">微信公众号模板工具开发-02（end）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/16/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8815%E6%97%A5/" title="本周看了啥-2023年7月15日">本周看了啥-2023年7月15日</a></span>
   </li>
 
   </ul>
@@ -816,13 +807,13 @@ sudo curl -L &amp;quot;https://get.daocloud.io/docker/compose/releases/download/
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">75k 字</span>
+    <span title="站点总字数">94k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:08</span>
+    <span title="站点阅读时长">1:25</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
