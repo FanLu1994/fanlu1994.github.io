@@ -396,3 +396,6 @@ feed:
         enable: true
         template: "themes/shoka/layout/_alternate/json.ejs"
         output: "feed.json"
+
+busuanzi:
+  enable: true
