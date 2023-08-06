@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>何妨吟啸且徐行 • Posts by &#34;阅读&#34; tag</title>
+        <link>https://fanlu.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 06 Aug 2023 06:29:15 +0000</pubDate>
+        <lastBuildDate>Sun, 06 Aug 2023 06:29:15 +0000</lastBuildDate>
+        <category>CI CD linux</category>
+        <category>测试开发 性能 工具</category>
+        <category>前端 产品经理</category>
+        <category>前端 UI</category>
+        <category>golang实验室</category>
+        <category>前端搬砖指南</category>
+        <category>前端 vue go wasm</category>
+        <category>云服务器</category>
+        <category>工具</category>
+        <category>nuxt axiss 前端</category>
+        <category>阅读 电影 电视</category>
+        <category>阅读 电视 播客</category>
+        <category>阅读</category>
+        <category>游戏 桌游 生活</category>
+        <category>前端 网站</category>
+        <category>前端 UI 网站</category>
+        <category>鸡毛蒜皮周刊</category>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/08/06/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%885%E6%97%A5/</guid>
+            <title>本周看了啥-2023年8月5日</title>
+            <link>https://fanlu.top/2023/08/06/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%885%E6%97%A5/</link>
+            <category>阅读</category>
+            <pubDate>Sun, 06 Aug 2023 06:29:15 +0000</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;不蒜子网站访问统计原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#不蒜子网站访问统计原理&#34;&gt;#&lt;/a&gt; 不蒜子网站访问统计原理&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly94dWpzMDgxMy5naXRodWIuaW8vZ2l0cGFnZS8yMDIwLzA5LzI1L2ludHJvZHVjdGlvbi1vZi1idS1zdWFuLXppLw==&#34;&gt;https://xujs0813.github.io/gitpage/2020/09/25/introduction-of-bu-suan-zi/&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pYnJ1Y2UuaW5mby8yMDE1LzA0LzA0L2J1c3VhbnppLyNtb3Jl&#34;&gt;https://ibruce.info/2015/04/04/busuanzi/#more&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;还是依靠请求和数据记录来实现的，不过实现的相当优雅，感谢作者的贡献&lt;/p&gt;
+&lt;h1 id=&#34;css原子化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css原子化&#34;&gt;#&lt;/a&gt; CSS 原子化&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC83MTYxMjExOTQxNjUyNzkxMzA0&#34;&gt;https://juejin.cn/post/7161211941652791304&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其实就是针对一种多处使用的样式类的封装。&lt;br&gt;
+tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
+但是 tailwindcss 会让代码变得很难看，而且会给后面的维护修改带来麻烦，所以可以使用它的 apply 语法，例如，这样可以美化代码，并且好维护&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.menu &amp;#123; @apply p-2 text-gray-900 font-semibold; &amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;游戏本土化测试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#游戏本土化测试&#34;&gt;#&lt;/a&gt; 游戏本土化测试&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93ZWliby5jb20vdHRhcnRpY2xlL3Avc2hvdz9pZD0yMzA5NDA0OTI4OTg1NTgxODc5NDQ4&#34;&gt;https://weibo.com/ttarticle/p/show?id=2309404928985581879448&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;现在大部分的游戏都会在多个国家和区域发行，每个地方的语言不一样，因此需要对各个地区进行本土化的翻译，带有文字的图片也要处理多份。&lt;br&gt;
+对不同语言版本的游戏，当然要注重文本的翻译质量，并且翻译的要本土化，比如赛博朋克 2077 的中文就是翻译的比较接地气的一类，还有今年的原子之心，本土化做的也相当不错，文本的翻译质量也直接影响到配音质量。&lt;br&gt;
+文本除了翻译意思之外，还要处理一些俚语、还要避免与本地文化冲突。&lt;br&gt;
+这篇文章就介绍了本地化测试 LQA 的工作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;语言翻译测试
+&lt;ul&gt;
+&lt;li&gt;未翻译的内容&lt;/li&gt;
+&lt;li&gt;界面显示&lt;/li&gt;
+&lt;li&gt;语言是否通顺合理&lt;/li&gt;
+&lt;li&gt;适配性和配音一致性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;母语测试
+&lt;ul&gt;
+&lt;li&gt;文化差异相关&lt;/li&gt;
+&lt;li&gt;图案相关&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;python调试分析工具&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#python调试分析工具&#34;&gt;#&lt;/a&gt; python 调试分析工具&lt;/h1&gt;
+&lt;p&gt;python 在运行种有事会出现内存占用增加、cpu 使用爆炸等问题，有一些工具可以帮助我们定位到是哪些代码造成了这个问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;linux 自带的 pstack gdb&lt;/li&gt;
+&lt;li&gt;pystack-debugger  定位到代码行&lt;/li&gt;
+&lt;li&gt;hypno&lt;/li&gt;
+&lt;li&gt;py-spy&lt;/li&gt;
+&lt;li&gt;austin&lt;/li&gt;
+&lt;li&gt;pyinstrument&lt;/li&gt;
+&lt;li&gt;pystuck&lt;/li&gt;
+&lt;li&gt;pyfalme&lt;/li&gt;
+&lt;li&gt;pyrasite&lt;/li&gt;
+&lt;li&gt;pydbattach&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;深入浅出nodejs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深入浅出nodejs&#34;&gt;#&lt;/a&gt; 深入浅出 Nodejs&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;作者：朴灵&lt;br&gt;
+ ISBN: 9787115335500&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;全面介绍了 nodejs 的原理、使用、框架等等。质量很高，很实用。&lt;br&gt;
+其实代码初学者可以选择 js 而非 python 来作为首选语言，毕竟 js 学会，前后端就都会了。&lt;/p&gt;
+&lt;h1 id=&#34;诡秘之主&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#诡秘之主&#34;&gt;#&lt;/a&gt; 诡秘之主&lt;/h1&gt;
+&lt;p&gt;终于看完了，感觉自己是个大冤种。后期基本快速读完了，结尾很烂。&lt;br&gt;
+作者显然很想给作品增加文学性，尽可能写的很厚重，但是作品题材又支撑不起来这样的想法，所以就显得很无聊，爽文又不够爽，文学也不够，就有点别扭。以后网文还是看点轻松的。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
