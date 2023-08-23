@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>何妨吟啸且徐行 • Posts by &#34;前端 动画 工具&#34; tag</title>
+        <link>https://fanlu.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Wed, 23 Aug 2023 15:07:29 +0000</pubDate>
+        <lastBuildDate>Wed, 23 Aug 2023 15:07:29 +0000</lastBuildDate>
+        <category>CI CD linux</category>
+        <category>测试开发 性能 工具</category>
+        <category>前端 产品经理</category>
+        <category>前端 UI</category>
+        <category>golang实验室</category>
+        <category>jenkins CD</category>
+        <category>前端 动画 工具</category>
+        <category>前端 工具</category>
+        <category>前端搬砖指南</category>
+        <category>前端 vue go wasm</category>
+        <category>云服务器</category>
+        <category>工具</category>
+        <category>nuxt axiss 前端</category>
+        <category>阅读 电影 电视</category>
+        <category>阅读 电视 播客</category>
+        <category>阅读 UP主</category>
+        <category>阅读</category>
+        <category>游戏 桌游 生活</category>
+        <category>前端 网站</category>
+        <category>前端 UI 网站</category>
+        <category>鸡毛蒜皮周刊</category>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/08/23/lottielab%E5%8A%A8%E7%94%BB%E5%BA%93/</guid>
+            <title>lottielab动画库</title>
+            <link>https://fanlu.top/2023/08/23/lottielab%E5%8A%A8%E7%94%BB%E5%BA%93/</link>
+            <category>前端 动画 工具</category>
+            <pubDate>Wed, 23 Aug 2023 15:07:29 +0000</pubDate>
+            <description><![CDATA[ &lt;h2 id=&#34;lottie&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lottie&#34;&gt;#&lt;/a&gt; lottie&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9haXJibmIuZGVzaWduL2xvdHRpZS8=&#34;&gt;lottie&lt;/span&gt; 是 aribnb 开发的一个面向 web 或者移动平台的动画编辑和播放库。&lt;br&gt;
+编辑的动画会生成一个 json 文件，然后你的项目中要集成 lottie 的库，加载到这个 json 文件，然后可以进行动画的播放&lt;/p&gt;
+&lt;h2 id=&#34;lottiefiles&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lottiefiles&#34;&gt;#&lt;/a&gt; lottieFiles&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sb3R0aWVmaWxlcy5jb20vZmVhdHVyZWQ=&#34;&gt;lottieFiles&lt;/span&gt; 是一个 lottie 托管库。包含内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大量的其他艺术家的动画作品&lt;/li&gt;
+&lt;li&gt;托管自己的动画库的平台，可以通过上传方式上传 json&lt;/li&gt;
+&lt;li&gt;可以在在线制作 lottie 动画 -》&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9lZGl0b3IubG90dGllZmlsZXMuY29tLw==&#34;&gt;lottie-editor&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lottielab&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lottielab&#34;&gt;#&lt;/a&gt; lottielab&lt;/h2&gt;
+&lt;p&gt;这是一个更好用的 lottie 动画编辑器。&lt;br&gt;
+地址： &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubG90dGllbGFiLmNvbS8=&#34;&gt;https://www.lottielab.com/&lt;/span&gt;&lt;br&gt;
+ 操作方式很像视频编辑器操作。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;左侧可以添加元素物体&lt;/li&gt;
+&lt;li&gt;右侧调整物体属性&lt;/li&gt;
+&lt;li&gt;下方时间轴可以拖拽调整或者双击添加关键帧&lt;br&gt;
+更加丰富的玩法需要自己去探索了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;做好的动画可以导出为 json、mp4、gif，非常方便。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

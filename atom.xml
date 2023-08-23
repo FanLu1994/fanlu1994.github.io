@@ -3,13 +3,15 @@
     <id>https://fanlu.top</id>
     <title>何妨吟啸且徐行</title>
     <link href="https://fanlu.top" />
-    <updated>2023-08-20T07:54:23.000Z</updated>
+    <updated>2023-08-23T15:09:10.000Z</updated>
     <category term="CI CD linux" />
     <category term="测试开发 性能 工具" />
     <category term="前端 产品经理" />
     <category term="前端 UI" />
     <category term="golang实验室" />
     <category term="jenkins CD" />
+    <category term="前端 动画 工具" />
+    <category term="前端 工具" />
     <category term="前端搬砖指南" />
     <category term="前端 vue go wasm" />
     <category term="云服务器" />
@@ -23,6 +25,149 @@
     <category term="前端 网站" />
     <category term="前端 UI 网站" />
     <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/08/23/rrweb%E4%BD%BF%E7%94%A8/</id>
+        <title>rrweb使用</title>
+        <link rel="alternate" href="https://fanlu.top/2023/08/23/rrweb%E4%BD%BF%E7%94%A8/"/>
+        <content type="html">&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;rrweb 是一种通过记录页面 dom 元素的变化，以及鼠标或者键盘输入的变化，来实现 web 操作的录制回放的功能。&lt;br&gt;
+官网在这里：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucnJ3ZWIuaW8v&#34;&gt;rrweb&lt;/span&gt;&lt;br&gt;
+ 源码在这里：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3Jyd2ViLWlvL3Jyd2Vi&#34;&gt;https://github.com/rrweb-io/rrweb&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;在vue中使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在vue中使用&#34;&gt;#&lt;/a&gt; 在 vue 中使用&lt;/h2&gt;
+&lt;h3 id=&#34;新建vue3项目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#新建vue3项目&#34;&gt;#&lt;/a&gt; 新建 vue3 项目&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-g&lt;/span&gt; @vue/cli&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vue create rrweb-vue-demo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;创建两个路由页面&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#创建两个路由页面&#34;&gt;#&lt;/a&gt; 创建两个路由页面&lt;/h3&gt;
+&lt;p&gt;分别用来录制操作和回放操作&lt;/p&gt;
+&lt;figure class=&#34;highlight ts&#34;&gt;&lt;figcaption data-lang=&#34;TypeScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;as&lt;/span&gt; Router &lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;vue-router&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; routes &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;/&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;../Record.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; path&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;/play&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; component&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;../Play.vue&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; router &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;createRouter&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token comment&#34;&gt;// 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    history&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; Router&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;createWebHashHistory&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    routes&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// `routes: routes` 的缩写  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;录制和播放&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#录制和播放&#34;&gt;#&lt;/a&gt; 录制和播放&lt;/h3&gt;
+&lt;h3 id=&#34;安装rrweb&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装rrweb&#34;&gt;#&lt;/a&gt; 安装 rrweb&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;npm install rrweb rrweb-player
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;录制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#录制&#34;&gt;#&lt;/a&gt; 录制&lt;/h3&gt;
+&lt;p&gt;这里录制 20s 自动停止，你也可以改成手动停止&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;  
+  &amp;lt;button @click=&amp;quot;startRecord&amp;quot;&amp;gt;开启记录&amp;lt;/button&amp;gt;  
+  &amp;lt;HelloWorld msg=&amp;quot;Vite + Vue&amp;quot; /&amp;gt;  
+  &amp;lt;button @click=&amp;quot;gotoPlay&amp;quot;&amp;gt;前往回放&amp;lt;/button&amp;gt;  
+&amp;lt;/template&amp;gt;  
+  
+&amp;lt;script setup  lang=&amp;quot;ts&amp;quot;&amp;gt;  
+import HelloWorld from &#39;./components/HelloWorld.vue&#39;  
+import * as rrweb from &amp;quot;rrweb&amp;quot;;  
+import &amp;#123;useRouter&amp;#125; from &amp;quot;vue-router&amp;quot;;  
+const startRecord = () =&amp;gt; &amp;#123;  
+  //record() 方法启动录制  
+  //stopFn为暂停录制的方法  
+  let stopFn = rrweb.record(&amp;#123;  
+    //12秒后停止页面的录制，如果想一直录得话可以去掉。  
+    emit(event) &amp;#123;  
+      setTimeout(() =&amp;gt; &amp;#123;  
+        stopFn();  
+      &amp;#125;, 20000);  
+      // 用任意方式存  储 event      // store.commit(&amp;quot;updateEvents&amp;quot;, &amp;#123; event: event &amp;#125;);      let eventList: any[] = JSON.parse(localStorage.getItem(&amp;quot;events&amp;quot;))  
+      if (eventList == null)&amp;#123;  
+        eventList = [event]  
+      &amp;#125;else&amp;#123;  
+        eventList.push(event)  
+      &amp;#125;  
+      localStorage.setItem(&amp;quot;events&amp;quot;,JSON.stringify(eventList))  
+  
+      // lo  
+      console.log(event)  
+    &amp;#125;,  
+  &amp;#125;);  
+  console.log(&amp;quot;开启记录&amp;quot;)  
+&amp;#125;;  
+  
+const route = useRouter()  
+const gotoPlay = ()=&amp;gt;&amp;#123;  
+  
+  console.log(route)  
+  route.push(&amp;quot;/play&amp;quot;)  
+&amp;#125;  
+  
+&amp;lt;/script&amp;gt;  
+  
+&amp;lt;style scoped&amp;gt;  
+  
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;回放&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#回放&#34;&gt;#&lt;/a&gt; 回放&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-vue&#34;&gt;&amp;lt;template&amp;gt;  
+  &amp;lt;button @click=&amp;quot;startPlay&amp;quot;&amp;gt;回放&amp;lt;/button&amp;gt;  
+  &amp;lt;div class=&amp;quot;counte&amp;quot;&amp;gt;  
+    &amp;lt;div id=&amp;quot;playback&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  
+  &amp;lt;/div&amp;gt;&amp;lt;/template&amp;gt;  
+  
+&amp;lt;script lang=&amp;quot;ts&amp;quot; setup&amp;gt;  
+import rrwebPlayer from &amp;quot;rrweb-player&amp;quot;;  
+import &amp;quot;rrweb-player/dist/style.css&amp;quot;  
+import &amp;#123;ref&amp;#125; from &amp;quot;vue&amp;quot;;  
+  
+const player = ref(null)  
+const startPlay = ()=&amp;gt;&amp;#123;  
+  const events = JSON.parse(localStorage.getItem(&amp;quot;events&amp;quot;))  
+  player.value = new rrwebPlayer(&amp;#123;  
+    target: document.getElementById(&amp;quot;playback&amp;quot;),  
+    props:&amp;#123;  
+      events:events,  
+      speedOption:[1,2,5,10]  
+    &amp;#125;  
+  &amp;#125;)  
+&amp;#125;  
+  
+&amp;lt;/script&amp;gt;  
+  
+&amp;lt;style scoped&amp;gt;  
+  
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;用途&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用途&#34;&gt;#&lt;/a&gt; 用途&lt;/h2&gt;
+&lt;h3 id=&#34;自动化测试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自动化测试&#34;&gt;#&lt;/a&gt; 自动化测试&lt;/h3&gt;
+&lt;p&gt;对于 web 的项目，可以预先录制一份操作数据。&lt;br&gt;
+然后测试时通过回放操作来进行回放。&lt;br&gt;
+不过如何发现测试中的错误，我还没有深入研究。&lt;br&gt;
+当然，如果要进行自动化测试，前端还有很多自动化的工具可以使用，这个未必好用。&lt;/p&gt;
+&lt;h3 id=&#34;bug复现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bug复现&#34;&gt;#&lt;/a&gt; bug 复现&lt;/h3&gt;
+&lt;p&gt;这个应该是 rrweb 最重要的功能。&lt;br&gt;
+线上如果出现 bug，可以利用 rrweb 录制的结果去回放 bug 现场。什么时机判断出现了 bug 呢？可以让用户一键上报，也可以进行埋点，发现问题就自动上报。&lt;/p&gt;
+&lt;h3 id=&#34;操作说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作说明&#34;&gt;#&lt;/a&gt; 操作说明&lt;/h3&gt;
+&lt;p&gt;一些需要教育用户的复杂操作，可以通过 rrweb 录制一份操作指南，让用户去观看学习。&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#其他&#34;&gt;#&lt;/a&gt; 其他&lt;/h3&gt;
+&lt;p&gt;其他&lt;/p&gt;
+&lt;h2 id=&#34;注意事项&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意事项&#34;&gt;#&lt;/a&gt; ！！ 注意事项&lt;/h2&gt;
+&lt;p&gt;因为回放的原理是通过 iframe 加载网页，来回放操作，如果录制时和回放时的内容不一样，那就 game over 了&lt;/p&gt;
+</content>
+        <category term="前端 工具" />
+        <updated>2023-08-23T15:09:10.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://fanlu.top/2023/08/23/lottielab%E5%8A%A8%E7%94%BB%E5%BA%93/</id>
+        <title>lottielab动画库</title>
+        <link rel="alternate" href="https://fanlu.top/2023/08/23/lottielab%E5%8A%A8%E7%94%BB%E5%BA%93/"/>
+        <content type="html">&lt;h2 id=&#34;lottie&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lottie&#34;&gt;#&lt;/a&gt; lottie&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9haXJibmIuZGVzaWduL2xvdHRpZS8=&#34;&gt;lottie&lt;/span&gt; 是 aribnb 开发的一个面向 web 或者移动平台的动画编辑和播放库。&lt;br&gt;
+编辑的动画会生成一个 json 文件，然后你的项目中要集成 lottie 的库，加载到这个 json 文件，然后可以进行动画的播放&lt;/p&gt;
+&lt;h2 id=&#34;lottiefiles&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lottiefiles&#34;&gt;#&lt;/a&gt; lottieFiles&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sb3R0aWVmaWxlcy5jb20vZmVhdHVyZWQ=&#34;&gt;lottieFiles&lt;/span&gt; 是一个 lottie 托管库。包含内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大量的其他艺术家的动画作品&lt;/li&gt;
+&lt;li&gt;托管自己的动画库的平台，可以通过上传方式上传 json&lt;/li&gt;
+&lt;li&gt;可以在在线制作 lottie 动画 -》&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9lZGl0b3IubG90dGllZmlsZXMuY29tLw==&#34;&gt;lottie-editor&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lottielab&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lottielab&#34;&gt;#&lt;/a&gt; lottielab&lt;/h2&gt;
+&lt;p&gt;这是一个更好用的 lottie 动画编辑器。&lt;br&gt;
+地址： &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubG90dGllbGFiLmNvbS8=&#34;&gt;https://www.lottielab.com/&lt;/span&gt;&lt;br&gt;
+ 操作方式很像视频编辑器操作。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;左侧可以添加元素物体&lt;/li&gt;
+&lt;li&gt;右侧调整物体属性&lt;/li&gt;
+&lt;li&gt;下方时间轴可以拖拽调整或者双击添加关键帧&lt;br&gt;
+更加丰富的玩法需要自己去探索了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;做好的动画可以导出为 json、mp4、gif，非常方便。&lt;/p&gt;
+</content>
+        <category term="前端 动画 工具" />
+        <updated>2023-08-23T15:07:29.000Z</updated>
+    </entry>
     <entry>
         <id>https://fanlu.top/2023/08/20/jenkins%E7%9A%84%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</id>
         <title>jenkins的部署问题记录</title>
