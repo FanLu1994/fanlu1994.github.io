@@ -3,7 +3,7 @@
     <id>https://fanlu.top</id>
     <title>何妨吟啸且徐行</title>
     <link href="https://fanlu.top" />
-    <updated>2023-08-23T15:09:10.000Z</updated>
+    <updated>2023-08-26T12:32:47.000Z</updated>
     <category term="CI CD linux" />
     <category term="测试开发 性能 工具" />
     <category term="前端 产品经理" />
@@ -14,6 +14,7 @@
     <category term="前端 工具" />
     <category term="前端搬砖指南" />
     <category term="前端 vue go wasm" />
+    <category term="阅读 经济" />
     <category term="云服务器" />
     <category term="工具" />
     <category term="nuxt axiss 前端" />
@@ -25,6 +26,22 @@
     <category term="前端 网站" />
     <category term="前端 UI 网站" />
     <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/08/26/%E3%80%8A%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%E3%80%8B%E9%98%85%E8%AF%BB/</id>
+        <title>《置身事内》阅读</title>
+        <link rel="alternate" href="https://fanlu.top/2023/08/26/%E3%80%8A%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%E3%80%8B%E9%98%85%E8%AF%BB/"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;ISBN: 9787208171336&lt;br&gt;
+ 作者： 兰小欢&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是一本介绍中国经济的书，从宏观角度和微观角度介绍了中国经济政策的发展，分析了背后的原因。&lt;/p&gt;
+&lt;p&gt;与我而言，本科毕业之后就再也没有读过经济相关的书了。这本书没有很多教条或者公文样的语言，学术和通俗在这本书结合的很好。尤其是前半部分，中国土地财政、政府投资、分税制改革等内容让我有种恍然大悟的感觉。&lt;/p&gt;
+&lt;p&gt;这是今年最让我感觉到知识拓展的一本书。&lt;/p&gt;
+&lt;p&gt;非常推荐。&lt;/p&gt;
+</content>
+        <category term="阅读 经济" />
+        <updated>2023-08-26T12:32:47.000Z</updated>
+    </entry>
     <entry>
         <id>https://fanlu.top/2023/08/23/rrweb%E4%BD%BF%E7%94%A8/</id>
         <title>rrweb使用</title>
