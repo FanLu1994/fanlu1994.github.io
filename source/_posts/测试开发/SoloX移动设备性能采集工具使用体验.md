@@ -2,6 +2,7 @@
 title: SoloX移动设备性能采集工具使用体验
 date: 2023-06-25 21:46:33
 tags: 测试开发 性能 工具
+categories: 测试开发
 ---
 > https://github.com/smart-test-ti/SoloX
 

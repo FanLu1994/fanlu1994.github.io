@@ -2,6 +2,7 @@
 title: SoloX之应用启动时间
 date: 2023-07-14 08:37:42
 tags: 测试开发 性能 工具
+categories: 测试开发
 ---
 ## 安卓
 

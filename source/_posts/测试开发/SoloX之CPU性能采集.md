@@ -2,6 +2,7 @@
 title: SoloX之CPU性能采集
 date: 2023-07-06 20:57:07
 tags: 测试开发 性能 工具
+categories: 测试开发
 ---
 ## 安卓
 ### 获取进程cpu使用时间

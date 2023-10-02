@@ -2,6 +2,7 @@
 title: grpcurl
 date: 2023-08-27 13:41:39
 tags: 工具 网络
+categories: 测试开发
 ---
 ## cURL
 curl是一个常见的命令行工具，用来请求web服务器接口，c就是client的意思。

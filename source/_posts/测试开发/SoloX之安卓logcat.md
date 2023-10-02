@@ -2,6 +2,7 @@
 title: SoloX之安卓logcat
 date: 2023-07-14 08:40:25
 tags: 测试开发 性能 工具
+categories: 测试开发
 ---
 安卓logcat通过一个websocket来进行传输；
 

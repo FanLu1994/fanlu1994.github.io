@@ -2,6 +2,7 @@
 title: SoloX之应用网络数据采集
 date: 2023-07-14 08:39:07
 tags: 测试开发 性能 工具
+categories: 测试开发
 ---
 ## 安卓
 基于linux的原理，通过`cat /proc/进程id/net/dev` 拿到网卡数据；
