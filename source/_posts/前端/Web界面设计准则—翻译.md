@@ -1,7 +1,10 @@
 ---
 title: Web界面设计准则—翻译
 date: 2023-06-17 23:55:48
-tags: 前端 产品经理
+tags: 
+- 前端 
+- 产品经理
+categories: 前端
 ---
  https://interfaces.rauno.me/
 

@@ -1,7 +1,11 @@
 ---
 title: lottielab动画库
 date: 2023-08-23 23:07:29
-tags: 前端 动画 工具
+tags: 
+- 前端 
+- 动画 
+- 工具
+categories: 前端
 ---
 ## lottie
 [lottie](https://airbnb.design/lottie/)是aribnb开发的一个面向web或者移动平台的动画编辑和播放库。

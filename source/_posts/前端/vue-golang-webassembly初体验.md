@@ -1,7 +1,12 @@
 ---
 title: vue-golang-webassembly初体验
 date: 2023-07-16 12:44:21
-tags: 前端 vue go wasm
+tags: 
+- 前端 
+- vue 
+- go 
+- wasm
+categories: 前端
 ---
 # golang 部分
 > 参考https://geektutu.com/post/quick-go-wasm.html

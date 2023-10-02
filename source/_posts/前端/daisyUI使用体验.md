@@ -1,7 +1,10 @@
 ---
 title: daisyUI使用体验
 date: 2023-06-20 23:28:33
-tags: 前端 UI
+tags: 
+- 前端 
+- UI
+categories: 前端
 ---
 ## tailwind介绍
 > https://www.tailwindcss.cn/docs/customizing-colors#-8

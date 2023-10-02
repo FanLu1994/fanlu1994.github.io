@@ -1,7 +1,10 @@
 ---
 title: jenkins的部署问题记录
 date: 2023-08-20 15:54:23
-tags: jenkins CD
+tags: 
+- jenkins 
+- CD
+categories: CI 
 ---
 因为工作的原因，需要给外包同学部署一个jenkins来帮助他们部署一些东西。
 ## docker方式

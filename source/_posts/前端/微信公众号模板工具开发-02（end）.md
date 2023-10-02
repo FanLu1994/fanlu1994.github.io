@@ -1,7 +1,11 @@
 ---
 title: 微信公众号模板工具开发-02（end）
 date: 2023-06-17 21:41:45
-tags: nuxt axiss 前端
+tags: 
+- nuxt 
+- axiss 
+- 前端
+categories: 前端
 ---
 ## 代码高亮
 使用prism.js来实现代码高亮。

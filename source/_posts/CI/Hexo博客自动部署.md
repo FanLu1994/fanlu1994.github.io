@@ -1,7 +1,11 @@
 ---
 title: Hexo博客自动部署
 date: 2023-06-19 21:56:14
-tags: CI CD linux 
+tags: 
+- CI 
+- CD 
+- linux 
+categories: CI 
 ---
 ## 简单介绍
 Hexo博客是一个非常好用的静态博客，之前也部署过一阵，后来换了halo，但是遇到了服务器崩溃，丢了一些数据，现在又换回了[Hexo](https://hexo.io/zh-cn/docs/).
