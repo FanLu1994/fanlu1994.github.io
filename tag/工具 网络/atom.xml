@@ -4,36 +4,36 @@
     <title>何妨吟啸且徐行 • Posts by &#34;工具 网络&#34; tag</title>
     <link href="https://fanlu.top" />
     <updated>2023-08-27T05:41:39.000Z</updated>
+    <category term="nuxt axiss 前端" />
     <category term="CI CD linux" />
-    <category term="测试开发 性能 工具" />
+    <category term="jenkins CD" />
+    <category term="云服务器" />
     <category term="前端 产品经理" />
     <category term="前端 UI" />
-    <category term="golang实验室" />
-    <category term="工具 网络" />
-    <category term="jenkins CD" />
     <category term="前端 动画 工具" />
     <category term="前端 工具" />
     <category term="前端搬砖指南" />
     <category term="前端 vue go wasm" />
-    <category term="阅读 经济" />
-    <category term="生活" />
-    <category term="云服务器" />
     <category term="工具" />
-    <category term="nuxt axiss 前端" />
+    <category term="前端 网站" />
+    <category term="前端 UI 网站" />
+    <category term="测试开发 性能 工具" />
+    <category term="golang实验室" />
+    <category term="工具 网络" />
+    <category term="游戏 桌游 生活" />
+    <category term="生活" />
+    <category term="阅读 经济" />
     <category term="阅读，记录" />
     <category term="阅读 电影 电视" />
     <category term="阅读 电视 播客" />
     <category term="阅读 UP主" />
     <category term="阅读" />
-    <category term="游戏 桌游 生活" />
-    <category term="前端 网站" />
-    <category term="前端 UI 网站" />
     <category term="阅读 记录" />
     <category term="鸡毛蒜皮周刊" />
     <entry>
-        <id>https://fanlu.top/2023/08/27/grpcurl/</id>
+        <id>https://fanlu.top/2023/08/27/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/grpcurl/</id>
         <title>grpcurl</title>
-        <link rel="alternate" href="https://fanlu.top/2023/08/27/grpcurl/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/08/27/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/grpcurl/"/>
         <content type="html">&lt;h2 id=&#34;curl&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#curl&#34;&gt;#&lt;/a&gt; cURL&lt;/h2&gt;
 &lt;p&gt;curl 是一个常见的命令行工具，用来请求 web 服务器接口，c 就是 client 的意思。&lt;br&gt;
 curl 支持的协议很多&lt;/p&gt;

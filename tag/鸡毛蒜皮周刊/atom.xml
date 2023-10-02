@@ -4,36 +4,36 @@
     <title>何妨吟啸且徐行 • Posts by &#34;鸡毛蒜皮周刊&#34; tag</title>
     <link href="https://fanlu.top" />
     <updated>2023-06-11T15:05:21.000Z</updated>
+    <category term="nuxt axiss 前端" />
     <category term="CI CD linux" />
-    <category term="测试开发 性能 工具" />
+    <category term="jenkins CD" />
+    <category term="云服务器" />
     <category term="前端 产品经理" />
     <category term="前端 UI" />
-    <category term="golang实验室" />
-    <category term="工具 网络" />
-    <category term="jenkins CD" />
     <category term="前端 动画 工具" />
     <category term="前端 工具" />
     <category term="前端搬砖指南" />
     <category term="前端 vue go wasm" />
-    <category term="阅读 经济" />
-    <category term="生活" />
-    <category term="云服务器" />
     <category term="工具" />
-    <category term="nuxt axiss 前端" />
+    <category term="前端 网站" />
+    <category term="前端 UI 网站" />
+    <category term="测试开发 性能 工具" />
+    <category term="golang实验室" />
+    <category term="工具 网络" />
+    <category term="游戏 桌游 生活" />
+    <category term="生活" />
+    <category term="阅读 经济" />
     <category term="阅读，记录" />
     <category term="阅读 电影 电视" />
     <category term="阅读 电视 播客" />
     <category term="阅读 UP主" />
     <category term="阅读" />
-    <category term="游戏 桌游 生活" />
-    <category term="前端 网站" />
-    <category term="前端 UI 网站" />
     <category term="阅读 记录" />
     <category term="鸡毛蒜皮周刊" />
     <entry>
-        <id>https://fanlu.top/2023/06/11/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/</id>
+        <id>https://fanlu.top/2023/06/11/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/</id>
         <title>鸡毛蒜皮周刊-04</title>
-        <link rel="alternate" href="https://fanlu.top/2023/06/11/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/06/11/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/"/>
         <content type="html">&lt;h2 id=&#34;wasm初体验&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#wasm初体验&#34;&gt;#&lt;/a&gt; WASM 初体验&lt;/h2&gt;
 &lt;p&gt;最近看到了很多介绍 webassembly 的文章，包括字节的公众号连续分享了两篇文章：&lt;/p&gt;
 &lt;ol&gt;
@@ -108,9 +108,9 @@ worker 也有不同的类型：&lt;/p&gt;
         <updated>2023-06-11T15:05:21.000Z</updated>
     </entry>
     <entry>
-        <id>https://fanlu.top/2023/06/03/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-03/</id>
+        <id>https://fanlu.top/2023/06/03/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-03/</id>
         <title>鸡毛蒜皮周刊-03</title>
-        <link rel="alternate" href="https://fanlu.top/2023/06/03/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-03/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/06/03/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-03/"/>
         <content type="html">&lt;h2 id=&#34;ue4的网络模块&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ue4的网络模块&#34;&gt;#&lt;/a&gt; ue4 的网络模块&lt;/h2&gt;
 &lt;p&gt;ue4 的网络和客户端紧密结合，通过蓝图中的设置就能实现服务器的功能。这篇文章介绍了 ue4 网络模块的原理。&lt;br&gt;
 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuemh5aW5na3VuLmNvbS9tYXJrZG93bi91ZTRuZXR3b3JrLw==&#34;&gt;UE4 网络模块剖析&lt;/span&gt;&lt;/p&gt;
@@ -130,9 +130,9 @@ worker 也有不同的类型：&lt;/p&gt;
         <updated>2023-06-03T07:18:12.000Z</updated>
     </entry>
     <entry>
-        <id>https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/</id>
+        <id>https://fanlu.top/2023/05/18/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/</id>
         <title>鸡毛蒜皮周刊-02</title>
-        <link rel="alternate" href="https://fanlu.top/2023/05/18/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/05/18/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/"/>
         <content type="html">&lt;h2 id=&#34;nonebot-和-微信机器人&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nonebot-和-微信机器人&#34;&gt;#&lt;/a&gt; NoneBot 和 微信机器人&lt;/h2&gt;
 &lt;p&gt;NoneBot（&lt;strong&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly92Mi5ub25lYm90LmRldi8=&#34;&gt;NoneBot&lt;/span&gt;&lt;/strong&gt;）是一个 python 框架，用来实现机器人聊天应答，支持的平台包括：qq、飞书、钉钉等，插件非常丰富，文档也很详尽，准备搭建试试。&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly94aWUuaW5mb3EuY24vYXJ0aWNsZS8yMGYxOTE0NjIzN2YzNzE0YzVlYjVhZGI3&#34;&gt;微信 + ChatGPT = 自己的智能助手 | 社区征文_ChatGPT_IT 蜗壳 - Tango_InfoQ 写作社区&lt;/span&gt; 作者基于 wechaty python 库和一个 chatGpt 账号，实现了一个微信的智能应答机器人&lt;/p&gt;
@@ -162,9 +162,9 @@ rust 语法有点难理解啊。&lt;br&gt;
         <updated>2023-05-18T15:20:45.000Z</updated>
     </entry>
     <entry>
-        <id>https://fanlu.top/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/</id>
+        <id>https://fanlu.top/2023/05/15/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/</id>
         <title>鸡毛蒜皮周刊-01</title>
-        <link rel="alternate" href="https://fanlu.top/2023/05/15/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/05/15/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-01/"/>
         <content type="html">&lt;h2 id=&#34;人类群星闪耀时&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#人类群星闪耀时&#34;&gt;#&lt;/a&gt; 人类群星闪耀时&lt;/h2&gt;
 &lt;p&gt;作者茨威格选择了一些很有意思的历史时间进行文学叙述，文笔确实很好。 但是作为一个历史” 爱好者 “，始终无法相信这样过度的文学描写，这样总会导致历史失真。&lt;/p&gt;
 &lt;h2 id=&#34;家里的wifi&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#家里的wifi&#34;&gt;#&lt;/a&gt; 家里的 wifi&lt;/h2&gt;

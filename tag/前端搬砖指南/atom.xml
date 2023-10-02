@@ -4,36 +4,36 @@
     <title>何妨吟啸且徐行 • Posts by &#34;前端搬砖指南&#34; tag</title>
     <link href="https://fanlu.top" />
     <updated>2023-05-16T00:19:08.000Z</updated>
+    <category term="nuxt axiss 前端" />
     <category term="CI CD linux" />
-    <category term="测试开发 性能 工具" />
+    <category term="jenkins CD" />
+    <category term="云服务器" />
     <category term="前端 产品经理" />
     <category term="前端 UI" />
-    <category term="golang实验室" />
-    <category term="工具 网络" />
-    <category term="jenkins CD" />
     <category term="前端 动画 工具" />
     <category term="前端 工具" />
     <category term="前端搬砖指南" />
     <category term="前端 vue go wasm" />
-    <category term="阅读 经济" />
-    <category term="生活" />
-    <category term="云服务器" />
     <category term="工具" />
-    <category term="nuxt axiss 前端" />
+    <category term="前端 网站" />
+    <category term="前端 UI 网站" />
+    <category term="测试开发 性能 工具" />
+    <category term="golang实验室" />
+    <category term="工具 网络" />
+    <category term="游戏 桌游 生活" />
+    <category term="生活" />
+    <category term="阅读 经济" />
     <category term="阅读，记录" />
     <category term="阅读 电影 电视" />
     <category term="阅读 电视 播客" />
     <category term="阅读 UP主" />
     <category term="阅读" />
-    <category term="游戏 桌游 生活" />
-    <category term="前端 网站" />
-    <category term="前端 UI 网站" />
     <category term="阅读 记录" />
     <category term="鸡毛蒜皮周刊" />
     <entry>
-        <id>https://fanlu.top/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</id>
+        <id>https://fanlu.top/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</id>
         <title>vben-admin换肤实现</title>
-        <link rel="alternate" href="https://fanlu.top/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/"/>
         <content type="html">&lt;p&gt;最近在 github 上看到了一个后台管理的前端项目，使用了 vue3+ts+vite+ant-vue 的技术，看起来很不错，功能特别丰富，clone 下来发现代码也写的特别好，比我现在的小白代码根本不在同一个等级，因此想要学习一下。 个人觉得从一个功能抽丝剥茧来学习一个功能的写法可能会对自己的技术提高有帮助。&lt;/p&gt;
 &lt;p&gt;项目中的侧边栏提供了超多的主题选项，可以丰富的变换主题。因此本文想分析一下这个换肤是如何实现的。&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://secure2.wostatic.cn/static/wGUf6UvBJUZVXfAPhrzaF/image.png?auth_key=1684196309-2jkBMzvREcZ21xSJjxnEvU-0-4173f6dd779469091bae7835b4c93aa7&#34; alt=&#34;&#34;&gt;&lt;/p&gt;

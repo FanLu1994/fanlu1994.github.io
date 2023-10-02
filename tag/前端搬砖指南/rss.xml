@@ -7,36 +7,36 @@
         <language>zh-CN</language>
         <pubDate>Tue, 16 May 2023 00:19:08 +0000</pubDate>
         <lastBuildDate>Tue, 16 May 2023 00:19:08 +0000</lastBuildDate>
+        <category>nuxt axiss 前端</category>
         <category>CI CD linux</category>
-        <category>测试开发 性能 工具</category>
+        <category>jenkins CD</category>
+        <category>云服务器</category>
         <category>前端 产品经理</category>
         <category>前端 UI</category>
-        <category>golang实验室</category>
-        <category>工具 网络</category>
-        <category>jenkins CD</category>
         <category>前端 动画 工具</category>
         <category>前端 工具</category>
         <category>前端搬砖指南</category>
         <category>前端 vue go wasm</category>
-        <category>阅读 经济</category>
-        <category>生活</category>
-        <category>云服务器</category>
         <category>工具</category>
-        <category>nuxt axiss 前端</category>
+        <category>前端 网站</category>
+        <category>前端 UI 网站</category>
+        <category>测试开发 性能 工具</category>
+        <category>golang实验室</category>
+        <category>工具 网络</category>
+        <category>游戏 桌游 生活</category>
+        <category>生活</category>
+        <category>阅读 经济</category>
         <category>阅读，记录</category>
         <category>阅读 电影 电视</category>
         <category>阅读 电视 播客</category>
         <category>阅读 UP主</category>
         <category>阅读</category>
-        <category>游戏 桌游 生活</category>
-        <category>前端 网站</category>
-        <category>前端 UI 网站</category>
         <category>阅读 记录</category>
         <category>鸡毛蒜皮周刊</category>
         <item>
-            <guid isPermalink="true">https://fanlu.top/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</guid>
+            <guid isPermalink="true">https://fanlu.top/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</guid>
             <title>vben-admin换肤实现</title>
-            <link>https://fanlu.top/2023/05/16/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</link>
+            <link>https://fanlu.top/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</link>
             <category>前端搬砖指南</category>
             <pubDate>Tue, 16 May 2023 00:19:08 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近在 github 上看到了一个后台管理的前端项目，使用了 vue3+ts+vite+ant-vue 的技术，看起来很不错，功能特别丰富，clone 下来发现代码也写的特别好，比我现在的小白代码根本不在同一个等级，因此想要学习一下。 个人觉得从一个功能抽丝剥茧来学习一个功能的写法可能会对自己的技术提高有帮助。&lt;/p&gt;

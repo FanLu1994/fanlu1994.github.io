@@ -7,36 +7,36 @@
         <language>zh-CN</language>
         <pubDate>Mon, 19 Jun 2023 13:56:14 +0000</pubDate>
         <lastBuildDate>Mon, 19 Jun 2023 13:56:14 +0000</lastBuildDate>
+        <category>nuxt axiss 前端</category>
         <category>CI CD linux</category>
-        <category>测试开发 性能 工具</category>
+        <category>jenkins CD</category>
+        <category>云服务器</category>
         <category>前端 产品经理</category>
         <category>前端 UI</category>
-        <category>golang实验室</category>
-        <category>工具 网络</category>
-        <category>jenkins CD</category>
         <category>前端 动画 工具</category>
         <category>前端 工具</category>
         <category>前端搬砖指南</category>
         <category>前端 vue go wasm</category>
-        <category>阅读 经济</category>
-        <category>生活</category>
-        <category>云服务器</category>
         <category>工具</category>
-        <category>nuxt axiss 前端</category>
+        <category>前端 网站</category>
+        <category>前端 UI 网站</category>
+        <category>测试开发 性能 工具</category>
+        <category>golang实验室</category>
+        <category>工具 网络</category>
+        <category>游戏 桌游 生活</category>
+        <category>生活</category>
+        <category>阅读 经济</category>
         <category>阅读，记录</category>
         <category>阅读 电影 电视</category>
         <category>阅读 电视 播客</category>
         <category>阅读 UP主</category>
         <category>阅读</category>
-        <category>游戏 桌游 生活</category>
-        <category>前端 网站</category>
-        <category>前端 UI 网站</category>
         <category>阅读 记录</category>
         <category>鸡毛蒜皮周刊</category>
         <item>
-            <guid isPermalink="true">https://fanlu.top/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
+            <guid isPermalink="true">https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
             <title>Hexo博客自动部署</title>
-            <link>https://fanlu.top/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
+            <link>https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
             <category>CI CD linux</category>
             <pubDate>Mon, 19 Jun 2023 13:56:14 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;简单介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简单介绍&#34;&gt;#&lt;/a&gt; 简单介绍&lt;/h2&gt;

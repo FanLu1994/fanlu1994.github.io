@@ -1,0 +1,689 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/tom.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="何妨吟啸且徐行" href="https://fanlu.top/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="何妨吟啸且徐行" href="https://fanlu.top/atom.xml" />
+<link rel="alternate" type="application/json" title="何妨吟啸且徐行" href="https://fanlu.top/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cat:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="golang实验室" />
+
+
+<link rel="canonical" href="https://fanlu.top/2023/05/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+
+
+  <title>何妨吟啸且徐行</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">gopher-lua的使用
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-05-17 09:03:13">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-05-17T09:03:13+08:00">2023-05-17</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5.4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Axiss</a></li>
+      <!-- <li class="item title"><a target="_blank" href="https://www.travellings.cn/" rel="start noopener">开往</a></li>  -->
+    </ul>
+
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <!-- <li class="item search">
+        <i class="ic i-search"></i>
+      </li>  -->
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-9ml1ex-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-dpr2mo-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-l366el-tuya.png"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-57xjw7-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-8old52-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-q2xwyd-tuya.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://fanlu.top/2023/05/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/tom.png">
+    <meta itemprop="name" content="Axiss">
+    <meta itemprop="description" content="Axiss的记事本, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="何妨吟啸且徐行">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>#golang #lua #压测</p>
+<blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3l1aW4vZ29waGVyLWx1YSN1c2FnZQ==">https://github.com/yuin/gopher-lua#usage</span></p>
+</blockquote>
+<h2 id="简单使用"><a class="markdownIt-Anchor" href="#简单使用">#</a> 简单使用</h2>
+<ol>
+<li>首先声明一个 lua 虚拟机： L := lua.NewState ()  返回一个 LState Struct</li>
+<li>然后可以执行 lua 格式的字符串或者 File
+<ul>
+<li>lua.DoString( <code>print(&quot;hello&quot;)</code> )</li>
+<li>lua.DoFile (lua 脚本的路径)</li>
+</ul>
+</li>
+</ol>
+<p>LState 定义如下：</p>
+<pre><code class="language-golang">type LState struct &#123;
+	G       *Global
+	Parent  *LState
+	Env     *LTable
+	Panic   func(*LState)
+	Dead    bool
+	Options Options
+
+	stop         int32
+	reg          *registry
+	stack        callFrameStack
+	alloc        *allocator
+	currentFrame *callFrame
+	wrapped      bool
+	uvcache      *Upvalue
+	hasErrorFunc bool
+	mainLoop     func(*LState, *callFrame)
+	ctx          context.Context
+&#125;
+</code></pre>
+<ul>
+<li>Get 方法  获取栈中的变量</li>
+<li></li>
+</ul>
+<h2 id="数据模型"><a class="markdownIt-Anchor" href="#数据模型">#</a> 数据模型</h2>
+<p>gopher-lua 中的说有变量值都是一个 LValue, 是 go 语言中的 interface，包含两个方法：</p>
+<ul>
+<li>String（）string</li>
+<li>Type() LValueType</li>
+</ul>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">type</span> LValue <span class="token keyword">interface</span> <span class="token punctuation">&#123;</span>  </pre></td></tr><tr><td data-num="2"></td><td><pre>   <span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>  </pre></td></tr><tr><td data-num="3"></td><td><pre>   <span class="token function">Type</span><span class="token punctuation">(</span><span class="token punctuation">)</span> LValueType   </pre></td></tr><tr><td data-num="4"></td><td><pre>   <span class="token function">assertFloat64</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">float64</span><span class="token punctuation">,</span> <span class="token builtin">bool</span><span class="token punctuation">)</span>  </pre></td></tr><tr><td data-num="5"></td><td><pre>   <span class="token function">assertString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">bool</span><span class="token punctuation">)</span>  </pre></td></tr><tr><td data-num="6"></td><td><pre>   <span class="token function">assertFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>LFunction<span class="token punctuation">,</span> <span class="token builtin">bool</span><span class="token punctuation">)</span>  </pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>该接口的实现包括如下类：</p>
+<table>
+<thead>
+<tr>
+<th>Type name</th>
+<th>Go type</th>
+<th>Type() value</th>
+<th>Constants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LNilType</code></td>
+<td>(constants)</td>
+<td><code>LTNil</code></td>
+<td><code>LNil</code></td>
+</tr>
+<tr>
+<td><code>LBool</code></td>
+<td>(constants)</td>
+<td><code>LTBool</code></td>
+<td><code>LTrue</code> ,  <code>LFalse</code></td>
+</tr>
+<tr>
+<td><code>LNumber</code></td>
+<td>float64</td>
+<td><code>LTNumber</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td><code>LString</code></td>
+<td>string</td>
+<td><code>LTString</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td><code>LFunction</code></td>
+<td>struct pointer</td>
+<td><code>LTFunction</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td><code>LUserData</code></td>
+<td>struct pointer</td>
+<td><code>LTUserData</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td><code>LState</code></td>
+<td>struct pointer</td>
+<td><code>LTThread</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td><code>LTable</code></td>
+<td>struct pointer</td>
+<td><code>LTTable</code></td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td><code>LChannel</code></td>
+<td>chan LValue</td>
+<td><code>LTChannel</code></td>
+<td><code>-</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>lv.Type () 可以获取类型</li>
+<li>原表不可用；没有错误捕捉</li>
+</ul>
+<h2 id="callstack-registry-size"><a class="markdownIt-Anchor" href="#callstack-registry-size">#</a> Callstack &amp; Registry size</h2>
+<p>LState 的调用栈的大小控制着脚本中 Lua 函数的最大调用深度（Go 函数的调用不算在内）。</p>
+<p>LState 的注册表实现了对调用函数（包括 Lua 和 Go 函数）和表达式中的临时变量的栈存储。它的存储需求将随着调用堆栈的使用和代码的复杂性而增加。</p>
+<p>注册表和调用堆栈都可以被设置为固定大小或自动大小。</p>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre>L <span class="token operator">:=</span> lua<span class="token punctuation">.</span><span class="token function">NewState</span><span class="token punctuation">(</span>lua<span class="token punctuation">.</span>Options<span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    RegistrySize<span class="token punctuation">:</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">20</span><span class="token punctuation">,</span>         <span class="token comment">// this is the initial size of the registry</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    RegistryMaxSize<span class="token punctuation">:</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">80</span><span class="token punctuation">,</span>      <span class="token comment">// this is the maximum size that the registry can grow to. If set to `0` (the default) then the registry will not auto grow</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    RegistryGrowStep<span class="token punctuation">:</span> <span class="token number">32</span><span class="token punctuation">,</span>            <span class="token comment">// this is how much to step up the registry by each time it runs out of space. The default is `32`.</span></pre></td></tr><tr><td data-num="5"></td><td><pre> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">defer</span> L<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="api"><a class="markdownIt-Anchor" href="#api">#</a> API</h2>
+<h3 id="从lua中调用go函数"><a class="markdownIt-Anchor" href="#从lua中调用go函数">#</a> 从 lua 中调用 go 函数</h3>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">func</span> <span class="token function">Double</span><span class="token punctuation">(</span>L <span class="token operator">*</span>lua<span class="token punctuation">.</span>LState<span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    lv <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">ToInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>             <span class="token comment">/* get argument */</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">Push</span><span class="token punctuation">(</span>lua<span class="token punctuation">.</span><span class="token function">LNumber</span><span class="token punctuation">(</span>lv <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">/* push result */</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">return</span> <span class="token number">1</span>                     <span class="token comment">/* number of results */</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    L <span class="token operator">:=</span> lua<span class="token punctuation">.</span><span class="token function">NewState</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">defer</span> L<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">SetGlobal</span><span class="token punctuation">(</span><span class="token string">"double"</span><span class="token punctuation">,</span> L<span class="token punctuation">.</span><span class="token function">NewFunction</span><span class="token punctuation">(</span>Double<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">/* Original lua_setglobal uses stack... */</span></pre></td></tr><tr><td data-num="11"></td><td><pre>   	<span class="token keyword">if</span> err <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">DoString</span><span class="token punctuation">(</span><span class="token string">`print(double(20))`</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>		<span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="13"></td><td><pre>	<span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="14"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>注册为 lua 函数之后，会变成一个 LGFunction 类型；</p>
+<p>支持协程中运行；</p>
+<h3 id="加载lua内置库的函数"><a class="markdownIt-Anchor" href="#加载lua内置库的函数">#</a> 加载 lua 内置库的函数</h3>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    L <span class="token operator">:=</span> lua<span class="token punctuation">.</span><span class="token function">NewState</span><span class="token punctuation">(</span>lua<span class="token punctuation">.</span>Options<span class="token punctuation">&#123;</span>SkipOpenLibs<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token keyword">defer</span> L<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> pair <span class="token operator">:=</span> <span class="token keyword">range</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">struct</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        n <span class="token builtin">string</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        f lua<span class="token punctuation">.</span>LGFunction</pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token punctuation">&#123;</span>lua<span class="token punctuation">.</span>LoadLibName<span class="token punctuation">,</span> lua<span class="token punctuation">.</span>OpenPackage<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// Must be first</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token punctuation">&#123;</span>lua<span class="token punctuation">.</span>BaseLibName<span class="token punctuation">,</span> lua<span class="token punctuation">.</span>OpenBase<span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token punctuation">&#123;</span>lua<span class="token punctuation">.</span>TabLibName<span class="token punctuation">,</span> lua<span class="token punctuation">.</span>OpenTable<span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        <span class="token keyword">if</span> err <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">CallByParam</span><span class="token punctuation">(</span>lua<span class="token punctuation">.</span>P<span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>            Fn<span class="token punctuation">:</span>      L<span class="token punctuation">.</span><span class="token function">NewFunction</span><span class="token punctuation">(</span>pair<span class="token punctuation">.</span>f<span class="token punctuation">)</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="14"></td><td><pre>            NRet<span class="token punctuation">:</span>    <span class="token number">0</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="15"></td><td><pre>            Protect<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> lua<span class="token punctuation">.</span><span class="token function">LString</span><span class="token punctuation">(</span>pair<span class="token punctuation">.</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>            <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token keyword">if</span> err <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">DoFile</span><span class="token punctuation">(</span><span class="token string">"main.lua"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="22"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="在go中创建一个lua的模块"><a class="markdownIt-Anchor" href="#在go中创建一个lua的模块">#</a> 在 go 中创建一个 lua 的模块</h3>
+<ol>
+<li>
+<p>首先定义一组方法  类型为 map [string] lua.LGFuntion</p>
+</li>
+<li>
+<p>然后调用 SetFuncs  将函数表分配给一个 lua table，作为一个模块，获取到一个 LTable</p>
+</li>
+<li>
+<p>然后将模块 push 到栈</p>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">func</span> <span class="token function">Loader</span><span class="token punctuation">(</span>L <span class="token operator">*</span>lua<span class="token punctuation">.</span>LState<span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token comment">// register functions to the table</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    mod <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">SetFuncs</span><span class="token punctuation">(</span>L<span class="token punctuation">.</span><span class="token function">NewTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> exports<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token comment">// register other stuff</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">SetField</span><span class="token punctuation">(</span>mod<span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">,</span> lua<span class="token punctuation">.</span><span class="token function">LString</span><span class="token punctuation">(</span><span class="token string">"value"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token comment">// returns the module</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">Push</span><span class="token punctuation">(</span>mod<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token keyword">return</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure></li>
+<li>
+<p>通过 PreLoadModule（name,  注册方法）将模块注册到虚拟机中</p>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre>L<span class="token punctuation">.</span><span class="token function">PreloadModule</span><span class="token punctuation">(</span><span class="token string">"mymodule"</span><span class="token punctuation">,</span> mymodule<span class="token punctuation">.</span>Loader<span class="token punctuation">)</span></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="在go中调用lua方法"><a class="markdownIt-Anchor" href="#在go中调用lua方法">#</a> 在 go 中调用 lua 方法</h3>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">if</span> err <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">CallByParam</span><span class="token punctuation">(</span>lua<span class="token punctuation">.</span>P<span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    Fn<span class="token punctuation">:</span> L<span class="token punctuation">.</span><span class="token function">GetGlobal</span><span class="token punctuation">(</span><span class="token string">"double"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>		<span class="token comment">//lua 方法名</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    NRet<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>					<span class="token comment">// </span></pre></td></tr><tr><td data-num="4"></td><td><pre>    Protect<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> lua<span class="token punctuation">.</span><span class="token function">LNumber</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><ul>
+<li>CallByParam 方法 第一个参数 lua.P 结构； 第二个参数 参数</li>
+<li>通过 lua.P 结构进行调用</li>
+<li>实际使用中 函数参数也可以使用提前设置全局变量的方式来实现</li>
+</ul>
+<h3 id="自定义类型"><a class="markdownIt-Anchor" href="#自定义类型">#</a> 自定义类型</h3>
+<p>支持在 Go 中自定义新类型</p>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">type</span> Person <span class="token keyword">struct</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    Name <span class="token builtin">string</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token keyword">const</span> luaPersonTypeName <span class="token operator">=</span> <span class="token string">"person"</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token comment">// 注册类型</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">func</span> <span class="token function">registerPersonType</span><span class="token punctuation">(</span>L <span class="token operator">*</span>lua<span class="token punctuation">.</span>LState<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    mt <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">NewTypeMetatable</span><span class="token punctuation">(</span>luaPersonTypeName<span class="token punctuation">)</span>  <span class="token comment">// 新建一个元表</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">SetGlobal</span><span class="token punctuation">(</span><span class="token string">"person"</span><span class="token punctuation">,</span> mt<span class="token punctuation">)</span>					<span class="token comment">// 元表设置为全局变量</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token comment">// static attributes</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">SetField</span><span class="token punctuation">(</span>mt<span class="token punctuation">,</span> <span class="token string">"new"</span><span class="token punctuation">,</span> L<span class="token punctuation">.</span><span class="token function">NewFunction</span><span class="token punctuation">(</span>newPerson<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 注册方法到元表中 静态放啊</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token comment">// methods</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">SetField</span><span class="token punctuation">(</span>mt<span class="token punctuation">,</span> <span class="token string">"__index"</span><span class="token punctuation">,</span> L<span class="token punctuation">.</span><span class="token function">SetFuncs</span><span class="token punctuation">(</span>L<span class="token punctuation">.</span><span class="token function">NewTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> personMethods<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 注册方法到元表</span></pre></td></tr><tr><td data-num="15"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token comment">// Constructor</span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token keyword">func</span> <span class="token function">newPerson</span><span class="token punctuation">(</span>L <span class="token operator">*</span>lua<span class="token punctuation">.</span>LState<span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>			<span class="token comment">//go 方法</span></pre></td></tr><tr><td data-num="19"></td><td><pre>    person <span class="token operator">:=</span> <span class="token operator">&amp;</span>Person<span class="token punctuation">&#123;</span>L<span class="token punctuation">.</span><span class="token function">CheckString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>    ud <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">NewUserData</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="21"></td><td><pre>    ud<span class="token punctuation">.</span>Value <span class="token operator">=</span> person</pre></td></tr><tr><td data-num="22"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">SetMetatable</span><span class="token punctuation">(</span>ud<span class="token punctuation">,</span> L<span class="token punctuation">.</span><span class="token function">GetTypeMetatable</span><span class="token punctuation">(</span>luaPersonTypeName<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">Push</span><span class="token punctuation">(</span>ud<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    <span class="token keyword">return</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="26"></td><td><pre></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token comment">// Checks whether the first lua argument is a *LUserData with *Person and returns this *Person.</span></pre></td></tr><tr><td data-num="28"></td><td><pre><span class="token keyword">func</span> <span class="token function">checkPerson</span><span class="token punctuation">(</span>L <span class="token operator">*</span>lua<span class="token punctuation">.</span>LState<span class="token punctuation">)</span> <span class="token operator">*</span>Person <span class="token punctuation">&#123;</span>  <span class="token comment">// 检查类型</span></pre></td></tr><tr><td data-num="29"></td><td><pre>    ud <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">CheckUserData</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="30"></td><td><pre>    <span class="token keyword">if</span> v<span class="token punctuation">,</span> ok <span class="token operator">:=</span> ud<span class="token punctuation">.</span>Value<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token operator">*</span>Person<span class="token punctuation">)</span><span class="token punctuation">;</span> ok <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="31"></td><td><pre>        <span class="token keyword">return</span> v</pre></td></tr><tr><td data-num="32"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">ArgError</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"person expected"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="34"></td><td><pre>    <span class="token keyword">return</span> <span class="token boolean">nil</span></pre></td></tr><tr><td data-num="35"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="36"></td><td><pre></pre></td></tr><tr><td data-num="37"></td><td><pre><span class="token keyword">var</span> personMethods <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span>lua<span class="token punctuation">.</span>LGFunction<span class="token punctuation">&#123;</span>		<span class="token comment">// 方法表</span></pre></td></tr><tr><td data-num="38"></td><td><pre>    <span class="token string">"name"</span><span class="token punctuation">:</span> personGetSetName<span class="token punctuation">,</span></pre></td></tr><tr><td data-num="39"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="40"></td><td><pre></pre></td></tr><tr><td data-num="41"></td><td><pre><span class="token comment">// Getter and setter for the Person#Name</span></pre></td></tr><tr><td data-num="42"></td><td><pre><span class="token keyword">func</span> <span class="token function">personGetSetName</span><span class="token punctuation">(</span>L <span class="token operator">*</span>lua<span class="token punctuation">.</span>LState<span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">&#123;</span>			<span class="token comment">// 属性的 Getter 和 Setter 在 lua 中通过 p:name () 调用</span></pre></td></tr><tr><td data-num="43"></td><td><pre>    p <span class="token operator">:=</span> <span class="token function">checkPerson</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="44"></td><td><pre>    <span class="token keyword">if</span> L<span class="token punctuation">.</span><span class="token function">GetTop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="45"></td><td><pre>        p<span class="token punctuation">.</span>Name <span class="token operator">=</span> L<span class="token punctuation">.</span><span class="token function">CheckString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="46"></td><td><pre>        <span class="token keyword">return</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="47"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">Push</span><span class="token punctuation">(</span>lua<span class="token punctuation">.</span><span class="token function">LString</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="49"></td><td><pre>    <span class="token keyword">return</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="50"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="51"></td><td><pre></pre></td></tr><tr><td data-num="52"></td><td><pre><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="53"></td><td><pre>    L <span class="token operator">:=</span> lua<span class="token punctuation">.</span><span class="token function">NewState</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="54"></td><td><pre>    <span class="token keyword">defer</span> L<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="55"></td><td><pre>    <span class="token function">registerPersonType</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="56"></td><td><pre>    <span class="token keyword">if</span> err <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">DoString</span><span class="token punctuation">(</span><span class="token string">`						</pre></td></tr><tr><td data-num="57"></td><td><pre>        p = person.new("Steeve")	</pre></td></tr><tr><td data-num="58"></td><td><pre>        print(p:name("新名字")) --  </pre></td></tr><tr><td data-num="59"></td><td><pre>		print(p:name())</pre></td></tr><tr><td data-num="60"></td><td><pre>        p:name("Alice")</pre></td></tr><tr><td data-num="61"></td><td><pre>        print(p:name()) -- "Alice"</pre></td></tr><tr><td data-num="62"></td><td><pre>    `</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="63"></td><td><pre>        <span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="64"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="65"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="共享lua字节代码"><a class="markdownIt-Anchor" href="#共享lua字节代码">#</a> 共享 lua 字节代码</h3>
+<p>调用 DoFile 将加载一个 Lua 脚本，将其编译为字节码，并在一个 LState 中运行字节码。</p>
+<p>如果你有多个 LState，它们都需要运行同一个脚本，你可以在它们之间共享字节码，这将节省内存。共享字节码是安全的，因为它是只读的，不能被 lua 脚本所改变。</p>
+<figure class="highlight go"><figcaption data-lang="go"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// CompileLua reads the passed lua file from disk and compiles it.</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">func</span> <span class="token function">CompileLua</span><span class="token punctuation">(</span>filePath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>lua<span class="token punctuation">.</span>FunctionProto<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    file<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">defer</span> file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token keyword">return</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> err</pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    reader <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewReader</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    chunk<span class="token punctuation">,</span> err <span class="token operator">:=</span> parse<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>reader<span class="token punctuation">,</span> filePath<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token keyword">return</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> err</pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    proto<span class="token punctuation">,</span> err <span class="token operator">:=</span> lua<span class="token punctuation">.</span><span class="token function">Compile</span><span class="token punctuation">(</span>chunk<span class="token punctuation">,</span> filePath<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token keyword">return</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> err</pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token keyword">return</span> proto<span class="token punctuation">,</span> <span class="token boolean">nil</span></pre></td></tr><tr><td data-num="18"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="19"></td><td><pre></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token comment">// DoCompiledFile takes a FunctionProto, as returned by CompileLua, and runs it in the LState. It is equivalent</span></pre></td></tr><tr><td data-num="21"></td><td><pre><span class="token comment">// to calling DoFile on the LState with the original source file.</span></pre></td></tr><tr><td data-num="22"></td><td><pre><span class="token keyword">func</span> <span class="token function">DoCompiledFile</span><span class="token punctuation">(</span>L <span class="token operator">*</span>lua<span class="token punctuation">.</span>LState<span class="token punctuation">,</span> proto <span class="token operator">*</span>lua<span class="token punctuation">.</span>FunctionProto<span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="23"></td><td><pre>    lfunc <span class="token operator">:=</span> L<span class="token punctuation">.</span><span class="token function">NewFunctionFromProto</span><span class="token punctuation">(</span>proto<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="24"></td><td><pre>    L<span class="token punctuation">.</span><span class="token function">Push</span><span class="token punctuation">(</span>lfunc<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token keyword">return</span> L<span class="token punctuation">.</span><span class="token function">PCall</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> lua<span class="token punctuation">.</span>MultRet<span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="26"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="go协程"><a class="markdownIt-Anchor" href="#go协程">#</a> go 协程</h3>
+<p>LState 不是 goroutine-safe。建议每个 goroutine 使用一个 LState，并通过使用通道在 goroutine 之间通信。</p>
+<p>通道在 GopherLua 中由通道对象表示。而一个通道表提供了执行通道操作的函数。</p>
+<p>有些对象不能通过通道发送，因为它本身有非 goroutine 安全的对象。</p>
+<p>一个线程 (state)<br>
+ 一个函数<br>
+一个用户数据<br>
+一个有元数据的表</p>
+
+      <div class="tags">
+          <a href="/tags/golang%E5%AE%9E%E9%AA%8C%E5%AE%A4/" rel="tag"><i class="ic i-tag"></i> golang实验室</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-10-02 09:02:37" itemprop="dateModified" datetime="2023-10-02T09:02:37+08:00">2023-10-02</time>
+  </span>
+  <span id="2023/05/17/测试开发/gopher-lua的使用/" class="item leancloud_visitors" data-flag-title="gopher-lua的使用" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Axiss <i class="ic i-at"><em>@</em></i>何妨吟啸且徐行
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://fanlu.top/2023/05/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/gopher-lua%E7%9A%84%E4%BD%BF%E7%94%A8/" title="gopher-lua的使用">https://fanlu.top/2023/05/17/测试开发/gopher-lua的使用/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-7pg8lo-tuya.png" title="vben-admin换肤实现">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>vben-admin换肤实现</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2023/05/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-m9kx6m-tuya.png" title="gopher-lua使用小demo">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>gopher-lua使用小demo</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text"> 简单使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text"> 数据模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#callstack-registry-size"><span class="toc-number">3.</span> <span class="toc-text"> Callstack &amp; Registry size</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#api"><span class="toc-number">4.</span> <span class="toc-text"> API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8Elua%E4%B8%AD%E8%B0%83%E7%94%A8go%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text"> 从 lua 中调用 go 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BDlua%E5%86%85%E7%BD%AE%E5%BA%93%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text"> 加载 lua 内置库的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8go%E4%B8%AD%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAlua%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-number">4.3.</span> <span class="toc-text"> 在 go 中创建一个 lua 的模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8go%E4%B8%AD%E8%B0%83%E7%94%A8lua%E6%96%B9%E6%B3%95"><span class="toc-number">4.4.</span> <span class="toc-text"> 在 go 中调用 lua 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.5.</span> <span class="toc-text"> 自定义类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E4%BA%ABlua%E5%AD%97%E8%8A%82%E4%BB%A3%E7%A0%81"><span class="toc-number">4.6.</span> <span class="toc-text"> 共享 lua 字节代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#go%E5%8D%8F%E7%A8%8B"><span class="toc-number">4.7.</span> <span class="toc-text"> go 协程</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Axiss"
+      data-src="/images/tom.png">
+  <p class="name" itemprop="name">Axiss</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">43</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">26</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Zhbkx1MTk5NA==" title="https:&#x2F;&#x2F;github.com&#x2F;FanLu1994"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Zhbkx1MTk5NA==" title="https:&#x2F;&#x2F;github.com&#x2F;FanLu1994"><i class="ic i-twitter"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS8xNTk5OTUyMDI1" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1599952025"><i class="ic i-weibo"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjEwNjY1ODAxMTlAcXEuY29t" title="mailto:1066580119@qq.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2023/05/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/27/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/grpcurl/" title="grpcurl">grpcurl</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/" title="微信公众号模板工具开发-02（end）">微信公众号模板工具开发-02（end）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/22/%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-CSS%E7%81%B5%E6%84%9F/" title="网站推荐-CSS灵感">网站推荐-CSS灵感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/" title="vben-admin换肤实现">vben-admin换肤实现</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/20/CI/jenkins%E7%9A%84%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="jenkins的部署问题记录">jenkins的部署问题记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/03/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-03/" title="鸡毛蒜皮周刊-03">鸡毛蒜皮周刊-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/05/18/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-02/" title="鸡毛蒜皮周刊-02">鸡毛蒜皮周刊-02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/23/%E5%89%8D%E7%AB%AF/rrweb%E4%BD%BF%E7%94%A8/" title="rrweb使用">rrweb使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/20/%E5%89%8D%E7%AB%AF/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" title="daisyUI使用体验">daisyUI使用体验</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="SoloX之CPU性能采集">SoloX之CPU性能采集</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Axiss @ Axiss</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">104k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:34</span>
+  </div>
+  <div>
+    <!-- 不蒜子统计 -->
+    <span id="busuanzi_container_site_pv">
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+      本站访客数<span id="busuanzi_value_site_uv"></span>人
+    </span>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div><div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+    <br/>
+        <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">沪ICP备2021031543号-1</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/05/17/测试开发/gopher-lua的使用/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

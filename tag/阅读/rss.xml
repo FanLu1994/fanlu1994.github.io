@@ -7,36 +7,36 @@
         <language>zh-CN</language>
         <pubDate>Sat, 12 Aug 2023 06:04:34 +0000</pubDate>
         <lastBuildDate>Sat, 12 Aug 2023 06:04:34 +0000</lastBuildDate>
+        <category>nuxt axiss 前端</category>
         <category>CI CD linux</category>
-        <category>测试开发 性能 工具</category>
+        <category>jenkins CD</category>
+        <category>云服务器</category>
         <category>前端 产品经理</category>
         <category>前端 UI</category>
-        <category>golang实验室</category>
-        <category>工具 网络</category>
-        <category>jenkins CD</category>
         <category>前端 动画 工具</category>
         <category>前端 工具</category>
         <category>前端搬砖指南</category>
         <category>前端 vue go wasm</category>
-        <category>阅读 经济</category>
-        <category>生活</category>
-        <category>云服务器</category>
         <category>工具</category>
-        <category>nuxt axiss 前端</category>
+        <category>前端 网站</category>
+        <category>前端 UI 网站</category>
+        <category>测试开发 性能 工具</category>
+        <category>golang实验室</category>
+        <category>工具 网络</category>
+        <category>游戏 桌游 生活</category>
+        <category>生活</category>
+        <category>阅读 经济</category>
         <category>阅读，记录</category>
         <category>阅读 电影 电视</category>
         <category>阅读 电视 播客</category>
         <category>阅读 UP主</category>
         <category>阅读</category>
-        <category>游戏 桌游 生活</category>
-        <category>前端 网站</category>
-        <category>前端 UI 网站</category>
         <category>阅读 记录</category>
         <category>鸡毛蒜皮周刊</category>
         <item>
-            <guid isPermalink="true">https://fanlu.top/2023/08/12/%E8%AF%BB%E5%90%8E%E6%84%9F-%E3%80%8A%E5%91%BD%E8%BF%90%E3%80%8B/</guid>
+            <guid isPermalink="true">https://fanlu.top/2023/08/12/%E9%98%85%E8%AF%BB/%E8%AF%BB%E5%90%8E%E6%84%9F-%E3%80%8A%E5%91%BD%E8%BF%90%E3%80%8B/</guid>
             <title>读后感-《命运》</title>
-            <link>https://fanlu.top/2023/08/12/%E8%AF%BB%E5%90%8E%E6%84%9F-%E3%80%8A%E5%91%BD%E8%BF%90%E3%80%8B/</link>
+            <link>https://fanlu.top/2023/08/12/%E9%98%85%E8%AF%BB/%E8%AF%BB%E5%90%8E%E6%84%9F-%E3%80%8A%E5%91%BD%E8%BF%90%E3%80%8B/</link>
             <category>阅读</category>
             <pubDate>Sat, 12 Aug 2023 06:04:34 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;作者是写过《皮囊》的蔡崇达。&lt;/p&gt;
@@ -49,9 +49,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://fanlu.top/2023/08/06/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%885%E6%97%A5/</guid>
+            <guid isPermalink="true">https://fanlu.top/2023/08/06/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%885%E6%97%A5/</guid>
             <title>本周看了啥-2023年8月5日</title>
-            <link>https://fanlu.top/2023/08/06/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%885%E6%97%A5/</link>
+            <link>https://fanlu.top/2023/08/06/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%885%E6%97%A5/</link>
             <category>阅读</category>
             <pubDate>Sun, 06 Aug 2023 06:29:15 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;不蒜子网站访问统计原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#不蒜子网站访问统计原理&#34;&gt;#&lt;/a&gt; 不蒜子网站访问统计原理&lt;/h1&gt;

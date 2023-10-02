@@ -1,0 +1,552 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/tom.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="何妨吟啸且徐行" href="https://fanlu.top/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="何妨吟啸且徐行" href="https://fanlu.top/atom.xml" />
+<link rel="alternate" type="application/json" title="何妨吟啸且徐行" href="https://fanlu.top/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cat:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="测试开发 性能 工具" />
+
+
+<link rel="canonical" href="https://fanlu.top/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/">
+
+
+
+  <title>何妨吟啸且徐行</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">SoloX之CPU性能采集
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2023-07-06 20:57:07">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-07-06T20:57:07+08:00">2023-07-06</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.1k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Axiss</a></li>
+      <!-- <li class="item title"><a target="_blank" href="https://www.travellings.cn/" rel="start noopener">开往</a></li>  -->
+    </ul>
+
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <!-- <li class="item search">
+        <i class="ic i-search"></i>
+      </li>  -->
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-l3el22-tuya.png"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-zymexj-tuya.png"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-9ml1ex-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-72pqze-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-o3zzj7-tuya.png"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-5gl3p9-tuya.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://fanlu.top/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/tom.png">
+    <meta itemprop="name" content="Axiss">
+    <meta itemprop="description" content="Axiss的记事本, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="何妨吟啸且徐行">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="安卓"><a class="markdownIt-Anchor" href="#安卓">#</a> 安卓</h2>
+<h3 id="获取进程cpu使用时间"><a class="markdownIt-Anchor" href="#获取进程cpu使用时间">#</a> 获取进程 cpu 使用时间</h3>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">getprocessCpuStat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""get the cpu usage of a process at a certain time"""</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    cmd <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'cat /proc/</span><span class="token interpolation"><span class="token punctuation">&#123;</span>self<span class="token punctuation">.</span>pid<span class="token punctuation">&#125;</span></span><span class="token string">/stat'</span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    result <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span>cmd<span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>deviceId<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    r <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">"\\s+"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    toks <span class="token operator">=</span> r<span class="token punctuation">.</span>split<span class="token punctuation">(</span>result<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    processCpu <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>toks<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">int</span><span class="token punctuation">(</span>toks<span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">int</span><span class="token punctuation">(</span>toks<span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">int</span><span class="token punctuation">(</span>toks<span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token keyword">return</span> processCpu</pre></td></tr></table></figure><h3 id="获取总cpu使用时间"><a class="markdownIt-Anchor" href="#获取总cpu使用时间">#</a> 获取总 cpu 使用时间</h3>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">getTotalCpuStat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""get the total cpu usage at a certain time"""</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    cmd <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'cat /proc/stat |</span><span class="token interpolation"><span class="token punctuation">&#123;</span>d<span class="token punctuation">.</span>filterType<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> ^cpu'</span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    result <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span>cmd<span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>deviceId<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    r <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'(?&lt;!cpu)\d+'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    toks <span class="token operator">=</span> r<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>result<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    totalCpu <span class="token operator">=</span> <span class="token number">0</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        totalCpu <span class="token operator">+=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>toks<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">return</span> <span class="token builtin">float</span><span class="token punctuation">(</span>totalCpu<span class="token punctuation">)</span></pre></td></tr></table></figure><h3 id="获取cpu核数"><a class="markdownIt-Anchor" href="#获取cpu核数">#</a> 获取 CPU 核数</h3>
+<figure class="highlight py"><figcaption data-lang="Python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">getCpuCores</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""get Android cpu cores"""</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    cmd <span class="token operator">=</span> <span class="token string">'cat /sys/devices/system/cpu/online'</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    result <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span>cmd<span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>deviceId<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        nums <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">except</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        nums <span class="token operator">=</span> <span class="token number">1</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">return</span> nums</pre></td></tr></table></figure><h3 id="获取系统cpu使用时间"><a class="markdownIt-Anchor" href="#获取系统cpu使用时间">#</a> 获取系统 CPU 使用时间</h3>
+<figure class="highlight py"><figcaption data-lang="Python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">getSysCpuStat</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""get the total cpu usage at a certain time"""</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    cmd <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f'cat /proc/stat |</span><span class="token interpolation"><span class="token punctuation">&#123;</span>d<span class="token punctuation">.</span>filterType<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> ^cpu'</span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    result <span class="token operator">=</span> adb<span class="token punctuation">.</span>shell<span class="token punctuation">(</span>cmd<span class="token operator">=</span>cmd<span class="token punctuation">,</span> deviceId<span class="token operator">=</span>self<span class="token punctuation">.</span>deviceId<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    r <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r'(?&lt;!cpu)\d+'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    toks <span class="token operator">=</span> r<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>result<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    ileCpu <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>toks<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    sysCpu <span class="token operator">=</span> self<span class="token punctuation">.</span>getTotalCpuStat<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> ileCpu</pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">return</span> sysCpu</pre></td></tr></table></figure><h3 id="采集结果"><a class="markdownIt-Anchor" href="#采集结果">#</a> 采集结果</h3>
+<blockquote>
+<p>间隔 0.5s 连续获取两次采集结果，然后计算得到 cpu 使用率  <span class="exturl" data-url="aHR0cHM6Ly95ZXN0ZXJtb3Jyb3cuZ2l0aHViLmlvLzIwMjEvMDMvMTcvQ1BVJUU0JUJEJUJGJUU3JTk0JUE4JUU3JThFJTg3Lw==">https://yestermorrow.github.io/2021/03/17/CPU 使用率 /</span></p>
+</blockquote>
+<figure class="highlight py"><figcaption data-lang="Python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">getAndroidCpuRate</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> noLog<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""get the Android cpu rate of a process"""</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    processCpuTime_1 <span class="token operator">=</span> self<span class="token punctuation">.</span>getprocessCpuStat<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    totalCpuTime_1 <span class="token operator">=</span> self<span class="token punctuation">.</span>getTotalCpuStat<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    sysCpuTime_1 <span class="token operator">=</span> self<span class="token punctuation">.</span>getSysCpuStat<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    processCpuTime_2 <span class="token operator">=</span> self<span class="token punctuation">.</span>getprocessCpuStat<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    totalCpuTime_2 <span class="token operator">=</span> self<span class="token punctuation">.</span>getTotalCpuStat<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    sysCpuTime_2 <span class="token operator">=</span> self<span class="token punctuation">.</span>getSysCpuStat<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    appCpuRate <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token punctuation">(</span>processCpuTime_2 <span class="token operator">-</span> processCpuTime_1<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>totalCpuTime_2 <span class="token operator">-</span> totalCpuTime_1<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    sysCpuRate <span class="token operator">=</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token punctuation">(</span>sysCpuTime_2 <span class="token operator">-</span> sysCpuTime_1<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>totalCpuTime_2 <span class="token operator">-</span> totalCpuTime_1<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token keyword">if</span> noLog <span class="token keyword">is</span> <span class="token boolean">False</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        apm_time <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%H:%M:%S.%f'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        f<span class="token punctuation">.</span>add_log<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>f<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span><span class="token string">'cpu_app.log'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> apm_time<span class="token punctuation">,</span> appCpuRate<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        f<span class="token punctuation">.</span>add_log<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>f<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span><span class="token string">'cpu_sys.log'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> apm_time<span class="token punctuation">,</span> sysCpuRate<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="16"></td><td><pre></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token keyword">return</span> appCpuRate<span class="token punctuation">,</span> sysCpuRate</pre></td></tr></table></figure><h2 id="ios"><a class="markdownIt-Anchor" href="#ios">#</a> IOS</h2>
+<blockquote>
+<p>ios 基于 pydevice 和 instrument 协议解析</p>
+</blockquote>
+<p>采集数据来自于 tidevice_instruments.py  iter_cpu_memory 方法</p>
+<figure class="highlight py"><figcaption data-lang="Python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">iter_cpu_memory</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Iterator<span class="token punctuation">[</span><span class="token builtin">dict</span><span class="token punctuation">]</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    <span class="token triple-quoted-string string">"""</pre></td></tr><tr><td data-num="3"></td><td><pre>    Close connection after iterator stop</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>    Iterator content eg:</pre></td></tr><tr><td data-num="6"></td><td><pre>        [&#123;'CPUCount': 2,</pre></td></tr><tr><td data-num="7"></td><td><pre>        'EnabledCPUs': 2,</pre></td></tr><tr><td data-num="8"></td><td><pre>        'EndMachAbsTime': 2158497307470,</pre></td></tr><tr><td data-num="9"></td><td><pre>        'PerCPUUsage': [&#123;'CPU_NiceLoad': 0.0,</pre></td></tr><tr><td data-num="10"></td><td><pre>                        'CPU_SystemLoad': -1.0,</pre></td></tr><tr><td data-num="11"></td><td><pre>                        'CPU_TotalLoad': 13.0,</pre></td></tr><tr><td data-num="12"></td><td><pre>                        'CPU_UserLoad': -1.0&#125;,</pre></td></tr><tr><td data-num="13"></td><td><pre>                        &#123;'CPU_NiceLoad': 0.0,</pre></td></tr><tr><td data-num="14"></td><td><pre>                        'CPU_SystemLoad': -1.0,</pre></td></tr><tr><td data-num="15"></td><td><pre>                        'CPU_TotalLoad': 31.0,</pre></td></tr><tr><td data-num="16"></td><td><pre>                        'CPU_UserLoad': -1.0&#125;],</pre></td></tr><tr><td data-num="17"></td><td><pre>        'StartMachAbsTime': 2158473307786,</pre></td></tr><tr><td data-num="18"></td><td><pre>        'SystemCPUUsage': &#123;'CPU_NiceLoad': 0.0,</pre></td></tr><tr><td data-num="19"></td><td><pre>                            'CPU_SystemLoad': -1.0,</pre></td></tr><tr><td data-num="20"></td><td><pre>                            'CPU_TotalLoad': 44.0,</pre></td></tr><tr><td data-num="21"></td><td><pre>                            'CPU_UserLoad': -1.0&#125;,</pre></td></tr><tr><td data-num="22"></td><td><pre>        'Type': 33&#125;,</pre></td></tr><tr><td data-num="23"></td><td><pre>        &#123;'EndMachAbsTime': 2158515468993,</pre></td></tr><tr><td data-num="24"></td><td><pre>        "cpuUsage", "ctxSwitch", "intWakeups", "physFootprint",</pre></td></tr><tr><td data-num="25"></td><td><pre>            "memResidentSize", "memAnon", "pid"</pre></td></tr><tr><td data-num="26"></td><td><pre>        'Processes': &#123;0: [0.20891292720792148, # cpuUsage</pre></td></tr><tr><td data-num="27"></td><td><pre>                            335770139, # contextSwitch</pre></td></tr><tr><td data-num="28"></td><td><pre>                            120505483, # interruptWakeups</pre></td></tr><tr><td data-num="29"></td><td><pre>                            7913472,   # physical Footprint</pre></td></tr><tr><td data-num="30"></td><td><pre>                            869646336, # memory RSS</pre></td></tr><tr><td data-num="31"></td><td><pre>                            232210432, # memory Anon?</pre></td></tr><tr><td data-num="32"></td><td><pre>                            0],        # pid</pre></td></tr><tr><td data-num="33"></td><td><pre>                        1: [0.0005502246751775457,</pre></td></tr><tr><td data-num="34"></td><td><pre>                            691065,</pre></td></tr><tr><td data-num="35"></td><td><pre>                            6038,</pre></td></tr><tr><td data-num="36"></td><td><pre>                            12353840,</pre></td></tr><tr><td data-num="37"></td><td><pre>                            4177920,</pre></td></tr><tr><td data-num="38"></td><td><pre>                            12255232,</pre></td></tr><tr><td data-num="39"></td><td><pre>                            1]</pre></td></tr><tr><td data-num="40"></td><td><pre>                        &#125;</pre></td></tr><tr><td data-num="41"></td><td><pre>        &#125;]</pre></td></tr><tr><td data-num="42"></td><td><pre>    """</span></pre></td></tr><tr><td data-num="43"></td><td><pre>    config <span class="token operator">=</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="44"></td><td><pre>        <span class="token string">"bm"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="45"></td><td><pre>        <span class="token string">"cpuUsage"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="46"></td><td><pre>        <span class="token string">"procAttrs"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span></pre></td></tr><tr><td data-num="47"></td><td><pre>            <span class="token string">"memVirtualSize"</span><span class="token punctuation">,</span> <span class="token string">"cpuUsage"</span><span class="token punctuation">,</span> <span class="token string">"ctxSwitch"</span><span class="token punctuation">,</span> <span class="token string">"intWakeups"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="48"></td><td><pre>            <span class="token string">"physFootprint"</span><span class="token punctuation">,</span> <span class="token string">"memResidentSize"</span><span class="token punctuation">,</span> <span class="token string">"memAnon"</span><span class="token punctuation">,</span> <span class="token string">"pid"</span></pre></td></tr><tr><td data-num="49"></td><td><pre>        <span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="50"></td><td><pre>        <span class="token string">"sampleInterval"</span><span class="token punctuation">:</span> <span class="token number">1000000000</span><span class="token punctuation">,</span> <span class="token comment"># 1e9 ns == 1s</span></pre></td></tr><tr><td data-num="51"></td><td><pre>        <span class="token string">"sysAttrs"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span></pre></td></tr><tr><td data-num="52"></td><td><pre>            <span class="token string">"vmExtPageCount"</span><span class="token punctuation">,</span> <span class="token string">"vmFreeCount"</span><span class="token punctuation">,</span> <span class="token string">"vmPurgeableCount"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="53"></td><td><pre>            <span class="token string">"vmSpeculativeCount"</span><span class="token punctuation">,</span> <span class="token string">"physMemSize"</span></pre></td></tr><tr><td data-num="54"></td><td><pre>        <span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="55"></td><td><pre>        <span class="token string">"ur"</span><span class="token punctuation">:</span> <span class="token number">1000</span></pre></td></tr><tr><td data-num="56"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="57"></td><td><pre></pre></td></tr><tr><td data-num="58"></td><td><pre>    channel_id <span class="token operator">=</span> self<span class="token punctuation">.</span>make_channel<span class="token punctuation">(</span>InstrumentsService<span class="token punctuation">.</span>Sysmontap<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="59"></td><td><pre>    self<span class="token punctuation">.</span>call_message<span class="token punctuation">(</span>channel_id<span class="token punctuation">,</span> <span class="token string">"setConfig:"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>config<span class="token punctuation">]</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="60"></td><td><pre>    self<span class="token punctuation">.</span>call_message<span class="token punctuation">(</span>channel_id<span class="token punctuation">,</span> <span class="token string">"start"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="61"></td><td><pre></pre></td></tr><tr><td data-num="62"></td><td><pre>    <span class="token comment"># channel = self.make_channel(</span></pre></td></tr><tr><td data-num="63"></td><td><pre>    <span class="token comment">#     "com.apple.instruments.server.services.processcontrol")</span></pre></td></tr><tr><td data-num="64"></td><td><pre>    <span class="token comment"># aux = AUXMessageBuffer()</span></pre></td></tr><tr><td data-num="65"></td><td><pre>    <span class="token comment"># aux.append_obj(1)  # TODO: pid</span></pre></td></tr><tr><td data-num="66"></td><td><pre>    <span class="token comment"># payload = DTXPayload.build("startObservingPid:", aux)</span></pre></td></tr><tr><td data-num="67"></td><td><pre>    <span class="token comment"># self.send_dtx_message(channel, payload)</span></pre></td></tr><tr><td data-num="68"></td><td><pre>    notification_channel_id <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">-</span> channel_id</pre></td></tr><tr><td data-num="69"></td><td><pre>    <span class="token keyword">try</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="70"></td><td><pre>        <span class="token keyword">for</span> m <span class="token keyword">in</span> self<span class="token punctuation">.</span>iter_message<span class="token punctuation">(</span>Event<span class="token punctuation">.</span>NOTIFICATION<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="71"></td><td><pre>            <span class="token keyword">if</span> m<span class="token punctuation">.</span>flags <span class="token operator">==</span> <span class="token number">0x01</span> <span class="token keyword">and</span> m<span class="token punctuation">.</span>channel_id <span class="token operator">==</span> notification_channel_id<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="72"></td><td><pre>                <span class="token keyword">yield</span> m<span class="token punctuation">.</span>result</pre></td></tr><tr><td data-num="73"></td><td><pre>    <span class="token keyword">except</span> GeneratorExit<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="74"></td><td><pre>        self<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 停止 connection，防止消息不停的发过来，暂时不会别的方法</span></pre></td></tr><tr><td data-num="75"></td><td><pre>        <span class="token comment"># print("Stop channel")</span></pre></td></tr><tr><td data-num="76"></td><td><pre>        <span class="token comment">## The following code is not working</span></pre></td></tr><tr><td data-num="77"></td><td><pre>        <span class="token comment"># self.call_message(channel_id, "stopSampling")</span></pre></td></tr><tr><td data-num="78"></td><td><pre>        <span class="token comment"># aux = AUXMessageBuffer()</span></pre></td></tr><tr><td data-num="79"></td><td><pre>        <span class="token comment"># aux.append_obj(channel_id)</span></pre></td></tr><tr><td data-num="80"></td><td><pre>        <span class="token comment"># self.send_dtx_message(channel_id, DTXPayload.build('_channelCanceled:', aux))</span></pre></td></tr></table></figure><ul>
+<li>该方法与 instrument 建立通信 发送协议请求，获取数据<br>
+其数据结果包含了</li>
+<li>cpu 数量</li>
+<li>启动的 cpu</li>
+<li>单个 cpu 使用率</li>
+<li>…</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91-%E6%80%A7%E8%83%BD-%E5%B7%A5%E5%85%B7/" rel="tag"><i class="ic i-tag"></i> 测试开发 性能 工具</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2023-10-02 09:02:37" itemprop="dateModified" datetime="2023-10-02T09:02:37+08:00">2023-10-02</time>
+  </span>
+  <span id="2023/07/06/测试开发/SoloX之CPU性能采集/" class="item leancloud_visitors" data-flag-title="SoloX之CPU性能采集" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Axiss <i class="ic i-at"><em>@</em></i>何妨吟啸且徐行
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://fanlu.top/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="SoloX之CPU性能采集">https://fanlu.top/2023/07/06/测试开发/SoloX之CPU性能采集/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/07/01/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-y8657g-tuya.jpg" title="solox之fps性能采集">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>solox之fps性能采集</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%86%85%E5%AD%98%E6%80%A7%E8%83%BD%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-q2xwyd-tuya.jpg" title="SoloX之内存性能数据采集">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>SoloX之内存性能数据采集</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%8D%93"><span class="toc-number">1.</span> <span class="toc-text"> 安卓</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%9B%E7%A8%8Bcpu%E4%BD%BF%E7%94%A8%E6%97%B6%E9%97%B4"><span class="toc-number">1.1.</span> <span class="toc-text"> 获取进程 cpu 使用时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%80%BBcpu%E4%BD%BF%E7%94%A8%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.</span> <span class="toc-text"> 获取总 cpu 使用时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96cpu%E6%A0%B8%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text"> 获取 CPU 核数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9Fcpu%E4%BD%BF%E7%94%A8%E6%97%B6%E9%97%B4"><span class="toc-number">1.4.</span> <span class="toc-text"> 获取系统 CPU 使用时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E9%9B%86%E7%BB%93%E6%9E%9C"><span class="toc-number">1.5.</span> <span class="toc-text"> 采集结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ios"><span class="toc-number">2.</span> <span class="toc-text"> IOS</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Axiss"
+      data-src="/images/tom.png">
+  <p class="name" itemprop="name">Axiss</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">43</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">26</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Zhbkx1MTk5NA==" title="https:&#x2F;&#x2F;github.com&#x2F;FanLu1994"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly9naXRodWIuY29tL0Zhbkx1MTk5NA==" title="https:&#x2F;&#x2F;github.com&#x2F;FanLu1994"><i class="ic i-twitter"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vdS8xNTk5OTUyMDI1" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;1599952025"><i class="ic i-weibo"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjEwNjY1ODAxMTlAcXEuY29t" title="mailto:1066580119@qq.com"><i class="ic i-envelope"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/07/01/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%86%85%E5%AD%98%E6%80%A7%E8%83%BD%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/20/CI/jenkins%E7%9A%84%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" title="jenkins的部署问题记录">jenkins的部署问题记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/27/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/grpcurl/" title="grpcurl">grpcurl</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/16/%E5%89%8D%E7%AB%AF/vue-golang-webassembly%E5%88%9D%E4%BD%93%E9%AA%8C/" title="vue-golang-webassembly初体验">vue-golang-webassembly初体验</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/" title="vben-admin换肤实现">vben-admin换肤实现</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/14/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%BA%94%E7%94%A8%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" title="SoloX之应用网络数据采集">SoloX之应用网络数据采集</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/14/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E6%8A%A5%E5%91%8A%E5%AF%BC%E5%87%BA/" title="SoloX之报告导出">SoloX之报告导出</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/06/25/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" title="SoloX移动设备性能采集工具使用体验">SoloX移动设备性能采集工具使用体验</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%A1%8C%E6%B8%B8/" title="桌游">桌游</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/01/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/solox%E4%B9%8Bfps%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="solox之fps性能采集">solox之fps性能采集</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/12/%E9%98%85%E8%AF%BB/%E8%AF%BB%E5%90%8E%E6%84%9F-%E3%80%8A%E5%91%BD%E8%BF%90%E3%80%8B/" title="读后感-《命运》">读后感-《命运》</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Axiss @ Axiss</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">104k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:34</span>
+  </div>
+  <div>
+    <!-- 不蒜子统计 -->
+    <span id="busuanzi_container_site_pv">
+      本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+      本站访客数<span id="busuanzi_value_site_uv"></span>人
+    </span>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div><div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+    <br/>
+        <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">沪ICP备2021031543号-1</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/07/06/测试开发/SoloX之CPU性能采集/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

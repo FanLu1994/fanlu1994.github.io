@@ -4,36 +4,36 @@
     <title>何妨吟啸且徐行 • Posts by &#34;ci cd linux&#34; tag</title>
     <link href="https://fanlu.top" />
     <updated>2023-06-19T13:56:14.000Z</updated>
+    <category term="nuxt axiss 前端" />
     <category term="CI CD linux" />
-    <category term="测试开发 性能 工具" />
+    <category term="jenkins CD" />
+    <category term="云服务器" />
     <category term="前端 产品经理" />
     <category term="前端 UI" />
-    <category term="golang实验室" />
-    <category term="工具 网络" />
-    <category term="jenkins CD" />
     <category term="前端 动画 工具" />
     <category term="前端 工具" />
     <category term="前端搬砖指南" />
     <category term="前端 vue go wasm" />
-    <category term="阅读 经济" />
-    <category term="生活" />
-    <category term="云服务器" />
     <category term="工具" />
-    <category term="nuxt axiss 前端" />
+    <category term="前端 网站" />
+    <category term="前端 UI 网站" />
+    <category term="测试开发 性能 工具" />
+    <category term="golang实验室" />
+    <category term="工具 网络" />
+    <category term="游戏 桌游 生活" />
+    <category term="生活" />
+    <category term="阅读 经济" />
     <category term="阅读，记录" />
     <category term="阅读 电影 电视" />
     <category term="阅读 电视 播客" />
     <category term="阅读 UP主" />
     <category term="阅读" />
-    <category term="游戏 桌游 生活" />
-    <category term="前端 网站" />
-    <category term="前端 UI 网站" />
     <category term="阅读 记录" />
     <category term="鸡毛蒜皮周刊" />
     <entry>
-        <id>https://fanlu.top/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</id>
+        <id>https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</id>
         <title>Hexo博客自动部署</title>
-        <link rel="alternate" href="https://fanlu.top/2023/06/19/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/"/>
         <content type="html">&lt;h2 id=&#34;简单介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简单介绍&#34;&gt;#&lt;/a&gt; 简单介绍&lt;/h2&gt;
 &lt;p&gt;Hexo 博客是一个非常好用的静态博客，之前也部署过一阵，后来换了 halo，但是遇到了服务器崩溃，丢了一些数据，现在又换回了&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv&#34;&gt; Hexo&lt;/span&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;hexo的部署&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hexo的部署&#34;&gt;#&lt;/a&gt; hexo 的部署&lt;/h2&gt;

@@ -4,36 +4,36 @@
     <title>何妨吟啸且徐行 • Posts by &#34;云服务器&#34; tag</title>
     <link href="https://fanlu.top" />
     <updated>2023-06-05T00:47:28.000Z</updated>
+    <category term="nuxt axiss 前端" />
     <category term="CI CD linux" />
-    <category term="测试开发 性能 工具" />
+    <category term="jenkins CD" />
+    <category term="云服务器" />
     <category term="前端 产品经理" />
     <category term="前端 UI" />
-    <category term="golang实验室" />
-    <category term="工具 网络" />
-    <category term="jenkins CD" />
     <category term="前端 动画 工具" />
     <category term="前端 工具" />
     <category term="前端搬砖指南" />
     <category term="前端 vue go wasm" />
-    <category term="阅读 经济" />
-    <category term="生活" />
-    <category term="云服务器" />
     <category term="工具" />
-    <category term="nuxt axiss 前端" />
+    <category term="前端 网站" />
+    <category term="前端 UI 网站" />
+    <category term="测试开发 性能 工具" />
+    <category term="golang实验室" />
+    <category term="工具 网络" />
+    <category term="游戏 桌游 生活" />
+    <category term="生活" />
+    <category term="阅读 经济" />
     <category term="阅读，记录" />
     <category term="阅读 电影 电视" />
     <category term="阅读 电视 播客" />
     <category term="阅读 UP主" />
     <category term="阅读" />
-    <category term="游戏 桌游 生活" />
-    <category term="前端 网站" />
-    <category term="前端 UI 网站" />
     <category term="阅读 记录" />
     <category term="鸡毛蒜皮周刊" />
     <entry>
-        <id>https://fanlu.top/2023/06/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/</id>
+        <id>https://fanlu.top/2023/06/05/CI/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/</id>
         <title>云服务器重新搭建实录</title>
-        <link rel="alternate" href="https://fanlu.top/2023/06/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/06/05/CI/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E6%96%B0%E6%90%AD%E5%BB%BA%E5%AE%9E%E5%BD%95/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;上上周把腾讯云的环境搞坏了，之前搭建的 halo 博客站数据也丢了，好在基本都有备份，有些垃圾文章就直接扔掉了。  重新部署了一下云服务器，包括 rss 阅读、hexo 博客、gocron 定时任务等等。这篇文章记录一下我的部署流程。&lt;/p&gt;
 &lt;/blockquote&gt;
