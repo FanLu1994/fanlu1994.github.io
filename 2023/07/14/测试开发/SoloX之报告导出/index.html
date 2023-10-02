@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="测试开发 性能 工具" />
+  <meta name="keywords" content="工具,测试开发,性能" />
 
 
 <link rel="canonical" href="https://fanlu.top/2023/07/14/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E6%8A%A5%E5%91%8A%E5%AF%BC%E5%87%BA/">
@@ -117,12 +117,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-1pjyl1-tuya.jpg"></li>
-          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-jx9zqq-tuya.jpg"></li>
-          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-x88o53-tuya.jpg"></li>
-          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-e7pwdw-tuya.jpg"></li>
-          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-g737lq-tuya.jpg"></li>
-          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-x8r5go-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-3lw5g9-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-m9p7r8-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-rd8wdm-tuya.png"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-5gwmd3-tuya.png"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-1k5kdg-tuya.jpg"></li>
+          <li class="item" data-background-image="https://blog-1258032198.cos.ap-shanghai.myqcloud.com/wallhaven-kx9jpq-tuya.jpg"></li>
         </ul>
       </div>
     </header>
@@ -175,7 +175,9 @@
 <p>通过模板渲染成一个 html 文件，然后导出</p>
 <figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">make_android_html</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> scene<span class="token punctuation">,</span> summary <span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'Generating HTML ...'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    STATICPATH <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>realpath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    file_loader <span class="token operator">=</span> FileSystemLoader<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>STATICPATH<span class="token punctuation">,</span> <span class="token string">'report_template'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    env <span class="token operator">=</span> Environment<span class="token punctuation">(</span>loader<span class="token operator">=</span>file_loader<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    template <span class="token operator">=</span> env<span class="token punctuation">.</span>get_template<span class="token punctuation">(</span><span class="token string">'android.html'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span> scene<span class="token punctuation">,</span> <span class="token string">'report.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'w+'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fout<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        html_content <span class="token operator">=</span> template<span class="token punctuation">.</span>render<span class="token punctuation">(</span>cpu_app<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'cpu_app'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>cpu_sys<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'cpu_sys'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="9"></td><td><pre>                                       mem_total<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'mem_total'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>mem_native<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'mem_native'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>                                       mem_dalvik<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'mem_dalvik'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>fps<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'fps'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre>                                       jank<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'jank'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>level<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'level'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="12"></td><td><pre>                                       tem<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'tem'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>net_send<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'net_send'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre>                                       net_recv<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'net_recv'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>cpu_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'cpu_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="14"></td><td><pre>                                       mem_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'mem_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>net_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'net_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="15"></td><td><pre>                                       battery_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'battery_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>fps_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'fps_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="16"></td><td><pre>                                       jank_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'jank_charts'</span><span class="token punctuation">]</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="17"></td><td><pre>        </pre></td></tr><tr><td data-num="18"></td><td><pre>        fout<span class="token punctuation">.</span>write<span class="token punctuation">(</span>html_content<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="19"></td><td><pre>    html_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span> scene<span class="token punctuation">,</span> <span class="token string">'report.html'</span><span class="token punctuation">)</span>    </pre></td></tr><tr><td data-num="20"></td><td><pre>    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'Generating HTML success : &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>html_path<span class="token punctuation">)</span><span class="token punctuation">)</span>  </pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token keyword">return</span> html_path</pre></td></tr></table></figure><figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">def</span> <span class="token function">make_ios_html</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> scene<span class="token punctuation">,</span> summary <span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'Generating HTML ...'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    STATICPATH <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>realpath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    file_loader <span class="token operator">=</span> FileSystemLoader<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>STATICPATH<span class="token punctuation">,</span> <span class="token string">'report_template'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    env <span class="token operator">=</span> Environment<span class="token punctuation">(</span>loader<span class="token operator">=</span>file_loader<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    template <span class="token operator">=</span> env<span class="token punctuation">.</span>get_template<span class="token punctuation">(</span><span class="token string">'ios.html'</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span> scene<span class="token punctuation">,</span> <span class="token string">'report.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'w+'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fout<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        html_content <span class="token operator">=</span> template<span class="token punctuation">.</span>render<span class="token punctuation">(</span>cpu_app<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'cpu_app'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>cpu_sys<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'cpu_sys'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>gpu<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'gpu'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="9"></td><td><pre>                                       mem_total<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'mem_total'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>fps<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'fps'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>                                       tem<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'tem'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>current<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'current'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre>                                       voltage<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'voltage'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>power<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'power'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="12"></td><td><pre>                                       net_send<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'net_send'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>net_recv<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'net_recv'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre>                                       cpu_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'cpu_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>mem_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'mem_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="14"></td><td><pre>                                       net_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'net_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>battery_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'battery_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="15"></td><td><pre>                                       fps_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'fps_charts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>gpu_charts<span class="token operator">=</span>summary<span class="token punctuation">[</span><span class="token string">'gpu_charts'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>            </pre></td></tr><tr><td data-num="16"></td><td><pre>        fout<span class="token punctuation">.</span>write<span class="token punctuation">(</span>html_content<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    html_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>report_dir<span class="token punctuation">,</span> scene<span class="token punctuation">,</span> <span class="token string">'report.html'</span><span class="token punctuation">)</span>    </pre></td></tr><tr><td data-num="18"></td><td><pre>    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'Generating HTML success : &#123;&#125;'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>html_path<span class="token punctuation">)</span><span class="token punctuation">)</span>  </pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token keyword">return</span> html_path</pre></td></tr></table></figure>
       <div class="tags">
-          <a href="/tags/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91-%E6%80%A7%E8%83%BD-%E5%B7%A5%E5%85%B7/" rel="tag"><i class="ic i-tag"></i> 测试开发 性能 工具</a>
+          <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"><i class="ic i-tag"></i> 工具</a>
+          <a href="/tags/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" rel="tag"><i class="ic i-tag"></i> 测试开发</a>
+          <a href="/tags/%E6%80%A7%E8%83%BD/" rel="tag"><i class="ic i-tag"></i> 性能</a>
       </div>
   </div>
 
@@ -187,7 +189,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-10-02 14:26:10" itemprop="dateModified" datetime="2023-10-02T14:26:10+08:00">2023-10-02</time>
+    <time title="修改时间：2023-10-02 14:43:39" itemprop="dateModified" datetime="2023-10-02T14:43:39+08:00">2023-10-02</time>
   </span>
   <span id="2023/07/14/测试开发/SoloX之报告导出/" class="item leancloud_visitors" data-flag-title="SoloX之报告导出" title="阅读次数">
       <span class="icon">
@@ -228,7 +230,7 @@
     <div class="item left">
       
 
-  <a href="/2023/07/14/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%AE%89%E5%8D%93logcat/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-72drx3-tuya.jpg" title="SoloX之安卓logcat">
+  <a href="/2023/07/14/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%AE%89%E5%8D%93logcat/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-g737lq-tuya.jpg" title="SoloX之安卓logcat">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 测试开发</span>
   <h3>SoloX之安卓logcat</h3>
@@ -238,7 +240,7 @@
     <div class="item right">
       
 
-  <a href="/2023/07/16/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8815%E6%97%A5/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-5gl3p9-tuya.jpg" title="本周看了啥-2023年7月15日">
+  <a href="/2023/07/16/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8815%E6%97%A5/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;blog-1258032198.cos.ap-shanghai.myqcloud.com&#x2F;wallhaven-vqg9o8-tuya.png" title="本周看了啥-2023年7月15日">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>本周看了啥-2023年7月15日</h3>
@@ -290,7 +292,7 @@
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">26</span>
+        <span class="count">27</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -375,6 +377,44 @@
 <a href="/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" title="分类于 测试开发">测试开发</a>
 </div>
 
+    <span><a href="/2023/07/14/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%BA%94%E7%94%A8%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" title="SoloX之应用网络数据采集">SoloX之应用网络数据采集</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%BD%9C%E6%B0%B4%E5%91%98%E6%88%B4%E5%A4%AB/" title="潜水员戴夫">潜水员戴夫</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/12/%E9%98%85%E8%AF%BB/%E8%AF%BB%E5%90%8E%E6%84%9F-%E3%80%8A%E5%91%BD%E8%BF%90%E3%80%8B/" title="读后感-《命运》">读后感-《命运》</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" title="分类于 测试开发">测试开发</a>
+</div>
+
+    <span><a href="/2023/06/25/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" title="SoloX移动设备性能采集工具使用体验">SoloX移动设备性能采集工具使用体验</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" title="分类于 测试开发">测试开发</a>
+</div>
+
     <span><a href="/2023/05/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/gopher-lua%E4%BD%BF%E7%94%A8%E5%B0%8Fdemo/" title="gopher-lua使用小demo">gopher-lua使用小demo</a></span>
   </li>
 
@@ -382,19 +422,10 @@
   <li class="item">
     
 <div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/09/04/%E9%98%85%E8%AF%BB/%E8%AF%BB%E3%80%8A%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%BA%E3%80%8B/" title="读《互联网人》">读《互联网人》</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" title="分类于 测试开发">测试开发</a>
 </div>
 
-    <span><a href="/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8BCPU%E6%80%A7%E8%83%BD%E9%87%87%E9%9B%86/" title="SoloX之CPU性能采集">SoloX之CPU性能采集</a></span>
+    <span><a href="/2023/07/14/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E6%97%B6%E9%97%B4/" title="SoloX之应用启动时间">SoloX之应用启动时间</a></span>
   </li>
 
       
@@ -403,7 +434,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/" title="微信公众号模板工具开发-02（end）">微信公众号模板工具开发-02（end）</a></span>
+    <span><a href="/2023/06/11/%E9%98%85%E8%AF%BB/%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E5%91%A8%E5%88%8A-04/" title="鸡毛蒜皮周刊-04">鸡毛蒜皮周刊-04</a></span>
   </li>
 
       
@@ -412,7 +443,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/08/23/%E5%89%8D%E7%AB%AF/lottielab%E5%8A%A8%E7%94%BB%E5%BA%93/" title="lottielab动画库">lottielab动画库</a></span>
+    <span><a href="/2023/06/20/%E5%89%8D%E7%AB%AF/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/" title="daisyUI使用体验">daisyUI使用体验</a></span>
   </li>
 
       
@@ -421,7 +452,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/07/22/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8822%E6%97%A5/" title="本周看了啥-2023年7月22日">本周看了啥-2023年7月22日</a></span>
+    <span><a href="/2023/09/04/%E7%94%9F%E6%B4%BB/%E4%BA%8C%E9%98%B3%E7%9A%84%E8%BF%99%E5%87%A0%E5%A4%A9/" title="二阳的这几天">二阳的这几天</a></span>
   </li>
 
       
@@ -430,35 +461,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/" title="vben-admin换肤实现">vben-admin换肤实现</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/10/02/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B410%E6%9C%8801%E6%97%A5-1/" title="本周看了啥-2023年10月01日">本周看了啥-2023年10月01日</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/" title="分类于 测试开发">测试开发</a>
-</div>
-
-    <span><a href="/2023/07/06/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/SoloX%E4%B9%8B%E5%86%85%E5%AD%98%E6%80%A7%E8%83%BD%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" title="SoloX之内存性能数据采集">SoloX之内存性能数据采集</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" title="Hexo博客自动部署">Hexo博客自动部署</a></span>
+    <span><a href="/2023/07/16/%E5%89%8D%E7%AB%AF/vue-golang-webassembly%E5%88%9D%E4%BD%93%E9%AA%8C/" title="vue-golang-webassembly初体验">vue-golang-webassembly初体验</a></span>
   </li>
 
   </ul>

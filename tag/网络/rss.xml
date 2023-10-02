@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>何妨吟啸且徐行 • Posts by &#34;工具 网络&#34; tag</title>
+        <title>何妨吟啸且徐行 • Posts by &#34;网络&#34; tag</title>
         <link>https://fanlu.top</link>
         <description></description>
         <language>zh-CN</language>
@@ -20,9 +20,10 @@
         <category>工具</category>
         <category>前端 网站</category>
         <category>前端 UI 网站</category>
-        <category>测试开发 性能 工具</category>
+        <category>测试开发</category>
+        <category>性能</category>
         <category>golang实验室</category>
-        <category>工具 网络</category>
+        <category>网络</category>
         <category>游戏 桌游 生活</category>
         <category>生活</category>
         <category>阅读 经济</category>
@@ -37,7 +38,8 @@
             <guid isPermalink="true">https://fanlu.top/2023/08/27/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/grpcurl/</guid>
             <title>grpcurl</title>
             <link>https://fanlu.top/2023/08/27/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/grpcurl/</link>
-            <category>工具 网络</category>
+            <category>工具</category>
+            <category>网络</category>
             <pubDate>Sun, 27 Aug 2023 05:41:39 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;curl&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#curl&#34;&gt;#&lt;/a&gt; cURL&lt;/h2&gt;
 &lt;p&gt;curl 是一个常见的命令行工具，用来请求 web 服务器接口，c 就是 client 的意思。&lt;br&gt;
