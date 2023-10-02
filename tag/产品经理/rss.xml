@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>何妨吟啸且徐行 • Posts by &#34;产品经理&#34; tag</title>
+        <link>https://fanlu.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 17 Jun 2023 15:55:48 +0000</pubDate>
+        <lastBuildDate>Sat, 17 Jun 2023 15:55:48 +0000</lastBuildDate>
+        <category>CI</category>
+        <category>CD</category>
+        <category>linux</category>
+        <category>jenkins</category>
+        <category>云服务器</category>
+        <category>前端</category>
+        <category>产品经理</category>
+        <category>UI</category>
+        <category>动画</category>
+        <category>工具</category>
+        <category>前端搬砖指南</category>
+        <category>vue</category>
+        <category>go</category>
+        <category>wasm</category>
+        <category>nuxt</category>
+        <category>axiss</category>
+        <category>网站</category>
+        <category>测试开发</category>
+        <category>性能</category>
+        <category>golang实验室</category>
+        <category>网络</category>
+        <category>游戏</category>
+        <category>桌游</category>
+        <category>生活</category>
+        <category>阅读</category>
+        <category>经济</category>
+        <category>记录</category>
+        <category>电影</category>
+        <category>电视</category>
+        <category>播客</category>
+        <category>UP主</category>
+        <category>鸡毛蒜皮周刊</category>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/Web%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99%E2%80%94%E7%BF%BB%E8%AF%91/</guid>
+            <title>Web界面设计准则—翻译</title>
+            <link>https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/Web%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99%E2%80%94%E7%BF%BB%E8%AF%91/</link>
+            <category>前端</category>
+            <category>产品经理</category>
+            <pubDate>Sat, 17 Jun 2023 15:55:48 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbnRlcmZhY2VzLnJhdW5vLm1lLw==&#34;&gt;https://interfaces.rauno.me/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;这个文档概述了构建良好的用户界面的一些细节，文档在持续更新中。本文借助 chatgpt 以及个人修改进行翻译，有些其实没接触过的，我也不懂啥意思，建议看原文。&lt;/p&gt;
+&lt;h2 id=&#34;交互&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#交互&#34;&gt;#&lt;/a&gt; 交互&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;点击输入框就聚焦输入&lt;/li&gt;
+&lt;li&gt;输入框应该被 form 元素包括，enter 件可以提交&lt;/li&gt;
+&lt;li&gt;输入框应该包含 type 属性，例如 password、email&lt;/li&gt;
+&lt;li&gt;大部分时间，输入框不应该使用拼写检查（spellcheck）以及自动填充（autocomplete）&lt;/li&gt;
+&lt;li&gt;需要校验的时候，使用 required 来校验&lt;/li&gt;
+&lt;li&gt;输入前缀和后缀装饰，比如图标、应该绝对定位，应该添加内边距，层级放在输入框上方，而不要放在旁边，点击也可以聚焦到输入框&lt;/li&gt;
+&lt;li&gt;toggle 组件必须立即生效，不需要二次确认&lt;/li&gt;
+&lt;li&gt;按钮应该在提交后失效，避免重复提交  （或者 loading）&lt;/li&gt;
+&lt;li&gt;交互的组件应该设置 user-select 为 none&lt;/li&gt;
+&lt;li&gt;装饰元素应该禁用指针事件，避免干扰&lt;/li&gt;
+&lt;li&gt;垂直或者水平列表中的可交互元素之间不应存在无效区域，同时应该增加元素内边距增大可点击区域&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;排版&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#排版&#34;&gt;#&lt;/a&gt; 排版&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;字体应该应用  &lt;code&gt;-webkit-font-smoothing: antialiased&lt;/code&gt;  以提高可读性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;字体应该应用  &lt;code&gt;text-rendering: optimizeLegibility&lt;/code&gt;  以提高可读性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;字体应该根据内容、字母表或相关语言进行子集化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在鼠标悬停或选中状态下不应改变字体粗细，以避免布局变化&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不应使用低于 400 的字体粗细&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中等大小的标题通常在 500-600 的字体粗细之间效果最好&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过使用 CSS 的  &lt;code&gt;clamp()&lt;/code&gt;  函数动态调整数值，例如  &lt;code&gt;clamp(48px, 5vw, 72px)&lt;/code&gt; ，可应用于标题的字体大小&lt;br&gt;
+ &lt;code&gt;clamp()&lt;/code&gt;  CSS 函数将中间值限制在指定的最小值和最大值范围内。该函数接受三个参数：最小值、首选值和最大允许值。&lt;br&gt;
+换句话说， &lt;code&gt;clamp()&lt;/code&gt;  函数确保结果值落在指定的范围内。如果首选值在最小值和最大值之间，则直接返回首选值。如果首选值小于最小值，则返回最小值。同样地，如果首选值大于最大值，则返回最大值。&lt;br&gt;
+以下是使用 &lt;code&gt;clamp()&lt;/code&gt;  函数的语法：&lt;br&gt;
+ &lt;code&gt;clamp(最小值, 首选值, 最大值)&lt;/code&gt; &lt;br&gt;
+ 例如， &lt;code&gt;clamp(10px, 5vw, 20px)&lt;/code&gt;  将返回至少为 10 像素，但不超过 20 像素的值。如果首选值 &lt;code&gt;5vw&lt;/code&gt;  在指定的范围内，将使用它作为结果值。&lt;br&gt;
+这个函数在创建响应式设计时非常有用，其中某个值应根据视口大小进行缩放，但仍有定义的限制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在可用时，应使用  &lt;code&gt;font-variant-numeric: tabular-nums&lt;/code&gt;  应用表格数字，特别是在表格或不希望出现布局变化的情况下，例如计时器中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用  &lt;code&gt;-webkit-text-size-adjust: 100%&lt;/code&gt;  可防止在 iOS 的横向模式下出现意外的文本调整大小&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;motion动画&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#motion动画&#34;&gt;#&lt;/a&gt; Motion (动画)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;切换主题不应触发元素 transition 或者动画&lt;/li&gt;
+&lt;li&gt;动画不应超过 200ms，否则会影响交互速度&lt;/li&gt;
+&lt;li&gt;动画值应该和触发器大小成比例：
+&lt;ul&gt;
+&lt;li&gt;缩放动画不应从 0 到 1，而是从 0.8 开始渐变透明度或者缩放度&lt;/li&gt;
+&lt;li&gt;按钮激活动画不应从 1 到 0.8，而是到 0.96 0.9 等等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;频率较高的动作避免不必要的动画
+&lt;ul&gt;
+&lt;li&gt;例如右键菜单&lt;/li&gt;
+&lt;li&gt;删除或者添加列表项&lt;/li&gt;
+&lt;li&gt;一般的按钮&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;看不见的元素动画应该停止，以降低 cpu 和 gpu 的能耗&lt;/li&gt;
+&lt;li&gt;使用 scroll-behavior:smooth 来作为业内导航的参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;触摸-移动设备&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#触摸-移动设备&#34;&gt;#&lt;/a&gt; 触摸 （移动设备）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;触摸时不应显示悬停状态，使用 &lt;code&gt;@media (hover: hover)&lt;/code&gt;  来实现。&lt;/li&gt;
+&lt;li&gt;输入框字体不小于 16px，防止 ios 焦点状态下缩放&lt;/li&gt;
+&lt;li&gt;输入框不应自动获取焦点&lt;/li&gt;
+&lt;li&gt;video，应使用  &lt;code&gt;muted&lt;/code&gt;  和  &lt;code&gt;playsinline&lt;/code&gt;  属性以在 iOS 上自动播放&lt;/li&gt;
+&lt;li&gt;对于自定义组件实现了平移和缩放手势的情况，应禁用  &lt;code&gt;touch-action&lt;/code&gt;  属性，以防止与缩放和滚动等本机行为的干扰&lt;/li&gt;
+&lt;li&gt;使用  &lt;code&gt;-webkit-tap-highlight-color: rgba(0,0,0,0)&lt;/code&gt;  可以禁用默认的 iOS 点击高亮效果，但始终应替代为适当的替代方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优化&#34;&gt;#&lt;/a&gt; 优化&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用较大的  &lt;code&gt;blur()&lt;/code&gt;  值来设置  &lt;code&gt;filter&lt;/code&gt;  和  &lt;code&gt;backdrop-filter&lt;/code&gt;  可能会导致性能下降&lt;/li&gt;
+&lt;li&gt;矩形缩放和模糊处理会导致色带效应（banding），使用径向渐变比较好&lt;/li&gt;
+&lt;li&gt;谨慎使用  &lt;code&gt;transform: translateZ(0)&lt;/code&gt;  来启用 GPU 渲染，以提高性能，但仅适用于性能较差的动画&lt;/li&gt;
+&lt;li&gt;对于性能较差的滚动动画，在动画的持续时间内切换  &lt;code&gt;will-change&lt;/code&gt;  属性&lt;/li&gt;
+&lt;li&gt;播放过多的视频可能会导致 iOS 设备性能下降，建议对屏幕外的视频进行暂停甚至卸载&lt;/li&gt;
+&lt;li&gt;使用  &lt;code&gt;refs&lt;/code&gt;  绕过 React 的渲染生命周期，直接将实时值提交给 DOM&lt;/li&gt;
+&lt;li&gt;检测和适应用户设备的硬件和网络能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;友好设计&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友好设计&#34;&gt;#&lt;/a&gt; 友好设计&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;禁用的按钮不应有提示信息&lt;/li&gt;
+&lt;li&gt;焦点环使用 box-shadow 而不是 outline&lt;/li&gt;
+&lt;li&gt;列表可聚焦元素支持上下键切换&lt;/li&gt;
+&lt;li&gt;列表可聚焦元素支持删除键删除&lt;/li&gt;
+&lt;li&gt;下拉菜单触发应该是 onMouseDown 而不是 onClick 事件&lt;/li&gt;
+&lt;li&gt;使用带有样式标签的 SVG 网站图标，根据 prefers-color-scheme 遵循系统主题&lt;/li&gt;
+&lt;li&gt;仅包含图标的交互元素应该定义一个明确的  &lt;code&gt;aria-label&lt;/code&gt;   （这样会支持屏幕阅读工具阅读）&lt;/li&gt;
+&lt;li&gt;悬浮触发的 tip 不应包含交互内容&lt;/li&gt;
+&lt;li&gt;图片使用 img 渲染，方便复制&lt;/li&gt;
+&lt;li&gt;插图应该有 aria-label&lt;/li&gt;
+&lt;li&gt;渐变文本在  &lt;code&gt;::selection&lt;/code&gt;  状态下应取消渐变效果&lt;/li&gt;
+&lt;li&gt;当使用嵌套菜单时，使用 &amp;quot;prediction cone” 以防止指针在移动过程中意外关闭菜单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;设计&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设计&#34;&gt;#&lt;/a&gt; 设计&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;提交后数据更新；但服务器报错后进行回滚和提示&lt;/li&gt;
+&lt;li&gt;身份验证应该在服务器完成，避免 url 变化&lt;/li&gt;
+&lt;li&gt;使用  &lt;code&gt;::selection&lt;/code&gt;  样式化文档选中状态&lt;/li&gt;
+&lt;li&gt;显示反馈：
+&lt;ul&gt;
+&lt;li&gt;复制成功时，显示一个内联的标记，而不是一个通知&lt;/li&gt;
+&lt;li&gt;输入错误时高亮显示相关的输入框&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;空状态应提示创建新项，并可选择使用模板&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -4,32 +4,37 @@
     <title>何妨吟啸且徐行</title>
     <link href="https://fanlu.top" />
     <updated>2023-10-02T00:39:21.000Z</updated>
-    <category term="nuxt axiss 前端" />
-    <category term="CI CD linux" />
-    <category term="jenkins CD" />
+    <category term="CI" />
+    <category term="CD" />
+    <category term="linux" />
+    <category term="jenkins" />
     <category term="云服务器" />
-    <category term="前端 产品经理" />
-    <category term="前端 UI" />
-    <category term="前端 动画 工具" />
-    <category term="前端 工具" />
-    <category term="前端搬砖指南" />
-    <category term="前端 vue go wasm" />
+    <category term="前端" />
+    <category term="产品经理" />
+    <category term="UI" />
+    <category term="动画" />
     <category term="工具" />
-    <category term="前端 网站" />
-    <category term="前端 UI 网站" />
+    <category term="前端搬砖指南" />
+    <category term="vue" />
+    <category term="go" />
+    <category term="wasm" />
+    <category term="nuxt" />
+    <category term="axiss" />
+    <category term="网站" />
     <category term="测试开发" />
     <category term="性能" />
     <category term="golang实验室" />
     <category term="网络" />
-    <category term="游戏 桌游 生活" />
+    <category term="游戏" />
+    <category term="桌游" />
     <category term="生活" />
-    <category term="阅读 经济" />
-    <category term="阅读，记录" />
-    <category term="阅读 电影 电视" />
-    <category term="阅读 电视 播客" />
-    <category term="阅读 UP主" />
     <category term="阅读" />
-    <category term="阅读 记录" />
+    <category term="经济" />
+    <category term="记录" />
+    <category term="电影" />
+    <category term="电视" />
+    <category term="播客" />
+    <category term="UP主" />
     <category term="鸡毛蒜皮周刊" />
     <entry>
         <id>https://fanlu.top/2023/10/02/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B410%E6%9C%8801%E6%97%A5-1/</id>
@@ -54,7 +59,8 @@
 &lt;h2 id=&#34;电视剧-鹊刀门传奇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#电视剧-鹊刀门传奇&#34;&gt;#&lt;/a&gt; 电视剧 - 鹊刀门传奇&lt;/h2&gt;
 &lt;p&gt;赵本山团队的新电视，没有罐头笑声的喜剧，穿着古装演现代戏的喜剧，有点武林外传的感觉，当然，差距还是很大的。可以一看。&lt;/p&gt;
 </content>
-        <category term="阅读，记录" />
+        <category term="阅读" />
+        <category term="记录" />
         <updated>2023-10-02T00:39:21.000Z</updated>
     </entry>
     <entry>
@@ -90,7 +96,8 @@
 &lt;p&gt;这本书对于各类职业的真实介绍，让我想起大学时的就业指导课，当时全是一些没有就业过的老师们上的，到现在我什么都不记得了。如果真的有各行各业的人来给我们介绍他们自己的工作，我会觉得特别有意思，也许会对我的职业选择有很多影响。 研究生阶段有这类课，有华为、腾讯等公司给我们讲解他们的一些技术分享，也算变相分享了他们的工作内容，很有趣，是我研究生阶段印象最深的几节课。&lt;/p&gt;
 &lt;p&gt;希望大学生朋友能有机会读读这本书，至少可以在选择要不要加入互联网行业的时候多一些判断依据。&lt;/p&gt;
 </content>
-        <category term="阅读 记录" />
+        <category term="阅读" />
+        <category term="记录" />
         <updated>2023-09-04T09:27:34.000Z</updated>
     </entry>
     <entry>
@@ -155,7 +162,8 @@ curl 支持的协议很多&lt;/p&gt;
 &lt;p&gt;这是今年最让我感觉到知识拓展的一本书。&lt;/p&gt;
 &lt;p&gt;非常推荐。&lt;/p&gt;
 </content>
-        <category term="阅读 经济" />
+        <category term="阅读" />
+        <category term="经济" />
         <updated>2023-08-26T12:32:47.000Z</updated>
     </entry>
     <entry>
@@ -269,7 +277,8 @@ const startPlay = ()=&amp;gt;&amp;#123;
 &lt;h2 id=&#34;注意事项&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意事项&#34;&gt;#&lt;/a&gt; ！！ 注意事项&lt;/h2&gt;
 &lt;p&gt;因为回放的原理是通过 iframe 加载网页，来回放操作，如果录制时和回放时的内容不一样，那就 game over 了&lt;/p&gt;
 </content>
-        <category term="前端 工具" />
+        <category term="前端" />
+        <category term="工具" />
         <updated>2023-08-23T15:09:10.000Z</updated>
     </entry>
     <entry>
@@ -298,7 +307,9 @@ const startPlay = ()=&amp;gt;&amp;#123;
 &lt;/ul&gt;
 &lt;p&gt;做好的动画可以导出为 json、mp4、gif，非常方便。&lt;/p&gt;
 </content>
-        <category term="前端 动画 工具" />
+        <category term="前端" />
+        <category term="动画" />
+        <category term="工具" />
         <updated>2023-08-23T15:07:29.000Z</updated>
     </entry>
     <entry>
@@ -328,7 +339,8 @@ const startPlay = ()=&amp;gt;&amp;#123;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然后重启服务就行了&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;service&lt;/span&gt; jenkins restart&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="jenkins CD" />
+        <category term="CD" />
+        <category term="jenkins" />
         <updated>2023-08-20T07:54:23.000Z</updated>
     </entry>
     <entry>
@@ -364,7 +376,8 @@ const startPlay = ()=&amp;gt;&amp;#123;
 这里有一个开源的项目，教你怎么写 jetpack compose 项目，看下来感觉是有用的，解决了我一些问题。&lt;br&gt;
 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qZXRwYWNrY29tcG9zZS5jbi9kb2NzLw==&#34;&gt;https://jetpackcompose.cn/docs/&lt;/span&gt;&lt;/p&gt;
 </content>
-        <category term="阅读 UP主" />
+        <category term="阅读" />
+        <category term="UP主" />
         <updated>2023-08-20T07:53:34.000Z</updated>
     </entry>
     <entry>
@@ -478,7 +491,9 @@ tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
 &lt;p&gt;这期讲了互联网内部的一些黑化，由于今年就业形势很差，所以讲者讲者就降到了不那么好的事情。感觉字节的人特别有自豪感，不知道为什么，可能字节的企业文化做的确实好吧。&lt;br&gt;
 我身为一个中小游戏厂的员工，很多地方也有感受，但我就没有那么强的企业自豪感，顶多算是企业认同吧。&lt;/p&gt;
 </content>
-        <category term="阅读 电视 播客" />
+        <category term="阅读" />
+        <category term="电视" />
+        <category term="播客" />
         <updated>2023-07-22T06:50:17.000Z</updated>
     </entry>
     <entry>
@@ -489,6 +504,7 @@ tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
 &lt;p&gt;很好玩。&lt;/p&gt;
 &lt;p&gt;主要玩法是捕鱼、经营、冒险，都很好玩，像素风也很可爱。推荐玩一玩。&lt;/p&gt;
 </content>
+        <category term="游戏" />
         <updated>2023-07-22T06:36:25.000Z</updated>
     </entry>
     <entry>
@@ -501,7 +517,9 @@ tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
 &lt;p&gt;和老婆已经玩明白了大宋百商图，大概半个多小时一局，计算稍显繁琐了一点，整体还是不错的，整体感觉复杂度一般，感觉可玩性要差一些。&lt;/p&gt;
 &lt;p&gt;勃艮第城堡应该更复杂，更好玩一点，周末玩玩。&lt;/p&gt;
 </content>
-        <category term="游戏 桌游 生活" />
+        <category term="游戏" />
+        <category term="桌游" />
+        <category term="生活" />
         <updated>2023-07-22T06:35:27.000Z</updated>
     </entry>
     <entry>
@@ -576,7 +594,10 @@ const run = ()=&amp;gt;&amp;#123;
 &lt;h2 id=&#34;是否支持多协程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#是否支持多协程&#34;&gt;#&lt;/a&gt; 是否支持多协程&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;支持&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&#34;highlight go&#34;&gt;&lt;figcaption data-lang=&#34;go&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   alert &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; js&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Global&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;alert&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   alert&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Invoke&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Hello World!&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   sleep &lt;span class=&#34;token operator&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;x &lt;span class=&#34;token builtin&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; wg &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;sync&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;WaitGroup&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;defer&lt;/span&gt; wg&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Done&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      time&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Sleep&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;time&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;Second &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; time&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Duration&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;x&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      fmt&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;我是coroutine:%d\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; wg sync&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;WaitGroup  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   fmt&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;开启两个协程&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   wg&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Add&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token keyword&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sleep&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;wg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   wg&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Add&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;span class=&#34;token keyword&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sleep&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;wg&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   wg&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Wait&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   fmt&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;All workers done&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="前端 vue go wasm" />
+        <category term="前端" />
+        <category term="vue" />
+        <category term="go" />
+        <category term="wasm" />
         <updated>2023-07-16T04:44:21.000Z</updated>
     </entry>
     <entry>
@@ -638,7 +659,9 @@ const run = ()=&amp;gt;&amp;#123;
 &lt;p&gt;阵容很强的一个电视剧，有我很喜欢的廖凡、张译、张鲁一、还有田雨、杨皓宇等等。&lt;br&gt;
 昨天开播的，看了一集，还是很不错的，只有 18 集的一个电视，应该会很紧凑，期待后面的剧情。&lt;/p&gt;
 </content>
-        <category term="阅读 电影 电视" />
+        <category term="阅读" />
+        <category term="电影" />
+        <category term="电视" />
         <updated>2023-07-16T04:43:20.000Z</updated>
     </entry>
     <entry>
@@ -865,7 +888,8 @@ const run = ()=&amp;gt;&amp;#123;
 &lt;p&gt;比如要实现上面的知乎效果，就可以输出 HIRE，然后选择 Alpha 样式。&lt;/p&gt;
 &lt;p&gt;可以给自己的网站开发者工具里面加一点有趣字符画，试试吧。&lt;/p&gt;
 </content>
-        <category term="前端 网站" />
+        <category term="前端" />
+        <category term="网站" />
         <updated>2023-06-29T01:01:40.000Z</updated>
     </entry>
     <entry>
@@ -1059,7 +1083,9 @@ const run = ()=&amp;gt;&amp;#123;
 源码使用的 scss，可以学到很多 scss 的用法以及 css 的用法；&lt;br&gt;
 当然，也可以直接拿来主义，给自己的开发或者样式实现提供很多思路。&lt;/p&gt;
 </content>
-        <category term="前端 UI 网站" />
+        <category term="前端" />
+        <category term="UI" />
+        <category term="网站" />
         <updated>2023-06-22T07:03:47.000Z</updated>
     </entry>
     <entry>
@@ -1117,7 +1143,8 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
 &lt;h2 id=&#34;体验总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#体验总结&#34;&gt;#&lt;/a&gt; 体验总结&lt;/h2&gt;
 &lt;p&gt;建议作为兴趣使用，如果想要快速出活，还是用其他的组件库比较好。&lt;/p&gt;
 </content>
-        <category term="前端 UI" />
+        <category term="前端" />
+        <category term="UI" />
         <updated>2023-06-20T15:28:33.000Z</updated>
     </entry>
     <entry>
@@ -1243,7 +1270,9 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight yml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Deploy On My server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;on&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;branches&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; main  &lt;span class=&#34;token comment&#34;&gt;# 更改为你要触发的分支&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;jobs&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;login&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;runs-on&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; ubuntu&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;latest  &lt;span class=&#34;token comment&#34;&gt;# 可以根据需要更改操作系统&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token key atrule&#34;&gt;steps&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token key atrule&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Checkout code&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token key atrule&#34;&gt;uses&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; actions/checkout@v2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token key atrule&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Login and Fetch Token&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token key atrule&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;token scalar string&#34;&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          # 在这里编写登录请求的代码，使用适当的语言和库发送POST请求，获取并提取出令牌&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          # 将令牌存储在一个变量中&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token comment&#34;&gt;# 示例（使用 cURL 发送请求）：&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          token=$(curl &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;X POST &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;d &#39;username= $&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼4&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token important&#34;&gt;&amp;amp;password=&lt;/span&gt; $&amp;lt;&lt;span class=&#34;token tag&#34;&gt;!--swig&lt;/span&gt;￼5&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&#39;  http&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;//gocron地址&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;5920/api/user/login &lt;span class=&#34;token punctuation&#34;&gt;|&lt;/span&gt; jq &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;r &#39;.data.token&#39;)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token key atrule&#34;&gt;echo &#34;Token&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; $token&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token comment&#34;&gt;# 将令牌存储为一个 GitHub Actions 的环境变量，以便在后续的步骤中使用&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          echo &#34;TOKEN=$token&#34; &lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&gt;&lt;/span&gt; $GITHUB_ENV&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token key atrule&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Start Deploy Task&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token key atrule&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;token scalar string&#34;&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          # 在这里编写发送下一个请求的代码，使用适当的语言和库&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          # 将上一步获取的令牌放置在请求标头中&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token comment&#34;&gt;# 示例（使用 cURL 发送请求）：&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          token=$TOKEN  &lt;span class=&#34;token comment&#34;&gt;# 获取上一步中存储的令牌&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token key atrule&#34;&gt;curl -H &#34;Auth-Token&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; $token&#34;  http&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;//gocron地址&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;5920/api/task/run/1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这样就 ok 啦！&lt;/p&gt;
 </content>
-        <category term="CI CD linux" />
+        <category term="CI" />
+        <category term="CD" />
+        <category term="linux" />
         <updated>2023-06-19T13:56:14.000Z</updated>
     </entry>
     <entry>
@@ -1372,13 +1401,14 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
 &lt;li&gt;空状态应提示创建新项，并可选择使用模板&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="前端 产品经理" />
+        <category term="前端" />
+        <category term="产品经理" />
         <updated>2023-06-17T15:55:48.000Z</updated>
     </entry>
     <entry>
-        <id>https://fanlu.top/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/</id>
+        <id>https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/</id>
         <title>微信公众号模板工具开发-02（end）</title>
-        <link rel="alternate" href="https://fanlu.top/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/"/>
         <content type="html">&lt;h2 id=&#34;代码高亮&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码高亮&#34;&gt;#&lt;/a&gt; 代码高亮&lt;/h2&gt;
 &lt;p&gt;使用 prism.js 来实现代码高亮。&lt;br&gt;
 每次渲染完 md 文档过后，调用 Prism.hightAll ()&lt;/p&gt;
@@ -1396,13 +1426,15 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
 &lt;li&gt;引用列表显示的还不是很完美，需要再搞搞&lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="nuxt axiss 前端" />
+        <category term="前端" />
+        <category term="nuxt" />
+        <category term="axiss" />
         <updated>2023-06-17T13:41:45.000Z</updated>
     </entry>
     <entry>
-        <id>https://fanlu.top/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/</id>
+        <id>https://fanlu.top/2023/06/12/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/</id>
         <title>微信公众号模板工具开发-01</title>
-        <link rel="alternate" href="https://fanlu.top/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/"/>
+        <link rel="alternate" href="https://fanlu.top/2023/06/12/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;在 nuxt 项目中实现一个 markdown 文本的渲染工作，可以用于微信公众号粘贴&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1468,7 +1500,9 @@ tailwindcss 中包含对很多基本 html 标签的样式定义，比如 h1、a�
 &lt;p&gt;这个就更简单了，只是一个动态绑定的 style，就不赘述了。&lt;/p&gt;
 &lt;p&gt;未完待续…&lt;/p&gt;
 </content>
-        <category term="nuxt axiss 前端" />
+        <category term="前端" />
+        <category term="nuxt" />
+        <category term="axiss" />
         <updated>2023-06-12T15:53:49.000Z</updated>
     </entry>
     <entry>

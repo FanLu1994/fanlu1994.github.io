@@ -7,38 +7,44 @@
         <language>zh-CN</language>
         <pubDate>Mon, 02 Oct 2023 00:39:21 +0000</pubDate>
         <lastBuildDate>Mon, 02 Oct 2023 00:39:21 +0000</lastBuildDate>
-        <category>nuxt axiss 前端</category>
-        <category>CI CD linux</category>
-        <category>jenkins CD</category>
+        <category>CI</category>
+        <category>CD</category>
+        <category>linux</category>
+        <category>jenkins</category>
         <category>云服务器</category>
-        <category>前端 产品经理</category>
-        <category>前端 UI</category>
-        <category>前端 动画 工具</category>
-        <category>前端 工具</category>
-        <category>前端搬砖指南</category>
-        <category>前端 vue go wasm</category>
+        <category>前端</category>
+        <category>产品经理</category>
+        <category>UI</category>
+        <category>动画</category>
         <category>工具</category>
-        <category>前端 网站</category>
-        <category>前端 UI 网站</category>
+        <category>前端搬砖指南</category>
+        <category>vue</category>
+        <category>go</category>
+        <category>wasm</category>
+        <category>nuxt</category>
+        <category>axiss</category>
+        <category>网站</category>
         <category>测试开发</category>
         <category>性能</category>
         <category>golang实验室</category>
         <category>网络</category>
-        <category>游戏 桌游 生活</category>
+        <category>游戏</category>
+        <category>桌游</category>
         <category>生活</category>
-        <category>阅读 经济</category>
-        <category>阅读，记录</category>
-        <category>阅读 电影 电视</category>
-        <category>阅读 电视 播客</category>
-        <category>阅读 UP主</category>
         <category>阅读</category>
-        <category>阅读 记录</category>
+        <category>经济</category>
+        <category>记录</category>
+        <category>电影</category>
+        <category>电视</category>
+        <category>播客</category>
+        <category>UP主</category>
         <category>鸡毛蒜皮周刊</category>
         <item>
             <guid isPermalink="true">https://fanlu.top/2023/10/02/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B410%E6%9C%8801%E6%97%A5-1/</guid>
             <title>本周看了啥-2023年10月01日</title>
             <link>https://fanlu.top/2023/10/02/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B410%E6%9C%8801%E6%97%A5-1/</link>
-            <category>阅读，记录</category>
+            <category>阅读</category>
+            <category>记录</category>
             <pubDate>Mon, 02 Oct 2023 00:39:21 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;最近工作很忙，终于等到了假期，把看的东西随便记录一下&lt;/p&gt;
 &lt;h2 id=&#34;持续交付20&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#持续交付20&#34;&gt;#&lt;/a&gt; 持续交付 2.0&lt;/h2&gt;
@@ -80,7 +86,8 @@
             <guid isPermalink="true">https://fanlu.top/2023/09/04/%E9%98%85%E8%AF%BB/%E8%AF%BB%E3%80%8A%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%BA%E3%80%8B/</guid>
             <title>读《互联网人》</title>
             <link>https://fanlu.top/2023/09/04/%E9%98%85%E8%AF%BB/%E8%AF%BB%E3%80%8A%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%BA%E3%80%8B/</link>
-            <category>阅读 记录</category>
+            <category>阅读</category>
+            <category>记录</category>
             <pubDate>Mon, 04 Sep 2023 09:27:34 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;ISBN: 9787300298023&lt;br&gt;
@@ -149,7 +156,8 @@ curl 支持的协议很多&lt;/p&gt;
             <guid isPermalink="true">https://fanlu.top/2023/08/26/%E9%98%85%E8%AF%BB/%E3%80%8A%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%E3%80%8B%E9%98%85%E8%AF%BB/</guid>
             <title>《置身事内》阅读</title>
             <link>https://fanlu.top/2023/08/26/%E9%98%85%E8%AF%BB/%E3%80%8A%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%E3%80%8B%E9%98%85%E8%AF%BB/</link>
-            <category>阅读 经济</category>
+            <category>阅读</category>
+            <category>经济</category>
             <pubDate>Sat, 26 Aug 2023 12:32:47 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;ISBN: 9787208171336&lt;br&gt;
@@ -165,7 +173,8 @@ curl 支持的协议很多&lt;/p&gt;
             <guid isPermalink="true">https://fanlu.top/2023/08/23/%E5%89%8D%E7%AB%AF/rrweb%E4%BD%BF%E7%94%A8/</guid>
             <title>rrweb使用</title>
             <link>https://fanlu.top/2023/08/23/%E5%89%8D%E7%AB%AF/rrweb%E4%BD%BF%E7%94%A8/</link>
-            <category>前端 工具</category>
+            <category>前端</category>
+            <category>工具</category>
             <pubDate>Wed, 23 Aug 2023 15:09:10 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
 &lt;p&gt;rrweb 是一种通过记录页面 dom 元素的变化，以及鼠标或者键盘输入的变化，来实现 web 操作的录制回放的功能。&lt;br&gt;
@@ -279,7 +288,9 @@ const startPlay = ()=&amp;gt;&amp;#123;
             <guid isPermalink="true">https://fanlu.top/2023/08/23/%E5%89%8D%E7%AB%AF/lottielab%E5%8A%A8%E7%94%BB%E5%BA%93/</guid>
             <title>lottielab动画库</title>
             <link>https://fanlu.top/2023/08/23/%E5%89%8D%E7%AB%AF/lottielab%E5%8A%A8%E7%94%BB%E5%BA%93/</link>
-            <category>前端 动画 工具</category>
+            <category>前端</category>
+            <category>动画</category>
+            <category>工具</category>
             <pubDate>Wed, 23 Aug 2023 15:07:29 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;lottie&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#lottie&#34;&gt;#&lt;/a&gt; lottie&lt;/h2&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9haXJibmIuZGVzaWduL2xvdHRpZS8=&#34;&gt;lottie&lt;/span&gt; 是 aribnb 开发的一个面向 web 或者移动平台的动画编辑和播放库。&lt;br&gt;
@@ -308,7 +319,8 @@ const startPlay = ()=&amp;gt;&amp;#123;
             <guid isPermalink="true">https://fanlu.top/2023/08/20/CI/jenkins%E7%9A%84%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
             <title>jenkins的部署问题记录</title>
             <link>https://fanlu.top/2023/08/20/CI/jenkins%E7%9A%84%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
-            <category>jenkins CD</category>
+            <category>CD</category>
+            <category>jenkins</category>
             <pubDate>Sun, 20 Aug 2023 07:54:23 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;因为工作的原因，需要给外包同学部署一个 jenkins 来帮助他们部署一些东西。&lt;/p&gt;
 &lt;h2 id=&#34;docker方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker方式&#34;&gt;#&lt;/a&gt; docker 方式&lt;/h2&gt;
@@ -338,7 +350,8 @@ const startPlay = ()=&amp;gt;&amp;#123;
             <guid isPermalink="true">https://fanlu.top/2023/08/20/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%8820%E6%97%A5/</guid>
             <title>本周看了啥-2023年8月20日</title>
             <link>https://fanlu.top/2023/08/20/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B48%E6%9C%8820%E6%97%A5/</link>
-            <category>阅读 UP主</category>
+            <category>阅读</category>
+            <category>UP主</category>
             <pubDate>Sun, 20 Aug 2023 07:53:34 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;webassembly实战&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#webassembly实战&#34;&gt;#&lt;/a&gt; WebAssembly 实战&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -461,7 +474,9 @@ tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
             <guid isPermalink="true">https://fanlu.top/2023/07/22/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8822%E6%97%A5/</guid>
             <title>本周看了啥-2023年7月22日</title>
             <link>https://fanlu.top/2023/07/22/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8822%E6%97%A5/</link>
-            <category>阅读 电视 播客</category>
+            <category>阅读</category>
+            <category>电视</category>
+            <category>播客</category>
             <pubDate>Sat, 22 Jul 2023 06:50:17 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;cdn技术详解&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cdn技术详解&#34;&gt;#&lt;/a&gt; CDN 技术详解&lt;/h1&gt;
 &lt;p&gt;这本书介绍了 CDN（内容分发网络）这个技术的原理，和这项技术的发展。整体还是不错的，不过可以感觉到 CDN 的技术内容不太足以支持一本书，因此，书里也介绍了不少其他相关的技术。&lt;/p&gt;
@@ -488,6 +503,7 @@ tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
             <guid isPermalink="true">https://fanlu.top/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%BD%9C%E6%B0%B4%E5%91%98%E6%88%B4%E5%A4%AB/</guid>
             <title>潜水员戴夫</title>
             <link>https://fanlu.top/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%BD%9C%E6%B0%B4%E5%91%98%E6%88%B4%E5%A4%AB/</link>
+            <category>游戏</category>
             <pubDate>Sat, 22 Jul 2023 06:36:25 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;潜水员戴夫到现在玩了大概四个小时了。&lt;/p&gt;
 &lt;p&gt;很好玩。&lt;/p&gt;
@@ -498,7 +514,9 @@ tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
             <guid isPermalink="true">https://fanlu.top/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%A1%8C%E6%B8%B8/</guid>
             <title>桌游</title>
             <link>https://fanlu.top/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%A1%8C%E6%B8%B8/</link>
-            <category>游戏 桌游 生活</category>
+            <category>游戏</category>
+            <category>桌游</category>
+            <category>生活</category>
             <pubDate>Sat, 22 Jul 2023 06:35:27 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;上次团建和大家一起玩了桌游，发现桌游并不像狼人啥那样无聊，还是很有趣的。&lt;/p&gt;
 &lt;p&gt;于是网上看了评价，选了一些感兴趣的桌游买了回来玩玩。&lt;/p&gt;
@@ -511,7 +529,10 @@ tailwindcss 就是一种典型的 css 原子化的产物。&lt;br&gt;
             <guid isPermalink="true">https://fanlu.top/2023/07/16/%E5%89%8D%E7%AB%AF/vue-golang-webassembly%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
             <title>vue-golang-webassembly初体验</title>
             <link>https://fanlu.top/2023/07/16/%E5%89%8D%E7%AB%AF/vue-golang-webassembly%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
-            <category>前端 vue go wasm</category>
+            <category>前端</category>
+            <category>vue</category>
+            <category>go</category>
+            <category>wasm</category>
             <pubDate>Sun, 16 Jul 2023 04:44:21 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;golang-部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#golang-部分&#34;&gt;#&lt;/a&gt; golang 部分&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -586,7 +607,9 @@ const run = ()=&amp;gt;&amp;#123;
             <guid isPermalink="true">https://fanlu.top/2023/07/16/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8815%E6%97%A5/</guid>
             <title>本周看了啥-2023年7月15日</title>
             <link>https://fanlu.top/2023/07/16/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8815%E6%97%A5/</link>
-            <category>阅读 电影 电视</category>
+            <category>阅读</category>
+            <category>电影</category>
+            <category>电视</category>
             <pubDate>Sun, 16 Jul 2023 04:43:20 +0000</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;pwa教程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pwa教程&#34;&gt;#&lt;/a&gt; pwa 教程&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -852,7 +875,8 @@ const run = ()=&amp;gt;&amp;#123;
             <guid isPermalink="true">https://fanlu.top/2023/06/29/%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/</guid>
             <title>ASCII</title>
             <link>https://fanlu.top/2023/06/29/%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-ASCII%E5%AD%97%E7%AC%A6%E7%94%BB/</link>
-            <category>前端 网站</category>
+            <category>前端</category>
+            <category>网站</category>
             <pubDate>Thu, 29 Jun 2023 01:01:40 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3BhdG9yamsuY29tL3NvZnR3YXJlL3RhYWcvI3A9ZGlzcGxheSZhbXA7Zj0zRCUyMERpYWdvbmFsJmFtcDt0PUhFTExPJTIwV09STEQ=&#34;&gt;http://patorjk.com/software/taag/#p=display&amp;amp;f=3D Diagonal&amp;amp;t=HELLO WORLD&lt;/span&gt;&lt;/p&gt;
@@ -1039,7 +1063,9 @@ const run = ()=&amp;gt;&amp;#123;
             <guid isPermalink="true">https://fanlu.top/2023/06/22/%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-CSS%E7%81%B5%E6%84%9F/</guid>
             <title>网站推荐-CSS灵感</title>
             <link>https://fanlu.top/2023/06/22/%E5%B7%A5%E5%85%B7/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90-CSS%E7%81%B5%E6%84%9F/</link>
-            <category>前端 UI 网站</category>
+            <category>前端</category>
+            <category>UI</category>
+            <category>网站</category>
             <pubDate>Thu, 22 Jun 2023 07:03:47 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jc3Njb2NvLmNvbS9pbnNwaXJhdGlvbi8jLy4vaW5pdA==&#34;&gt;https://csscoco.com/inspiration/#/./init&lt;/span&gt;&lt;/p&gt;
@@ -1069,7 +1095,8 @@ const run = ()=&amp;gt;&amp;#123;
             <guid isPermalink="true">https://fanlu.top/2023/06/20/%E5%89%8D%E7%AB%AF/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</guid>
             <title>daisyUI使用体验</title>
             <link>https://fanlu.top/2023/06/20/%E5%89%8D%E7%AB%AF/daisyUI%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</link>
-            <category>前端 UI</category>
+            <category>前端</category>
+            <category>UI</category>
             <pubDate>Tue, 20 Jun 2023 15:28:33 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;tailwind介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tailwind介绍&#34;&gt;#&lt;/a&gt; tailwind 介绍&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -1127,7 +1154,9 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
             <guid isPermalink="true">https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
             <title>Hexo博客自动部署</title>
             <link>https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
-            <category>CI CD linux</category>
+            <category>CI</category>
+            <category>CD</category>
+            <category>linux</category>
             <pubDate>Mon, 19 Jun 2023 13:56:14 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;简单介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简单介绍&#34;&gt;#&lt;/a&gt; 简单介绍&lt;/h2&gt;
 &lt;p&gt;Hexo 博客是一个非常好用的静态博客，之前也部署过一阵，后来换了 halo，但是遇到了服务器崩溃，丢了一些数据，现在又换回了&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv&#34;&gt; Hexo&lt;/span&gt;.&lt;/p&gt;
@@ -1253,7 +1282,8 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
             <guid isPermalink="true">https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/Web%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99%E2%80%94%E7%BF%BB%E8%AF%91/</guid>
             <title>Web界面设计准则—翻译</title>
             <link>https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/Web%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99%E2%80%94%E7%BF%BB%E8%AF%91/</link>
-            <category>前端 产品经理</category>
+            <category>前端</category>
+            <category>产品经理</category>
             <pubDate>Sat, 17 Jun 2023 15:55:48 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pbnRlcmZhY2VzLnJhdW5vLm1lLw==&#34;&gt;https://interfaces.rauno.me/&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;这个文档概述了构建良好的用户界面的一些细节，文档在持续更新中。本文借助 chatgpt 以及个人修改进行翻译，有些其实没接触过的，我也不懂啥意思，建议看原文。&lt;/p&gt;
@@ -1379,10 +1409,12 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://fanlu.top/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/</guid>
+            <guid isPermalink="true">https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/</guid>
             <title>微信公众号模板工具开发-02（end）</title>
-            <link>https://fanlu.top/2023/06/17/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/</link>
-            <category>nuxt axiss 前端</category>
+            <link>https://fanlu.top/2023/06/17/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-02%EF%BC%88end%EF%BC%89/</link>
+            <category>前端</category>
+            <category>nuxt</category>
+            <category>axiss</category>
             <pubDate>Sat, 17 Jun 2023 13:41:45 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;代码高亮&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码高亮&#34;&gt;#&lt;/a&gt; 代码高亮&lt;/h2&gt;
 &lt;p&gt;使用 prism.js 来实现代码高亮。&lt;br&gt;
@@ -1403,10 +1435,12 @@ Tailwind CSS 是一个现代化的 CSS 框架，它提供了一套可复用的�
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://fanlu.top/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/</guid>
+            <guid isPermalink="true">https://fanlu.top/2023/06/12/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/</guid>
             <title>微信公众号模板工具开发-01</title>
-            <link>https://fanlu.top/2023/06/12/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/</link>
-            <category>nuxt axiss 前端</category>
+            <link>https://fanlu.top/2023/06/12/%E5%89%8D%E7%AB%AF/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%A8%A1%E6%9D%BF%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91-01/</link>
+            <category>前端</category>
+            <category>nuxt</category>
+            <category>axiss</category>
             <pubDate>Mon, 12 Jun 2023 15:53:49 +0000</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;在 nuxt 项目中实现一个 markdown 文本的渲染工作，可以用于微信公众号粘贴&lt;/p&gt;

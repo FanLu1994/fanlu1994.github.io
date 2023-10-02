@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>何妨吟啸且徐行 • Posts by &#34;记录&#34; tag</title>
+        <link>https://fanlu.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 02 Oct 2023 00:39:21 +0000</pubDate>
+        <lastBuildDate>Mon, 02 Oct 2023 00:39:21 +0000</lastBuildDate>
+        <category>CI</category>
+        <category>CD</category>
+        <category>linux</category>
+        <category>jenkins</category>
+        <category>云服务器</category>
+        <category>前端</category>
+        <category>产品经理</category>
+        <category>UI</category>
+        <category>动画</category>
+        <category>工具</category>
+        <category>前端搬砖指南</category>
+        <category>vue</category>
+        <category>go</category>
+        <category>wasm</category>
+        <category>nuxt</category>
+        <category>axiss</category>
+        <category>网站</category>
+        <category>测试开发</category>
+        <category>性能</category>
+        <category>golang实验室</category>
+        <category>网络</category>
+        <category>游戏</category>
+        <category>桌游</category>
+        <category>生活</category>
+        <category>阅读</category>
+        <category>经济</category>
+        <category>记录</category>
+        <category>电影</category>
+        <category>电视</category>
+        <category>播客</category>
+        <category>UP主</category>
+        <category>鸡毛蒜皮周刊</category>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/10/02/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B410%E6%9C%8801%E6%97%A5-1/</guid>
+            <title>本周看了啥-2023年10月01日</title>
+            <link>https://fanlu.top/2023/10/02/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B410%E6%9C%8801%E6%97%A5-1/</link>
+            <category>阅读</category>
+            <category>记录</category>
+            <pubDate>Mon, 02 Oct 2023 00:39:21 +0000</pubDate>
+            <description><![CDATA[ &lt;p&gt;最近工作很忙，终于等到了假期，把看的东西随便记录一下&lt;/p&gt;
+&lt;h2 id=&#34;持续交付20&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#持续交付20&#34;&gt;#&lt;/a&gt; 持续交付 2.0&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc3ViamVjdC8zMDQxOTU1NS8=&#34;&gt;https://book.douban.com/subject/30419555/&lt;/span&gt;&lt;br&gt;
+ 这是一本介绍 DevOPS 的书，主要讲了开发 - 测试 - 部署的一个流程的演变和优化。作为一个测试人员，吸收到的营养有限，可以作为一个工具书，需要搭建流程的时候，拿来参考一下。&lt;/p&gt;
+&lt;h2 id=&#34;松弛感&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#松弛感&#34;&gt;#&lt;/a&gt; 松弛感&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc3ViamVjdC8zNjMzNjY4MC8=&#34;&gt;https://book.douban.com/subject/36336680/&lt;/span&gt;&lt;br&gt;
+ 内容是松弛感，内容确实讲了很多技术弱的人员通过疯狂学习达到技术大神的故事，不知道哪里体现到松弛感了，我看着就觉得压力满满。 而且松弛感是一个很主观的感受，我本来期望看到一本教我如何放松，如何从容面对难题的书。比较失望。&lt;/p&gt;
+&lt;h2 id=&#34;米格尔街&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#米格尔街&#34;&gt;#&lt;/a&gt; 米格尔街&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc3ViamVjdC8yMTM0NjAwOC8=&#34;&gt;https://book.douban.com/subject/21346008/&lt;/span&gt;&lt;br&gt;
+ 奥斯卡文学奖得主的书，主要讲小镇上的人和事。无法共情，没有历史背景的补充，看的有点懵。文笔很好，至少翻译的很好。 看了一半弃了。&lt;/p&gt;
+&lt;h2 id=&#34;安卓传奇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安卓传奇&#34;&gt;#&lt;/a&gt; 安卓传奇&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc3ViamVjdC8zNjE0OTI3Mi8=&#34;&gt;https://book.douban.com/subject/36149272/&lt;/span&gt;&lt;br&gt;
+ 主要讲述安卓操作系统的开发故事。对于项目的开始、每一个关键技术先生和故事都讲了。有点流水账，不够吸引人。 同时在听半拿铁播客的苹果系列，讲故事的水平对比强烈。传奇性一般般。&lt;/p&gt;
+&lt;h2 id=&#34;web30&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#web30&#34;&gt;#&lt;/a&gt; web3.0&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc3ViamVjdC8zNjE0OTI3Mi8=&#34;&gt;https://book.douban.com/subject/36149272/&lt;/span&gt;&lt;br&gt;
+ 看 web3.0 开始 get 老年人不会用智能手机的感受了 – 摘自豆瓣书评&lt;/p&gt;
+&lt;h2 id=&#34;电视剧-鹊刀门传奇&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#电视剧-鹊刀门传奇&#34;&gt;#&lt;/a&gt; 电视剧 - 鹊刀门传奇&lt;/h2&gt;
+&lt;p&gt;赵本山团队的新电视，没有罐头笑声的喜剧，穿着古装演现代戏的喜剧，有点武林外传的感觉，当然，差距还是很大的。可以一看。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://fanlu.top/2023/09/04/%E9%98%85%E8%AF%BB/%E8%AF%BB%E3%80%8A%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%BA%E3%80%8B/</guid>
+            <title>读《互联网人》</title>
+            <link>https://fanlu.top/2023/09/04/%E9%98%85%E8%AF%BB/%E8%AF%BB%E3%80%8A%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%BA%E3%80%8B/</link>
+            <category>阅读</category>
+            <category>记录</category>
+            <pubDate>Mon, 04 Sep 2023 09:27:34 +0000</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;ISBN: 9787300298023&lt;br&gt;
+ 作者：  &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc2VhcmNoLyVFNiVCMiU5OSVFNiVBMiU5MyVFNyVBNCVCRQ==&#34;&gt;沙梓社&lt;/span&gt;&lt;br&gt;
+豆瓣： &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc3ViamVjdC8zNTg1OTg4OC8=&#34;&gt;https://book.douban.com/subject/35859888/&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是一本文字版的纪录片。&lt;/p&gt;
+&lt;p&gt;作者选择了一些互联网行业的打工人或者创业者作为纪录片的主人公。作者深入陪伴了主人公一些时间，对于主人公的工作、生活、家庭都做了很详细的描述。&lt;/p&gt;
+&lt;p&gt;作者的文笔不能说特别出众，但是白描一般的记录和精致的插图加起来让我读起来感觉画面感还是很强的。&lt;/p&gt;
+&lt;p&gt;覆盖的职业很有意思，有程序员、有设计师、有公关、有人事、有产品经理、有手游、有销售、也包括一些硬件方面的从业者、甚至还有盲人程序员。 让我也多了解了不少行业的工作情况。&lt;/p&gt;
+&lt;p&gt;普遍来说，感觉大家过得都还不错，有能力超强，创业致富的；有安稳度日，工作轻松的的；有努力工作，回报丰厚的；也有工作一般，但家庭支撑力量很足的。想来也是，如果过得很不好，也不会联系作者进行采访了。&lt;/p&gt;
+&lt;p&gt;这本书对于各类职业的真实介绍，让我想起大学时的就业指导课，当时全是一些没有就业过的老师们上的，到现在我什么都不记得了。如果真的有各行各业的人来给我们介绍他们自己的工作，我会觉得特别有意思，也许会对我的职业选择有很多影响。 研究生阶段有这类课，有华为、腾讯等公司给我们讲解他们的一些技术分享，也算变相分享了他们的工作内容，很有趣，是我研究生阶段印象最深的几节课。&lt;/p&gt;
+&lt;p&gt;希望大学生朋友能有机会读读这本书，至少可以在选择要不要加入互联网行业的时候多一些判断依据。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

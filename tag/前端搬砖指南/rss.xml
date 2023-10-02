@@ -7,32 +7,37 @@
         <language>zh-CN</language>
         <pubDate>Tue, 16 May 2023 00:19:08 +0000</pubDate>
         <lastBuildDate>Tue, 16 May 2023 00:19:08 +0000</lastBuildDate>
-        <category>nuxt axiss 前端</category>
-        <category>CI CD linux</category>
-        <category>jenkins CD</category>
+        <category>CI</category>
+        <category>CD</category>
+        <category>linux</category>
+        <category>jenkins</category>
         <category>云服务器</category>
-        <category>前端 产品经理</category>
-        <category>前端 UI</category>
-        <category>前端 动画 工具</category>
-        <category>前端 工具</category>
-        <category>前端搬砖指南</category>
-        <category>前端 vue go wasm</category>
+        <category>前端</category>
+        <category>产品经理</category>
+        <category>UI</category>
+        <category>动画</category>
         <category>工具</category>
-        <category>前端 网站</category>
-        <category>前端 UI 网站</category>
+        <category>前端搬砖指南</category>
+        <category>vue</category>
+        <category>go</category>
+        <category>wasm</category>
+        <category>nuxt</category>
+        <category>axiss</category>
+        <category>网站</category>
         <category>测试开发</category>
         <category>性能</category>
         <category>golang实验室</category>
         <category>网络</category>
-        <category>游戏 桌游 生活</category>
+        <category>游戏</category>
+        <category>桌游</category>
         <category>生活</category>
-        <category>阅读 经济</category>
-        <category>阅读，记录</category>
-        <category>阅读 电影 电视</category>
-        <category>阅读 电视 播客</category>
-        <category>阅读 UP主</category>
         <category>阅读</category>
-        <category>阅读 记录</category>
+        <category>经济</category>
+        <category>记录</category>
+        <category>电影</category>
+        <category>电视</category>
+        <category>播客</category>
+        <category>UP主</category>
         <category>鸡毛蒜皮周刊</category>
         <item>
             <guid isPermalink="true">https://fanlu.top/2023/05/16/%E5%89%8D%E7%AB%AF/vben-admin%E6%8D%A2%E8%82%A4%E5%AE%9E%E7%8E%B0/</guid>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fanlu.top</id>
+    <title>何妨吟啸且徐行 • Posts by &#34;电影&#34; tag</title>
+    <link href="https://fanlu.top" />
+    <updated>2023-07-16T04:43:20.000Z</updated>
+    <category term="CI" />
+    <category term="CD" />
+    <category term="linux" />
+    <category term="jenkins" />
+    <category term="云服务器" />
+    <category term="前端" />
+    <category term="产品经理" />
+    <category term="UI" />
+    <category term="动画" />
+    <category term="工具" />
+    <category term="前端搬砖指南" />
+    <category term="vue" />
+    <category term="go" />
+    <category term="wasm" />
+    <category term="nuxt" />
+    <category term="axiss" />
+    <category term="网站" />
+    <category term="测试开发" />
+    <category term="性能" />
+    <category term="golang实验室" />
+    <category term="网络" />
+    <category term="游戏" />
+    <category term="桌游" />
+    <category term="生活" />
+    <category term="阅读" />
+    <category term="经济" />
+    <category term="记录" />
+    <category term="电影" />
+    <category term="电视" />
+    <category term="播客" />
+    <category term="UP主" />
+    <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/07/16/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8815%E6%97%A5/</id>
+        <title>本周看了啥-2023年7月15日</title>
+        <link rel="alternate" href="https://fanlu.top/2023/07/16/%E9%98%85%E8%AF%BB/%E6%9C%AC%E5%91%A8%E7%9C%8B%E4%BA%86%E5%95%A5-2023%E5%B9%B47%E6%9C%8815%E6%97%A5/"/>
+        <content type="html">&lt;h1 id=&#34;pwa教程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pwa教程&#34;&gt;#&lt;/a&gt; pwa 教程&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sYXZhcy1wcm9qZWN0LmdpdGh1Yi5pby9wd2EtYm9vay9jaGFwdGVyMDUvNS13b3JrYm94Lmh0bWw=&#34;&gt;https://lavas-project.github.io/pwa-book/chapter05/5-workbox.html&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;pwa 可以将网站当作 app 安装到电脑或者手机上。&lt;br&gt;
+这个教程全面介绍了 pwa 的技术，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pwa 的发展&lt;/li&gt;
+&lt;li&gt;前端对于用户体验的优化&lt;/li&gt;
+&lt;li&gt;用到的 js 技术&lt;/li&gt;
+&lt;li&gt;service worker 的技术&lt;/li&gt;
+&lt;li&gt;缓存策略&lt;/li&gt;
+&lt;li&gt;消息通知&lt;/li&gt;
+&lt;li&gt;安全性介绍&lt;/li&gt;
+&lt;li&gt;性能优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;尤其是前端用户体验方便，对于骨架屏、响应式布局的介绍，写的很好。&lt;/p&gt;
+&lt;h1 id=&#34;css揭秘&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css揭秘&#34;&gt;#&lt;/a&gt; css 揭秘&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ib29rLmRvdWJhbi5jb20vc3ViamVjdC8yNjc0NTk0My8=&#34;&gt;https://book.douban.com/subject/26745943/&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这本书是 css 的专家，css 设计委员会成员写的，非常注重实战。&lt;br&gt;
+从不同方便，列举了很多例子，介绍了 css 的高级又巧妙的用法，很有启发性。&lt;/p&gt;
+&lt;h1 id=&#34;vuejsgasp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#vuejsgasp&#34;&gt;#&lt;/a&gt; vue.js+gasp&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tZWRpdW0uY29tL0BkYWlseWZpcmUvdnVlLWpzLWdzYXAtYW5pbWF0aW9ucy0yNmZjNmIxYzNjNWE=&#34;&gt;https://medium.com/@dailyfire/vue-js-gsap-animations-26fc6b1c3c5a&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这篇文章介绍了在 vue 中使用 gasp 的步骤。&lt;/p&gt;
+&lt;h1 id=&#34;服务间的网络通信&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#服务间的网络通信&#34;&gt;#&lt;/a&gt; 服务间的网络通信&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90ZWNoLmt1amlhbGUuY29tL2xpYW8tbGlhby1mdS13dS1qaWFuLWRlLXdhbmctbHVvLXRvbmcteGluLXRjcC15dS1odHRwLw==&#34;&gt;https://tech.kujiale.com/liao-liao-fu-wu-jian-de-wang-luo-tong-xin-tcp-yu-http/&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是酷家乐团队写的介绍 tcp 长连接的文章，对于网络的分析尤其是 wireshark 的使用，非常值得学习。&lt;/p&gt;
+&lt;h1 id=&#34;诡秘之主&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#诡秘之主&#34;&gt;#&lt;/a&gt; 诡秘之主&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;克莱恩已经是诡法师了&lt;/li&gt;
+&lt;li&gt;干掉 因斯。赞格威尔的部分写的很精彩&lt;/li&gt;
+&lt;li&gt;干掉 阿蒙分身更精彩&lt;/li&gt;
+&lt;li&gt;听说宿命之环写的没有爽点，被全网喷，可惜了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;银河护卫队3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#银河护卫队3&#34;&gt;#&lt;/a&gt; 银河护卫队 3&lt;/h1&gt;
+&lt;p&gt;这应该是银河护卫队这批演员的最后一部电影了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;特效依旧很牛逼；&lt;/li&gt;
+&lt;li&gt;剧情比较俗套，但还在水准之上；&lt;/li&gt;
+&lt;li&gt;动物进化的星球很诡异，但是整个星球死了好像也没有什么伤心的，所以人类还是共情长得跟自己像的；&lt;/li&gt;
+&lt;li&gt;个人还是更喜欢有人味的超级英雄，比如蜘蛛侠、蝙蝠侠、第一部的钢铁侠，看电影时更容易投入，后面到外星球实在无法感同身受了。希望漫威还能出正常的超级英雄电影。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;欢颜&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#欢颜&#34;&gt;#&lt;/a&gt; 欢颜&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9tb3ZpZS5kb3ViYW4uY29tL3N1YmplY3QvMzU4OTE4MDgv&#34;&gt;https://movie.douban.com/subject/35891808/&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;阵容很强的一个电视剧，有我很喜欢的廖凡、张译、张鲁一、还有田雨、杨皓宇等等。&lt;br&gt;
+昨天开播的，看了一集，还是很不错的，只有 18 集的一个电视，应该会很紧凑，期待后面的剧情。&lt;/p&gt;
+</content>
+        <category term="阅读" />
+        <category term="电影" />
+        <category term="电视" />
+        <updated>2023-07-16T04:43:20.000Z</updated>
+    </entry>
+</feed>

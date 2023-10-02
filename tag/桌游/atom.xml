@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fanlu.top</id>
+    <title>何妨吟啸且徐行 • Posts by &#34;桌游&#34; tag</title>
+    <link href="https://fanlu.top" />
+    <updated>2023-07-22T06:35:27.000Z</updated>
+    <category term="CI" />
+    <category term="CD" />
+    <category term="linux" />
+    <category term="jenkins" />
+    <category term="云服务器" />
+    <category term="前端" />
+    <category term="产品经理" />
+    <category term="UI" />
+    <category term="动画" />
+    <category term="工具" />
+    <category term="前端搬砖指南" />
+    <category term="vue" />
+    <category term="go" />
+    <category term="wasm" />
+    <category term="nuxt" />
+    <category term="axiss" />
+    <category term="网站" />
+    <category term="测试开发" />
+    <category term="性能" />
+    <category term="golang实验室" />
+    <category term="网络" />
+    <category term="游戏" />
+    <category term="桌游" />
+    <category term="生活" />
+    <category term="阅读" />
+    <category term="经济" />
+    <category term="记录" />
+    <category term="电影" />
+    <category term="电视" />
+    <category term="播客" />
+    <category term="UP主" />
+    <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%A1%8C%E6%B8%B8/</id>
+        <title>桌游</title>
+        <link rel="alternate" href="https://fanlu.top/2023/07/22/%E6%B8%B8%E6%88%8F/%E6%A1%8C%E6%B8%B8/"/>
+        <content type="html">&lt;p&gt;上次团建和大家一起玩了桌游，发现桌游并不像狼人啥那样无聊，还是很有趣的。&lt;/p&gt;
+&lt;p&gt;于是网上看了评价，选了一些感兴趣的桌游买了回来玩玩。&lt;/p&gt;
+&lt;p&gt;先买了两套，一个是国产的历史经营题材的 &lt;code&gt;大宋百商图&lt;/code&gt; ，一个是备受好评的 &lt;code&gt;勃艮第城堡&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;和老婆已经玩明白了大宋百商图，大概半个多小时一局，计算稍显繁琐了一点，整体还是不错的，整体感觉复杂度一般，感觉可玩性要差一些。&lt;/p&gt;
+&lt;p&gt;勃艮第城堡应该更复杂，更好玩一点，周末玩玩。&lt;/p&gt;
+</content>
+        <category term="游戏" />
+        <category term="桌游" />
+        <category term="生活" />
+        <updated>2023-07-22T06:35:27.000Z</updated>
+    </entry>
+</feed>
