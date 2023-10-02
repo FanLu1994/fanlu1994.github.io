@@ -1,7 +1,10 @@
 ---
 title: SoloX之GPU性能采集
 date: 2023-07-14 08:36:15
-tags: 测试开发 性能 工具
+tags: 
+    - 测试开发 
+    - 性能 
+    - 工具
 categories: 测试开发
 ---
 ## 安卓

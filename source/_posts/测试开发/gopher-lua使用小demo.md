@@ -1,7 +1,8 @@
 ---
 title: gopher-lua使用小demo
 date: 2023-05-17 09:04:08
-tags: golang实验室
+tags: 
+	- golang实验室
 categories: 测试开发
 ---
 > 模拟读者读书
