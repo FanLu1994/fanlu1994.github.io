@@ -16,6 +16,17 @@
             ]
         },
         {
+            "id": "https://fanlu.top/2023/10/24/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/Fastbot-ios/",
+            "url": "https://fanlu.top/2023/10/24/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/Fastbot-ios/",
+            "title": "Fastbot_Android",
+            "date_published": "2023-10-24T00:50:37.000Z",
+            "content_html": "<p>参考资料：<br>\n<span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZm5uZy9wLzE1NzM4Mjg0Lmh0bWw=\">https://www.cnblogs.com/fnng/p/15738284.html</span></p>\n<blockquote>\n<p>字节开发的一个基于强化学习的 app 遍历测试或者 monkey 测试工具。</p>\n</blockquote>\n<ul>\n<li>只能在 macos 执行</li>\n</ul>\n<h2 id=\"获取应用安装的列表\"><a class=\"markdownIt-Anchor\" href=\"#获取应用安装的列表\">#</a> 获取应用安装的列表</h2>\n<p>可以用 tidevice 来获取 https://github.com/alibaba/taobao-iphone-device<br>\n 执行命令：</p>\n<figure class=\"highlight shell\"><figcaption data-lang=\"Bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>tidevice applist</pre></td></tr></table></figure><h2 id=\"环境配置\"><a class=\"markdownIt-Anchor\" href=\"#环境配置\">#</a> 环境配置</h2>\n<ul>\n<li>安装 xcode</li>\n<li>打开 fastbot_ios 项目</li>\n<li>允许 fastbotrunner\n<ul>\n<li>这里会报错，因为 xcode 需要添加一个 apple 账号</li>\n<li>此外需要修改应用名字<br>\n具体操作可以参考： <span class=\"exturl\" data-url=\"aHR0cHM6Ly9naXRodWIuY29tL2J5dGVkYW5jZS9GYXN0Ym90X2lPUy9ibG9iL21haW4vRG9jL2hhbmRib29rLWNuLm1k\">https://github.com/bytedance/Fastbot_iOS/blob/main/Doc/handbook-cn.md</span></li>\n</ul>\n</li>\n</ul>\n",
+            "tags": [
+                "工具",
+                "自动化测试"
+            ]
+        },
+        {
             "id": "https://fanlu.top/2023/10/18/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/ghz-grpc%E5%8E%8B%E6%B5%8B%E5%B7%A5%E5%85%B7/",
             "url": "https://fanlu.top/2023/10/18/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/ghz-grpc%E5%8E%8B%E6%B5%8B%E5%B7%A5%E5%85%B7/",
             "title": "ghz-grpc压测工具",
