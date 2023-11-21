@@ -1,0 +1,20 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "何妨吟啸且徐行 • All posts by \"debug\" tag",
+    "description": "",
+    "home_page_url": "https://fanlu.top",
+    "items": [
+        {
+            "id": "https://fanlu.top/2023/11/21/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/pyinstrument/",
+            "url": "https://fanlu.top/2023/11/21/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/pyinstrument/",
+            "title": "pyinstrument",
+            "date_published": "2023-11-21T14:41:31.000Z",
+            "content_html": "<blockquote>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9weWluc3RydW1lbnQucmVhZHRoZWRvY3MuaW8vZW4vbGF0ZXN0L2d1aWRlLmh0bWw=\">https://pyinstrument.readthedocs.io/en/latest/guide.html</span></p>\n</blockquote>\n<p>这是一个 python 性能分析工具.</p>\n<p>大致有两种使用方式：</p>\n<ol>\n<li>命令行直接运行脚本</li>\n</ol>\n<pre><code>pyinstrument script.py\n</code></pre>\n<ol start=\"2\">\n<li>嵌入到项目中</li>\n</ol>\n<ul>\n<li>简单包裹代码块</li>\n</ul>\n<figure class=\"highlight python\"><figcaption data-lang=\"python\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token keyword\">from</span> pyinstrument <span class=\"token keyword\">import</span> Profiler</pre></td></tr><tr><td data-num=\"2\"></td><td><pre></pre></td></tr><tr><td data-num=\"3\"></td><td><pre>profiler <span class=\"token operator\">=</span> Profiler<span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span></pre></td></tr><tr><td data-num=\"4\"></td><td><pre>profiler<span class=\"token punctuation\">.</span>start<span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span></pre></td></tr><tr><td data-num=\"5\"></td><td><pre></pre></td></tr><tr><td data-num=\"6\"></td><td><pre><span class=\"token comment\"># code you want to profile</span></pre></td></tr><tr><td data-num=\"7\"></td><td><pre></pre></td></tr><tr><td data-num=\"8\"></td><td><pre>profiler<span class=\"token punctuation\">.</span>stop<span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span></pre></td></tr><tr><td data-num=\"9\"></td><td><pre></pre></td></tr><tr><td data-num=\"10\"></td><td><pre>profiler<span class=\"token punctuation\">.</span><span class=\"token keyword\">print</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span></pre></td></tr></table></figure><ul>\n<li>作为中间件嵌入到 <code>django</code> 、 <code>flask</code> 、 <code>fastapi</code> 、 <code>falcon</code>  中使用</li>\n</ul>\n",
+            "tags": [
+                "工具",
+                "DEBUG",
+                "python"
+            ]
+        }
+    ]
+}
