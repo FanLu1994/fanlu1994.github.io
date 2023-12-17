@@ -25,18 +25,19 @@
     <category term="测试开发" />
     <category term="性能" />
     <category term="网络" />
+    <category term="golang" />
     <category term="golang实验室" />
     <category term="DEBUG" />
     <category term="python" />
+    <category term="生活" />
     <category term="游戏" />
     <category term="桌游" />
-    <category term="生活" />
     <category term="阅读" />
     <category term="经济" />
     <category term="记录" />
+    <category term="电影" />
     <category term="电视" />
     <category term="播客" />
-    <category term="电影" />
     <category term="UP主" />
     <category term="鸡毛蒜皮周刊" />
     <entry>
@@ -128,8 +129,8 @@
 昨天开播的，看了一集，还是很不错的，只有 18 集的一个电视，应该会很紧凑，期待后面的剧情。&lt;/p&gt;
 </content>
         <category term="阅读" />
-        <category term="电视" />
         <category term="电影" />
+        <category term="电视" />
         <updated>2023-07-16T04:43:20.000Z</updated>
     </entry>
 </feed>

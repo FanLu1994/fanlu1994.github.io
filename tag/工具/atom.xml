@@ -3,7 +3,7 @@
     <id>https://fanlu.top</id>
     <title>何妨吟啸且徐行 • Posts by &#34;工具&#34; tag</title>
     <link href="https://fanlu.top" />
-    <updated>2023-11-21T14:41:31.000Z</updated>
+    <updated>2023-12-17T12:24:47.000Z</updated>
     <category term="CI" />
     <category term="CD" />
     <category term="linux" />
@@ -25,20 +25,115 @@
     <category term="测试开发" />
     <category term="性能" />
     <category term="网络" />
+    <category term="golang" />
     <category term="golang实验室" />
     <category term="DEBUG" />
     <category term="python" />
+    <category term="生活" />
     <category term="游戏" />
     <category term="桌游" />
-    <category term="生活" />
     <category term="阅读" />
     <category term="经济" />
     <category term="记录" />
+    <category term="电影" />
     <category term="电视" />
     <category term="播客" />
-    <category term="电影" />
     <category term="UP主" />
     <category term="鸡毛蒜皮周刊" />
+    <entry>
+        <id>https://fanlu.top/2023/12/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/go-ios%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/</id>
+        <title>go-ios测试工具</title>
+        <link rel="alternate" href="https://fanlu.top/2023/12/17/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/go-ios%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;这是一个 go 实现的 ios 自动化测试工具，用于实现在 linux window mac 上实现 ios 自动化&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2RhbmllbHBhdWx1cy9nby1pb3M=&#34;&gt; https://github.com/danielpaulus/go-ios&lt;/span&gt;&lt;br&gt;
+！！ ios17 已经无法挂载开发者镜像&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;功能简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能简介&#34;&gt;#&lt;/a&gt; 功能简介&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;安装 ipa 到 iphone&lt;/li&gt;
+&lt;li&gt;在多平台运行 XCTest，包括 webdriverAgent&lt;/li&gt;
+&lt;li&gt;启动和停止应用&lt;/li&gt;
+&lt;li&gt;无需手动点击弹窗就可以配对设备&lt;/li&gt;
+&lt;li&gt;自动安装开发者镜像&lt;/li&gt;
+&lt;li&gt;在设备上执行热状态和网络仿真（弱网测试）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h2&gt;
+&lt;p&gt;两种方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;npm install go-ios&lt;/li&gt;
+&lt;li&gt;下载代码，编译 go 项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所有命令的默认输出都是 JSON 格式。如果你更喜欢人类可读的输出结果，请在命令中指定 --nojson 选项。&lt;br&gt;
+默认情况下，除非指定 --udid=some_udid 开关，否则命令将使用找到的第一个设备。&lt;br&gt;
+指定 -v 用于调试日志，指定 -t 用于转储每条信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
+&lt;p&gt;！！windows 要安装并启动 itunes；&lt;br&gt;
+！！ios17 目前很多功能不支持，手上也没有其他设备，所以很多功能试不了&lt;br&gt;
+！！若命令未指定–udid，则命令默认在列表中第一个设备执行&lt;/p&gt;
+&lt;h2 id=&#34;查看设备列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看设备列表&#34;&gt;#&lt;/a&gt; 查看设备列表&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以下命令类似，windows 如果是自己变异的就用 exe 执行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# mac&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ios  list&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# windows&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;.&lt;span class=&#34;token punctuation&#34;&gt;\&lt;/span&gt;go-ios.exe list&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;安装开发者镜像&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装开发者镜像&#34;&gt;#&lt;/a&gt; 安装开发者镜像&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ios image auto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里有点问题 我的 iphone 设备使用 mac 或者 widnows 都无法成功安装镜像&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从 github 下载镜像出错，众所周知的原因&lt;/li&gt;
+&lt;li&gt;手动下载后报错，原因暂时位置，并且我的设备时 17.1 了，为什么要下载 16.6 呢？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#123;&amp;quot;err&amp;quot;:&amp;quot;open devimages\\16.6\\DeveloperDiskImage.dmg.signature: The system cannot find the file specified.&amp;quot;,&amp;quot;image&amp;quot;:&amp;quot;devimages\\16.6\\DeveloperDiskImage.dmg&amp;quot;,&amp;quot;level&amp;quot;:&amp;quot;error&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;error mounting image&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2023-12-06T08:53:56+08:00&amp;quot;,&amp;quot;udid&amp;quot;:&amp;quot;00008101-001E38100242001E&amp;quot;&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;经过排查，iphone 需要开启开发者模式：&lt;br&gt;
+设置 -》通用 -》隐私与安全性 -》开发者模式&lt;br&gt;
+打开之后重启设备&lt;/p&gt;
+&lt;h3 id=&#34;设备信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设备信息&#34;&gt;#&lt;/a&gt; 设备信息&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ios info
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;系统日志&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#系统日志&#34;&gt;#&lt;/a&gt; 系统日志&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ios syslog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;应用相关&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#应用相关&#34;&gt;#&lt;/a&gt; 应用相关&lt;/h3&gt;
+&lt;h4 id=&#34;应用列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#应用列表&#34;&gt;#&lt;/a&gt; 应用列表&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;ios apps --list  安装应用  不是json输出
+ios apps --all  全部应用
+ios apps --system  系统应用
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;安装ipa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装ipa&#34;&gt;#&lt;/a&gt; 安装 ipa&lt;/h4&gt;
+&lt;h4 id=&#34;启动停止应用程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#启动停止应用程序&#34;&gt;#&lt;/a&gt; 启动停止应用程序&lt;/h4&gt;
+&lt;p&gt;需要开发者镜像&lt;/p&gt;
+&lt;h3 id=&#34;状态模拟&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#状态模拟&#34;&gt;#&lt;/a&gt; 状态模拟&lt;/h3&gt;
+&lt;p&gt;需要开发者镜像&lt;/p&gt;
+&lt;h3 id=&#34;崩溃日志&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#崩溃日志&#34;&gt;#&lt;/a&gt; 崩溃日志&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt; .\go-ios.exe crash ls  查看崩溃日志
+ .\go-ios.exe crash cp &amp;quot;*&amp;quot; &amp;quot;./&amp;quot;  拷贝日志到指定目录
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;截图&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#截图&#34;&gt;#&lt;/a&gt; 截图&lt;/h3&gt;
+&lt;p&gt;ios17 不行&lt;/p&gt;
+&lt;h3 id=&#34;抓包&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#抓包&#34;&gt;#&lt;/a&gt; 抓包&lt;/h3&gt;
+&lt;p&gt;需要进程 id，进程 id 需要开发者镜像&lt;/p&gt;
+&lt;h3 id=&#34;重启&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重启&#34;&gt;#&lt;/a&gt; 重启&lt;/h3&gt;
+&lt;h3 id=&#34;磁盘相关&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#磁盘相关&#34;&gt;#&lt;/a&gt; 磁盘相关&lt;/h3&gt;
+&lt;p&gt;查看磁盘大小&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(base) PS D:\git\go-ios&amp;gt; .\go-ios.exe diskspace
+&amp;#123;&amp;quot;level&amp;quot;:&amp;quot;info&amp;quot;,&amp;quot;msg&amp;quot;:&amp;quot;no udid specified using first device in list&amp;quot;,&amp;quot;time&amp;quot;:&amp;quot;2023-12-12T08:28:29+08:00&amp;quot;,&amp;quot;udid&amp;quot;:&amp;quot;00008101-001E38100242001E&amp;quot;&amp;#125;
+      Model: iPhone13,2
+  BlockSize: 512
+  FreeSpace: 34.5GB
+  UsedSpace: 93.3GB
+ TotalSpace: 127.9GB
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;配对密钥&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配对密钥&#34;&gt;#&lt;/a&gt; 配对密钥&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;.\go-ios.exe readpair
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="工具" />
+        <category term="golang" />
+        <updated>2023-12-17T12:24:47.000Z</updated>
+    </entry>
     <entry>
         <id>https://fanlu.top/2023/11/21/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/pyinstrument/</id>
         <title>pyinstrument</title>
