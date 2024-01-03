@@ -13,16 +13,16 @@
         <category>jenkins</category>
         <category>云服务器</category>
         <category>前端</category>
-        <category>产品经理</category>
         <category>UI</category>
+        <category>产品经理</category>
         <category>动画</category>
         <category>工具</category>
         <category>前端搬砖指南</category>
+        <category>nuxt</category>
+        <category>axiss</category>
         <category>vue</category>
         <category>go</category>
         <category>wasm</category>
-        <category>nuxt</category>
-        <category>axiss</category>
         <category>网站</category>
         <category>自动化测试</category>
         <category>测试开发</category>
@@ -30,11 +30,12 @@
         <category>网络</category>
         <category>golang</category>
         <category>golang实验室</category>
+        <category>ios</category>
         <category>DEBUG</category>
         <category>python</category>
-        <category>生活</category>
         <category>游戏</category>
         <category>桌游</category>
+        <category>生活</category>
         <category>阅读</category>
         <category>经济</category>
         <category>记录</category>

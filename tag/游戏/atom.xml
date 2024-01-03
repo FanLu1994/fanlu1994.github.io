@@ -10,16 +10,16 @@
     <category term="jenkins" />
     <category term="云服务器" />
     <category term="前端" />
-    <category term="产品经理" />
     <category term="UI" />
+    <category term="产品经理" />
     <category term="动画" />
     <category term="工具" />
     <category term="前端搬砖指南" />
+    <category term="nuxt" />
+    <category term="axiss" />
     <category term="vue" />
     <category term="go" />
     <category term="wasm" />
-    <category term="nuxt" />
-    <category term="axiss" />
     <category term="网站" />
     <category term="自动化测试" />
     <category term="测试开发" />
@@ -27,11 +27,12 @@
     <category term="网络" />
     <category term="golang" />
     <category term="golang实验室" />
+    <category term="ios" />
     <category term="DEBUG" />
     <category term="python" />
-    <category term="生活" />
     <category term="游戏" />
     <category term="桌游" />
+    <category term="生活" />
     <category term="阅读" />
     <category term="经济" />
     <category term="记录" />
@@ -61,9 +62,9 @@
 &lt;p&gt;和老婆已经玩明白了大宋百商图，大概半个多小时一局，计算稍显繁琐了一点，整体还是不错的，整体感觉复杂度一般，感觉可玩性要差一些。&lt;/p&gt;
 &lt;p&gt;勃艮第城堡应该更复杂，更好玩一点，周末玩玩。&lt;/p&gt;
 </content>
-        <category term="生活" />
         <category term="游戏" />
         <category term="桌游" />
+        <category term="生活" />
         <updated>2023-07-22T06:35:27.000Z</updated>
     </entry>
 </feed>
