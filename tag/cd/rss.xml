@@ -7,23 +7,26 @@
         <language>zh-CN</language>
         <pubDate>Sun, 20 Aug 2023 07:54:23 +0000</pubDate>
         <lastBuildDate>Sun, 20 Aug 2023 07:54:23 +0000</lastBuildDate>
-        <category>CI</category>
-        <category>CD</category>
-        <category>linux</category>
         <category>jenkins</category>
+        <category>CD</category>
+        <category>CI</category>
+        <category>linux</category>
+        <category>云服务器</category>
         <category>前端</category>
         <category>产品经理</category>
-        <category>云服务器</category>
         <category>动画</category>
         <category>工具</category>
         <category>UI</category>
-        <category>前端搬砖指南</category>
         <category>vue</category>
         <category>go</category>
         <category>wasm</category>
+        <category>前端搬砖指南</category>
         <category>nuxt</category>
         <category>axiss</category>
         <category>网站</category>
+        <category>游戏</category>
+        <category>桌游</category>
+        <category>生活</category>
         <category>自动化测试</category>
         <category>测试开发</category>
         <category>性能</category>
@@ -33,9 +36,6 @@
         <category>DEBUG</category>
         <category>python</category>
         <category>ios</category>
-        <category>游戏</category>
-        <category>桌游</category>
-        <category>生活</category>
         <category>阅读</category>
         <category>经济</category>
         <category>记录</category>
@@ -48,8 +48,8 @@
             <guid isPermalink="true">https://fanlu.top/2023/08/20/CI/jenkins%E7%9A%84%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
             <title>jenkins的部署问题记录</title>
             <link>https://fanlu.top/2023/08/20/CI/jenkins%E7%9A%84%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
-            <category>CD</category>
             <category>jenkins</category>
+            <category>CD</category>
             <pubDate>Sun, 20 Aug 2023 07:54:23 +0000</pubDate>
             <description><![CDATA[ &lt;p&gt;因为工作的原因，需要给外包同学部署一个 jenkins 来帮助他们部署一些东西。&lt;/p&gt;
 &lt;h2 id=&#34;docker方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker方式&#34;&gt;#&lt;/a&gt; docker 方式&lt;/h2&gt;
@@ -79,8 +79,8 @@
             <guid isPermalink="true">https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid>
             <title>Hexo博客自动部署</title>
             <link>https://fanlu.top/2023/06/19/CI/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link>
-            <category>CI</category>
             <category>CD</category>
+            <category>CI</category>
             <category>linux</category>
             <pubDate>Mon, 19 Jun 2023 13:56:14 +0000</pubDate>
             <description><![CDATA[ &lt;h2 id=&#34;简单介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简单介绍&#34;&gt;#&lt;/a&gt; 简单介绍&lt;/h2&gt;

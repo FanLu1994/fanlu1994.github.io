@@ -7,23 +7,26 @@
         <language>zh-CN</language>
         <pubDate>Wed, 23 Aug 2023 15:07:29 +0000</pubDate>
         <lastBuildDate>Wed, 23 Aug 2023 15:07:29 +0000</lastBuildDate>
-        <category>CI</category>
-        <category>CD</category>
-        <category>linux</category>
         <category>jenkins</category>
+        <category>CD</category>
+        <category>CI</category>
+        <category>linux</category>
+        <category>云服务器</category>
         <category>前端</category>
         <category>产品经理</category>
-        <category>云服务器</category>
         <category>动画</category>
         <category>工具</category>
         <category>UI</category>
-        <category>前端搬砖指南</category>
         <category>vue</category>
         <category>go</category>
         <category>wasm</category>
+        <category>前端搬砖指南</category>
         <category>nuxt</category>
         <category>axiss</category>
         <category>网站</category>
+        <category>游戏</category>
+        <category>桌游</category>
+        <category>生活</category>
         <category>自动化测试</category>
         <category>测试开发</category>
         <category>性能</category>
@@ -33,9 +36,6 @@
         <category>DEBUG</category>
         <category>python</category>
         <category>ios</category>
-        <category>游戏</category>
-        <category>桌游</category>
-        <category>生活</category>
         <category>阅读</category>
         <category>经济</category>
         <category>记录</category>
